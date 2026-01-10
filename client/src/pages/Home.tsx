@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 
-import heroImage from "@assets/stock_images/central_asian_feast__de1dc62c.jpg";
+import heroImage from "@assets/stock_images/2024_11_04_Zira_Uzbek_Kitchen_046.jpg";
 import plovImage from "@assets/stock_images/uzbek_plov_rice_dish_c2c15446.jpg";
 import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.jpg";
 import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.jpg";
@@ -518,66 +518,69 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Form */}
+      {/* Contact & Booking */}
       <section id="contact" className="py-24 relative z-10">
-        <div className="container mx-auto px-4 md:px-6 max-w-2xl">
-           <div className="text-center mb-12 bg-background/80 backdrop-blur-sm p-6 rounded-sm">
-             <h2 className="text-primary text-lg font-bold tracking-widest mb-2">RESERVATION</h2>
-             <h3 className="text-4xl md:text-5xl font-heading font-bold mb-4">{t.contact.title}</h3>
-           </div>
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-12 bg-background/80 backdrop-blur-sm p-6 rounded-sm max-w-4xl mx-auto">
+            <h2 className="text-primary text-lg font-bold tracking-widest mb-2">GET IN TOUCH</h2>
+            <h3 className="text-4xl md:text-5xl font-heading font-bold mb-4">{t.contact.title}</h3>
+            <p className="text-lg text-muted-foreground">
+              {lang === 'de' ? 'Wir freuen uns auf Ihre Nachricht!' : lang === 'ru' ? 'Мы с нетерпением ждем вашего сообщения!' : 'We look forward to hearing from you!'}
+            </p>
+          </div>
 
-           <Card className="border-border shadow-lg bg-card/80 backdrop-blur-sm relative overflow-visible">
-              <div className="absolute -top-3 -left-3 w-6 h-6 bg-primary rounded-full z-10"></div>
-              <div className="absolute -bottom-3 -right-3 w-6 h-6 bg-secondary rounded-full z-10"></div>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              {/* Phone */}
+              <a href="tel:+4922142362352" className="group bg-card/80 backdrop-blur-sm border-2 border-border p-8 text-center hover:border-primary transition-all hover:scale-105 rounded-sm">
+                <Phone className="w-12 h-12 mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" />
+                <div className="font-mono text-lg">+49 221 42362352</div>
+              </a>
 
-              <CardContent className="p-8">
-                <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">{t.contact.form.name}</Label>
-                      <Input id="name" placeholder="John Doe" className="bg-background" data-testid="input-name" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="contact">{t.contact.form.contact}</Label>
-                      <Input id="contact" placeholder="email@example.com" className="bg-background" data-testid="input-contact" />
-                    </div>
-                  </div>
-                  
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="guests">{t.contact.form.guests}</Label>
-                      <Select>
-                        <SelectTrigger className="bg-background" data-testid="select-guests">
-                          <SelectValue placeholder="2" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {[1,2,3,4,5,6,7,8,"8+"].map(n => (
-                            <SelectItem key={n} value={n.toString()}>{n} {lang === 'ru' ? 'чел.' : 'Pers.'}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="date">{t.contact.form.date}</Label>
-                      <Input id="date" type="datetime-local" className="bg-background" data-testid="input-date" />
-                    </div>
-                  </div>
+              {/* Email */}
+              <a href="mailto:info@silkroad-koeln.de" className="group bg-card/80 backdrop-blur-sm border-2 border-border p-8 text-center hover:border-secondary transition-all hover:scale-105 rounded-sm">
+                <Mail className="w-12 h-12 mx-auto mb-4 text-secondary group-hover:scale-110 transition-transform" />
+                <div className="font-mono text-lg">info@silkroad-koeln.de</div>
+              </a>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="message">{t.contact.form.message}</Label>
-                    <Textarea id="message" className="bg-background min-h-[100px]" placeholder="..." data-testid="input-message" />
-                  </div>
+              {/* Instagram */}
+              <a href="https://instagram.com/silkroad.koeln" target="_blank" rel="noreferrer" className="group bg-card/80 backdrop-blur-sm border-2 border-border p-8 text-center hover:border-accent transition-all hover:scale-105 rounded-sm">
+                <Instagram className="w-12 h-12 mx-auto mb-4 text-accent group-hover:scale-110 transition-transform" />
+                <div className="font-mono text-lg">@silkroad.koeln</div>
+              </a>
+            </div>
 
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-white font-heading uppercase tracking-wide text-lg py-6" data-testid="button-submit">
-                    {t.contact.form.submit}
-                  </Button>
-
-                  <p className="text-center text-xs text-muted-foreground mt-4">
-                    {t.contact.catering}
-                  </p>
-                </form>
-              </CardContent>
-           </Card>
+            {/* Reservation/Catering Info Section */}
+            <div className="bg-primary/10 border-4 border-primary p-8 md:p-12 backdrop-blur-sm">
+              <h3 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-6 text-center uppercase">
+                {lang === 'de' ? 'Reservierung & Catering' : lang === 'ru' ? 'Бронирование и Кейтеринг' : 'Reservations & Catering'}
+              </h3>
+              <p className="text-lg mb-6 text-center">
+                {lang === 'de' ? 'Kontaktieren Sie uns für Reservierungen, private Veranstaltungen oder Catering-Anfragen.' : lang === 'ru' ? 'Свяжитесь с нами для бронирования, частных мероприятий или заказа кейтеринга.' : 'Contact us for reservations, private events, or catering inquiries.'}
+              </p>
+              <ul className="grid md:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
+                <li className="flex items-center gap-3 text-lg font-mono">
+                  <span className="text-primary text-2xl">►</span>
+                  {lang === 'de' ? 'Tischreservierungen' : lang === 'ru' ? 'Бронирование столов' : 'Table Reservations'}
+                </li>
+                <li className="flex items-center gap-3 text-lg font-mono">
+                  <span className="text-primary text-2xl">►</span>
+                  {lang === 'de' ? 'Private Feiern' : lang === 'ru' ? 'Частные праздники' : 'Private Celebrations'}
+                </li>
+                <li className="flex items-center gap-3 text-lg font-mono">
+                  <span className="text-primary text-2xl">►</span>
+                  {lang === 'de' ? 'Catering Service' : lang === 'ru' ? 'Кейтеринг' : 'Catering Service'}
+                </li>
+                <li className="flex items-center gap-3 text-lg font-mono">
+                  <span className="text-primary text-2xl">►</span>
+                  {lang === 'de' ? 'Firmenevents' : lang === 'ru' ? 'Корпоративы' : 'Corporate Events'}
+                </li>
+              </ul>
+              <p className="text-lg text-center font-medium max-w-2xl mx-auto border-t border-primary/30 pt-6">
+                {t.contact.catering || (lang === 'de' ? 'Rufen Sie uns an oder schreiben Sie eine E-Mail!' : lang === 'ru' ? 'Позвоните нам или напишите!' : 'Call us or send an email!')}
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -615,20 +618,24 @@ export default function Home() {
 }
 
 function MenuCard({ image, title, desc, price }: { image: string, title: string, desc: string, price: string }) {
+  const rotations = ["rotate-1", "-rotate-1", "rotate-2", "-rotate-2", "rotate-1", "-rotate-1"];
+  const hoverRotations = ["hover:-rotate-1", "hover:rotate-1", "hover:-rotate-2", "hover:rotate-2", "hover:-rotate-2", "hover:rotate-2"];
+  const randomIndex = Math.floor(Math.random() * rotations.length);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="group bg-background/95 backdrop-blur-sm rounded-sm overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300"
+      className={`p-6 border-4 border-foreground bg-background ${rotations[randomIndex]} ${hoverRotations[randomIndex]} transition-transform group relative overflow-hidden`}
     >
-      <div className="aspect-[4/3] bg-muted relative overflow-hidden">
+      <div className="aspect-[4/3] bg-muted relative overflow-hidden mb-4">
         <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-        <div className="absolute top-2 right-2 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-sm text-sm font-bold shadow-sm">
+        <div className="absolute top-2 right-2 bg-foreground text-background px-3 py-1 text-sm font-bold shadow-sm">
           {price}
         </div>
       </div>
-      <div className="p-6">
+      <div>
         <h4 className="text-xl font-heading font-bold mb-2 group-hover:text-primary transition-colors">{title}</h4>
         <p className="text-muted-foreground text-sm leading-relaxed">{desc}</p>
       </div>
