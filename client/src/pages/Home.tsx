@@ -74,11 +74,11 @@ export default function Home() {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
-          opacity: 0.4
+          opacity: 0.8
         }}
       />
       {/* Lighter overlay to maintain text readability while showing more carpet */}
-      <div className="fixed inset-0 pointer-events-none z-0 bg-background/65" />
+      <div className="fixed inset-0 pointer-events-none z-0 bg-background/10" />
 
       {/* Navigation */}
       <nav 

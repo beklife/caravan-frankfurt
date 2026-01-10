@@ -17,10 +17,28 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     audioRef.current.loop = true;
     audioRef.current.volume = 0.3;
 
+    // Try to autoplay
     const playPromise = audioRef.current.play();
     if (playPromise !== undefined) {
       playPromise.catch(() => {
         setMusicPlaying(false);
+
+        // If autoplay is blocked, try to play on first user interaction
+        const startOnInteraction = () => {
+          if (audioRef.current && !musicPlaying) {
+            audioRef.current.play().then(() => {
+              setMusicPlaying(true);
+            }).catch(() => {
+              // Still blocked, user needs to click the music button
+            });
+          }
+          // Remove listeners after first attempt
+          document.removeEventListener('click', startOnInteraction);
+          document.removeEventListener('touchstart', startOnInteraction);
+        };
+
+        document.addEventListener('click', startOnInteraction);
+        document.addEventListener('touchstart', startOnInteraction);
       });
     }
 

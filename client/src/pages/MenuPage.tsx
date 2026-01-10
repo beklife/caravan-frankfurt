@@ -174,11 +174,11 @@ export default function MenuPage() {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
-          opacity: 0.4
+          opacity: 0.8
         }}
       />
       {/* Lighter overlay to maintain text readability while showing more carpet */}
-      <div className="fixed inset-0 pointer-events-none z-0 bg-background/40" />
+      <div className="fixed inset-0 pointer-events-none z-0 bg-background/10" />
 
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border py-4">
@@ -284,11 +284,32 @@ export default function MenuPage() {
       </header>
 
       {/* Menu Content */}
-      <main className="container mx-auto px-4 md:px-6 py-12 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-primary text-lg font-bold tracking-widest mb-2">SPEISEKARTE / MENU</h2>
-          <h3 className="text-4xl md:text-5xl font-heading font-bold mb-4">{t.menu.title}</h3>
-          <p className="text-muted-foreground max-w-xl mx-auto">{t.menu.subtitle}</p>
+      <main className="container mx-auto px-4 md:px-6 py-8 md:py-16 relative z-10 max-w-5xl">
+        {/* Elegant Header */}
+        <div className="text-center mb-12 md:mb-20 bg-background/90 backdrop-blur-md p-6 md:p-12 rounded-sm border-2 border-primary/20 relative overflow-hidden shadow-xl">
+          {/* Decorative Corner Elements */}
+          <div className="absolute top-0 left-0 w-12 h-12 md:w-24 md:h-24 border-t-2 border-l-2 border-primary/30"></div>
+          <div className="absolute top-0 right-0 w-12 h-12 md:w-24 md:h-24 border-t-2 border-r-2 border-primary/30"></div>
+          <div className="absolute bottom-0 left-0 w-12 h-12 md:w-24 md:h-24 border-b-2 border-l-2 border-primary/30"></div>
+          <div className="absolute bottom-0 right-0 w-12 h-12 md:w-24 md:h-24 border-b-2 border-r-2 border-primary/30"></div>
+
+          {/* Ornamental Top */}
+          <div className="flex items-center justify-center gap-2 md:gap-4 mb-4 md:mb-6">
+            <div className="h-[2px] w-8 md:w-16 bg-gradient-to-r from-transparent to-primary"></div>
+            <span className="text-2xl md:text-4xl">✦</span>
+            <div className="h-[2px] w-8 md:w-16 bg-gradient-to-l from-transparent to-primary"></div>
+          </div>
+
+          <h2 className="text-secondary text-xs md:text-sm font-bold tracking-[0.2em] md:tracking-[0.3em] mb-2 md:mb-3 uppercase">Speisekarte • Menu • Меню</h2>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-3 md:mb-4 text-foreground tracking-wide">{t.menu.title}</h1>
+          <p className="text-muted-foreground text-sm md:text-lg max-w-2xl mx-auto leading-relaxed italic px-4">{t.menu.subtitle}</p>
+
+          {/* Ornamental Bottom */}
+          <div className="flex items-center justify-center gap-2 md:gap-4 mt-4 md:mt-6">
+            <div className="h-[2px] w-8 md:w-16 bg-gradient-to-r from-transparent to-primary"></div>
+            <span className="text-2xl md:text-4xl">✦</span>
+            <div className="h-[2px] w-8 md:w-16 bg-gradient-to-l from-transparent to-primary"></div>
+          </div>
         </div>
 
         {/* Main Dishes */}
@@ -307,20 +328,42 @@ export default function MenuPage() {
         <MenuSection title={cats.desserts} items={fullMenu.desserts} lang={lang} getDishInfo={getDishInfo} />
 
         {/* Footer Note */}
-        <div className="mt-16 text-center">
-          <p className="text-muted-foreground text-sm italic border-t border-border pt-8 max-w-lg mx-auto">
-            {lang === 'de' && 'Alle Preise inkl. MwSt. Allergene auf Anfrage.'}
-            {lang === 'en' && 'All prices include VAT. Allergen info available on request.'}
-            {lang === 'ru' && 'Все цены включают НДС. Информация об аллергенах по запросу.'}
+        <div className="mt-12 md:mt-20 text-center bg-card/90 backdrop-blur-sm p-4 md:p-8 rounded-sm border border-border/50">
+          <div className="flex items-center justify-center gap-2 md:gap-4 mb-3 md:mb-4">
+            <div className="h-[1px] w-8 md:w-12 bg-gradient-to-r from-transparent to-primary"></div>
+            <span className="text-xl md:text-2xl text-primary">✦</span>
+            <div className="h-[1px] w-8 md:w-12 bg-gradient-to-l from-transparent to-primary"></div>
+          </div>
+          <p className="text-muted-foreground text-xs md:text-sm leading-relaxed max-w-2xl mx-auto px-2">
+            {lang === 'de' && 'Alle Preise inkl. MwSt. • Allergene und Zusatzstoffe auf Anfrage • Alle Gerichte sind Halal'}
+            {lang === 'en' && 'All prices include VAT • Allergen information available on request • All dishes are Halal'}
+            {lang === 'ru' && 'Все цены включают НДС • Информация об аллергенах по запросу • Все блюда халяльные'}
           </p>
+          <div className="mt-4 md:mt-6 text-center">
+            <p className="text-xs text-muted-foreground/70">
+              {lang === 'de' && 'Reservierung empfohlen • +49 221 42362352'}
+              {lang === 'en' && 'Reservation recommended • +49 221 42362352'}
+              {lang === 'ru' && 'Рекомендуется бронирование • +49 221 42362352'}
+            </p>
+          </div>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-8 mt-12">
+      <footer className="bg-foreground text-background py-8 md:py-12 mt-8 md:mt-16 border-t-2 border-primary/30 relative z-10">
         <div className="container mx-auto px-4 text-center">
-          <p className="font-heading text-xl tracking-widest mb-2">SILK ROAD</p>
-          <p className="text-white/60 text-sm">Karl-Berbuer-Platz 7, 50678 Köln • +49 221 42362352</p>
+          <div className="flex items-center justify-center gap-2 md:gap-4 mb-3 md:mb-4">
+            <div className="h-[1px] w-8 md:w-16 bg-gradient-to-r from-transparent to-white/30"></div>
+            <span className="text-2xl md:text-3xl text-secondary">✦</span>
+            <div className="h-[1px] w-8 md:w-16 bg-gradient-to-l from-transparent to-white/30"></div>
+          </div>
+          <p className="font-heading text-2xl md:text-3xl tracking-[0.2em] md:tracking-[0.3em] mb-2 text-white">SILK ROAD</p>
+          <p className="text-white/80 text-sm md:text-base mb-1">Karl-Berbuer-Platz 7, 50678 Köln</p>
+          <p className="text-white/60 text-xs md:text-sm mb-3 md:mb-4">Severinsviertel • Köln</p>
+          <p className="text-secondary font-bold tracking-wider text-sm md:text-base">+49 221 42362352</p>
+          <div className="mt-4 md:mt-6 text-white/40 text-xs">
+            <p>© 2026 SILK ROAD Restaurant • Köln</p>
+          </div>
         </div>
       </footer>
     </div>
@@ -328,44 +371,129 @@ export default function MenuPage() {
 }
 
 function MenuSection({ title, items, lang, getDishInfo }: { title: string, items: any[], lang: Language, getDishInfo: (d: any) => { name: string, desc: string } }) {
+  // Check if this section has signature dishes (mains)
+  const isMainSection = items.length > 0 && items[0].id === 'plov';
+
   return (
-    <section className="mb-16">
-      <h3 className="text-2xl font-heading font-bold mb-8 border-b border-border pb-4 flex items-center gap-4">
-        <span className="w-8 h-[2px] bg-primary"></span>
-        {title}
-      </h3>
-      <div className="space-y-6">
-        {items.map((item, idx) => {
-          const { name, desc } = getDishInfo(item);
-          return (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="flex gap-6 items-start group"
-            >
-              {item.image ? (
-                <div className="w-24 h-24 rounded-sm overflow-hidden flex-shrink-0 bg-muted">
-                  <img src={item.image} alt={name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                </div>
-              ) : (
-                <div className="w-24 h-24 rounded-sm flex-shrink-0 bg-muted/50 flex items-center justify-center">
-                  <span className="text-3xl">🍽</span>
-                </div>
-              )}
-              <div className="flex-1 min-w-0">
-                <div className="flex justify-between items-start gap-4">
-                  <h4 className="text-lg font-heading font-bold group-hover:text-primary transition-colors">{name}</h4>
-                  <span className="font-bold text-primary whitespace-nowrap">{item.price}</span>
-                </div>
-                <p className="text-muted-foreground text-sm mt-1 leading-relaxed">{desc}</p>
-              </div>
-            </motion.div>
-          );
-        })}
+    <motion.section
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="mb-20"
+    >
+      {/* Category Header */}
+      <div className="text-center mb-8 md:mb-12 relative">
+        {/* Decorative Line */}
+        <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-border to-transparent"></div>
+
+        {/* Category Title */}
+        <div className="relative inline-block bg-background/95 backdrop-blur-sm px-4 md:px-8 py-2 md:py-3 border-2 border-primary/30 rounded-sm">
+          <h3 className="text-xl md:text-3xl font-heading font-bold tracking-wider text-primary uppercase">
+            {title}
+          </h3>
+        </div>
       </div>
-    </section>
+
+      {/* Menu Items Container */}
+      <div className="bg-card/95 backdrop-blur-md p-4 md:p-8 lg:p-12 rounded-sm border border-border shadow-lg">
+        <div className="space-y-6 md:space-y-8">
+          {items.map((item, idx) => {
+            const { name, desc } = getDishInfo(item);
+            const isSignature = isMainSection && (item.id === 'plov' || item.id === 'shashlik');
+
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.08 }}
+                className="group relative"
+              >
+                <div className="flex gap-3 md:gap-6 items-start">
+                  {/* Image */}
+                  {item.image ? (
+                    <div className="w-20 h-20 md:w-32 md:h-32 rounded-sm overflow-hidden flex-shrink-0 bg-muted shadow-md relative">
+                      <img
+                        src={item.image}
+                        alt={name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      {isSignature && (
+                        <div className="absolute top-1 right-1 md:top-2 md:right-2 bg-secondary text-secondary-foreground text-xs font-bold px-1.5 md:px-2 py-0.5 md:py-1 rounded-sm shadow-lg">
+                          ★
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="w-20 h-20 md:w-32 md:h-32 rounded-sm flex-shrink-0 bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center border border-border">
+                      <span className="text-3xl md:text-5xl opacity-40">🍽</span>
+                    </div>
+                  )}
+
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    {/* Dish Name & Price with Dotted Line - Stack on mobile */}
+                    <div className="mb-2 md:mb-3">
+                      {/* Mobile Layout - Stacked */}
+                      <div className="md:hidden">
+                        <div className="flex items-baseline justify-between gap-2 mb-1">
+                          <h4 className="text-lg font-heading font-bold group-hover:text-primary transition-colors">
+                            {name}
+                            {isSignature && <span className="text-secondary ml-1 text-sm">★</span>}
+                          </h4>
+                          <span className="text-lg font-bold text-primary whitespace-nowrap">
+                            {item.price}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Desktop Layout - With dotted line */}
+                      <div className="hidden md:flex items-baseline gap-2">
+                        <h4 className="text-xl lg:text-2xl font-heading font-bold group-hover:text-primary transition-colors flex-shrink-0">
+                          {name}
+                          {isSignature && <span className="text-secondary ml-2 text-sm">★</span>}
+                        </h4>
+                        <div className="flex-1 border-b-2 border-dotted border-border/50 mb-1 min-w-[20px]"></div>
+                        <span className="text-xl lg:text-2xl font-bold text-primary whitespace-nowrap flex-shrink-0">
+                          {item.price}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                      {desc}
+                    </p>
+
+                    {/* Dietary Icons (if applicable) */}
+                    <div className="flex gap-2 mt-2 md:mt-3">
+                      <span className="inline-flex items-center gap-1 text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
+                        <span>✓</span> Halal
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Separator (except for last item) */}
+                {idx < items.length - 1 && (
+                  <div className="mt-6 md:mt-8 h-[1px] bg-gradient-to-r from-transparent via-border/50 to-transparent"></div>
+                )}
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Signature Note */}
+      {isMainSection && (
+        <div className="mt-3 md:mt-4 text-center">
+          <p className="text-xs md:text-sm text-muted-foreground italic">
+            <span className="text-secondary">★</span> {lang === 'de' ? 'Empfehlung des Hauses' : lang === 'ru' ? 'Фирменное блюдо' : "Chef's Signature"}
+          </p>
+        </div>
+      )}
+    </motion.section>
   );
 }
