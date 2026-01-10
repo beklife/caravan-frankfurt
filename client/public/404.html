@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SILK ROAD Restaurant</title>
+    <script>
+      // GitHub Pages SPA redirect
+      const pathSegments = window.location.pathname.split('/').filter(segment => segment);
+      const basePath = '/silkroad';
+
+      if (pathSegments[0] === 'silkroad') {
+        const redirect = basePath + window.location.pathname.slice(basePath.length) + window.location.search + window.location.hash;
+        sessionStorage.redirect = redirect;
+      }
+
+      window.location.replace(basePath + '/');
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
