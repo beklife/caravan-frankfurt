@@ -7,6 +7,8 @@ import { MusicProvider } from "@/lib/MusicContext";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import MenuPage from "@/pages/MenuPage";
+import Impressum from "@/pages/Impressum";
+import Datenschutz from "@/pages/Datenschutz";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Switch>
               <Route path="/" component={Home} />
               <Route path="/menu" component={MenuPage} />
+              <Route path="/impressum" component={Impressum} />
+              <Route path="/datenschutz" component={Datenschutz} />
               <Route component={NotFound} />
             </Switch>
           </Router>

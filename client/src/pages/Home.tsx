@@ -525,8 +525,8 @@ export default function Home() {
                <Link href="/menu" className="hover:text-primary transition-colors text-white/80">{t.nav.menu}</Link>
                <a href="#about" className="hover:text-primary transition-colors text-white/80">{t.nav.about}</a>
                <a href="#location" className="hover:text-primary transition-colors text-white/80">{t.nav.location}</a>
-               <a href="#" className="hover:text-primary transition-colors text-white/80">{t.footer.impressum}</a>
-               <a href="#" className="hover:text-primary transition-colors text-white/80">{t.footer.privacy}</a>
+               <Link href="/impressum" className="hover:text-primary transition-colors text-white/80">{t.footer.impressum}</Link>
+               <Link href="/datenschutz" className="hover:text-primary transition-colors text-white/80">{t.footer.privacy}</Link>
             </div>
 
             <div className="flex flex-col items-center md:items-end gap-4">
@@ -546,13 +546,7 @@ export default function Home() {
 
 function MenuCard({ image, title, desc, price }: { image: string, title: string, desc: string, price: string }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.4 }}
-      className="group bg-background/95 backdrop-blur-sm rounded-sm overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300"
-    >
+    <div className="group bg-background/95 backdrop-blur-sm rounded-sm overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300">
       <div className="aspect-[4/3] bg-muted relative overflow-hidden">
         <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
         <div className="absolute top-2 right-2 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-sm text-sm font-bold shadow-sm">
@@ -563,6 +557,6 @@ function MenuCard({ image, title, desc, price }: { image: string, title: string,
         <h4 className="text-xl font-heading font-bold mb-2 group-hover:text-primary transition-colors">{title}</h4>
         <p className="text-muted-foreground text-sm leading-relaxed">{desc}</p>
       </div>
-    </motion.div>
+    </div>
   )
 }
