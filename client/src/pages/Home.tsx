@@ -5,11 +5,6 @@ import { useMusic } from "@/lib/MusicContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Phone, Clock, Menu as MenuIcon, X, ChevronDown, Mail, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Card, CardContent } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
 
 import heroImage from "@assets/stock_images/2024_11_04_Zira_Uzbek_Kitchen_046.jpg";
 import plovImage from "@assets/stock_images/uzbek_plov_rice_dish_c2c15446.jpg";
@@ -96,9 +91,9 @@ export default function Home() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection("about")} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.about}</button>
-            <Link href="/menu" className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.menu}</Link>
+            <button onClick={() => scrollToSection("menu")} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.menu}</button>
             <button onClick={() => scrollToSection("location")} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.location}</button>
-            
+
             <div className="h-4 w-px bg-white/30 mx-2"></div>
 
             {/* Music Button */}
@@ -202,10 +197,6 @@ export default function Home() {
                 )}
               </AnimatePresence>
             </div>
-
-            <Button onClick={() => scrollToSection("contact")} variant={isScrolled ? "default" : "secondary"} className="font-heading uppercase tracking-wide">
-              {t.nav.reserve}
-            </Button>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -284,9 +275,8 @@ export default function Home() {
             >
               <div className="flex flex-col p-6 gap-4">
                 <button onClick={() => scrollToSection("about")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.about}</button>
-                <Link href="/menu" className="text-lg font-medium py-2 border-b border-dashed border-border" onClick={() => setMobileMenuOpen(false)}>{t.nav.menu}</Link>
+                <button onClick={() => scrollToSection("menu")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.menu}</button>
                 <button onClick={() => scrollToSection("location")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.location}</button>
-                <Button onClick={() => scrollToSection("contact")} className="w-full mt-4">{t.nav.reserve}</Button>
               </div>
             </motion.div>
           )}
@@ -317,14 +307,9 @@ export default function Home() {
             {t.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <Button size="lg" onClick={() => scrollToSection("contact")} className="bg-primary hover:bg-primary/90 text-white font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto">
-              {t.hero.cta_reserve}
+            <Button size="lg" onClick={() => scrollToSection("menu")} className="bg-primary hover:bg-primary/90 text-white font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto">
+              {t.hero.cta_menu}
             </Button>
-            <Link href="/menu">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto backdrop-blur-sm">
-                {t.hero.cta_menu}
-              </Button>
-            </Link>
           </div>
         </motion.div>
         
@@ -418,85 +403,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Opening Hours & Location */}
-      <section id="location" className="py-24 relative z-10">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-12">
-            
-            <motion.div
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               className="bg-card/90 backdrop-blur-sm p-8 md:p-12 rounded-sm border border-border shadow-sm relative overflow-hidden"
-            >
-               <div className="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-accent/20 rounded-tr-3xl"></div>
-               <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-accent/20 rounded-bl-3xl"></div>
-
-               <h3 className="text-3xl font-heading font-bold mb-8">{t.hours.title}</h3>
-               
-               <div className="space-y-6">
-                 <div className="flex justify-between items-center border-b border-dashed border-border pb-4">
-                   <span className="font-medium text-lg text-muted-foreground">{t.hours.weekdays}</span>
-                   <span className="font-bold text-xl">17:00 – 23:00</span>
-                 </div>
-                 <div className="flex justify-between items-center border-b border-dashed border-border pb-4">
-                   <span className="font-medium text-lg text-muted-foreground">{t.hours.weekend}</span>
-                   <span className="font-bold text-xl">12:00 – 23:00</span>
-                 </div>
-               </div>
-               
-               <p className="mt-6 text-sm text-muted-foreground bg-secondary/10 p-4 rounded-md flex items-start gap-2">
-                 <Clock className="w-4 h-4 mt-1 text-secondary" />
-                 {t.hours.note}
-               </p>
-
-               <div className="mt-12">
-                 <h3 className="text-3xl font-heading font-bold mb-6">{t.location.title}</h3>
-                 <div className="flex flex-col gap-4">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary/10 p-3 rounded-full text-primary">
-                        <MapPin className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <p className="font-bold text-lg">{t.location.address}</p>
-                        <p className="text-muted-foreground">{t.location.district}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary/10 p-3 rounded-full text-primary">
-                        <Phone className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <p className="font-bold text-lg">+49 221 42362352</p>
-                        <p className="text-muted-foreground">{t.contact.fallback}</p>
-                      </div>
-                    </div>
-                 </div>
-
-                 <div className="flex gap-4 mt-8">
-                   <Button className="flex-1 bg-foreground text-background hover:bg-foreground/90">{t.location.get_directions}</Button>
-                   <Button variant="outline" className="flex-1">{t.location.call_us}</Button>
-                 </div>
-               </div>
-            </motion.div>
-
-            <div className="h-full min-h-[400px] bg-muted relative rounded-sm overflow-hidden border border-border group">
-               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2514.2492770851457!2d6.957599776935105!3d50.93721345214046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf25b0a331626f%3A0x628373740037300!2sSeverinsviertel%2C%20K%C3%B6ln!5e0!3m2!1sde!2sde!4v1709825412451!5m2!1sde!2sde" 
-                width="100%" 
-                height="100%" 
-                style={{border:0, filter: "grayscale(0.8) contrast(1.1)"}} 
-                allowFullScreen={true} 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                className="absolute inset-0 transition-all duration-500 group-hover:filter-none"
-              ></iframe>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
       {/* Gallery */}
       <section className="py-24 bg-foreground text-background relative z-10">
         <div className="container mx-auto px-4 md:px-6">
@@ -518,66 +424,82 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Form */}
-      <section id="contact" className="py-24 relative z-10">
-        <div className="container mx-auto px-4 md:px-6 max-w-2xl">
-           <div className="text-center mb-12 bg-background/80 backdrop-blur-sm p-6 rounded-sm">
-             <h2 className="text-primary text-lg font-bold tracking-widest mb-2">RESERVATION</h2>
-             <h3 className="text-4xl md:text-5xl font-heading font-bold mb-4">{t.contact.title}</h3>
-           </div>
+      {/* Opening Hours & Location */}
+      <section id="location" className="py-24 relative z-10">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-12">
 
-           <Card className="border-border shadow-lg bg-card/80 backdrop-blur-sm relative overflow-visible">
-              <div className="absolute -top-3 -left-3 w-6 h-6 bg-primary rounded-full z-10"></div>
-              <div className="absolute -bottom-3 -right-3 w-6 h-6 bg-secondary rounded-full z-10"></div>
+            <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               className="bg-card/90 backdrop-blur-sm p-8 md:p-12 rounded-sm border border-border shadow-sm relative overflow-hidden"
+            >
+               <div className="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-accent/20 rounded-tr-3xl"></div>
+               <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-accent/20 rounded-bl-3xl"></div>
 
-              <CardContent className="p-8">
-                <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">{t.contact.form.name}</Label>
-                      <Input id="name" placeholder="John Doe" className="bg-background" data-testid="input-name" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="contact">{t.contact.form.contact}</Label>
-                      <Input id="contact" placeholder="email@example.com" className="bg-background" data-testid="input-contact" />
-                    </div>
-                  </div>
+               <h3 className="text-3xl font-heading font-bold mb-8">{t.hours.title}</h3>
 
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="guests">{t.contact.form.guests}</Label>
-                      <Select>
-                        <SelectTrigger className="bg-background" data-testid="select-guests">
-                          <SelectValue placeholder="2" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {[1,2,3,4,5,6,7,8,"8+"].map(n => (
-                            <SelectItem key={n} value={n.toString()}>{n} {lang === 'ru' ? 'чел.' : 'Pers.'}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="date">{t.contact.form.date}</Label>
-                      <Input id="date" type="datetime-local" className="bg-background" data-testid="input-date" />
-                    </div>
-                  </div>
+               <div className="space-y-6">
+                 <div className="flex justify-between items-center border-b border-dashed border-border pb-4">
+                   <span className="font-medium text-lg text-muted-foreground">{t.hours.weekdays}</span>
+                   <span className="font-bold text-xl">17:00 – 23:00</span>
+                 </div>
+                 <div className="flex justify-between items-center border-b border-dashed border-border pb-4">
+                   <span className="font-medium text-lg text-muted-foreground">{t.hours.weekend}</span>
+                   <span className="font-bold text-xl">12:00 – 23:00</span>
+                 </div>
+               </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="message">{t.contact.form.message}</Label>
-                    <Textarea id="message" className="bg-background min-h-[100px]" placeholder="..." data-testid="input-message" />
-                  </div>
+               <p className="mt-6 text-sm text-muted-foreground bg-secondary/10 p-4 rounded-md flex items-start gap-2">
+                 <Clock className="w-4 h-4 mt-1 text-secondary" />
+                 {t.hours.note}
+               </p>
 
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-white font-heading uppercase tracking-wide text-lg py-6" data-testid="button-submit">
-                    {t.contact.form.submit}
-                  </Button>
+               <div className="mt-12">
+                 <h3 className="text-2xl font-bold uppercase text-secondary mb-6 flex items-center gap-2">
+                   <MapPin className="w-6 h-6" /> Karl-Berbuer-Platz 7
+                 </h3>
+                 <address className="not-italic text-lg mb-6 block">
+                   Karl-Berbuer-Platz 7<br />
+                   50678 Köln
+                 </address>
 
-                  <p className="text-center text-xs text-muted-foreground mt-4">
-                    {t.contact.catering}
-                  </p>
-                </form>
-              </CardContent>
-           </Card>
+                 <div className="space-y-2 text-sm text-neutral-400 font-mono">
+                   <p>U-Bahn: Severinstraße</p>
+                   <p>Bus: 142, 133</p>
+                 </div>
+
+                 <div className="flex items-start gap-4 mt-6">
+                   <div className="bg-primary/10 p-3 rounded-full text-primary">
+                     <Phone className="w-6 h-6" />
+                   </div>
+                   <div>
+                     <p className="font-bold text-lg">+49 221 42362352</p>
+                     <p className="text-muted-foreground">{t.contact.fallback}</p>
+                   </div>
+                 </div>
+
+                 <div className="flex gap-4 mt-8">
+                   <Button className="flex-1 bg-foreground text-background hover:bg-foreground/90">{t.location.get_directions}</Button>
+                   <Button variant="outline" className="flex-1">{t.location.call_us}</Button>
+                 </div>
+               </div>
+            </motion.div>
+
+            <div className="h-full min-h-[400px] bg-muted relative rounded-sm overflow-hidden border border-border group">
+               <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2513.6448929863436!2d6.937599915779326!3d50.9472198792944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf25a32e5c1b0d%3A0x2b4f6c7e9c8e5f0a!2sKarl-Berbuer-Platz%207%2C%2050678%20K%C3%B6ln!5e0!3m2!1sde!2sde!4v1709825412451!5m2!1sde!2sde"
+                width="100%"
+                height="100%"
+                style={{border:0}}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+          </div>
         </div>
       </section>
 

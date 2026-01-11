@@ -11,6 +11,7 @@ const MusicContext = createContext<MusicContextType | undefined>(undefined);
 export function MusicProvider({ children }: { children: ReactNode }) {
   const [musicPlaying, setMusicPlaying] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const isPlayingRef = useRef(false);
 
   useEffect(() => {
     audioRef.current = new Audio(backgroundMusic);
@@ -20,26 +21,32 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     // Try to autoplay
     const playPromise = audioRef.current.play();
     if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        setMusicPlaying(false);
+      playPromise
+        .then(() => {
+          isPlayingRef.current = true;
+        })
+        .catch(() => {
+          // Autoplay blocked - try to play on first user interaction
+          isPlayingRef.current = false;
 
-        // If autoplay is blocked, try to play on first user interaction
-        const startOnInteraction = () => {
-          if (audioRef.current && !musicPlaying) {
-            audioRef.current.play().then(() => {
-              setMusicPlaying(true);
-            }).catch(() => {
-              // Still blocked, user needs to click the music button
-            });
-          }
-          // Remove listeners after first attempt
-          document.removeEventListener('click', startOnInteraction);
-          document.removeEventListener('touchstart', startOnInteraction);
-        };
+          const startOnInteraction = () => {
+            if (audioRef.current && !isPlayingRef.current) {
+              audioRef.current.play()
+                .then(() => {
+                  isPlayingRef.current = true;
+                })
+                .catch(() => {
+                  // Still blocked, user needs to click the music button
+                });
+            }
+            // Remove listeners after first attempt
+            document.removeEventListener('click', startOnInteraction);
+            document.removeEventListener('touchstart', startOnInteraction);
+          };
 
-        document.addEventListener('click', startOnInteraction);
-        document.addEventListener('touchstart', startOnInteraction);
-      });
+          document.addEventListener('click', startOnInteraction);
+          document.addEventListener('touchstart', startOnInteraction);
+        });
     }
 
     return () => {
@@ -54,10 +61,18 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     if (audioRef.current) {
       if (musicPlaying) {
         audioRef.current.pause();
+        isPlayingRef.current = false;
+        setMusicPlaying(false);
       } else {
-        audioRef.current.play();
+        audioRef.current.play()
+          .then(() => {
+            isPlayingRef.current = true;
+            setMusicPlaying(true);
+          })
+          .catch(() => {
+            // Play failed, keep button in off state
+          });
       }
-      setMusicPlaying(!musicPlaying);
     }
   };
 
