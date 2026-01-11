@@ -173,12 +173,12 @@ export default function MenuPage() {
           backgroundImage: `url(${carpetImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-          opacity: 0.8
+          backgroundAttachment: 'scroll',
+          opacity: 0.5
         }}
       />
       {/* Lighter overlay to maintain text readability while showing more carpet */}
-      <div className="fixed inset-0 pointer-events-none z-0 bg-background/10" />
+      <div className="fixed inset-0 pointer-events-none z-0 bg-background/30" />
 
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border py-4">
@@ -378,8 +378,8 @@ function MenuSection({ title, items, lang, getDishInfo }: { title: string, items
     <motion.section
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      viewport={{ once: true, margin: "-100px", amount: 0.2 }}
+      transition={{ duration: 0.5 }}
       className="mb-20"
     >
       {/* Category Header */}
@@ -407,8 +407,8 @@ function MenuSection({ title, items, lang, getDishInfo }: { title: string, items
                 key={item.id}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.08 }}
+                viewport={{ once: true, margin: "0px", amount: 0.5 }}
+                transition={{ delay: idx * 0.05, duration: 0.4 }}
                 className="group relative"
               >
                 <div className="flex gap-3 md:gap-6 items-start">
@@ -418,6 +418,7 @@ function MenuSection({ title, items, lang, getDishInfo }: { title: string, items
                       <img
                         src={item.image}
                         alt={name}
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       {isSignature && (

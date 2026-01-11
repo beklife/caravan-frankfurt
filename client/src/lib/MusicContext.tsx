@@ -9,9 +9,8 @@ interface MusicContextType {
 const MusicContext = createContext<MusicContextType | undefined>(undefined);
 
 export function MusicProvider({ children }: { children: ReactNode }) {
-  const [musicPlaying, setMusicPlaying] = useState(true);
+  const [musicPlaying, setMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const isPlayingRef = useRef(false);
 
   useEffect(() => {
     audioRef.current = new Audio(backgroundMusic);
@@ -23,17 +22,17 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     if (playPromise !== undefined) {
       playPromise
         .then(() => {
-          isPlayingRef.current = true;
+          setMusicPlaying(true);
         })
         .catch(() => {
           // Autoplay blocked - try to play on first user interaction
-          isPlayingRef.current = false;
+          setMusicPlaying(false);
 
           const startOnInteraction = () => {
-            if (audioRef.current && !isPlayingRef.current) {
+            if (audioRef.current) {
               audioRef.current.play()
                 .then(() => {
-                  isPlayingRef.current = true;
+                  setMusicPlaying(true);
                 })
                 .catch(() => {
                   // Still blocked, user needs to click the music button
@@ -61,12 +60,10 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     if (audioRef.current) {
       if (musicPlaying) {
         audioRef.current.pause();
-        isPlayingRef.current = false;
         setMusicPlaying(false);
       } else {
         audioRef.current.play()
           .then(() => {
-            isPlayingRef.current = true;
             setMusicPlaying(true);
           })
           .catch(() => {

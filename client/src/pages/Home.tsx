@@ -68,12 +68,12 @@ export default function Home() {
           backgroundImage: `url(${carpetImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-          opacity: 0.8
+          backgroundAttachment: 'scroll',
+          opacity: 0.5
         }}
       />
       {/* Lighter overlay to maintain text readability while showing more carpet */}
-      <div className="fixed inset-0 pointer-events-none z-0 bg-background/10" />
+      <div className="fixed inset-0 pointer-events-none z-0 bg-background/30" />
 
       {/* Navigation */}
       <nav 
@@ -541,11 +541,12 @@ function MenuCard({ image, title, desc, price }: { image: string, title: string,
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: "-50px", amount: 0.3 }}
+      transition={{ duration: 0.5 }}
       className="group bg-background/95 backdrop-blur-sm rounded-sm overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300"
     >
       <div className="aspect-[4/3] bg-muted relative overflow-hidden">
-        <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
         <div className="absolute top-2 right-2 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-sm text-sm font-bold shadow-sm">
           {price}
         </div>
