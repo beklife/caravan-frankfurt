@@ -275,7 +275,7 @@ export default function Home() {
             >
               <div className="flex flex-col p-6 gap-4">
                 <button onClick={() => scrollToSection("about")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.about}</button>
-                <Link href="/menu" className="text-lg font-medium py-2 border-b border-dashed border-border" onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'instant' }); }}>{t.nav.menu}</Link>
+                <Link href="/menu" className="text-lg text-center font-medium py-2 border-b border-dashed border-border" onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'instant' }); }}>{t.nav.menu}</Link>
                 <button onClick={() => scrollToSection("location")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.location}</button>
               </div>
             </motion.div>
