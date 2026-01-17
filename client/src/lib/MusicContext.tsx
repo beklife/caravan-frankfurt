@@ -15,7 +15,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     audioRef.current = new Audio(backgroundMusic);
     audioRef.current.loop = true;
-    audioRef.current.volume = 0.1;
+    audioRef.current.volume = 0.05;
 
     // Try to autoplay
     const playPromise = audioRef.current.play();
