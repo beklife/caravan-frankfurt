@@ -53,7 +53,7 @@ export default function Datenschutz() {
             </Button>
           </Link>
 
-          <h1 className="font-heading text-2xl font-bold tracking-wider text-primary">SILK ROAD</h1>
+          <h1 className="font-heading text-2xl font-bold tracking-wider text-primary">CARAVAN</h1>
 
           <div className="flex items-center gap-4">
             {/* Music Button */}
@@ -210,12 +210,12 @@ export default function Datenschutz() {
               {lang === 'de' ? 'Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:' : lang === 'ru' ? 'Ответственная сторона за обработку данных на этом веб-сайте:' : 'The responsible party for data processing on this website is:'}
             </p>
             <p className="mb-4">
-              SILK ROAD Restaurant<br />
-              Karl-Berbuer-Platz 7<br />
-              50678 Köln<br />
+              CARAVAN Restaurant<br />
+              Wöllstädter Str. 11<br />
+              60385 Frankfurt am Main<br />
               <br />
-              {lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : 'Phone:'} +49 221 42362352<br />
-              E-Mail: info@silkroad-koeln.de
+              {lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : 'Phone:'} 069 95909158<br />
+              E-Mail: info@caravan-frankfurt.de
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
@@ -261,11 +261,11 @@ export default function Datenschutz() {
       {/* Footer */}
       <footer className="bg-foreground text-background py-8 md:py-12 mt-8 md:mt-16 border-t-2 border-primary/30 relative z-10">
         <div className="container mx-auto px-4 text-center">
-          <p className="font-heading text-2xl md:text-3xl tracking-wider mb-2 text-white">SILK ROAD</p>
-          <p className="text-white/80 text-sm md:text-base mb-1">Karl-Berbuer-Platz 7, 50678 Köln</p>
-          <p className="text-secondary font-bold tracking-wider text-sm md:text-base">+49 221 42362352</p>
+          <p className="font-heading text-2xl md:text-3xl tracking-wider mb-2 text-white">CARAVAN</p>
+          <p className="text-white/80 text-sm md:text-base mb-1">Wöllstädter Str. 11, 60385 Frankfurt am Main</p>
+          <p className="text-secondary font-bold tracking-wider text-sm md:text-base">069 95909158</p>
           <div className="mt-4 md:mt-6 text-white/40 text-xs">
-            <p>© 2026 SILK ROAD Restaurant • Köln</p>
+            <p>© 2026 CARAVAN Restaurant • Frankfurt</p>
           </div>
         </div>
       </footer>

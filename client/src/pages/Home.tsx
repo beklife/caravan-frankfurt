@@ -51,11 +51,26 @@ export default function Home() {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setMobileMenuOpen(false);
-    }
+    setMobileMenuOpen(false);
+    // Delay scroll to allow mobile menu to close first
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        // Only add offset for reservation section
+        if (id === "reservation") {
+          const offset = 100; // Navbar height + spacing
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        } else {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }, 300);
   };
 
   const fadeInUp = {
@@ -89,7 +104,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
              <span className={`font-heading text-2xl font-bold tracking-wider ${isScrolled ? "text-primary" : "text-white"}`}>
-               SILK ROAD
+               CARAVAN
              </span>
           </div>
 
@@ -98,7 +113,7 @@ export default function Home() {
             <button onClick={() => scrollToSection("about")} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.about}</button>
             <Link href="/menu" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.menu}</Link>
             <button onClick={() => scrollToSection("contact")} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.contact}</button>
-            <button onClick={() => scrollToSection("contact")} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.reserve}</button>
+            <button onClick={() => scrollToSection("reservation")} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.reserve}</button>
 
             <div className="h-4 w-px bg-white/30 mx-2"></div>
 
@@ -283,7 +298,7 @@ export default function Home() {
                 <button onClick={() => scrollToSection("about")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.about}</button>
                 <Link href="/menu" className="text-lg text-center font-medium py-2 border-b border-dashed border-border" onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'instant' }); }}>{t.nav.menu}</Link>
                 <button onClick={() => scrollToSection("contact")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.contact}</button>
-                <button onClick={() => scrollToSection("contact")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.reserve}</button>
+                <button onClick={() => scrollToSection("reservation")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.reserve}</button>
               </div>
             </motion.div>
           )}
@@ -305,7 +320,7 @@ export default function Home() {
           className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-6"
         >
           <div className="inline-block border-y-2 border-primary/60 py-2 mb-4">
-            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-sm md:text-base">Est. 2024 • Köln</span>
+            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-sm md:text-base">Est. 2024 • Frankfurt</span>
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight drop-shadow-lg">
             {t.hero.title}
@@ -314,7 +329,7 @@ export default function Home() {
             {t.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <Button size="lg" onClick={() => scrollToSection("contact")} className="bg-primary hover:bg-primary/90 text-white font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto">
+            <Button size="lg" onClick={() => scrollToSection("reservation")} className="bg-primary hover:bg-primary/90 text-white font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto">
               {t.hero.cta_reserve}
             </Button>
             <Button size="lg" onClick={() => scrollToSection("menu")} variant="outline" className="border-white text-white hover:bg-white hover:text-primary font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto">
@@ -397,7 +412,7 @@ export default function Home() {
       <section id="menu" className="py-24 bg-card/80 backdrop-blur-sm relative z-10 border-y border-border/50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 bg-background/80 backdrop-blur-sm p-6 rounded-sm">
-            <h2 className="text-primary text-lg font-bold tracking-widest mb-2">TASTE THE SILK ROAD</h2>
+            <h2 className="text-primary text-lg font-bold tracking-widest mb-2">JOURNEY WITH CARAVAN</h2>
             <h3 className="text-4xl md:text-5xl font-heading font-bold mb-4">{t.menu.title}</h3>
             <p className="text-muted-foreground">{t.menu.subtitle}</p>
           </div>
@@ -465,7 +480,11 @@ export default function Home() {
                  </div>
                  <div className="flex justify-between items-center border-b border-dashed border-border pb-4">
                    <span className="font-medium text-lg text-muted-foreground">{t.hours.weekend}</span>
-                   <span className="font-bold text-xl">12:00 – 23:00</span>
+                   <span className="font-bold text-xl">17:00 – 23:00</span>
+                 </div>
+                 <div className="flex justify-between items-center border-b border-dashed border-border pb-4">
+                   <span className="font-medium text-lg text-muted-foreground">{t.hours.monday}</span>
+                   <span className="font-bold text-xl">{t.hours.closed}</span>
                  </div>
                </div>
 
@@ -476,16 +495,16 @@ export default function Home() {
 
                <div className="mt-12">
                  <h3 className="text-2xl font-bold uppercase text-secondary mb-6 flex items-center gap-2">
-                   <MapPin className="w-6 h-6" /> Karl-Berbuer-Platz 7
+                   <MapPin className="w-6 h-6" /> Wöllstädter Str. 11
                  </h3>
                  <address className="not-italic text-lg mb-6 block">
-                   Karl-Berbuer-Platz 7<br />
-                   50678 Köln
+                   Wöllstädter Str. 11<br />
+                   60385 Frankfurt am Main
                  </address>
 
                  <div className="space-y-2 text-sm text-neutral-400 font-mono">
-                   <p>U-Bahn: Severinstraße</p>
-                   <p>Bus: 142, 133</p>
+                   <p>U-Bahn: Heddernheim</p>
+                   <p>Bus: 60, 27</p>
                  </div>
 
                  <div className="flex items-start gap-4 mt-6">
@@ -493,7 +512,7 @@ export default function Home() {
                      <Phone className="w-6 h-6" />
                    </div>
                    <div>
-                     <p className="font-bold text-lg">+49 221 42362352</p>
+                     <p className="font-bold text-lg">069 95909158</p>
                      <p className="text-muted-foreground">{t.contact.fallback}</p>
                    </div>
                  </div>
@@ -507,7 +526,7 @@ export default function Home() {
 
             <div className="h-full min-h-[400px] bg-muted relative rounded-sm overflow-hidden border border-border group">
                <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2513.6448929863436!2d6.937599915779326!3d50.9472198792944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf25a32e5c1b0d%3A0x2b4f6c7e9c8e5f0a!2sKarl-Berbuer-Platz%207%2C%2050678%20K%C3%B6ln!5e0!3m2!1sde!2sde!4v1709825412451!5m2!1sde!2sde"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2556.7234567891234!2d8.6234567891234!3d50.1678901234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDEwJzA0LjQiTiA4wrAzNycyNC40IkU!5e0!3m2!1sde!2sde!4v1234567890123!5m2!1sde!2sde"
                 width="100%"
                 height="100%"
                 style={{border:0}}
@@ -520,7 +539,7 @@ export default function Home() {
           </div>
 
           {/* Booking Form */}
-          <div className="mt-12">
+          <div id="reservation" className="mt-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -541,17 +560,17 @@ export default function Home() {
                   {t.contact.fallback}
                 </p>
                 <a
-                  href="mailto:info@silkroad-cologne.de"
+                  href="mailto:info@caravan-frankfurt.de"
                   className="text-primary hover:underline font-medium"
                 >
-                  info@silkroad-cologne.de
+                  info@caravan-frankfurt.de
                 </a>
                 <span className="mx-2 text-muted-foreground">|</span>
                 <a
-                  href="tel:+4922142362352"
+                  href="tel:06995909158"
                   className="text-primary hover:underline font-medium"
                 >
-                  +49 221 42362352
+                  069 95909158
                 </a>
               </div>
             </motion.div>
@@ -564,9 +583,9 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-3 gap-12 text-center md:text-left">
             <div>
-              <h4 className="text-2xl font-heading font-bold mb-6 text-white tracking-widest">SILK ROAD</h4>
+              <h4 className="text-2xl font-heading font-bold mb-6 text-white tracking-widest">CARAVAN</h4>
               <p className="text-white/60 mb-4">{t.location.address}</p>
-              <p className="text-white/60">+49 221 42362352</p>
+              <p className="text-white/60">069 95909158</p>
             </div>
             
             <div className="flex flex-col gap-2 items-center md:items-start">
@@ -583,7 +602,7 @@ export default function Home() {
                 <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"><Facebook className="w-5 h-5" /></a>
                 <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"><Mail className="w-5 h-5" /></a>
               </div>
-              <p className="text-xs text-white/40 mt-auto">© 2026 SILK ROAD Köln. {t.footer.rights}</p>
+              <p className="text-xs text-white/40 mt-auto">© 2026 CARAVAN Frankfurt. {t.footer.rights}</p>
             </div>
           </div>
         </div>

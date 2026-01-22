@@ -53,7 +53,7 @@ export default function Impressum() {
             </Button>
           </Link>
 
-          <h1 className="font-heading text-2xl font-bold tracking-wider text-primary">SILK ROAD</h1>
+          <h1 className="font-heading text-2xl font-bold tracking-wider text-primary">CARAVAN</h1>
 
           <div className="flex items-center gap-4">
             {/* Music Button */}
@@ -153,9 +153,9 @@ export default function Impressum() {
             </h2>
 
             <p className="mb-4">
-              <strong>SILK ROAD Restaurant</strong><br />
-              Karl-Berbuer-Platz 7<br />
-              50678 Köln<br />
+              <strong>CARAVAN Restaurant</strong><br />
+              Wöllstädter Str. 11<br />
+              60385 Frankfurt am Main<br />
               Deutschland
             </p>
 
@@ -163,17 +163,17 @@ export default function Impressum() {
               {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакты' : 'Contact'}
             </h2>
             <p className="mb-4">
-              <strong>{lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : 'Phone:'}</strong> +49 221 42362352<br />
-              <strong>E-Mail:</strong> info@silkroad-koeln.de
+              <strong>{lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : 'Phone:'}</strong> 069 95909158<br />
+              <strong>E-Mail:</strong> info@caravan-frankfurt.de
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
               {lang === 'de' ? 'Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV' : lang === 'ru' ? 'Ответственный за содержание согласно § 55 Abs. 2 RStV' : 'Responsible for content according to § 55 Abs. 2 RStV'}
             </h2>
             <p className="mb-4">
-              SILK ROAD Restaurant<br />
-              Karl-Berbuer-Platz 7<br />
-              50678 Köln
+              CARAVAN Restaurant<br />
+              Wöllstädter Str. 11<br />
+              60385 Frankfurt am Main
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
@@ -208,11 +208,11 @@ export default function Impressum() {
       {/* Footer */}
       <footer className="bg-foreground text-background py-8 md:py-12 mt-8 md:mt-16 border-t-2 border-primary/30 relative z-10">
         <div className="container mx-auto px-4 text-center">
-          <p className="font-heading text-2xl md:text-3xl tracking-wider mb-2 text-white">SILK ROAD</p>
-          <p className="text-white/80 text-sm md:text-base mb-1">Karl-Berbuer-Platz 7, 50678 Köln</p>
-          <p className="text-secondary font-bold tracking-wider text-sm md:text-base">+49 221 42362352</p>
+          <p className="font-heading text-2xl md:text-3xl tracking-wider mb-2 text-white">CARAVAN</p>
+          <p className="text-white/80 text-sm md:text-base mb-1">Wöllstädter Str. 11, 60385 Frankfurt am Main</p>
+          <p className="text-secondary font-bold tracking-wider text-sm md:text-base">069 95909158</p>
           <div className="mt-4 md:mt-6 text-white/40 text-xs">
-            <p>© 2026 SILK ROAD Restaurant • Köln</p>
+            <p>© 2026 CARAVAN Restaurant • Frankfurt</p>
           </div>
         </div>
       </footer>

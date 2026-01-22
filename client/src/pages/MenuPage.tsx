@@ -198,7 +198,7 @@ export default function MenuPage() {
             </Button>
           </Link>
 
-          <h1 className="font-heading text-2xl font-bold tracking-wider text-primary">SILK ROAD</h1>
+          <h1 className="font-heading text-2xl font-bold tracking-wider text-primary">CARAVAN</h1>
 
           <div className="flex items-center gap-4">
             {/* Music Button */}
@@ -349,9 +349,9 @@ export default function MenuPage() {
           </p>
           <div className="mt-4 md:mt-6 text-center">
             <p className="text-xs text-muted-foreground/70">
-              {lang === 'de' && 'Reservierung empfohlen • +49 221 42362352'}
-              {lang === 'en' && 'Reservation recommended • +49 221 42362352'}
-              {lang === 'ru' && 'Рекомендуется бронирование • +49 221 42362352'}
+              {lang === 'de' && 'Reservierung empfohlen • 069 95909158'}
+              {lang === 'en' && 'Reservation recommended • 069 95909158'}
+              {lang === 'ru' && 'Рекомендуется бронирование • 069 95909158'}
             </p>
           </div>
         </div>
@@ -365,12 +365,12 @@ export default function MenuPage() {
             <span className="text-2xl md:text-3xl text-secondary">✦</span>
             <div className="h-[1px] w-8 md:w-16 bg-gradient-to-l from-transparent to-white/30"></div>
           </div>
-          <p className="font-heading text-2xl md:text-3xl tracking-[0.2em] md:tracking-[0.3em] mb-2 text-white">SILK ROAD</p>
-          <p className="text-white/80 text-sm md:text-base mb-1">Karl-Berbuer-Platz 7, 50678 Köln</p>
-          <p className="text-white/60 text-xs md:text-sm mb-3 md:mb-4">Severinsviertel • Köln</p>
-          <p className="text-secondary font-bold tracking-wider text-sm md:text-base">+49 221 42362352</p>
+          <p className="font-heading text-2xl md:text-3xl tracking-[0.2em] md:tracking-[0.3em] mb-2 text-white">CARAVAN</p>
+          <p className="text-white/80 text-sm md:text-base mb-1">Wöllstädter Str. 11, 60385 Frankfurt am Main</p>
+          <p className="text-white/60 text-xs md:text-sm mb-3 md:mb-4">Heddernheim • Frankfurt</p>
+          <p className="text-secondary font-bold tracking-wider text-sm md:text-base">069 95909158</p>
           <div className="mt-4 md:mt-6 text-white/40 text-xs">
-            <p>© 2026 SILK ROAD Restaurant • Köln</p>
+            <p>© 2026 CARAVAN Restaurant • Frankfurt</p>
           </div>
         </div>
       </footer>

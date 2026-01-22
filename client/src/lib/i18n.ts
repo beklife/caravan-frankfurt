@@ -10,14 +10,14 @@ export const translations = {
       reserve: "Reservieren"
     },
     hero: {
-      title: "SILK ROAD – Zentralasien in Köln.",
-      subtitle: "Authentische Küche, warme Gastfreundschaft und lebendige Teekultur im Severinsviertel.",
+      title: "CARAVAN – Zentralasien in Frankfurt.",
+      subtitle: "Authentische Küche, warme Gastfreundschaft und lebendige Teekultur in Frankfurt am Main.",
       cta_reserve: "Tisch anfragen",
       cta_menu: "Highlights ansehen"
     },
     about: {
       title: "Unsere Geschichte",
-      content: "Willkommen im SILK ROAD. Wir bringen die reichen Aromen und die herzliche Gastfreundschaft der Seidenstraße nach Köln. Unsere Küche zelebriert die kulinarischen Traditionen Zentralasiens – von handgezogenen Nudeln bis zu langsam gegartem Plov. Bei uns ist Essen mehr als nur Nahrung; es ist ein gemeinschaftliches Erlebnis, geteilt mit Freunden und Familie in einer Atmosphäre, die sich wie zu Hause anfühlt."
+      content: "Willkommen im CARAVAN. Wir bringen die reichen Aromen und die herzliche Gastfreundschaft der Seidenstraße nach Frankfurt. Unsere Küche zelebriert die kulinarischen Traditionen Zentralasiens – von handgezogenen Nudeln bis zu langsam gegartem Plov. Bei uns ist Essen mehr als nur Nahrung; es ist ein gemeinschaftliches Erlebnis, geteilt mit Freunden und Familie in einer Atmosphäre, die sich wie zu Hause anfühlt."
     },
     menu: {
       title: "Kulinarische Highlights",
@@ -33,14 +33,16 @@ export const translations = {
     },
     hours: {
       title: "Öffnungszeiten",
-      weekdays: "Montag – Freitag",
+      weekdays: "Dienstag – Freitag",
       weekend: "Samstag – Sonntag",
+      monday: "Montag",
+      closed: "Geschlossen",
       note: "An Feiertagen können die Zeiten abweichen. Bitte rufen Sie an."
     },
     location: {
       title: "Standort",
-      address: "Karl-Berbuer-Platz 7, 50678 Köln",
-      district: "Severinsviertel / Altstadt-Süd",
+      address: "Wöllstädter Str. 11, 60385 Frankfurt am Main",
+      district: "Heddernheim / Frankfurt am Main",
       get_directions: "Route planen",
       call_us: "Anrufen"
     },
@@ -78,14 +80,14 @@ export const translations = {
       reserve: "Reserve"
     },
     hero: {
-      title: "SILK ROAD – Central Asian comfort food in Cologne.",
-      subtitle: "Authentic flavors, warm hospitality, and vibrant tea culture in the Severin Quarter.",
+      title: "CARAVAN – Central Asian comfort food in Frankfurt.",
+      subtitle: "Authentic flavors, warm hospitality, and vibrant tea culture in Frankfurt am Main.",
       cta_reserve: "Book a Table",
       cta_menu: "View Highlights"
     },
     about: {
       title: "Our Story",
-      content: "Welcome to SILK ROAD. We bring the rich flavors and warm hospitality of the ancient Silk Road to Cologne. Our kitchen celebrates the culinary traditions of Central Asia—from hand-pulled noodles to slow-cooked Plov. Here, dining is more than just food; it is a communal experience shared with friends and family in an atmosphere that feels like home."
+      content: "Welcome to CARAVAN. We bring the rich flavors and warm hospitality of the ancient Silk Road to Frankfurt. Our kitchen celebrates the culinary traditions of Central Asia—from hand-pulled noodles to slow-cooked Plov. Here, dining is more than just food; it is a communal experience shared with friends and family in an atmosphere that feels like home."
     },
     menu: {
       title: "Menu Highlights",
@@ -101,14 +103,16 @@ export const translations = {
     },
     hours: {
       title: "Opening Hours",
-      weekdays: "Monday – Friday",
+      weekdays: "Tuesday – Friday",
       weekend: "Saturday – Sunday",
+      monday: "Monday",
+      closed: "Closed",
       note: "Hours may vary on holidays. Call to confirm."
     },
     location: {
       title: "Location",
-      address: "Karl-Berbuer-Platz 7, 50678 Cologne",
-      district: "Severinsviertel / Old Town South",
+      address: "Wöllstädter Str. 11, 60385 Frankfurt am Main",
+      district: "Heddernheim / Frankfurt am Main",
       get_directions: "Get Directions",
       call_us: "Call Us"
     },
@@ -146,14 +150,14 @@ export const translations = {
       reserve: "Бронь"
     },
     hero: {
-      title: "SILK ROAD — кухня Центральной Азии в Кёльне.",
-      subtitle: "Аутентичные вкусы, теплое гостеприимство и культура чаепития в квартале Северин.",
+      title: "CARAVAN — кухня Центральной Азии во Франкфурте.",
+      subtitle: "Аутентичные вкусы, теплое гостеприимство и культура чаепития во Франкфурте-на-Майне.",
       cta_reserve: "Забронировать стол",
       cta_menu: "Смотреть меню"
     },
     about: {
       title: "Наша история",
-      content: "Добро пожаловать в SILK ROAD. Мы привезли в Кёльн богатые вкусы и теплое гостеприимство Шелкового пути. Наша кухня прославляет кулинарные традиции Центральной Азии — от тянутой лапши до томленого плова. Еда для нас — это не просто пища, а повод собраться с друзьями и семьей в атмосфере домашнего уюта."
+      content: "Добро пожаловать в CARAVAN. Мы привезли во Франкфурт богатые вкусы и теплое гостеприимство Шелкового пути. Наша кухня прославляет кулинарные традиции Центральной Азии — от тянутой лапши до томленого плова. Еда для нас — это не просто пища, а повод собраться с друзьями и семьей в атмосфере домашнего уюта."
     },
     menu: {
       title: "Хиты меню",
@@ -169,14 +173,16 @@ export const translations = {
     },
     hours: {
       title: "Часы работы",
-      weekdays: "Понедельник – Пятница",
+      weekdays: "Вторник – Пятница",
       weekend: "Суббота – Воскресенье",
+      monday: "Понедельник",
+      closed: "Закрыто",
       note: "В праздничные дни часы могут меняться. Позвоните для уточнения."
     },
     location: {
       title: "Как нас найти",
-      address: "Karl-Berbuer-Platz 7, 50678 Кёльн",
-      district: "Северинсфиртель",
+      address: "Wöllstädter Str. 11, 60385 Франкфурт-на-Майне",
+      district: "Хеддернхайм / Франкфурт-на-Майне",
       get_directions: "Проложить маршрут",
       call_us: "Позвонить"
     },
