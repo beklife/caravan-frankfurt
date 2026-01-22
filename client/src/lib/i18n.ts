@@ -1,4 +1,4 @@
-export type Language = 'de' | 'en' | 'ru';
+export type Language = 'de' | 'en' | 'ru' | 'uz';
 
 export const translations = {
   de: {
@@ -209,6 +209,76 @@ export const translations = {
       impressum: "Импрессум",
       privacy: "Конфиденциальность",
       rights: "Все права защищены."
+    }
+  },
+  uz: {
+    nav: {
+      about: "Biz haqimizda",
+      menu: "Menyu",
+      location: "Manzil",
+      contact: "Aloqa",
+      reserve: "Bron qilish"
+    },
+    hero: {
+      title: "CARAVAN – Frankfurt shahrida Markaziy Osiyo oshxonasi.",
+      subtitle: "Frankfurt am Main shahrida asl ta'mlar, samimiy mehmondo'stlik va choy madaniyati.",
+      cta_reserve: "Stol bron qilish",
+      cta_menu: "Menyu ko'rish"
+    },
+    about: {
+      title: "Bizning tariximiz",
+      content: "CARAVAN restoraniga xush kelibsiz. Biz Frankfurt shahriga Ipak yo'lining boy ta'mlari va samimiy mehmondo'stligini olib keldik. Oshxonamiz Markaziy Osiyoning oshpazlik an'analarini nishonlaydi – qo'lda tortilgan lag'mon lagmanidan tortib sekin pishirilgan oshgacha. Bizda ovqatlanish shunchaki ovqat emas; bu do'stlar va oila bilan uyga o'xshagan muhitda baham ko'riladigan jamoaviy tajribadir."
+    },
+    menu: {
+      title: "Oshxona diqqatga sazovor taomlar",
+      subtitle: "Bizning eng mashhur taomlarimizdan tanlov. Taomlar mavsumga qarab o'zgarishi mumkin.",
+      dishes: {
+        plov: { name: "An'anaviy Osh", desc: "O'zbek oshxonasining yuragi. Guruch, yumshoq qo'y go'shti, sariq sabzi, no'xat va mayiz, an'anaviy ravishda qozonda pishiriladi." },
+        manty: { name: "Qo'lda yasalgan Manti", desc: "Mayda to'g'ralgan go'sht va piyoz bilan to'ldirilgan katta, sharbatli manti, yogurt sousi bilan beriladi." },
+        lagman: { name: "Uyg'ur Lag'moni", desc: "Mol go'shti, qalampir, pomidor va yangi ko'katlar bilan mazali sho'rvada qo'lda tortilgan lag'mon." },
+        samsa: { name: "Xamirli Somsa", desc: "Ziravorli go'sht yoki qovoq bilan to'ldirilgan tandirda pishirilgan somsa." },
+        shashlik: { name: "Qo'y go'shtidan Shashlik", desc: "Ko'mirda qovurilgan marinadlangan yumshoq qo'y go'shti shishlari, marinadlangan piyoz bilan beriladi." },
+        tea: { name: "Markaziy Osiyo Choyi", desc: "An'anaviy piyolalarda quritilgan mevalar va yong'oqlar bilan yashil va qora choylar taklif etiladi." }
+      }
+    },
+    hours: {
+      title: "Ish vaqti",
+      weekdays: "Seshanba – Juma",
+      weekend: "Shanba – Yakshanba",
+      monday: "Dushanba",
+      closed: "Yopiq",
+      note: "Bayram kunlari vaqt o'zgarishi mumkin. Tasdiqlash uchun qo'ng'iroq qiling."
+    },
+    location: {
+      title: "Manzil",
+      address: "Wöllstädter Str. 11, 60385 Frankfurt am Main",
+      district: "Heddernheim / Frankfurt am Main",
+      get_directions: "Yo'nalish olish",
+      call_us: "Qo'ng'iroq qilish"
+    },
+    gallery: {
+      title: "Galereya"
+    },
+    contact: {
+      title: "Bron qilish va Aloqa",
+      form: {
+        name: "Ismingiz",
+        email: "Elektron pochta",
+        phone: "Telefon raqam",
+        date: "Sana",
+        time: "Vaqt",
+        message: "Xabar (Ixtiyoriy)",
+        submit: "So'rov yuborish",
+        success: "Sizning bron qilish so'rovingiz muvaffaqiyatli yuborildi! Tez orada bog'lanamiz.",
+        error: "So'rovingizni yuborishda muammo yuz berdi. Iltimos, qayta urinib ko'ring."
+      },
+      fallback: "Shakl ishlamayaptimi? Bizga yozing:",
+      catering: "So'rov bo'yicha ketering xizmati mavjud."
+    },
+    footer: {
+      impressum: "Impressum",
+      privacy: "Maxfiylik siyosati",
+      rights: "Barcha huquqlar himoyalangan."
     }
   }
 };

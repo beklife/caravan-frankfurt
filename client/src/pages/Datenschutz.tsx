@@ -10,13 +10,15 @@ import carpetImage from "@assets/stock_images/persian_carpet.jpg";
 const langNames: Record<Language, string> = {
   de: "Deutsch",
   en: "English",
-  ru: "Русский"
+  ru: "Русский",
+  uz: "O'zbek"
 };
 
 const langFlags: Record<Language, string> = {
   de: "🇩🇪",
   en: "🇬🇧",
-  ru: "🇷🇺"
+  ru: "🇷🇺",
+  uz: "🇺🇿"
 };
 
 export default function Datenschutz() {
@@ -120,7 +122,7 @@ export default function Datenschutz() {
                     transition={{ duration: 0.15 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[140px]"
                   >
-                    {(["de", "en", "ru"] as Language[]).map((l) => (
+                    {(["de", "en", "ru", "uz"] as Language[]).map((l) => (
                       <button
                         key={l}
                         onClick={() => { setLang(l); setLangDropdownOpen(false); }}
@@ -144,7 +146,7 @@ export default function Datenschutz() {
       <main className="container mx-auto px-4 md:px-6 py-8 md:py-16 relative z-10 max-w-4xl">
         <div className="bg-card/90 backdrop-blur-md p-6 md:p-12 rounded-sm border border-border shadow-xl">
           <h1 className="text-3xl md:text-4xl font-heading font-bold mb-8 text-primary">
-            {lang === 'de' ? 'Datenschutzerklärung' : lang === 'ru' ? 'Политика конфиденциальности' : 'Privacy Policy'}
+            {lang === 'de' ? 'Datenschutzerklärung' : lang === 'ru' ? 'Политика конфиденциальности' : lang === 'uz' ? 'Maxfiylik siyosati' : 'Privacy Policy'}
           </h1>
 
           <div className="prose prose-neutral dark:prose-invert max-w-none">
@@ -214,7 +216,7 @@ export default function Datenschutz() {
               Wöllstädter Str. 11<br />
               60385 Frankfurt am Main<br />
               <br />
-              {lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : 'Phone:'} 069 95909158<br />
+              {lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : lang === 'uz' ? 'Telefon:' : 'Phone:'} 069 95909158<br />
               E-Mail: info@caravan-frankfurt.de
             </p>
 

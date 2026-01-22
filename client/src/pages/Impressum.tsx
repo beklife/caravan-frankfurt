@@ -10,13 +10,15 @@ import carpetImage from "@assets/stock_images/persian_carpet.jpg";
 const langNames: Record<Language, string> = {
   de: "Deutsch",
   en: "English",
-  ru: "Русский"
+  ru: "Русский",
+  uz: "O'zbek"
 };
 
 const langFlags: Record<Language, string> = {
   de: "🇩🇪",
   en: "🇬🇧",
-  ru: "🇷🇺"
+  ru: "🇷🇺",
+  uz: "🇺🇿"
 };
 
 export default function Impressum() {
@@ -120,7 +122,7 @@ export default function Impressum() {
                     transition={{ duration: 0.15 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[140px]"
                   >
-                    {(["de", "en", "ru"] as Language[]).map((l) => (
+                    {(["de", "en", "ru", "uz"] as Language[]).map((l) => (
                       <button
                         key={l}
                         onClick={() => { setLang(l); setLangDropdownOpen(false); }}
@@ -144,12 +146,12 @@ export default function Impressum() {
       <main className="container mx-auto px-4 md:px-6 py-8 md:py-16 relative z-10 max-w-4xl">
         <div className="bg-card/90 backdrop-blur-md p-6 md:p-12 rounded-sm border border-border shadow-xl">
           <h1 className="text-3xl md:text-4xl font-heading font-bold mb-8 text-primary">
-            {lang === 'de' ? 'Impressum' : lang === 'ru' ? 'Импрессум' : 'Imprint'}
+            {lang === 'de' ? 'Impressum' : lang === 'ru' ? 'Импрессум' : lang === 'uz' ? 'Impressum' : 'Imprint'}
           </h1>
 
           <div className="prose prose-neutral dark:prose-invert max-w-none">
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
-              {lang === 'de' ? 'Angaben gemäß § 5 TMG' : lang === 'ru' ? 'Информация согласно § 5 TMG' : 'Information according to § 5 TMG'}
+              {lang === 'de' ? 'Angaben gemäß § 5 TMG' : lang === 'ru' ? 'Информация согласно § 5 TMG' : lang === 'uz' ? '§ 5 TMG ga muvofiq ma\'lumot' : 'Information according to § 5 TMG'}
             </h2>
 
             <p className="mb-4">
@@ -160,10 +162,10 @@ export default function Impressum() {
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
-              {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакты' : 'Contact'}
+              {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакты' : lang === 'uz' ? 'Aloqa' : 'Contact'}
             </h2>
             <p className="mb-4">
-              <strong>{lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : 'Phone:'}</strong> 069 95909158<br />
+              <strong>{lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : lang === 'uz' ? 'Telefon:' : 'Phone:'}</strong> 069 95909158<br />
               <strong>E-Mail:</strong> info@caravan-frankfurt.de
             </p>
 

@@ -20,13 +20,15 @@ import carpetImage from "@assets/stock_images/persian_carpet.jpg";
 const langNames: Record<Language, string> = {
   de: "Deutsch",
   en: "English",
-  ru: "Русский"
+  ru: "Русский",
+  uz: "O'zbek"
 };
 
 const langFlags: Record<Language, string> = {
   de: "🇩🇪",
   en: "🇬🇧",
-  ru: "🇷🇺"
+  ru: "🇷🇺",
+  uz: "🇺🇿"
 };
 
 export default function Home() {
@@ -199,7 +201,7 @@ export default function Home() {
                     transition={{ duration: 0.15 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[140px]"
                   >
-                    {(["de", "en", "ru"] as Language[]).map((l) => (
+                    {(["de", "en", "ru", "uz"] as Language[]).map((l) => (
                       <button
                         key={l}
                         data-testid={`button-lang-${l}`}
@@ -264,7 +266,7 @@ export default function Home() {
                     exit={{ opacity: 0, y: -10 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden z-50"
                   >
-                    {(["de", "en", "ru"] as Language[]).map((l) => (
+                    {(["de", "en", "ru", "uz"] as Language[]).map((l) => (
                       <button
                         key={l}
                         onClick={() => { setLang(l); setLangDropdownOpen(false); }}
@@ -325,7 +327,7 @@ export default function Home() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight drop-shadow-lg">
             {t.hero.title}
           </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl font-bold leading-relaxed">
             {t.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
@@ -429,7 +431,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Link href="/menu" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>
               <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white font-heading uppercase tracking-wide">
-                {lang === 'de' ? 'Vollständige Speisekarte' : lang === 'ru' ? 'Полное меню' : 'View Full Menu'}
+                {lang === 'de' ? 'Vollständige Speisekarte' : lang === 'ru' ? 'Полное меню' : lang === 'uz' ? 'To\'liq menyu' : 'View Full Menu'}
               </Button>
             </Link>
           </div>
@@ -592,8 +594,8 @@ export default function Home() {
                <Link href="/menu" className="hover:text-primary transition-colors text-white/80">{t.nav.menu}</Link>
                <a href="#about" className="hover:text-primary transition-colors text-white/80">{t.nav.about}</a>
                <a href="#contact" className="hover:text-primary transition-colors text-white/80">{t.nav.contact}</a>
-               <Link href="/impressum" className="hover:text-primary transition-colors text-white/80">{t.footer.impressum}</Link>
-               <Link href="/datenschutz" className="hover:text-primary transition-colors text-white/80">{t.footer.privacy}</Link>
+               {lang !== 'uz' && <Link href="/impressum" className="hover:text-primary transition-colors text-white/80">{t.footer.impressum}</Link>}
+               {lang !== 'uz' && <Link href="/datenschutz" className="hover:text-primary transition-colors text-white/80">{t.footer.privacy}</Link>}
             </div>
 
             <div className="flex flex-col items-center md:items-end gap-4">

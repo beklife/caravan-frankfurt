@@ -54,7 +54,7 @@
 
   /* Muted Textures */
   --muted: 35 15% 85%;
-  --muted-foreground: 220 10% 40%;
+  --muted-foreground: 220 15% 25%;
 
   /* Cards (Slightly lighter than background for depth) */
   --card: 35 30% 97%;
@@ -101,6 +101,14 @@
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-medium tracking-wide uppercase;
+  }
+  p {
+    @apply text-base leading-relaxed;
+    color: hsl(220 15% 10%);
+    font-size: 1.0625rem;
+  }
+  .text-muted-foreground {
+    color: hsl(220 15% 20%) !important;
   }
 }
 

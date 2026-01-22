@@ -21,13 +21,15 @@ import carpetImage from "@assets/stock_images/persian_carpet.jpg";
 const langNames: Record<Language, string> = {
   de: "Deutsch",
   en: "English",
-  ru: "Русский"
+  ru: "Русский",
+  uz: "O'zbek"
 };
 
 const langFlags: Record<Language, string> = {
   de: "🇩🇪",
   en: "🇬🇧",
-  ru: "🇷🇺"
+  ru: "🇷🇺",
+  uz: "🇺🇿"
 };
 
 const menuCategories = {
@@ -51,6 +53,13 @@ const menuCategories = {
     sides: "Гарниры",
     drinks: "Напитки",
     desserts: "Десерты"
+  },
+  uz: {
+    mains: "Asosiy taomlar",
+    appetizers: "Taomlar",
+    sides: "Garnirlar",
+    drinks: "Ichimliklar",
+    desserts: "Shirinliklar"
   }
 };
 
@@ -67,11 +76,12 @@ const fullMenu = {
       id: 'salad',
       image: saladImage,
       price: '6.90€',
-      names: { de: 'Achichuk Salat', en: 'Achichuk Salad', ru: 'Салат Ачичук' },
+      names: { de: 'Achichuk Salat', en: 'Achichuk Salad', ru: 'Салат Ачичук', uz: 'Achichuk Salat' },
       descs: {
         de: 'Frischer Tomaten-Zwiebel-Salat mit Kräutern und Sumach.',
         en: 'Fresh tomato-onion salad with herbs and sumac.',
-        ru: 'Свежий салат из помидоров и лука с зеленью и сумахом.'
+        ru: 'Свежий салат из помидоров и лука с зеленью и сумахом.',
+        uz: 'Sabzavot va ziravorlar bilan yangi pomidor-piyoz salati.'
       }
     },
   ],
@@ -80,11 +90,12 @@ const fullMenu = {
       id: 'non',
       image: breadImage,
       price: '3.50€',
-      names: { de: 'Tandoor Non', en: 'Tandoor Bread', ru: 'Тандырная лепёшка' },
+      names: { de: 'Tandoor Non', en: 'Tandoor Bread', ru: 'Тандырная лепёшка', uz: 'Tandir Non' },
       descs: {
         de: 'Traditionelles Fladenbrot aus dem Lehmofen.',
         en: 'Traditional flatbread from the clay oven.',
-        ru: 'Традиционная лепёшка из глиняной печи.'
+        ru: 'Традиционная лепёшка из глиняной печи.',
+        uz: 'Tandirda pishirilgan an\'anaviy non.'
       }
     },
     // {
@@ -105,22 +116,24 @@ const fullMenu = {
       id: 'ayran',
       image: ayranImage,
       price: '3.50€',
-      names: { de: 'Ayran', en: 'Ayran', ru: 'Айран' },
+      names: { de: 'Ayran', en: 'Ayran', ru: 'Айран', uz: 'Ayron' },
       descs: {
         de: 'Erfrischendes Joghurtgetränk mit Salz.',
         en: 'Refreshing yogurt drink with salt.',
-        ru: 'Освежающий солёный кисломолочный напиток.'
+        ru: 'Освежающий солёный кисломолочный напиток.',
+        uz: 'Tuz bilan tetiklashtiruvchi yogurt ichimligi.'
       }
     },
     {
       id: 'kompot',
       image: kompotImage,
       price: '4.00€',
-      names: { de: 'Kompott', en: 'Kompot', ru: 'Компот' },
+      names: { de: 'Kompott', en: 'Kompot', ru: 'Компот', uz: 'Kompot' },
       descs: {
         de: 'Hausgemachtes Früchtekompott.',
         en: 'Homemade fruit compote drink.',
-        ru: 'Домашний компот из сухофруктов.'
+        ru: 'Домашний компот из сухофруктов.',
+        uz: 'Uyda tayyorlangan mevali kompot.'
       }
     },
   ],
@@ -129,22 +142,24 @@ const fullMenu = {
       id: 'halva',
       image: null,
       price: '5.00€',
-      names: { de: 'Usbekische Halwa', en: 'Uzbek Halva', ru: 'Узбекская Халва' },
+      names: { de: 'Usbekische Halwa', en: 'Uzbek Halva', ru: 'Узбекская Халва', uz: 'O\'zbek Halvasi' },
       descs: {
         de: 'Traditionelle Sesam-Süßigkeit mit Nüssen.',
         en: 'Traditional sesame confection with nuts.',
-        ru: 'Традиционная кунжутная сладость с орехами.'
+        ru: 'Традиционная кунжутная сладость с орехами.',
+        uz: 'Yong\'oq bilan an\'anaviy kunjut shirinligi.'
       }
     },
     {
       id: 'chak',
       image: null,
       price: '4.50€',
-      names: { de: 'Chak-Chak', en: 'Chak-Chak', ru: 'Чак-чак' },
+      names: { de: 'Chak-Chak', en: 'Chak-Chak', ru: 'Чак-чак', uz: 'Chak-chak' },
       descs: {
         de: 'Knusprige Teigstücke in Honig.',
         en: 'Crispy dough pieces in honey.',
-        ru: 'Хрустящие кусочки теста в мёде.'
+        ru: 'Хрустящие кусочки теста в мёде.',
+        uz: 'Asalda qovurilgan xamir bo\'laklari.'
       }
     },
   ]
@@ -271,7 +286,7 @@ export default function MenuPage() {
                     transition={{ duration: 0.15 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[140px]"
                   >
-                    {(["de", "en", "ru"] as Language[]).map((l) => (
+                    {(["de", "en", "ru", "uz"] as Language[]).map((l) => (
                       <button
                         key={l}
                         onClick={() => { setLang(l); setLangDropdownOpen(false); }}
@@ -346,12 +361,14 @@ export default function MenuPage() {
             {lang === 'de' && 'Alle Preise inkl. MwSt. • Allergene und Zusatzstoffe auf Anfrage • Alle Gerichte sind Halal'}
             {lang === 'en' && 'All prices include VAT • Allergen information available on request • All dishes are Halal'}
             {lang === 'ru' && 'Все цены включают НДС • Информация об аллергенах по запросу • Все блюда халяльные'}
+            {lang === 'uz' && 'Barcha narxlar QQS bilan • Allergen haqida ma\'lumot so\'rovga binoan • Barcha taomlar halol'}
           </p>
           <div className="mt-4 md:mt-6 text-center">
             <p className="text-xs text-muted-foreground/70">
               {lang === 'de' && 'Reservierung empfohlen • 069 95909158'}
               {lang === 'en' && 'Reservation recommended • 069 95909158'}
               {lang === 'ru' && 'Рекомендуется бронирование • 069 95909158'}
+              {lang === 'uz' && 'Bron qilish tavsiya etiladi • 069 95909158'}
             </p>
           </div>
         </div>
@@ -499,7 +516,7 @@ function MenuSection({ title, items, lang, getDishInfo }: { title: string, items
       {isMainSection && (
         <div className="mt-3 md:mt-4 text-center">
           <p className="text-xs md:text-sm text-muted-foreground italic">
-            <span className="text-secondary">★</span> {lang === 'de' ? 'Empfehlung des Hauses' : lang === 'ru' ? 'Фирменное блюдо' : "Chef's Signature"}
+            <span className="text-secondary">★</span> {lang === 'de' ? 'Empfehlung des Hauses' : lang === 'ru' ? 'Фирменное блюдо' : lang === 'uz' ? 'Oshpazning tanlovli taomi' : "Chef's Signature"}
           </p>
         </div>
       )}

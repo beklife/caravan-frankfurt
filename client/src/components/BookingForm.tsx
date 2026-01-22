@@ -191,6 +191,8 @@ export default function BookingForm({ lang }: BookingFormProps) {
               ? "Besondere Wünsche oder Allergien..."
               : lang === "ru"
               ? "Особые пожелания или аллергии..."
+              : lang === "uz"
+              ? "Maxsus so'rovlar yoki allergiyalar..."
               : "Special requests or allergies..."
           }
           rows={4}
