@@ -1,0 +1,210 @@
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Calendar as CalendarIcon, Clock, Mail, Phone, User, MessageSquare } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
+import type { Language } from "@/lib/i18n";
+import { translations } from "@/lib/i18n";
+
+const bookingSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().min(10, "Please enter a valid phone number"),
+  date: z.string().min(1, "Please select a date"),
+  time: z.string().min(1, "Please select a time"),
+  message: z.string().optional(),
+});
+
+type BookingFormData = z.infer<typeof bookingSchema>;
+
+interface BookingFormProps {
+  lang: Language;
+}
+
+export default function BookingForm({ lang }: BookingFormProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+  const t = translations[lang];
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<BookingFormData>({
+    resolver: zodResolver(bookingSchema),
+  });
+
+  const onSubmit = async (data: BookingFormData) => {
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "1febc7c6-870f-49de-84f8-0551f65741b0", // Replace with your actual key
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          date: data.date,
+          time: data.time,
+          message: data.message || "",
+          subject: `Table Booking Request from ${data.name}`,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Success!",
+          description: t.contact.form.success,
+          variant: "default",
+        });
+        reset();
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: t.contact.form.error,
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      {/* Name */}
+      <div>
+        <Label htmlFor="name" className="flex items-center gap-2 mb-2">
+          <User className="h-4 w-4" />
+          {t.contact.form.name}
+        </Label>
+        <Input
+          id="name"
+          {...register("name")}
+          placeholder="John Doe"
+          className={errors.name ? "border-destructive" : ""}
+        />
+        {errors.name && (
+          <p className="text-destructive text-sm mt-1">{errors.name.message}</p>
+        )}
+      </div>
+
+      {/* Email */}
+      <div>
+        <Label htmlFor="email" className="flex items-center gap-2 mb-2">
+          <Mail className="h-4 w-4" />
+          {t.contact.form.email}
+        </Label>
+        <Input
+          id="email"
+          type="email"
+          {...register("email")}
+          placeholder="john@example.com"
+          className={errors.email ? "border-destructive" : ""}
+        />
+        {errors.email && (
+          <p className="text-destructive text-sm mt-1">{errors.email.message}</p>
+        )}
+      </div>
+
+      {/* Phone */}
+      <div>
+        <Label htmlFor="phone" className="flex items-center gap-2 mb-2">
+          <Phone className="h-4 w-4" />
+          {t.contact.form.phone}
+        </Label>
+        <Input
+          id="phone"
+          type="tel"
+          {...register("phone")}
+          placeholder="+49 123 456789"
+          className={errors.phone ? "border-destructive" : ""}
+        />
+        {errors.phone && (
+          <p className="text-destructive text-sm mt-1">{errors.phone.message}</p>
+        )}
+      </div>
+
+      {/* Date and Time Row */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Date */}
+        <div>
+          <Label htmlFor="date" className="flex items-center gap-2 mb-2">
+            <CalendarIcon className="h-4 w-4" />
+            {t.contact.form.date}
+          </Label>
+          <Input
+            id="date"
+            type="date"
+            {...register("date")}
+            className={errors.date ? "border-destructive" : ""}
+          />
+          {errors.date && (
+            <p className="text-destructive text-sm mt-1">{errors.date.message}</p>
+          )}
+        </div>
+
+        {/* Time */}
+        <div>
+          <Label htmlFor="time" className="flex items-center gap-2 mb-2">
+            <Clock className="h-4 w-4" />
+            {t.contact.form.time}
+          </Label>
+          <Input
+            id="time"
+            type="time"
+            {...register("time")}
+            className={errors.time ? "border-destructive" : ""}
+          />
+          {errors.time && (
+            <p className="text-destructive text-sm mt-1">{errors.time.message}</p>
+          )}
+        </div>
+      </div>
+
+      {/* Message */}
+      <div>
+        <Label htmlFor="message" className="flex items-center gap-2 mb-2">
+          <MessageSquare className="h-4 w-4" />
+          {t.contact.form.message}
+        </Label>
+        <Textarea
+          id="message"
+          {...register("message")}
+          placeholder={
+            lang === "de"
+              ? "Besondere Wünsche oder Allergien..."
+              : lang === "ru"
+              ? "Особые пожелания или аллергии..."
+              : "Special requests or allergies..."
+          }
+          rows={4}
+        />
+      </div>
+
+      {/* Submit Button */}
+      <Button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-6 text-lg"
+      >
+        {isSubmitting ? "..." : t.contact.form.submit}
+      </Button>
+    </form>
+  );
+}

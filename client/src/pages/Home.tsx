@@ -5,6 +5,7 @@ import { useMusic } from "@/lib/MusicContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Phone, Clock, Menu as MenuIcon, X, ChevronDown, Mail, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import  BookingForm from "@/components/BookingForm";
 
 import heroImage from "@assets/stock_images/2024_11_04_Zira_Uzbek_Kitchen_046.jpg";
 import plovImage from "@assets/stock_images/menu/osh.jpg";
@@ -96,7 +97,8 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection("about")} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.about}</button>
             <Link href="/menu" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.menu}</Link>
-            <button onClick={() => scrollToSection("location")} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.location}</button>
+            <button onClick={() => scrollToSection("contact")} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.contact}</button>
+            <button onClick={() => scrollToSection("contact")} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.reserve}</button>
 
             <div className="h-4 w-px bg-white/30 mx-2"></div>
 
@@ -280,7 +282,8 @@ export default function Home() {
               <div className="flex flex-col p-6 gap-4">
                 <button onClick={() => scrollToSection("about")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.about}</button>
                 <Link href="/menu" className="text-lg text-center font-medium py-2 border-b border-dashed border-border" onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'instant' }); }}>{t.nav.menu}</Link>
-                <button onClick={() => scrollToSection("location")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.location}</button>
+                <button onClick={() => scrollToSection("contact")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.contact}</button>
+                <button onClick={() => scrollToSection("contact")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.reserve}</button>
               </div>
             </motion.div>
           )}
@@ -311,7 +314,10 @@ export default function Home() {
             {t.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <Button size="lg" onClick={() => scrollToSection("menu")} className="bg-primary hover:bg-primary/90 text-white font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto">
+            <Button size="lg" onClick={() => scrollToSection("contact")} className="bg-primary hover:bg-primary/90 text-white font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto">
+              {t.hero.cta_reserve}
+            </Button>
+            <Button size="lg" onClick={() => scrollToSection("menu")} variant="outline" className="border-white text-white hover:bg-white hover:text-primary font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto">
               {t.hero.cta_menu}
             </Button>
           </div>
@@ -436,8 +442,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Opening Hours & Location */}
-      <section id="location" className="py-24 relative z-10">
+      {/* Contact Section: Hours, Location & Booking */}
+      <section id="contact" className="py-24 relative z-10">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12">
 
@@ -512,6 +518,44 @@ export default function Home() {
             </div>
 
           </div>
+
+          {/* Booking Form */}
+          <div className="mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-card/90 backdrop-blur-sm p-8 md:p-12 rounded-sm border border-border shadow-sm relative overflow-hidden max-w-3xl mx-auto"
+            >
+              <div className="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-accent/20 rounded-tr-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-accent/20 rounded-bl-3xl"></div>
+
+              <h3 className="text-3xl font-heading font-bold mb-8">{t.contact.title}</h3>
+              <p className="text-muted-foreground mb-8">{t.contact.catering}</p>
+
+              <BookingForm lang={lang} />
+
+              {/* Fallback Contact Info */}
+              <div className="mt-8 pt-8 border-t border-dashed border-border text-center">
+                <p className="text-sm text-muted-foreground mb-2">
+                  {t.contact.fallback}
+                </p>
+                <a
+                  href="mailto:info@silkroad-cologne.de"
+                  className="text-primary hover:underline font-medium"
+                >
+                  info@silkroad-cologne.de
+                </a>
+                <span className="mx-2 text-muted-foreground">|</span>
+                <a
+                  href="tel:+4922142362352"
+                  className="text-primary hover:underline font-medium"
+                >
+                  +49 221 42362352
+                </a>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -528,7 +572,7 @@ export default function Home() {
             <div className="flex flex-col gap-2 items-center md:items-start">
                <Link href="/menu" className="hover:text-primary transition-colors text-white/80">{t.nav.menu}</Link>
                <a href="#about" className="hover:text-primary transition-colors text-white/80">{t.nav.about}</a>
-               <a href="#location" className="hover:text-primary transition-colors text-white/80">{t.nav.location}</a>
+               <a href="#contact" className="hover:text-primary transition-colors text-white/80">{t.nav.contact}</a>
                <Link href="/impressum" className="hover:text-primary transition-colors text-white/80">{t.footer.impressum}</Link>
                <Link href="/datenschutz" className="hover:text-primary transition-colors text-white/80">{t.footer.privacy}</Link>
             </div>

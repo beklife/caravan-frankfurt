@@ -51,11 +51,14 @@ export const translations = {
       title: "Reservierung & Kontakt",
       form: {
         name: "Ihr Name",
-        contact: "Email oder Telefon",
-        date: "Datum & Uhrzeit",
-        guests: "Anzahl Gäste",
+        email: "E-Mail",
+        phone: "Telefonnummer",
+        date: "Datum",
+        time: "Uhrzeit",
         message: "Nachricht (Optional)",
-        submit: "Anfrage senden"
+        submit: "Anfrage senden",
+        success: "Ihre Reservierungsanfrage wurde erfolgreich gesendet! Wir melden uns in Kürze.",
+        error: "Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut."
       },
       fallback: "Funktioniert das Formular nicht? Schreiben Sie uns:",
       catering: "Catering auf Anfrage verfügbar."
@@ -116,11 +119,14 @@ export const translations = {
       title: "Reservations & Contact",
       form: {
         name: "Your Name",
-        contact: "Email or Phone",
-        date: "Date & Time",
-        guests: "Number of Guests",
+        email: "Email",
+        phone: "Phone Number",
+        date: "Date",
+        time: "Time",
         message: "Message (Optional)",
-        submit: "Send Request"
+        submit: "Send Request",
+        success: "Your reservation request has been sent successfully! We'll be in touch soon.",
+        error: "There was a problem sending your request. Please try again."
       },
       fallback: "Form not working? Email us at:",
       catering: "Catering available upon request."
@@ -181,11 +187,14 @@ export const translations = {
       title: "Бронь и Контакты",
       form: {
         name: "Ваше Имя",
-        contact: "Email или Телефон",
-        date: "Дата и Время",
-        guests: "Количество гостей",
+        email: "Email",
+        phone: "Телефон",
+        date: "Дата",
+        time: "Время",
         message: "Сообщение (необязательно)",
-        submit: "Отправить запрос"
+        submit: "Отправить запрос",
+        success: "Ваш запрос на бронирование успешно отправлен! Скоро свяжемся с вами.",
+        error: "Возникла проблема при отправке. Пожалуйста, попробуйте снова."
       },
       fallback: "Не получается отправить? Напишите нам:",
       catering: "Кейтеринг доступен по запросу."
