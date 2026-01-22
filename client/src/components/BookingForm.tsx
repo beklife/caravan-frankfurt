@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Calendar as CalendarIcon, Clock, Mail, Phone, User, MessageSquare } from "lucide-react";
+import { Calendar as CalendarIcon, Clock, Mail, Phone, User, MessageSquare, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,6 +15,7 @@ const bookingSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
   phone: z.string().min(10, "Please enter a valid phone number"),
+  guests: z.string().min(1, "Please select number of guests"),
   date: z.string().min(1, "Please select a date"),
   time: z.string().min(1, "Please select a time"),
   message: z.string().optional(),
@@ -55,10 +56,11 @@ export default function BookingForm({ lang }: BookingFormProps) {
           name: data.name,
           email: data.email,
           phone: data.phone,
+          guests: data.guests,
           date: data.date,
           time: data.time,
           message: data.message || "",
-          subject: `Table Booking Request from ${data.name}`,
+          subject: `Table Booking Request from ${data.name} for ${data.guests} guests`,
         }),
       });
 
@@ -137,6 +139,35 @@ export default function BookingForm({ lang }: BookingFormProps) {
         />
         {errors.phone && (
           <p className="text-destructive text-sm mt-1">{errors.phone.message}</p>
+        )}
+      </div>
+
+      {/* Number of Guests */}
+      <div>
+        <Label htmlFor="guests" className="flex items-center gap-2 mb-2">
+          <Users className="h-4 w-4" />
+          {t.contact.form.guests}
+        </Label>
+        <select
+          id="guests"
+          {...register("guests")}
+          className={`flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${errors.guests ? "border-destructive" : ""}`}
+        >
+          <option value="">{lang === 'de' ? 'Bitte wählen' : lang === 'ru' ? 'Пожалуйста, выберите' : lang === 'uz' ? 'Iltimos tanlang' : 'Please select'}</option>
+          <option value="1">1 {lang === 'de' ? 'Person' : lang === 'ru' ? 'человек' : lang === 'uz' ? 'kishi' : 'person'}</option>
+          <option value="2">2 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человека' : lang === 'uz' ? 'kishi' : 'people'}</option>
+          <option value="3">3 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человека' : lang === 'uz' ? 'kishi' : 'people'}</option>
+          <option value="4">4 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человека' : lang === 'uz' ? 'kishi' : 'people'}</option>
+          <option value="5">5 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' : lang === 'uz' ? 'kishi' : 'people'}</option>
+          <option value="6">6 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' : lang === 'uz' ? 'kishi' : 'people'}</option>
+          <option value="7">7 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' : lang === 'uz' ? 'kishi' : 'people'}</option>
+          <option value="8">8 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' : lang === 'uz' ? 'kishi' : 'people'}</option>
+          <option value="9">9 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' : lang === 'uz' ? 'kishi' : 'people'}</option>
+          <option value="10">10 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' : lang === 'uz' ? 'kishi' : 'people'}</option>
+          <option value="10+">{lang === 'de' ? 'Mehr als 10 Personen' : lang === 'ru' ? 'Более 10 человек' : lang === 'uz' ? '10 kishidan ortiq' : 'More than 10 people'}</option>
+        </select>
+        {errors.guests && (
+          <p className="text-destructive text-sm mt-1">{errors.guests.message}</p>
         )}
       </div>
 

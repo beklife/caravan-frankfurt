@@ -105,7 +105,7 @@
   p {
     @apply text-base leading-relaxed;
     color: hsl(220 15% 10%);
-    font-size: 1.0625rem;
+    font-size: 1.25rem;
   }
   .text-muted-foreground {
     color: hsl(220 15% 20%) !important;

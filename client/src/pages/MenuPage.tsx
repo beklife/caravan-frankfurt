@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ChevronDown } from "lucide-react";
+import { ArrowLeft, ChevronDown, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import plovImage from "@assets/stock_images/menu/osh.jpg";
@@ -168,6 +168,7 @@ const fullMenu = {
 export default function MenuPage() {
   const [lang, setLang] = useState<Language>("de");
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; name: string } | null>(null);
   const { musicPlaying, toggleMusic } = useMusic();
   const t = translations[lang];
   const cats = menuCategories[lang];
@@ -336,16 +337,16 @@ export default function MenuPage() {
         </div>
 
         {/* Main Dishes */}
-        <MenuSection title={cats.mains} items={fullMenu.mains} lang={lang} getDishInfo={getDishInfo} />
-        
+        <MenuSection title={cats.mains} items={fullMenu.mains} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />
+
         {/* Appetizers */}
-        <MenuSection title={cats.appetizers} items={fullMenu.appetizers} lang={lang} getDishInfo={getDishInfo} />
-        
+        <MenuSection title={cats.appetizers} items={fullMenu.appetizers} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />
+
         {/* Sides */}
-        <MenuSection title={cats.sides} items={fullMenu.sides} lang={lang} getDishInfo={getDishInfo} />
-        
+        <MenuSection title={cats.sides} items={fullMenu.sides} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />
+
         {/* Drinks */}
-        <MenuSection title={cats.drinks} items={fullMenu.drinks} lang={lang} getDishInfo={getDishInfo} />
+        <MenuSection title={cats.drinks} items={fullMenu.drinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />
         
         {/* Desserts */}
         {/* <MenuSection title={cats.desserts} items={fullMenu.desserts} lang={lang} getDishInfo={getDishInfo} /> */}
@@ -391,11 +392,56 @@ export default function MenuPage() {
           </div>
         </div>
       </footer>
+
+      {/* Image Lightbox Modal */}
+      <AnimatePresence>
+        {lightboxImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setLightboxImage(null)}
+            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-5xl w-full max-h-[90vh] cursor-default"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setLightboxImage(null)}
+                className="absolute -top-12 right-0 md:-right-12 md:top-0 text-white hover:text-primary transition-colors p-2 bg-white/10 rounded-full backdrop-blur-sm"
+                aria-label="Close"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              {/* Image */}
+              <img
+                src={lightboxImage.src}
+                alt={lightboxImage.name}
+                className="w-full h-full object-contain rounded-lg shadow-2xl"
+              />
+
+              {/* Image Title */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+                <h3 className="text-white text-xl md:text-2xl font-heading font-bold text-center">
+                  {lightboxImage.name}
+                </h3>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
 
-function MenuSection({ title, items, lang, getDishInfo }: { title: string, items: any[], lang: Language, getDishInfo: (d: any) => { name: string, desc: string } }) {
+function MenuSection({ title, items, lang, getDishInfo, setLightboxImage }: { title: string, items: any[], lang: Language, getDishInfo: (d: any) => { name: string, desc: string }, setLightboxImage: (image: { src: string; name: string } | null) => void }) {
   // Check if this section has signature dishes (mains)
   const isMainSection = items.length > 0 && items[0].id === 'plov';
 
@@ -439,13 +485,20 @@ function MenuSection({ title, items, lang, getDishInfo }: { title: string, items
                 <div className="flex gap-3 md:gap-6 items-start">
                   {/* Image */}
                   {item.image ? (
-                    <div className="w-20 h-20 md:w-32 md:h-32 rounded-sm overflow-hidden flex-shrink-0 bg-muted shadow-md relative">
+                    <div
+                      onClick={() => setLightboxImage({ src: item.image, name })}
+                      className="w-20 h-20 md:w-32 md:h-32 rounded-sm overflow-hidden flex-shrink-0 bg-muted shadow-md relative cursor-zoom-in hover:ring-2 hover:ring-primary transition-all group/image"
+                    >
                       <img
                         src={item.image}
                         alt={name}
                         loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
+                      {/* Zoom overlay hint */}
+                      <div className="absolute inset-0 bg-black/0 group-hover/image:bg-black/20 transition-colors flex items-center justify-center">
+                        <span className="text-white opacity-0 group-hover/image:opacity-100 transition-opacity text-2xl">🔍</span>
+                      </div>
                       {isSignature && (
                         <div className="absolute top-1 right-1 md:top-2 md:right-2 bg-secondary text-secondary-foreground text-xs font-bold px-1.5 md:px-2 py-0.5 md:py-1 rounded-sm shadow-lg">
                           ★
@@ -515,8 +568,8 @@ function MenuSection({ title, items, lang, getDishInfo }: { title: string, items
       {/* Signature Note */}
       {isMainSection && (
         <div className="mt-3 md:mt-4 text-center">
-          <p className="text-xs md:text-sm text-muted-foreground italic">
-            <span className="text-secondary">★</span> {lang === 'de' ? 'Empfehlung des Hauses' : lang === 'ru' ? 'Фирменное блюдо' : lang === 'uz' ? 'Oshpazning tanlovli taomi' : "Chef's Signature"}
+          <p className="text-xs md:text-sm text-muted-foreground font-bold italic">
+            <span className="text-secondary text-xl">★</span> {lang === 'de' ? 'Empfehlung des Hauses' : lang === 'ru' ? 'Фирменное блюдо' : lang === 'uz' ? 'Oshpazning tanlovli taomi' : "Chef's Signature"}
           </p>
         </div>
       )}

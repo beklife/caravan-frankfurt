@@ -327,7 +327,7 @@ export default function Home() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight drop-shadow-lg">
             {t.hero.title}
           </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl font-bold leading-relaxed">
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl font-semibold leading-relaxed">
             {t.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
