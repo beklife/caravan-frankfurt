@@ -16,7 +16,7 @@ function App() {
       <TooltipProvider>
         <MusicProvider>
           <Toaster />
-          <Router basepath={import.meta.env.BASE_URL}>
+          <Router base={import.meta.env.BASE_URL}>
             <Switch>
               <Route path="/" component={Home} />
               <Route path="/menu" component={MenuPage} />
