@@ -594,8 +594,8 @@ export default function Home() {
                <Link href="/menu" className="hover:text-primary transition-colors text-white/80">{t.nav.menu}</Link>
                <a href="#about" className="hover:text-primary transition-colors text-white/80">{t.nav.about}</a>
                <a href="#contact" className="hover:text-primary transition-colors text-white/80">{t.nav.contact}</a>
-               {lang !== 'uz' && <Link href="/impressum" className="hover:text-primary transition-colors text-white/80">{t.footer.impressum}</Link>}
-               {lang !== 'uz' && <Link href="/datenschutz" className="hover:text-primary transition-colors text-white/80">{t.footer.privacy}</Link>}
+               <Link href="/impressum" className="hover:text-primary transition-colors text-white/80">{t.footer.impressum}</Link>
+               <Link href="/datenschutz" className="hover:text-primary transition-colors text-white/80">{t.footer.privacy}</Link>
             </div>
 
             <div className="flex flex-col items-center md:items-end gap-4">
