@@ -1,6 +1,5 @@
 import { createContext, useContext, useState, useEffect, useRef, ReactNode } from "react";
 import backgroundMusic from "@assets/kuigai_24zafbn24lu_991e85e2.m4a";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 interface MusicContextType {
   musicPlaying: boolean;
@@ -12,76 +11,63 @@ const MusicContext = createContext<MusicContextType | undefined>(undefined);
 export function MusicProvider({ children }: { children: ReactNode }) {
   const [musicPlaying, setMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const isMobile = useIsMobile();
 
   useEffect(() => {
-    const audio = new Audio(backgroundMusic);
-    audio.loop = true;
-    audioRef.current = audio;
+    audioRef.current = new Audio(backgroundMusic);
+    audioRef.current.loop = true;
+    audioRef.current.volume = 0.05;
 
-    console.log('MusicContext: isMobile on mount:', isMobile);
-    const targetVolume = isMobile ? 0 : 0.005; // Temporarily setting mobile to 0 for debugging
-    audio.volume = targetVolume;
-    console.log('MusicContext: Initial volume set to:', audio.volume);
-
-    const playPromise = audio.play();
+    // Try to autoplay
+    const playPromise = audioRef.current.play();
     if (playPromise !== undefined) {
       playPromise
         .then(() => {
           setMusicPlaying(true);
-          console.log('MusicContext: Play promise resolved, current volume:', audio.volume);
         })
-        .catch((error) => {
+        .catch(() => {
+          // Autoplay blocked - try to play on first user interaction
           setMusicPlaying(false);
-          console.error('MusicContext: Autoplay blocked/failed:', error);
-          console.log('MusicContext: Current volume after blocked play:', audio.volume);
 
           const startOnInteraction = () => {
-            audio.play()
-              .then(() => {
-                setMusicPlaying(true);
-                console.log('MusicContext: Interaction play resolved, current volume:', audio.volume);
-              })
-              .catch((error) => {
-                console.error('MusicContext: Interaction play failed:', error);
-              });
+            if (audioRef.current) {
+              audioRef.current.play()
+                .then(() => {
+                  setMusicPlaying(true);
+                })
+                .catch(() => {
+                  // Still blocked, user needs to click the music button
+                });
+            }
+            // Remove listeners after first attempt
             document.removeEventListener('click', startOnInteraction);
             document.removeEventListener('touchstart', startOnInteraction);
           };
+
           document.addEventListener('click', startOnInteraction);
           document.addEventListener('touchstart', startOnInteraction);
         });
     }
 
     return () => {
-      audio.pause();
-      audioRef.current = null;
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
     };
   }, []);
-
-  useEffect(() => {
-    if (audioRef.current) {
-      console.log('MusicContext: isMobile changed or audioRef updated:', isMobile);
-      const targetVolume = isMobile ? 0 : 0.005; // Temporarily setting mobile to 0 for debugging
-      audioRef.current.volume = targetVolume;
-      console.log('MusicContext: Volume updated to:', audioRef.current.volume);
-    }
-  }, [isMobile, audioRef.current]);
 
   const toggleMusic = () => {
     if (audioRef.current) {
       if (musicPlaying) {
         audioRef.current.pause();
         setMusicPlaying(false);
-        console.log('MusicContext: Music paused, current volume:', audioRef.current.volume);
       } else {
         audioRef.current.play()
           .then(() => {
             setMusicPlaying(true);
-            console.log('MusicContext: Music played via toggle, current volume:', audioRef.current.volume);
           })
-          .catch((error) => {
-            console.error('MusicContext: Toggle play failed:', error);
+          .catch(() => {
+            // Play failed, keep button in off state
           });
       }
     }
