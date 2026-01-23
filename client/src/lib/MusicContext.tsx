@@ -15,48 +15,39 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    audioRef.current = new Audio(backgroundMusic);
-    audioRef.current.loop = true;
-    audioRef.current.volume = isMobile ? 0.05 : 0.05;
+    const audio = new Audio(backgroundMusic);
+    audio.loop = true;
+    audioRef.current = audio;
 
-    // Try to autoplay
-    const playPromise = audioRef.current.play();
+    const playPromise = audio.play();
     if (playPromise !== undefined) {
       playPromise
-        .then(() => {
-          setMusicPlaying(true);
-        })
+        .then(() => setMusicPlaying(true))
         .catch(() => {
-          // Autoplay blocked - try to play on first user interaction
           setMusicPlaying(false);
-
           const startOnInteraction = () => {
-            if (audioRef.current) {
-              audioRef.current.play()
-                .then(() => {
-                  setMusicPlaying(true);
-                })
-                .catch(() => {
-                  // Still blocked, user needs to click the music button
-                });
-            }
-            // Remove listeners after first attempt
+            audio.play()
+              .then(() => setMusicPlaying(true))
+              .catch(() => {});
             document.removeEventListener('click', startOnInteraction);
             document.removeEventListener('touchstart', startOnInteraction);
           };
-
           document.addEventListener('click', startOnInteraction);
           document.addEventListener('touchstart', startOnInteraction);
         });
     }
 
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
+      audio.pause();
+      audioRef.current = null;
     };
-  }, [isMobile]);
+  }, []);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = isMobile ? 0.001 : 0.005;
+    }
+  }, [isMobile, audioRef.current]);
 
   const toggleMusic = () => {
     if (audioRef.current) {
@@ -65,12 +56,8 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         setMusicPlaying(false);
       } else {
         audioRef.current.play()
-          .then(() => {
-            setMusicPlaying(true);
-          })
-          .catch(() => {
-            // Play failed, keep button in off state
-          });
+          .then(() => setMusicPlaying(true))
+          .catch(() => {});
       }
     }
   };
