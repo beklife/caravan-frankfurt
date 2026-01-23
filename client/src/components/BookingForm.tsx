@@ -102,7 +102,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
           className={errors.name ? "border-destructive" : ""}
         />
         {errors.name && (
-          <p className="text-destructive text-sm mt-1">{errors.name.message}</p>
+          <p className="text-destructive text-sm text-red-700 mt-1">{errors.name.message}</p>
         )}
       </div>
 
@@ -120,7 +120,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
           className={errors.email ? "border-destructive" : ""}
         />
         {errors.email && (
-          <p className="text-destructive text-sm mt-1">{errors.email.message}</p>
+          <p className="text-destructive text-sm text-red-700 mt-1">{errors.email.message}</p>
         )}
       </div>
 
@@ -138,7 +138,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
           className={errors.phone ? "border-destructive" : ""}
         />
         {errors.phone && (
-          <p className="text-destructive text-sm mt-1">{errors.phone.message}</p>
+          <p className="text-destructive text-sm text-red-700 mt-1">{errors.phone.message}</p>
         )}
       </div>
 
@@ -167,7 +167,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
           <option value="10+">{lang === 'de' ? 'Mehr als 10 Personen' : lang === 'ru' ? 'Более 10 человек' : lang === 'uz' ? '10 kishidan ortiq' : 'More than 10 people'}</option>
         </select>
         {errors.guests && (
-          <p className="text-destructive text-sm mt-1">{errors.guests.message}</p>
+          <p className="text-destructive text-sm text-red-700 mt-1">{errors.guests.message}</p>
         )}
       </div>
 
@@ -186,7 +186,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
             className={errors.date ? "border-destructive" : ""}
           />
           {errors.date && (
-            <p className="text-destructive text-sm mt-1">{errors.date.message}</p>
+            <p className="text-destructive text-sm text-red-700 mt-1">{errors.date.message}</p>
           )}
         </div>
 
@@ -203,7 +203,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
             className={errors.time ? "border-destructive" : ""}
           />
           {errors.time && (
-            <p className="text-destructive text-sm mt-1">{errors.time.message}</p>
+            <p className="text-destructive text-sm text-red-700 mt-1">{errors.time.message}</p>
           )}
         </div>
       </div>

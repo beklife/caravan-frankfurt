@@ -19,16 +19,32 @@ export function MusicProvider({ children }: { children: ReactNode }) {
     audio.loop = true;
     audioRef.current = audio;
 
+    console.log('MusicContext: isMobile on mount:', isMobile);
+    const targetVolume = isMobile ? 0 : 0.005; // Temporarily setting mobile to 0 for debugging
+    audio.volume = targetVolume;
+    console.log('MusicContext: Initial volume set to:', audio.volume);
+
     const playPromise = audio.play();
     if (playPromise !== undefined) {
       playPromise
-        .then(() => setMusicPlaying(true))
-        .catch(() => {
+        .then(() => {
+          setMusicPlaying(true);
+          console.log('MusicContext: Play promise resolved, current volume:', audio.volume);
+        })
+        .catch((error) => {
           setMusicPlaying(false);
+          console.error('MusicContext: Autoplay blocked/failed:', error);
+          console.log('MusicContext: Current volume after blocked play:', audio.volume);
+
           const startOnInteraction = () => {
             audio.play()
-              .then(() => setMusicPlaying(true))
-              .catch(() => {});
+              .then(() => {
+                setMusicPlaying(true);
+                console.log('MusicContext: Interaction play resolved, current volume:', audio.volume);
+              })
+              .catch((error) => {
+                console.error('MusicContext: Interaction play failed:', error);
+              });
             document.removeEventListener('click', startOnInteraction);
             document.removeEventListener('touchstart', startOnInteraction);
           };
@@ -45,7 +61,10 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.volume = isMobile ? 0.0005 : 0.005;
+      console.log('MusicContext: isMobile changed or audioRef updated:', isMobile);
+      const targetVolume = isMobile ? 0 : 0.005; // Temporarily setting mobile to 0 for debugging
+      audioRef.current.volume = targetVolume;
+      console.log('MusicContext: Volume updated to:', audioRef.current.volume);
     }
   }, [isMobile, audioRef.current]);
 
@@ -54,10 +73,16 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       if (musicPlaying) {
         audioRef.current.pause();
         setMusicPlaying(false);
+        console.log('MusicContext: Music paused, current volume:', audioRef.current.volume);
       } else {
         audioRef.current.play()
-          .then(() => setMusicPlaying(true))
-          .catch(() => {});
+          .then(() => {
+            setMusicPlaying(true);
+            console.log('MusicContext: Music played via toggle, current volume:', audioRef.current.volume);
+          })
+          .catch((error) => {
+            console.error('MusicContext: Toggle play failed:', error);
+          });
       }
     }
   };
