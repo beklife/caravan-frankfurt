@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect, useRef, ReactNode } from "react";
 import backgroundMusic from "@assets/kuigai_24zafbn24lu_991e85e2.m4a";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface MusicContextType {
   musicPlaying: boolean;
@@ -11,11 +12,12 @@ const MusicContext = createContext<MusicContextType | undefined>(undefined);
 export function MusicProvider({ children }: { children: ReactNode }) {
   const [musicPlaying, setMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     audioRef.current = new Audio(backgroundMusic);
     audioRef.current.loop = true;
-    audioRef.current.volume = 0.005;
+    audioRef.current.volume = isMobile ? 0.05 : 0.05;
 
     // Try to autoplay
     const playPromise = audioRef.current.play();
@@ -54,7 +56,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         audioRef.current = null;
       }
     };
-  }, []);
+  }, [isMobile]);
 
   const toggleMusic = () => {
     if (audioRef.current) {
