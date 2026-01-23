@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, useRef, ReactNode } from "react";
-import backgroundMusic from "@assets/kuigai_24zafbn24lu_991e85e2.m4a";
+import backgroundMusic from "@assets/kuigai.mp3";
 
 interface MusicContextType {
   musicPlaying: boolean;
@@ -15,7 +15,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     audioRef.current = new Audio(backgroundMusic);
     audioRef.current.loop = true;
-    audioRef.current.volume = 0.05;
+    audioRef.current.volume = 1;
 
     // Try to autoplay
     const playPromise = audioRef.current.play();
