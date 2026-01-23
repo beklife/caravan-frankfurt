@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, useRef, ReactNode } from "react";
-import backgroundMusic from "@assets/kuigai.mp3";
+import backgroundMusic from "@assets/kuigai2.mp3";
 
 interface MusicContextType {
   musicPlaying: boolean;
