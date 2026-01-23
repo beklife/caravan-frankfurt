@@ -45,7 +45,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.volume = isMobile ? 0 : 0.005;
+      audioRef.current.volume = isMobile ? 0.0005 : 0.005;
     }
   }, [isMobile, audioRef.current]);
 
