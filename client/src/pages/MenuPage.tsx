@@ -3,20 +3,20 @@ import { Link } from "wouter";
 import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ChevronDown, X } from "lucide-react";
+import { ArrowLeftIcon as ArrowLeft, ChevronDownIcon as ChevronDown, XIcon as X } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 
-import plovImage from "@assets/stock_images/menu/osh.jpg";
-import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.jpg";
-import lagmanImage from "@assets/stock_images/menu/uygurishe lagman.jpg";
-import samsaImage from "@assets/stock_images/menu/somsa.jpg";
-import shashlikImage from "@assets/stock_images/menu/shashlyk-meat-centralasia-food.jpg";
-import teaImage from "@assets/stock_images/menu/tea_1.jpg";
-import saladImage from "@assets/stock_images/menu/salat.jpg";
-import breadImage from "@assets/stock_images/menu/Uzbek-bread-obi-non-thumbnail-square-500x500.jpg";
-import ayranImage from "@assets/stock_images/menu/Ayran.jpeg";
-import kompotImage from "@assets/stock_images/menu/kompot.jpg";
-import carpetImage from "@assets/stock_images/persian_carpet.jpg";
+import plovImage from "@assets/stock_images/menu/osh.webp";
+import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.webp";
+import lagmanImage from "@assets/stock_images/menu/uygurishe lagman.webp";
+import samsaImage from "@assets/stock_images/menu/somsa.webp";
+import shashlikImage from "@assets/stock_images/menu/shashlyk-meat-centralasia-food.webp";
+import teaImage from "@assets/stock_images/menu/tea_1.webp";
+import saladImage from "@assets/stock_images/menu/salat.webp";
+import breadImage from "@assets/stock_images/menu/Uzbek-bread-obi-non-thumbnail-square-500x500.webp";
+import ayranImage from "@assets/stock_images/menu/Ayran.webp";
+import kompotImage from "@assets/stock_images/menu/kompot.webp";
+import carpetImage from "@assets/stock_images/persian_carpet.webp";
 
 const langNames: Record<Language, string> = {
   de: "Deutsch",
@@ -190,7 +190,7 @@ export default function MenuPage() {
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground relative">
-      {/* Persian Carpet Background */}
+      {/* Persian Carpet Background - Lazy loaded */}
       <div
         className="fixed inset-0 pointer-events-none z-0"
         style={{
@@ -198,8 +198,10 @@ export default function MenuPage() {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'scroll',
-          opacity: 0.5
+          opacity: 0.5,
+          willChange: 'auto',
         }}
+        role="presentation"
       />
       {/* Lighter overlay to maintain text readability while showing more carpet */}
       <div className="fixed inset-0 pointer-events-none z-0 bg-background/30" />
@@ -222,6 +224,7 @@ export default function MenuPage() {
               onClick={toggleMusic}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              aria-label="Toggle music"
               className="relative p-2 text-foreground hover:text-primary transition-all"
             >
               <svg
@@ -272,6 +275,7 @@ export default function MenuPage() {
             <div className="relative">
               <button
                 onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+                aria-label="Select language"
                 className="flex items-center gap-2 px-3 py-2 rounded-full bg-muted hover:bg-muted/80 transition-all"
               >
                 <span className="text-lg">{langFlags[lang]}</span>

@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, useEffect, useRef, ReactNode } from "react";
-import backgroundMusic from "@assets/kuigai2.mp3";
 
 interface MusicContextType {
   musicPlaying: boolean;
@@ -11,44 +10,35 @@ const MusicContext = createContext<MusicContextType | undefined>(undefined);
 export function MusicProvider({ children }: { children: ReactNode }) {
   const [musicPlaying, setMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioLoadedRef = useRef(false);
 
-  useEffect(() => {
-    audioRef.current = new Audio(backgroundMusic);
+  const loadAudio = async () => {
+    if (audioLoadedRef.current || audioRef.current) return;
+
+    audioLoadedRef.current = true;
+    const module = await import("@assets/kuigai2.mp3");
+    audioRef.current = new Audio(module.default);
     audioRef.current.loop = true;
     audioRef.current.volume = 0.5;
+  };
 
-    // Try to autoplay
-    const playPromise = audioRef.current.play();
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          setMusicPlaying(true);
-        })
-        .catch(() => {
-          // Autoplay blocked - try to play on first user interaction
-          setMusicPlaying(false);
+  useEffect(() => {
+    // Don't load audio on mount - wait for user interaction
+    const handleFirstInteraction = () => {
+      loadAudio();
+      document.removeEventListener('click', handleFirstInteraction);
+      document.removeEventListener('touchstart', handleFirstInteraction);
+      document.removeEventListener('keydown', handleFirstInteraction);
+    };
 
-          const startOnInteraction = () => {
-            if (audioRef.current) {
-              audioRef.current.play()
-                .then(() => {
-                  setMusicPlaying(true);
-                })
-                .catch(() => {
-                  // Still blocked, user needs to click the music button
-                });
-            }
-            // Remove listeners after first attempt
-            document.removeEventListener('click', startOnInteraction);
-            document.removeEventListener('touchstart', startOnInteraction);
-          };
-
-          document.addEventListener('click', startOnInteraction);
-          document.addEventListener('touchstart', startOnInteraction);
-        });
-    }
+    document.addEventListener('click', handleFirstInteraction);
+    document.addEventListener('touchstart', handleFirstInteraction);
+    document.addEventListener('keydown', handleFirstInteraction);
 
     return () => {
+      document.removeEventListener('click', handleFirstInteraction);
+      document.removeEventListener('touchstart', handleFirstInteraction);
+      document.removeEventListener('keydown', handleFirstInteraction);
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current = null;
