@@ -1,21 +1,23 @@
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect, useLayoutEffect, lazy, Suspense } from "react";
 import { Link } from "wouter";
 import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Phone, Clock, Menu as MenuIcon, X, ChevronDown, Mail, Instagram, Facebook } from "lucide-react";
+import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, MenuIcon, XIcon as X, ChevronDownIcon as ChevronDown, MailIcon as Mail } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import  BookingForm from "@/components/BookingForm";
 
-import heroImage from "@assets/stock_images/2024_11_04_Zira_Uzbek_Kitchen_046.jpg";
-import plovImage from "@assets/stock_images/menu/osh.jpg";
-import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.jpg";
-import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.jpg";
-import lagmanImage from "@assets/stock_images/menu/uygurishe lagman.jpg";
-import samsaImage from "@assets/stock_images/menu/somsa.jpg";
-import shashlikImage from "@assets/stock_images/menu/shashlyk-meat-centralasia-food.jpg";
-import teaImage from "@assets/stock_images/menu/tea_1.jpg";
-import carpetImage from "@assets/stock_images/persian_carpet.jpg";
+// Lazy load BookingForm to reduce initial bundle size
+const BookingForm = lazy(() => import("@/components/BookingForm"));
+
+import heroImage from "@assets/stock_images/2024_11_04_Zira_Uzbek_Kitchen_046.webp";
+import plovImage from "@assets/stock_images/menu/osh.webp";
+import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.webp";
+import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.webp";
+import lagmanImage from "@assets/stock_images/menu/uygurishe lagman.webp";
+import samsaImage from "@assets/stock_images/menu/somsa.webp";
+import shashlikImage from "@assets/stock_images/menu/shashlyk-meat-centralasia-food.webp";
+import teaImage from "@assets/stock_images/menu/tea_1.webp";
+import carpetImage from "@assets/stock_images/persian_carpet.webp";
 
 const langNames: Record<Language, string> = {
   de: "Deutsch",
@@ -76,8 +78,8 @@ export default function Home() {
   };
 
   const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    hidden: { opacity: 0, y: 20, willChange: 'transform, opacity' },
+    visible: { opacity: 1, y: 0, willChange: 'auto', transition: { duration: 0.6 } }
   };
 
   return (
@@ -123,6 +125,7 @@ export default function Home() {
             <div className="relative">
               <motion.button
                 onClick={toggleMusic}
+                aria-label="Toggle music"
                 data-testid="button-music-toggle"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -181,6 +184,7 @@ export default function Home() {
             <div className="relative">
               <button
                 onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+                aria-label="Select language"
                 data-testid="button-language-toggle"
                 className={`flex items-center gap-2 px-3 py-2 rounded-full transition-all ${
                   isScrolled
@@ -227,6 +231,7 @@ export default function Home() {
             {/* Mobile Music Button */}
             <button
               onClick={toggleMusic}
+              aria-label="Toggle music"
               className={`p-1.5 ${isScrolled ? "text-foreground" : "text-white"}`}
             >
               <svg
@@ -251,6 +256,7 @@ export default function Home() {
             <div className="relative">
               <button
                 onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+                aria-label="Select language"
                 className={`flex items-center gap-1 px-2 py-1.5 rounded-full ${
                   isScrolled ? "bg-muted text-foreground" : "bg-white/10 text-white"
                 }`}
@@ -281,7 +287,7 @@ export default function Home() {
               </AnimatePresence>
             </div>
 
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={`${isScrolled ? "text-foreground" : "text-white"}`}>
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle mobile menu" className={`${isScrolled ? "text-foreground" : "text-white"}`}>
               {mobileMenuOpen ? <X /> : <MenuIcon />}
             </button>
           </div>
@@ -310,7 +316,13 @@ export default function Home() {
       {/* Hero Section */}
       <section id="hero" className="relative h-screen min-h-[600px] flex items-center justify-center text-center px-4 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={heroImage} alt="Central Asian Feast" className="w-full h-full object-cover" />
+          <img
+            src={heroImage}
+            alt="Central Asian Feast"
+            className="w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="async"
+          />
           <div className="absolute inset-0 bg-black/40 mix-blend-multiply"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
         </div>
@@ -444,16 +456,16 @@ export default function Home() {
           <h2 className="text-center text-4xl font-heading font-bold mb-12 text-white">{t.gallery.title}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 h-[500px]">
              <div className="col-span-2 row-span-2 relative overflow-hidden group rounded-sm">
-                <img src={heroImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                <img alt="Central Asian Feast" src={heroImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
              <div className="col-span-1 row-span-1 relative overflow-hidden group rounded-sm">
-                <img src={mantyImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                <img alt="Manty Dumplings" src={mantyImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
              <div className="col-span-1 row-span-1 relative overflow-hidden group rounded-sm">
-                <img src={plovImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                <img alt="Uzbek Plov" src={plovImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
              <div className="col-span-2 row-span-1 relative overflow-hidden group rounded-sm">
-                <img src={interiorImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                <img alt="Restaurant Interior" src={interiorImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
           </div>
         </div>
@@ -528,6 +540,7 @@ export default function Home() {
 
             <div className="h-full min-h-[400px] bg-muted relative rounded-sm overflow-hidden border border-border group">
                <iframe
+                title="Google Maps location of the restaurant"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2556.7234567891234!2d8.6234567891234!3d50.1678901234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDEwJzA0LjQiTiA4wrAzNycyNC40IkU!5e0!3m2!1sde!2sde!4v1234567890123!5m2!1sde!2sde"
                 width="100%"
                 height="100%"
@@ -554,7 +567,9 @@ export default function Home() {
               <h3 className="text-3xl font-heading font-bold mb-8">{t.contact.title}</h3>
               <p className="text-muted-foreground mb-8">{t.contact.catering}</p>
 
-              <BookingForm lang={lang} />
+              <Suspense fallback={<div className="text-center py-8 text-muted-foreground">Loading form...</div>}>
+                <BookingForm lang={lang} />
+              </Suspense>
 
               {/* Fallback Contact Info */}
               <div className="mt-8 pt-8 border-t border-dashed border-border text-center">
@@ -600,11 +615,19 @@ export default function Home() {
 
             <div className="flex flex-col items-center md:items-end gap-4">
               <div className="flex gap-4">
-                <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"><Instagram className="w-5 h-5" /></a>
-                <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"><Facebook className="w-5 h-5" /></a>
-                <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"><Mail className="w-5 h-5" /></a>
+                <a href="#" aria-label="Instagram" className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
+                  </svg>
+                </a>
+                <a href="#" aria-label="Facebook" className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                </a>
+                <a href="mailto:info@caravan-frankfurt.de" aria-label="Email" className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"><Mail className="w-5 h-5" /></a>
               </div>
-              <p className="text-xs text-white/40 mt-auto">© 2026 CARAVAN Frankfurt. {t.footer.rights}</p>
+              <p className="text-xs text-white/80 mt-auto">© 2026 CARAVAN Frankfurt. {t.footer.rights}</p>
             </div>
           </div>
         </div>
