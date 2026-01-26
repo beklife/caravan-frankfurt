@@ -43,7 +43,21 @@ export default function Home() {
   const t = translations[lang];
 
   useLayoutEffect(() => {
-    window.scrollTo(0, 0);
+    // Check if there's a hash in the URL
+    const hash = window.location.hash;
+    if (hash) {
+      // Remove the # from the hash
+      const elementId = hash.substring(1);
+      // Use setTimeout to ensure DOM is ready
+      setTimeout(() => {
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   useEffect(() => {
