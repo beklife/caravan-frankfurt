@@ -4,11 +4,10 @@
     <meta charset="utf-8">
     <title>Page Not Found - CARAVAN Restaurant</title>
     <script>
-      // Redirect to homepage for SPA routing
-      if (window.location.pathname !== '/') {
-        sessionStorage.redirect = window.location.pathname + window.location.search + window.location.hash;
-        window.location.replace('/');
-      }
+      // GitHub Pages SPA redirect for custom domain
+      // Store the requested path and redirect to root so React Router can handle it
+      sessionStorage.redirect = window.location.pathname + window.location.search + window.location.hash;
+      window.location.replace('/');
     </script>
   </head>
   <body>
