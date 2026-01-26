@@ -288,7 +288,7 @@ export default function Home() {
             </div>
 
             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle mobile menu" className={`${isScrolled ? "text-foreground" : "text-white"}`}>
-              {mobileMenuOpen ? <X /> : <MenuIcon />}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -527,11 +527,10 @@ export default function Home() {
                    </div>
                    <div>
                      <p className="font-bold text-lg">069 95909158</p>
-                     <p className="text-muted-foreground">{t.contact.fallback}</p>
                    </div>
                  </div>
 
-                 <div className="flex gap-4 mt-8">
+                 <div className="flex gap-4 mt-4">
                    <Button className="flex-1 bg-foreground text-background hover:bg-foreground/90">{t.location.get_directions}</Button>
                    <Button variant="outline" className="flex-1">{t.location.call_us}</Button>
                  </div>
@@ -541,7 +540,7 @@ export default function Home() {
             <div className="h-full min-h-[400px] bg-muted relative rounded-sm overflow-hidden border border-border group">
                <iframe
                 title="Google Maps location of the restaurant"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2556.7234567891234!2d8.6234567891234!3d50.1678901234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDEwJzA0LjQiTiA4wrAzNycyNC40IkU!5e0!3m2!1sde!2sde!4v1234567890123!5m2!1sde!2sde"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.4614624215283!2d8.710742976530918!3d50.13379857153347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd09697e951d87%3A0xfec545fed4dbe79d!2sRestaurant%20Caravan!5e0!3m2!1sde!2sde!4v1769458302327!5m2!1sde!2sde"
                 width="100%"
                 height="100%"
                 style={{border:0}}
