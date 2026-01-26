@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://silk-road-restaurant.netlify.app/sitemap.xml
+Sitemap: https://caravan-restaurant.de/sitemap.xml
