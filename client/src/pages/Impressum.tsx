@@ -2,6 +2,7 @@ import { useState, useLayoutEffect } from "react";
 import { Link } from "wouter";
 import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
+import { useLanguage } from "@/lib/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeftIcon as ArrowLeft, ChevronDownIcon as ChevronDown, MenuIcon, XIcon as X } from "@/components/icons";
 import { Button } from "@/components/ui/button";
@@ -22,7 +23,7 @@ const langFlags: Record<Language, string> = {
 };
 
 export default function Impressum() {
-  const [lang, setLang] = useState<Language>("de");
+  const { lang, setLang } = useLanguage();
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { musicPlaying, toggleMusic } = useMusic();

@@ -2,6 +2,7 @@ import { useState, useEffect, useLayoutEffect, lazy, Suspense } from "react";
 import { Link } from "wouter";
 import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
+import { useLanguage } from "@/lib/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, MenuIcon, XIcon as X, ChevronDownIcon as ChevronDown, MailIcon as Mail } from "@/components/icons";
 import { Button } from "@/components/ui/button";
@@ -34,7 +35,7 @@ const langFlags: Record<Language, string> = {
 };
 
 export default function Home() {
-  const [lang, setLang] = useState<Language>("de");
+  const { lang, setLang } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
@@ -334,7 +335,7 @@ export default function Home() {
             src={heroImage}
             alt="Central Asian Feast"
             className="w-full h-full object-cover"
-            fetchPriority="high"
+            fetchpriority="high"
             decoding="async"
           />
           <div className="absolute inset-0 bg-black/40 mix-blend-multiply"></div>
