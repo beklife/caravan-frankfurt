@@ -320,8 +320,8 @@ export default function Datenschutz() {
               Wöllstädter Str. 11<br />
               60385 Frankfurt am Main<br />
               <br />
-              {lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : lang === 'uz' ? 'Telefon:' : 'Phone:'} 069 95909158<br />
-              E-Mail: info@caravan-frankfurt.de
+              {lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : lang === 'uz' ? 'Telefon:' : 'Phone:'} +49 69 95909158<br />
+              E-Mail: info@restaurant-caravan.com
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">

@@ -261,8 +261,8 @@ export default function Impressum() {
               {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакты' : lang === 'uz' ? 'Aloqa' : 'Contact'}
             </h2>
             <p className="mb-4">
-              <strong>{lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : lang === 'uz' ? 'Telefon:' : 'Phone:'}</strong> 069 95909158<br />
-              <strong>E-Mail:</strong> info@caravan-frankfurt.de
+              <strong>{lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : lang === 'uz' ? 'Telefon:' : 'Phone:'}</strong> +49 69 95909158<br />
+              <strong>E-Mail:</strong> info@restaurant-caravan.com
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">

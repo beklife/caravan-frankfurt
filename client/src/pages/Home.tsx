@@ -333,9 +333,9 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <img
             src={heroImage}
-            alt="Central Asian Feast"
+            alt="Traditional Central Asian feast with colorful dishes including Uzbek Plov, Manty dumplings, and Lagman noodles at CARAVAN Restaurant Frankfurt"
             className="w-full h-full object-cover"
-            fetchpriority="high"
+            fetchPriority="high"
             decoding="async"
           />
           <div className="absolute inset-0 bg-black/40 mix-blend-multiply"></div>
@@ -396,7 +396,7 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-[4/5] overflow-hidden rounded-sm">
-                <img src={interiorImage} alt="Restaurant Interior" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src={interiorImage} alt="Cozy interior of CARAVAN Restaurant Frankfurt with traditional Central Asian carpets and warm atmosphere" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-secondary/20 -z-10 rounded-full blur-2xl"></div>
               <div className="absolute -top-6 -left-6 w-32 h-32 border-2 border-primary/30 z-20"></div>
@@ -409,11 +409,11 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="bg-background/90 backdrop-blur-sm p-8 rounded-sm"
             >
-              <h2 className="text-primary text-lg font-bold tracking-widest mb-2 flex items-center gap-2">
+              <div className="text-primary text-lg font-bold tracking-widest mb-2 flex items-center gap-2">
                 <span className="w-8 h-[2px] bg-primary"></span>
                 STORY
-              </h2>
-              <h3 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-foreground">{t.about.title}</h3>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-foreground">{t.about.title}</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                 {t.about.content}
               </p>
@@ -441,8 +441,8 @@ export default function Home() {
       <section id="menu" className="py-24 bg-card/80 backdrop-blur-sm relative z-10 border-y border-border/50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 bg-background/80 backdrop-blur-sm p-6 rounded-sm">
-            <h2 className="text-primary text-lg font-bold tracking-widest mb-2">JOURNEY WITH CARAVAN</h2>
-            <h3 className="text-4xl md:text-5xl font-heading font-bold mb-4">{t.menu.title}</h3>
+            <div className="text-primary text-lg font-bold tracking-widest mb-2">JOURNEY WITH CARAVAN</div>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">{t.menu.title}</h2>
             <p className="text-muted-foreground">{t.menu.subtitle}</p>
           </div>
 
@@ -471,16 +471,16 @@ export default function Home() {
           <h2 className="text-center text-4xl font-heading font-bold mb-12 text-white">{t.gallery.title}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 h-[500px]">
              <div className="col-span-2 row-span-2 relative overflow-hidden group rounded-sm">
-                <img alt="Central Asian Feast" src={heroImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                <img alt="Authentic Central Asian dishes at CARAVAN Restaurant Frankfurt - Uzbek Plov, Manty, Lagman" src={heroImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
              <div className="col-span-1 row-span-1 relative overflow-hidden group rounded-sm">
-                <img alt="Manty Dumplings" src={mantyImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                <img alt="Handmade Manty dumplings with meat filling and yogurt sauce - traditional Uzbek dish in Frankfurt" src={mantyImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
              <div className="col-span-1 row-span-1 relative overflow-hidden group rounded-sm">
-                <img alt="Uzbek Plov" src={plovImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                <img alt="Traditional Uzbek Plov with lamb, carrots, and chickpeas cooked in Kazan at CARAVAN Frankfurt" src={plovImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
              <div className="col-span-2 row-span-1 relative overflow-hidden group rounded-sm">
-                <img alt="Restaurant Interior" src={interiorImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                <img alt="Warm and inviting interior of CARAVAN Restaurant in Heddernheim, Frankfurt with traditional decorations" src={interiorImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
           </div>
         </div>
@@ -500,7 +500,7 @@ export default function Home() {
                <div className="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-accent/20 rounded-tr-3xl"></div>
                <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-accent/20 rounded-bl-3xl"></div>
 
-               <h3 className="text-3xl font-heading font-bold mb-8">{t.hours.title}</h3>
+               <h2 className="text-3xl font-heading font-bold mb-8">{t.hours.title}</h2>
 
                <div className="space-y-6">
                  <div className="flex justify-between items-center border-b border-dashed border-border pb-4">
@@ -524,7 +524,7 @@ export default function Home() {
 
                <div className="mt-12">
                  <h3 className="text-2xl font-bold uppercase text-secondary mb-6 flex items-center gap-2">
-                   <MapPin className="w-6 h-6" /> Wöllstädter Str. 11
+                   <MapPin className="w-6 h-6" /> {t.location.title}
                  </h3>
                  <address className="not-italic text-lg mb-6 block">
                    Wöllstädter Str. 11<br />
@@ -578,7 +578,7 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-accent/20 rounded-tr-3xl"></div>
               <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-accent/20 rounded-bl-3xl"></div>
 
-              <h3 className="text-3xl font-heading font-bold mb-8">{t.contact.title}</h3>
+              <h2 className="text-3xl font-heading font-bold mb-8">{t.contact.title}</h2>
               <p className="text-muted-foreground mb-8">{t.contact.catering}</p>
 
               <Suspense fallback={<div className="text-center py-8 text-muted-foreground">Loading form...</div>}>
@@ -591,17 +591,17 @@ export default function Home() {
                   {t.contact.fallback}
                 </p>
                 <a
-                  href="mailto:info@caravan-frankfurt.de"
+                  href="mailto:info@restaurant-caravan.com"
                   className="text-primary hover:underline font-medium"
                 >
-                  info@caravan-frankfurt.de
+                  info@restaurant-caravan.com
                 </a>
                 <span className="mx-2 text-muted-foreground">|</span>
                 <a
-                  href="tel:06995909158"
+                  href="tel:+49 69 95909158"
                   className="text-primary hover:underline font-medium"
                 >
-                  069 95909158
+                  +49 69 95909158
                 </a>
               </div>
             </motion.div>
@@ -639,7 +639,7 @@ export default function Home() {
                     <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
                   </svg>
                 </a>
-                <a href="mailto:info@caravan-frankfurt.de" aria-label="Email" className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"><Mail className="w-5 h-5" /></a>
+                <a href="mailto:info@restaurant-caravan.com" aria-label="Email" className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"><Mail className="w-5 h-5" /></a>
               </div>
               <p className="text-xs text-white/80 mt-auto">© 2026 CARAVAN Frankfurt. {t.footer.rights}</p>
             </div>

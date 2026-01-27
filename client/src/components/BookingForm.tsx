@@ -19,6 +19,8 @@ const bookingSchema = z.object({
   date: z.string().min(1, "Please select a date"),
   time: z.string().min(1, "Please select a time"),
   message: z.string().optional(),
+  // Honeypot field - should always be empty
+  website: z.string().max(0).optional(),
 });
 
 type BookingFormData = z.infer<typeof bookingSchema>;
@@ -29,6 +31,7 @@ interface BookingFormProps {
 
 export default function BookingForm({ lang }: BookingFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formLoadTime] = useState(Date.now());
   const { toast } = useToast();
   const t = translations[lang];
 
@@ -43,6 +46,29 @@ export default function BookingForm({ lang }: BookingFormProps) {
 
   const onSubmit = async (data: BookingFormData) => {
     setIsSubmitting(true);
+
+    // Anti-spam validation
+    // 1. Check honeypot field (should be empty)
+    if (data.website && data.website.length > 0) {
+      console.log("Spam detected: honeypot field filled");
+      setIsSubmitting(false);
+      return; // Silent fail for bots
+    }
+
+    // 2. Time-based validation (form must be open for at least 3 seconds)
+    const timeOnForm = Date.now() - formLoadTime;
+    if (timeOnForm < 3000) {
+      toast({
+        title: "Error",
+        description: lang === 'de' ? 'Bitte nehmen Sie sich Zeit, das Formular auszufüllen.' :
+                     lang === 'ru' ? 'Пожалуйста, не торопитесь при заполнении формы.' :
+                     lang === 'uz' ? 'Iltimos, shaklni toʻldirishda shoshilmang.' :
+                     'Please take your time filling out the form.',
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -61,6 +87,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
           time: data.time,
           message: data.message || "",
           subject: `Table Booking Request from ${data.name} for ${data.guests} guests`,
+          botcheck: data.website || "", // Web3Forms honeypot field
         }),
       });
 
@@ -229,6 +256,23 @@ export default function BookingForm({ lang }: BookingFormProps) {
           rows={4}
         />
       </div>
+
+      {/* Honeypot field - Hidden from users, but visible to bots */}
+      <input
+        type="text"
+        {...register("website")}
+        style={{
+          position: 'absolute',
+          left: '-9999px',
+          width: '1px',
+          height: '1px',
+          opacity: 0,
+          pointerEvents: 'none',
+        }}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
 
       {/* Submit Button */}
       <Button
