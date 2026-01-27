@@ -4,7 +4,8 @@ import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeftIcon as ArrowLeft, ChevronDownIcon as ChevronDown, MenuIcon, XIcon as X } from "@/components/icons";
+import { ArrowLeftIcon as ArrowLeft, ChevronDownIcon as ChevronDown } from "@/components/icons";
+import HamburgerButton from "@/components/HamburgerButton";
 import { Button } from "@/components/ui/button";
 
 import plovImage from "@assets/stock_images/menu/osh.webp";
@@ -371,9 +372,11 @@ export default function MenuPage() {
             </div>
 
             {/* Mobile Menu Toggle */}
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle mobile menu" className="text-foreground">
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
-            </button>
+            <HamburgerButton
+              isOpen={mobileMenuOpen}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-foreground"
+            />
           </div>
         </div>
 

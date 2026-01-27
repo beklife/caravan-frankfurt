@@ -4,7 +4,8 @@ import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, MenuIcon, XIcon as X, ChevronDownIcon as ChevronDown, MailIcon as Mail } from "@/components/icons";
+import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, ChevronDownIcon as ChevronDown, MailIcon as Mail } from "@/components/icons";
+import HamburgerButton from "@/components/HamburgerButton";
 import { Button } from "@/components/ui/button";
 
 // Lazy load BookingForm to reduce initial bundle size
@@ -302,9 +303,11 @@ export default function Home() {
               </AnimatePresence>
             </div>
 
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle mobile menu" className={`${isScrolled ? "text-foreground" : "text-white"}`}>
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
-            </button>
+            <HamburgerButton
+              isOpen={mobileMenuOpen}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className={isScrolled ? "text-foreground" : "text-white"}
+            />
           </div>
         </div>
 

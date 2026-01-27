@@ -41,7 +41,15 @@ async function buildAll() {
   console.log("pre-rendering routes...");
   await prerender({
     distDir: "dist/public",
-    routes: ["/", "/menu", "/impressum", "/datenschutz"],
+    routes: [
+      "/",
+      "/menu",
+      "/impressum",
+      "/datenschutz",
+      "/usbekisches-restaurant-frankfurt",
+      "/halal-restaurant-frankfurt",
+      "/plov-frankfurt",
+    ],
   });
 
   console.log("building server...");

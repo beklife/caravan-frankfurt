@@ -115,3 +115,65 @@
 .text-balance {
   text-wrap: balance;
 }
+
+.hamburger-toggle {
+  --toggle-block-width: 44px;
+  --toggle-line-width: 28px;
+  --toggle-line-height: 2px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--toggle-block-width);
+  height: var(--toggle-block-width);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.hamburger-toggle span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--toggle-line-width);
+  height: var(--toggle-line-height);
+  background-color: currentColor;
+  transform: translate(-50%, -50%);
+  transition: all 0.45s;
+}
+
+.hamburger-toggle span::before,
+.hamburger-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  transition: all 0.45s;
+}
+
+.hamburger-toggle span::before {
+  top: -9px;
+}
+
+.hamburger-toggle span::after {
+  bottom: -9px;
+}
+
+.hamburger-toggle.is-clicked span {
+  background-color: transparent;
+  transition: all 0.1s;
+}
+
+.hamburger-toggle.is-clicked span::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.hamburger-toggle.is-clicked span::after {
+  bottom: 0;
+  transform: rotate(225deg);
+}
