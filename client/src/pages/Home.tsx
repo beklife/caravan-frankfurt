@@ -123,9 +123,13 @@ export default function Home() {
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
-             <span className={`font-heading text-2xl font-bold tracking-wider ${isScrolled ? "text-primary" : "text-white"}`}>
-               CARAVAN
-             </span>
+            <Link
+              href="/"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className={`font-heading text-2xl font-bold tracking-wider ${isScrolled ? "text-primary" : "text-white"}`}
+            >
+              CARAVAN
+            </Link>
           </div>
 
           {/* Desktop Menu */}

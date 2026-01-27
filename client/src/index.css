@@ -120,6 +120,7 @@
   --toggle-block-width: 44px;
   --toggle-line-width: 28px;
   --toggle-line-height: 2px;
+  --toggle-line-offset: 8px;
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -131,6 +132,10 @@
   background: transparent;
   color: inherit;
   cursor: pointer;
+}
+
+.bg-transparent .hamburger-toggle {
+  color: white;
 }
 
 .hamburger-toggle span {
@@ -156,11 +161,11 @@
 }
 
 .hamburger-toggle span::before {
-  top: -9px;
+  top: calc(var(--toggle-line-offset) * -1);
 }
 
 .hamburger-toggle span::after {
-  bottom: -9px;
+  bottom: calc(var(--toggle-line-offset) * -1);
 }
 
 .hamburger-toggle.is-clicked span {

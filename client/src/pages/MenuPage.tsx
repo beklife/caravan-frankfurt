@@ -4,7 +4,7 @@ import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeftIcon as ArrowLeft, ChevronDownIcon as ChevronDown } from "@/components/icons";
+import { ArrowLeftIcon as ArrowLeft, ChevronDownIcon as ChevronDown, X } from "@/components/icons";
 import HamburgerButton from "@/components/HamburgerButton";
 import { Button } from "@/components/ui/button";
 
@@ -215,11 +215,17 @@ export default function MenuPage() {
           <Link href="/">
             <Button variant="ghost" className="gap-2">
               <ArrowLeft className="w-4 h-4" />
-              {lang === 'de' ? 'Zurück' : lang === 'ru' ? 'Назад' : 'Back'}
+              {lang === 'de' ? 'Zurück' : lang === 'ru' ? 'Назад' : lang === 'en' ? 'Back' : lang === 'uz' ? 'Ortga' : 'Back'}
             </Button>
           </Link>
 
-          <h1 className="font-heading text-2xl font-bold tracking-wider text-primary">CARAVAN</h1>
+          <Link
+            href="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="font-heading text-2xl font-bold tracking-wider text-primary"
+          >
+            CARAVAN
+          </Link>
 
           <div className="hidden md:flex items-center gap-4">
             {/* Music Button */}

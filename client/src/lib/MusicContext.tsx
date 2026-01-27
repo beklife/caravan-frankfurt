@@ -8,9 +8,10 @@ interface MusicContextType {
 const MusicContext = createContext<MusicContextType | undefined>(undefined);
 
 export function MusicProvider({ children }: { children: ReactNode }) {
-  const [musicPlaying, setMusicPlaying] = useState(false);
+  const [musicPlaying, setMusicPlaying] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const audioLoadedRef = useRef(false);
+  const autoPlayRequestedRef = useRef(true);
 
   const loadAudio = async () => {
     if (audioLoadedRef.current || audioRef.current) return;
@@ -23,9 +24,29 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   };
 
   useEffect(() => {
-    // Don't load audio on mount - wait for user interaction
+    const attemptAutoplay = async () => {
+      await loadAudio();
+      if (!audioRef.current) return;
+      audioRef.current.play()
+        .then(() => {
+          setMusicPlaying(true);
+        })
+        .catch(() => {
+          setMusicPlaying(false);
+        });
+    };
+
+    attemptAutoplay();
+
     const handleFirstInteraction = () => {
-      loadAudio();
+      if (!autoPlayRequestedRef.current) return;
+      if (musicPlaying) {
+        document.removeEventListener('click', handleFirstInteraction);
+        document.removeEventListener('touchstart', handleFirstInteraction);
+        document.removeEventListener('keydown', handleFirstInteraction);
+        return;
+      }
+      attemptAutoplay();
       document.removeEventListener('click', handleFirstInteraction);
       document.removeEventListener('touchstart', handleFirstInteraction);
       document.removeEventListener('keydown', handleFirstInteraction);
@@ -47,20 +68,27 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const toggleMusic = () => {
-    if (audioRef.current) {
-      if (musicPlaying) {
+    if (musicPlaying) {
+      if (audioRef.current) {
         audioRef.current.pause();
-        setMusicPlaying(false);
-      } else {
-        audioRef.current.play()
-          .then(() => {
-            setMusicPlaying(true);
-          })
-          .catch(() => {
-            // Play failed, keep button in off state
-          });
       }
+      autoPlayRequestedRef.current = false;
+      setMusicPlaying(false);
+      return;
     }
+
+    loadAudio()
+      .then(() => {
+        if (!audioRef.current) return;
+        return audioRef.current.play();
+      })
+      .then(() => {
+        autoPlayRequestedRef.current = true;
+        setMusicPlaying(true);
+      })
+      .catch(() => {
+        // Play failed, keep button in off state
+      });
   };
 
   return (

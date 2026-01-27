@@ -21,7 +21,11 @@ export default function UsbekischesRestaurant() {
     <div className="min-h-screen bg-background text-foreground">
       <header className="border-b border-border/60 bg-background/95 backdrop-blur">
         <div className="container mx-auto px-4 md:px-6 py-5 flex items-center justify-between">
-          <Link href="/" className="font-heading text-2xl font-bold tracking-wider text-primary">
+          <Link
+            href="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="font-heading text-2xl font-bold tracking-wider text-primary"
+          >
             CARAVAN
           </Link>
           <div className="flex items-center gap-3">

@@ -58,7 +58,13 @@ export default function Datenschutz() {
             </Button>
           </Link>
 
-          <h1 className="font-heading text-2xl font-bold tracking-wider text-primary">CARAVAN</h1>
+          <Link
+            href="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="font-heading text-2xl font-bold tracking-wider text-primary"
+          >
+            CARAVAN
+          </Link>
 
           <div className="hidden md:flex items-center gap-4">
             {/* Music Button */}
