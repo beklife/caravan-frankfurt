@@ -335,7 +335,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="relative h-screen min-h-[600px] flex items-center justify-center text-center px-4 overflow-hidden">
+      <section id="hero" className="relative h-screen min-h-[900px] flex items-center justify-center text-center px-4 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={heroImage}
@@ -363,7 +363,7 @@ export default function Home() {
           <p className="text-lg md:text-xl text-white/90 max-w-2xl font-semibold leading-relaxed">
             {t.hero.subtitle}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-8 mb-10">
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Button size="lg" onClick={() => scrollToSection("reservation")} className="bg-primary hover:bg-primary/90 text-white font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto">
               {t.hero.cta_reserve}
             </Button>
