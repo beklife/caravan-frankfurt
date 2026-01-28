@@ -15,7 +15,6 @@ import heroImage from "@assets/stock_images/2024_11_04_Zira_Uzbek_Kitchen_046.we
 import plovImage from "@assets/stock_images/menu/osh.webp";
 import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.webp";
 import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.webp";
-import lagmanImage from "@assets/stock_images/menu/uygurishe lagman.webp";
 import samsaImage from "@assets/stock_images/menu/somsa.webp";
 import shashlikImage from "@assets/stock_images/menu/shashlyk-meat-centralasia-food.webp";
 import teaImage from "@assets/stock_images/menu/tea_1.webp";
@@ -340,7 +339,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <img
             src={heroImage}
-            alt="Traditional Central Asian feast with colorful dishes including Uzbek Plov, Manty dumplings, and Lagman noodles at CARAVAN Restaurant Frankfurt"
+            alt="Traditional Uzbek and Central Asian feast with colorful dishes including Uzbek Plov, Manty dumplings, and Lagman noodles at CARAVAN Restaurant Frankfurt"
             className="w-full h-full object-cover"
             fetchPriority="high"
             decoding="async"
@@ -403,7 +402,7 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-[4/5] overflow-hidden rounded-sm">
-                <img src={interiorImage} alt="Cozy interior of CARAVAN Restaurant Frankfurt with traditional Central Asian carpets and warm atmosphere" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src={interiorImage} alt="Cozy interior of CARAVAN Uzbek Restaurant Frankfurt with traditional Central Asian carpets and warm atmosphere" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-secondary/20 -z-10 rounded-full blur-2xl"></div>
               <div className="absolute -top-6 -left-6 w-32 h-32 border-2 border-primary/30 z-20"></div>
@@ -454,12 +453,12 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <MenuCard image={plovImage} title={t.menu.dishes.plov.name} desc={t.menu.dishes.plov.desc} price="14.50€" />
-            <MenuCard image={mantyImage} title={t.menu.dishes.manty.name} desc={t.menu.dishes.manty.desc} price="13.90€" />
-            <MenuCard image={lagmanImage} title={t.menu.dishes.lagman.name} desc={t.menu.dishes.lagman.desc} price="13.50€" />
-            <MenuCard image={samsaImage} title={t.menu.dishes.samsa.name} desc={t.menu.dishes.samsa.desc} price="4.50€" />
-            <MenuCard image={shashlikImage} title={t.menu.dishes.shashlik.name} desc={t.menu.dishes.shashlik.desc} price="16.90€" />
-            <MenuCard image={teaImage} title={t.menu.dishes.tea.name} desc={t.menu.dishes.tea.desc} price="5.50€" />
+            <MenuCard image={plovImage} title={t.menu.dishes.plov.name} desc={t.menu.dishes.plov.desc} price="17.90€" />
+            <MenuCard image={mantyImage} title={t.menu.dishes.manty.name} desc={t.menu.dishes.manty.desc} price="23.90€" />
+            <MenuCard image={samsaImage} title={t.menu.dishes.somsa.name} desc={t.menu.dishes.somsa.desc} price="11.90€" />
+            <MenuCard image={shashlikImage} title={t.menu.dishes.schaschlikvomlamm.name} desc={t.menu.dishes.schaschlikvomlamm.desc} price="26.90€" />
+            <MenuCard image={""} title={t.menu.dishes.kazankebab.name} desc={t.menu.dishes.kazankebab.desc} price="26.90€" />
+            <MenuCard image={teaImage} title={t.menu.dishes.kannetee06jasmin.name} desc={t.menu.dishes.kannetee06jasmin.desc} price="6.50€" />
           </div>
           
           <div className="mt-12 text-center">
@@ -478,7 +477,7 @@ export default function Home() {
           <h2 className="text-center text-4xl font-heading font-bold mb-12 text-white">{t.gallery.title}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 h-[500px]">
              <div className="col-span-2 row-span-2 relative overflow-hidden group rounded-sm">
-                <img alt="Authentic Central Asian dishes at CARAVAN Restaurant Frankfurt - Uzbek Plov, Manty, Lagman" src={heroImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                <img alt="Authentic Uzbek and Central Asian dishes at CARAVAN Restaurant Frankfurt - Uzbek Plov, Manty, Lagman" src={heroImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
              <div className="col-span-1 row-span-1 relative overflow-hidden group rounded-sm">
                 <img alt="Handmade Manty dumplings with meat filling and yogurt sauce - traditional Uzbek dish in Frankfurt" src={mantyImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
@@ -661,7 +660,13 @@ function MenuCard({ image, title, desc, price }: { image: string, title: string,
   return (
     <div className="group bg-background/95 backdrop-blur-sm rounded-sm overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300">
       <div className="aspect-[4/3] bg-muted relative overflow-hidden">
-        <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        {image ? (
+          <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
+            <span className="text-6xl opacity-40">🍽</span>
+          </div>
+        )}
         <div className="absolute top-2 right-2 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-sm text-sm font-bold shadow-sm">
           {price}
         </div>

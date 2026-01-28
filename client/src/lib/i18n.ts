@@ -10,8 +10,8 @@ export const translations = {
       reserve: "Reservieren"
     },
     hero: {
-      title: "CARAVAN – Zentralasien in Frankfurt.",
-      subtitle: "Authentische Küche, warme Gastfreundschaft und lebendige Teekultur in Frankfurt am Main.",
+      title: "CARAVAN – erste Usbekische Küche in Frankfurt und Deutschland.",
+      subtitle: "Authentische usbekische Küche, warme Gastfreundschaft und lebendige Teekultur in Frankfurt am Main.",
       cta_reserve: "Tisch anfragen",
       cta_menu: "Highlights ansehen"
     },
@@ -23,12 +23,26 @@ export const translations = {
       title: "Kulinarische Highlights",
       subtitle: "Eine Auswahl unserer beliebtesten Gerichte. Das Angebot kann saisonal variieren.",
       dishes: {
-        plov: { name: "Traditioneller Plov", desc: "Das Herzstück usbekischer Küche. Reis, zartes Lammfleisch, gelbe Karotten, Kichererbsen und Rosinen, traditionell im Kazan gegart." },
-        manty: { name: "Handgemachte Manty", desc: "Große, saftige Teigtaschen, gefüllt mit fein gehacktem Fleisch und Zwiebeln, serviert mit Joghurt-Dip." },
-        lagman: { name: "Uigurischer Lagman", desc: "Handgezogene Nudeln in einer würzigen Brühe mit Rindfleisch, Paprika, Tomaten und frischen Kräutern." },
-        samsa: { name: "Knusprige Samsa", desc: "Im Ofen gebackene Teigtaschen mit würziger Fleisch- oder Kürbisfüllung." },
-        shashlik: { name: "Lamm Schaschlik", desc: "Zart marinierte Lammspieße über Holzkohle gegrillt, serviert mit marinierten Zwiebeln." },
-        tea: { name: "Zentralasiatische Teezeremonie", desc: "Ausgewählte Grün- und Schwarztees, serviert in traditionellen Pialas mit Trockenfrüchten und Nüssen." }
+        schorpa: { name: "Schorpa", desc: "Usbekische Nationalsuppe mit zartem Fleisch, Kartoffeln, Karotten, Paprika, Zwiebeln und frischen Kräutern." },
+        borsch: { name: "Borsch", desc: "Gemüsesuppe und Rindfleisch mit rote Bete nach altrussische Art." },
+        chuchvara: { name: "Chuchvara", desc: "Gefüllte Teigtaschensuppe (Pelmeny) mit Kalbfleisch, Gemüse und Zwiebeln, verfeinert mit Koriander." },
+        mastava: { name: "Mastava", desc: "Reissuppe mit Kalbfleisch, Gemüse und Zwiebeln und abgeschmeckt mit orientalischen Gewürzen." },
+        somsa: { name: "Somsa (2 St.)", desc: "Knuspriges Gebäck mit Kalbfleisch, verfeinert mit traditionell usbekischen Gewürzen." },
+        tschebureki: { name: "Tschebureki (2 St.)", desc: "Knusprige Krapfen mit Hackfleischfüllung (Rind)." },
+        karottensalat: { name: "Karottensalat", desc: "Exotischer Karottensalat nach usbekischer Art hauchdünn geraspelt, mit frischem Knoblauch." },
+        atschuchuksalat: { name: "Atschuchuksalat", desc: "Ein frischer Gemüsesalat mit saftigen Tomaten, Zwiebeln und wahlweise Pfeffer." },
+        kazankebab: { name: "Kazan Kebab", desc: "Gebratenes Lammfleisch und Kartoffeln mit orientalischen Gewürzen, köstlich zubereitet im traditionellen gusseisernen Kochtopf 'Kazan'. Frischer Gemüsesalat dazu." },
+        kazankebabhaehnchen: { name: "Kazan Kebab Hähnchen", desc: "Gebratenes Hühnerfleisch und Kartoffeln mit orientalischen Gewürzen, köstlich zubereitet im traditionellen gusseisernen Kochtopf 'Kazan'. Frischer Gemüsesalat dazu." },
+        plov: { name: "Plov", desc: "Erlesener Reis, Lammfleisch und Karotten fein gewürzt nach alter usbekischer Art. Frischer Gemüsesalat dazu." },
+        pelmeni: { name: "Pelmeni", desc: "Kleine gefüllte Teigtaschen mit Fleischfüllung nach altrussische Art. Servieren mit schmand und frische Salat." },
+        manty: { name: "Manty", desc: "Gedämpfte Teigtaschen mit Kalbfleisch nach Usbekische Art. Frische Gemüsesalat dazu." },
+        honimvegetariach: { name: "Honim Vegetariach", desc: "Gedämpfte hauchdünne Teigrolade mit Füllung aus Zucchini, Karotten, Kartoffel und Zwiebel. Frische Gemüsesalat dazu." },
+        warenikiwegetarisch: { name: "Wareniki Wegetarisch", desc: "Kleine Maultaschen Mit Kartoffelfüllung. Frische Gemüsesalat dazu." },
+        schaschlikvomlamm: { name: "Schaschlik vom Lamm", desc: "Saftige Lammfleischstückchen mit Tomaten-Yoghurt-Knoblauch-Sauce und frischem Gemüsesalat." },
+        schaschlikvomhaehnchen: { name: "Schaschlik vom Hähnchen", desc: "Saftige Hähnchenfleischstückchen mit Tomaten-Yoghurt-Knoblauch-Sauce und frischem Gemüsesalat." },
+        caravandessert: { name: "Caravan Dessert", desc: "Gebackene Apetithäppchen aus Blätterteig mit Halwa und Äpfeln. Vanillesauce dazu." },
+        honigmedovikkuchen: { name: "Honig Medovik Kuchen", desc: "Honig Medovik Kuchen in zwei Sorten: Nuss / Schokolade" },
+        kannetee06jasmin: { name: "Kanne Jasmin Tee", desc: "Aromatischer Jasmin-Tee, traditionell serviert in einer Teekanne." }
       }
     },
     hours: {
@@ -81,8 +95,8 @@ export const translations = {
       reserve: "Reserve"
     },
     hero: {
-      title: "CARAVAN – Central Asian comfort food in Frankfurt.",
-      subtitle: "Authentic flavors, warm hospitality, and vibrant tea culture in Frankfurt am Main.",
+      title: "CARAVAN – first Uzbek cuisine in Frankfurt and Germany.",
+      subtitle: "Authentic Uzbek flavors, warm hospitality, and vibrant tea culture in Frankfurt am Main.",
       cta_reserve: "Book a Table",
       cta_menu: "View Highlights"
     },
@@ -94,12 +108,26 @@ export const translations = {
       title: "Menu Highlights",
       subtitle: "A selection of our favorites. Offerings may vary seasonally.",
       dishes: {
-        plov: { name: "Traditional Plov", desc: "The heart of Uzbek cuisine. Rice, tender lamb, yellow carrots, chickpeas, and raisins, cooked traditionally in a Kazan." },
-        manty: { name: "Handmade Manty", desc: "Large, juicy dumplings filled with finely chopped meat and onions, served with a yogurt dip." },
-        lagman: { name: "Uyghur Lagman", desc: "Hand-pulled noodles in a savory broth with beef, peppers, tomatoes, and fresh herbs." },
-        samsa: { name: "Crispy Samsa", desc: "Oven-baked pastries filled with spiced meat or pumpkin." },
-        shashlik: { name: "Lamb Shashlik", desc: "Tender marinated lamb skewers grilled over charcoal, served with marinated onions." },
-        tea: { name: "Central Asian Tea", desc: "Selected green and black teas served in traditional pialas with dried fruits and nuts." }
+        schorpa: { name: "Schorpa", desc: "Uzbek national soup with tender meat, potatoes, carrots, bell peppers, onions, and fresh herbs." },
+        borsch: { name: "Borsch", desc: "Vegetable and beef soup with beetroot in traditional old Russian style." },
+        chuchvara: { name: "Chuchvara", desc: "Dumpling soup (Pelmeny) filled with veal, vegetables, and onions, refined with coriander." },
+        mastava: { name: "Mastava", desc: "Rice soup with veal, vegetables, and onions, seasoned with oriental spices." },
+        somsa: { name: "Somsa (2 pcs.)", desc: "Crispy patty filled with minced meat (beef), onions and Uzbek spices." },
+        tschebureki: { name: "Tschebureki (2 pcs.)", desc: "Crispy fried pie with minced meat filling (beef) - The most famous 'street food' in Uzbekistan!" },
+        karottensalat: { name: "Carrot Salad", desc: "Traditional spicy salad made of fresh carrots and garlic." },
+        atschuchuksalat: { name: "Atschuchuk Salad", desc: "A fresh vegetable salad with juicy tomatoes, onions, and optional peppers." },
+        kazankebab: { name: "Kazan Kebab", desc: "Mouth-watering fried lamb pieces served with potatoes and a fresh vegetable salad." },
+        kazankebabhaehnchen: { name: "Kazan Kebab Chicken", desc: "Mouth-watering fried chicken pieces served with potatoes and a fresh vegetable salad." },
+        plov: { name: "Plov", desc: "The main national Uzbek specialty made of rice, carrots, lamb, with a fine mix of spices." },
+        pelmeni: { name: "Pelmeni", desc: "Small filled dumplings with meat filling in the old Russian style. Served with a fresh vegetable salad." },
+        manty: { name: "Manty", desc: "Steamed dumplings with veal prepared in Uzbek style. Served with a fresh vegetable salad." },
+        honimvegetariach: { name: "Honim Vegetarian", desc: "Steamed, paper-thin dough roll filled with zucchini, carrots, potatoes, and onions. Served with a fresh vegetable salad." },
+        warenikiwegetarisch: { name: "Wareniki Vegetarian", desc: "Little dumpling filled with potatoes. Served with a fresh vegetable salad." },
+        schaschlikvomlamm: { name: "Shashlik from Lamb", desc: "Tenderly marinated lamb filets, served with a fresh vegetable salad, tomato sauce and a side dish of your choice." },
+        schaschlikvomhaehnchen: { name: "Shashlik from Chicken", desc: "Tenderly marinated chicken filets, served with a fresh vegetable salad, tomato sauce and a side dish of your choice." },
+        caravandessert: { name: "Caravan Dessert", desc: "Puff pastry filled with Halva and Apples, served with a vanilla sauce." },
+        honigmedovikkuchen: { name: "Honey Medovik Cake", desc: "Honey Medovik Cake in two varieties: Nut / Chocolate" },
+        kannetee06jasmin: { name: "Pot of Jasmine Tea", desc: "Aromatic jasmine tea, traditionally served in a teapot." }
       }
     },
     hours: {
@@ -152,8 +180,8 @@ export const translations = {
       reserve: "Бронь"
     },
     hero: {
-      title: "CARAVAN — кухня Центральной Азии во Франкфурте.",
-      subtitle: "Аутентичные вкусы, теплое гостеприимство и культура чаепития во Франкфурте-на-Майне.",
+      title: "CARAVAN — первая узбекская кухня во Франкфурте и Германии.",
+      subtitle: "Аутентичные узбекские вкусы, теплое гостеприимство и культура чаепития во Франкфурте-на-Майне.",
       cta_reserve: "Забронировать стол",
       cta_menu: "Смотреть меню"
     },
@@ -165,12 +193,26 @@ export const translations = {
       title: "Хиты меню",
       subtitle: "Избранные блюда. Меню может меняться в зависимости от сезона.",
       dishes: {
-        plov: { name: "Традиционный Плов", desc: "Сердце узбекской кухни. Рис, нежная баранина, желтая морковь, нут и изюм, приготовленные в казане." },
-        manty: { name: "Манты ручной лепки", desc: "Большие сочные манты с рубленым мясом и луком, подаются с йогуртовым соусом." },
-        lagman: { name: "Уйгурский Лагман", desc: "Тянутая вручную лапша в наваристом бульоне с говядиной, перцем, томатами и свежей зеленью." },
-        samsa: { name: "Хрустящая Самса", desc: "Запеченные в тандыре пирожки с пряным мясом или тыквой." },
-        shashlik: { name: "Шашлык из баранины", desc: "Нежный маринованный шашлык, приготовленный на углях, с маринованным луком." },
-        tea: { name: "Чайная церемония", desc: "Отборный зеленый и черный чай, подается в пиалах с сухофруктами и орехами." }
+        schorpa: { name: "Шурпа", desc: "Узбекский национальный суп с нежным мясом, картофелем, морковью, перцем, луком и свежей зеленью." },
+        borsch: { name: "Борщ", desc: "Овощной суп с говядиной и свеклой по старорусскому рецепту." },
+        chuchvara: { name: "Чучвара", desc: "Суп с пельменями из телятины, овощей и лука, приправленный кориандром." },
+        mastava: { name: "Мастава", desc: "Рисовый суп с телятиной, овощами и луком, приправленный восточными специями." },
+        somsa: { name: "Сомса (2 шт.)", desc: "Хрустящая выпечка с телятиной, приправленная традиционными узбекскими специями." },
+        tschebureki: { name: "Чебуреки (2 шт.)", desc: "Хрустящие пирожки с мясным фаршем (говядина)." },
+        karottensalat: { name: "Морковный салат", desc: "Экзотический морковный салат по-узбекски, тонко нарезанный, со свежим чесноком." },
+        atschuchuksalat: { name: "Салат Ачучук", desc: "Свежий овощной салат с сочными помидорами, луком и перцем по желанию." },
+        kazankebab: { name: "Казан Кебаб", desc: "Жареная баранина с картофелем и восточными специями, приготовленная в традиционном чугунном казане. Свежий овощной салат." },
+        kazankebabhaehnchen: { name: "Казан Кебаб из курицы", desc: "Жареная курица с картофелем и восточными специями, приготовленная в традиционном чугунном казане. Свежий овощной салат." },
+        plov: { name: "Плов", desc: "Изысканный рис, баранина и морковь, приправленные по старинному узбекскому рецепту. Свежий овощной салат." },
+        pelmeni: { name: "Пельмени", desc: "Маленькие пельмени с мясной начинкой по старорусскому рецепту. Подаются со сметаной и свежим салатом." },
+        manty: { name: "Манты", desc: "Паровые манты с телятиной по-узбекски. Свежий овощной салат." },
+        honimvegetariach: { name: "Хоним вегетарианский", desc: "Паровые тонкие рулеты из теста с начинкой из кабачков, моркови, картофеля и лука. Свежий овощной салат." },
+        warenikiwegetarisch: { name: "Вареники вегетарианские", desc: "Маленькие вареники с картофельной начинкой. Свежий овощной салат." },
+        schaschlikvomlamm: { name: "Шашлык из баранины", desc: "Сочные кусочки баранины с томатно-йогуртовым соусом с чесноком и свежим овощным салатом." },
+        schaschlikvomhaehnchen: { name: "Шашлык из курицы", desc: "Сочные кусочки курицы с томатно-йогуртовым соусом с чесноком и свежим овощным салатом." },
+        caravandessert: { name: "Десерт Караван", desc: "Печеные аппетитные кусочки слоеного теста с халвой и яблоками. Ванильный соус." },
+        honigmedovikkuchen: { name: "Медовый торт Медовик", desc: "Медовый торт Медовик в двух вариантах: Ореховый / Шоколадный" },
+        kannetee06jasmin: { name: "Чайник жасминового чая", desc: "Ароматный жасминовый чай, традиционно подается в чайнике." }
       }
     },
     hours: {
@@ -223,8 +265,8 @@ export const translations = {
       reserve: "Bron qilish"
     },
     hero: {
-      title: "CARAVAN – Frankfurt shahrida Markaziy Osiyo oshxonasi.",
-      subtitle: "Frankfurt am Main shahrida asl ta'mlar, samimiy mehmondo'stlik va choy madaniyati.",
+      title: "CARAVAN – Frankfurt va Germaniyada birinchi O'zbek oshxonasi.",
+      subtitle: "Frankfurt am Main shahrida asl o'zbek ta'mlari, samimiy mehmondo'stlik va choy madaniyati.",
       cta_reserve: "Stol bron qilish",
       cta_menu: "Menyu ko'rish"
     },
@@ -236,12 +278,26 @@ export const translations = {
       title: "Oshxona diqqatga sazovor taomlar",
       subtitle: "Bizning eng mashhur taomlarimizdan tanlov. Taomlar mavsumga qarab o'zgarishi mumkin.",
       dishes: {
-        plov: { name: "An'anaviy Osh", desc: "O'zbek oshxonasining yuragi. Guruch, yumshoq qo'y go'shti, sariq sabzi, no'xat va mayiz, an'anaviy ravishda qozonda pishiriladi." },
-        manty: { name: "Qo'lda yasalgan Manti", desc: "Mayda to'g'ralgan go'sht va piyoz bilan to'ldirilgan katta, sharbatli manti, yogurt sousi bilan beriladi." },
-        lagman: { name: "Uyg'ur Lag'moni", desc: "Mol go'shti, qalampir, pomidor va yangi ko'katlar bilan mazali sho'rvada qo'lda tortilgan lag'mon." },
-        samsa: { name: "Xamirli Somsa", desc: "Ziravorli go'sht yoki qovoq bilan to'ldirilgan tandirda pishirilgan somsa." },
-        shashlik: { name: "Qo'y go'shtidan Shashlik", desc: "Ko'mirda qovurilgan marinadlangan yumshoq qo'y go'shti shishlari, marinadlangan piyoz bilan beriladi." },
-        tea: { name: "Markaziy Osiyo Choyi", desc: "An'anaviy piyolalarda quritilgan mevalar va yong'oqlar bilan yashil va qora choylar taklif etiladi." }
+        schorpa: { name: "Shurpa", desc: "O'zbek milliy sho'rvasi yumshoq go'sht, kartoshka, sabzi, qalampir, piyoz va yangi ko'katlar bilan." },
+        borsch: { name: "Borsh", desc: "Sabzavot va mol go'shti sho'rvasi lavlagi bilan eski rus uslubida." },
+        chuchvara: { name: "Chuchvara", desc: "Dana go'shti, sabzavot va piyoz bilan to'ldirilgan pelmen sho'rvasi, koriander bilan." },
+        mastava: { name: "Mastava", desc: "Dana go'shti, sabzavot va piyoz bilan guruch sho'rvasi, sharq ziravorlari bilan." },
+        somsa: { name: "Somsa (2 dona)", desc: "Dana go'shti bilan xamirli somsa, an'anaviy o'zbek ziravorlari bilan." },
+        tschebureki: { name: "Cheburek (2 dona)", desc: "Qiyma (mol go'shti) bilan xamirli cheburek." },
+        karottensalat: { name: "Sabzi salati", desc: "O'zbekcha ekzotik sabzi salati ingichka qirib qirg'ich bilan, yangi sarimsoq bilan." },
+        atschuchuksalat: { name: "Achichuk salati", desc: "Shirin pomidor, piyoz va ixtiyoriy qalampir bilan yangi sabzavot salati." },
+        kazankebab: { name: "Qozon Kabob", desc: "Qovurilgan qo'y go'shti va kartoshka sharq ziravorlari bilan, an'anaviy cho'yan qozonda tayyorlangan. Yangi sabzavot salati." },
+        kazankebabhaehnchen: { name: "Qozon Kabob Tovuq", desc: "Qovurilgan tovuq go'shti va kartoshka sharq ziravorlari bilan, an'anaviy cho'yan qozonda tayyorlangan. Yangi sabzavot salati." },
+        plov: { name: "Osh", desc: "Tanlangan guruch, qo'y go'shti va sabzi qadimiy o'zbek uslubida ziravorlangan. Yangi sabzavot salati." },
+        pelmeni: { name: "Pelmeni", desc: "Go'sht to'ldirg'ichli kichik pelmenlar eski rus uslubida. Smetana va yangi salat bilan." },
+        manty: { name: "Manti", desc: "Dana go'shti bilan bug'da pishirilgan manti o'zbekcha. Yangi sabzavot salati." },
+        honimvegetariach: { name: "Honim Vegetarian", desc: "Qovoq, sabzi, kartoshka va piyoz bilan to'ldirilgan yupqa xamir ruleti bug'da pishirilgan. Yangi sabzavot salati." },
+        warenikiwegetarisch: { name: "Vareniki Vegetarian", desc: "Kartoshka to'ldirg'ichli kichik vareniklar. Yangi sabzavot salati." },
+        schaschlikvomlamm: { name: "Qo'y go'shtidan Shashlik", desc: "Pomidor-yogurt-sarimsoq sousi va yangi sabzavot salati bilan sharbatli qo'y go'shti bo'laklari." },
+        schaschlikvomhaehnchen: { name: "Tovuqdan Shashlik", desc: "Pomidor-yogurt-sarimsoq sousi va yangi sabzavot salati bilan sharbatli tovuq go'shti bo'laklari." },
+        caravandessert: { name: "Caravan Desert", desc: "Halva va olma bilan pishirilgan xamir bo'laklari. Vanil sousi bilan." },
+        honigmedovikkuchen: { name: "Asal Medovik Torti", desc: "Ikki xil asal Medovik torti: Yong'oq / Shokolad" },
+        kannetee06jasmin: { name: "Choynak yasmin choy", desc: "Xushbo'y yasmin choy, an'anaviy choynak bilan beriladi." }
       }
     },
     hours: {
