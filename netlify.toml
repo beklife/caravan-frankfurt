@@ -1,0 +1,12 @@
+[build]
+  command = "npx puppeteer browsers install chrome && npm run build"
+  publish = "dist/public"
+
+[build.environment]
+  NODE_VERSION = "20"
+  PUPPETEER_CACHE_DIR = "/opt/buildhome/.cache/puppeteer"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
