@@ -363,7 +363,7 @@ export default function Home() {
           <p className="text-lg md:text-xl text-white/90 max-w-2xl font-semibold leading-relaxed">
             {t.hero.subtitle}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+          <div className="flex flex-col sm:flex-row gap-4 mt-8 mb-10">
             <Button size="lg" onClick={() => scrollToSection("reservation")} className="bg-primary hover:bg-primary/90 text-white font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto">
               {t.hero.cta_reserve}
             </Button>
@@ -372,7 +372,6 @@ export default function Home() {
             </Button>
           </div>
         </motion.div>
-        
         <motion.div
           animate={{ y: [0, 15, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
