@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
 import { useLanguage } from "@/lib/LanguageContext";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ArrowLeftIcon as ArrowLeft, ChevronDownIcon as ChevronDown, X } from "@/components/icons";
 import HamburgerButton from "@/components/HamburgerButton";
 import { Button } from "@/components/ui/button";
@@ -1137,7 +1137,7 @@ export default function MenuPage() {
         <MenuSection title={cats.drinks} items={fullMenu.drinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />
 
         {/* Cold Drinks */}
-        <MenuSection title={cats.colddrinks} items={fullMenu.colddrinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />
+        <MenuSection title={cats.colddrinks} items={fullMenu.colddrinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} hideDetails={true} />
 
         {/* Beer */}
         <MenuSection title={cats.beer} items={fullMenu.beer} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />
@@ -1238,12 +1238,19 @@ export default function MenuPage() {
   );
 }
 
-function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePlaceholder }: { title: string, items: any[], lang: Language, getDishInfo: (d: any) => { name: string, desc: string }, setLightboxImage: (image: { src: string; name: string } | null) => void, hidePlaceholder?: boolean }) {
+function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePlaceholder, hideDetails }: { title: string, items: any[], lang: Language, getDishInfo: (d: any) => { name: string, desc: string }, setLightboxImage: (image: { src: string; name: string } | null) => void, hidePlaceholder?: boolean, hideDetails?: boolean }) {
   // Check if this section has signature dishes (mains)
   const isMainSection = items.length > 0 && items[0].id === 'plov';
+  const reduceMotion = useReducedMotion();
 
   return (
-    <section className="mb-20">
+    <motion.section
+      initial={{ opacity: 1, y: reduceMotion ? 0 : 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px", amount: 0.2 }}
+      transition={{ duration: reduceMotion ? 0 : 0.45, ease: "easeOut" }}
+      className="mb-20"
+    >
       {/* Category Header */}
       <div className="text-center mb-8 md:mb-12 relative">
         {/* Decorative Line */}
@@ -1265,7 +1272,14 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
             const isSignature = isMainSection && (item.id === 'plov' || item.id === 'shashlik');
 
             return (
-              <div key={item.id} className="group relative">
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 1, x: reduceMotion ? 0 : -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "0px", amount: 0.4 }}
+                transition={{ delay: reduceMotion ? 0 : idx * 0.04, duration: reduceMotion ? 0 : 0.35 }}
+                className="group relative"
+              >
                 <div className="flex gap-3 md:gap-6 items-start">
                   {/* Image */}
                   {item.image ? (
@@ -1325,29 +1339,33 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                       </div>
                     </div>
 
-                    {/* Description */}
-                    <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
-                      {desc}
-                    </p>
+                    {!hideDetails && (
+                      <>
+                        {/* Description */}
+                        <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                          {desc}
+                        </p>
 
-                    {/* Dietary Icons (if applicable) */}
-                    <div className="flex gap-2 mt-2 md:mt-3">
-                      {item.dietary === 'halal' && (
-                        <span className="inline-flex items-center gap-1 text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
-                          <span>✓</span> Halal
-                        </span>
-                      )}
-                      {item.dietary === 'vegetarian' && (
-                        <span className="inline-flex items-center gap-1 text-xs bg-green-500/10 text-green-600 px-2 py-1 rounded-full">
-                          <span>🌱</span> Vegetarian
-                        </span>
-                      )}
-                      {item.dietary === 'vegan' && (
-                        <span className="inline-flex items-center gap-1 text-xs bg-green-600/10 text-green-700 px-2 py-1 rounded-full">
-                          <span>🌿</span> Vegan
-                        </span>
-                      )}
-                    </div>
+                        {/* Dietary Icons (if applicable) */}
+                        <div className="flex gap-2 mt-2 md:mt-3">
+                          {item.dietary === 'halal' && (
+                            <span className="inline-flex items-center gap-1 text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
+                              <span>✓</span> Halal
+                            </span>
+                          )}
+                          {item.dietary === 'vegetarian' && (
+                            <span className="inline-flex items-center gap-1 text-xs bg-green-500/10 text-green-600 px-2 py-1 rounded-full">
+                              <span>🌱</span> Vegetarian
+                            </span>
+                          )}
+                          {item.dietary === 'vegan' && (
+                            <span className="inline-flex items-center gap-1 text-xs bg-green-600/10 text-green-700 px-2 py-1 rounded-full">
+                              <span>🌿</span> Vegan
+                            </span>
+                          )}
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -1355,7 +1373,7 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                 {idx < items.length - 1 && (
                   <div className="mt-6 md:mt-8 h-[1px] bg-gradient-to-r from-transparent via-border/50 to-transparent"></div>
                 )}
-              </div>
+              </motion.div>
             );
           })}
         </div>
@@ -1369,6 +1387,6 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
           </p>
         </div>
       )}
-    </section>
+    </motion.section>
   );
 }
