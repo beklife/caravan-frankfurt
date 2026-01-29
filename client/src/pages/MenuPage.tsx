@@ -1243,13 +1243,7 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
   const isMainSection = items.length > 0 && items[0].id === 'plov';
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px", amount: 0.2 }}
-      transition={{ duration: 0.5 }}
-      className="mb-20"
-    >
+    <section className="mb-20">
       {/* Category Header */}
       <div className="text-center mb-8 md:mb-12 relative">
         {/* Decorative Line */}
@@ -1271,14 +1265,7 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
             const isSignature = isMainSection && (item.id === 'plov' || item.id === 'shashlik');
 
             return (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "0px", amount: 0.5 }}
-                transition={{ delay: idx * 0.05, duration: 0.4 }}
-                className="group relative"
-              >
+              <div key={item.id} className="group relative">
                 <div className="flex gap-3 md:gap-6 items-start">
                   {/* Image */}
                   {item.image ? (
@@ -1368,7 +1355,7 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                 {idx < items.length - 1 && (
                   <div className="mt-6 md:mt-8 h-[1px] bg-gradient-to-r from-transparent via-border/50 to-transparent"></div>
                 )}
-              </motion.div>
+              </div>
             );
           })}
         </div>
@@ -1382,6 +1369,6 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
           </p>
         </div>
       )}
-    </motion.section>
+    </section>
   );
 }
