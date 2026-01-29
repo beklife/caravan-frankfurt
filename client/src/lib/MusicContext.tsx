@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect, useRef, ReactNode } from "react";
+import musicSrc from "@assets/kuigai2.mp3";
 
 interface MusicContextType {
   musicPlaying: boolean;
@@ -13,19 +14,19 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const audioLoadedRef = useRef(false);
   const autoPlayRequestedRef = useRef(true);
 
-  const loadAudio = async () => {
+  const loadAudio = () => {
     if (audioLoadedRef.current || audioRef.current) return;
 
     audioLoadedRef.current = true;
-    const module = await import("@assets/kuigai2.mp3");
-    audioRef.current = new Audio(module.default);
+    audioRef.current = new Audio(musicSrc);
     audioRef.current.loop = true;
     audioRef.current.volume = 0.5;
+    audioRef.current.preload = "auto";
   };
 
   useEffect(() => {
-    const attemptAutoplay = async () => {
-      await loadAudio();
+    const attemptAutoplay = () => {
+      loadAudio();
       if (!audioRef.current) return;
       audioRef.current.play()
         .then(() => {
@@ -46,7 +47,16 @@ export function MusicProvider({ children }: { children: ReactNode }) {
         document.removeEventListener('keydown', handleFirstInteraction);
         return;
       }
-      attemptAutoplay();
+      loadAudio();
+      if (audioRef.current) {
+        audioRef.current.play()
+          .then(() => {
+            setMusicPlaying(true);
+          })
+          .catch(() => {
+            setMusicPlaying(false);
+          });
+      }
       document.removeEventListener('click', handleFirstInteraction);
       document.removeEventListener('touchstart', handleFirstInteraction);
       document.removeEventListener('keydown', handleFirstInteraction);
@@ -77,11 +87,9 @@ export function MusicProvider({ children }: { children: ReactNode }) {
       return;
     }
 
-    loadAudio()
-      .then(() => {
-        if (!audioRef.current) return;
-        return audioRef.current.play();
-      })
+    loadAudio();
+    if (!audioRef.current) return;
+    audioRef.current.play()
       .then(() => {
         autoPlayRequestedRef.current = true;
         setMusicPlaying(true);
