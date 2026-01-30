@@ -850,6 +850,7 @@ export default function MenuPage() {
   const { musicPlaying, toggleMusic } = useMusic();
   const t = translations[lang];
   const cats = menuCategories[lang];
+  const currentYear = new Date().getFullYear();
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -1163,10 +1164,38 @@ export default function MenuPage() {
           </p>
           <div className="mt-4 md:mt-6 text-center">
             <p className="text-xs text-muted-foreground/70">
-              {lang === 'de' && 'Reservierung empfohlen • 069 95909158'}
-              {lang === 'en' && 'Reservation recommended • 069 95909158'}
-              {lang === 'ru' && 'Рекомендуется бронирование • 069 95909158'}
-              {lang === 'uz' && 'Bron qilish tavsiya etiladi • 069 95909158'}
+              {lang === 'de' && (
+                <>
+                  Reservierung empfohlen •{" "}
+                  <a href="tel:+496995909158" className="hover:text-primary transition-colors">
+                    069 95909158
+                  </a>
+                </>
+              )}
+              {lang === 'en' && (
+                <>
+                  Reservation recommended •{" "}
+                  <a href="tel:+496995909158" className="hover:text-primary transition-colors">
+                    069 95909158
+                  </a>
+                </>
+              )}
+              {lang === 'ru' && (
+                <>
+                  Рекомендуется бронирование •{" "}
+                  <a href="tel:+496995909158" className="hover:text-primary transition-colors">
+                    069 95909158
+                  </a>
+                </>
+              )}
+              {lang === 'uz' && (
+                <>
+                  Bron qilish tavsiya etiladi •{" "}
+                  <a href="tel:+496995909158" className="hover:text-primary transition-colors">
+                    069 95909158
+                  </a>
+                </>
+              )}
             </p>
           </div>
         </div>
@@ -1183,9 +1212,17 @@ export default function MenuPage() {
           <p className="font-heading text-2xl md:text-3xl tracking-[0.2em] md:tracking-[0.3em] mb-2 text-white">CARAVAN</p>
           <p className="text-white/80 text-sm md:text-base mb-1">Wöllstädter Str. 11, 60385 Frankfurt am Main</p>
           <p className="text-white/60 text-xs md:text-sm mb-3 md:mb-4">Heddernheim • Frankfurt</p>
-          <p className="text-secondary font-bold tracking-wider text-sm md:text-base">069 95909158</p>
-          <div className="mt-4 md:mt-6 text-white/40 text-xs">
-            <p>© 2026 CARAVAN Restaurant • Frankfurt</p>
+          <a href="tel:+496995909158" className="text-secondary font-bold tracking-wider text-sm md:text-base hover:text-primary transition-colors">
+            069 95909158
+          </a>
+          <div className="mt-4 md:mt-6">
+            <p className="text-xs text-white/80 mt-auto">© {currentYear} CARAVAN Restaurant • Frankfurt</p>
+            <p className="text-xs text-white/60 mt-2">
+              Made by ❤️{" "}
+              <a href="https://beklife.github.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">
+                ASLBEK
+              </a>
+            </p>
           </div>
         </div>
       </footer>

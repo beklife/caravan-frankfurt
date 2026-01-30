@@ -28,6 +28,7 @@ export default function Datenschutz() {
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { musicPlaying, toggleMusic } = useMusic();
+  const currentYear = new Date().getFullYear();
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -329,7 +330,11 @@ export default function Datenschutz() {
               Wöllstädter Str. 11<br />
               60385 Frankfurt am Main<br />
               <br />
-              {lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : lang === 'uz' ? 'Telefon:' : 'Phone:'} +49 69 95909158<br />
+              {lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : lang === 'uz' ? 'Telefon:' : 'Phone:'}{" "}
+              <a href="tel:+496995909158" className="underline hover:text-primary transition-colors">
+                +49 69 95909158
+              </a>
+              <br />
               E-Mail: info@restaurant-caravan.com
             </p>
 
@@ -384,9 +389,17 @@ export default function Datenschutz() {
         <div className="container mx-auto px-4 text-center">
           <p className="font-heading text-2xl md:text-3xl tracking-wider mb-2 text-white">CARAVAN</p>
           <p className="text-white/80 text-sm md:text-base mb-1">Wöllstädter Str. 11, 60385 Frankfurt am Main</p>
-          <p className="text-secondary font-bold tracking-wider text-sm md:text-base">069 95909158</p>
-          <div className="mt-4 md:mt-6 text-white/40 text-xs">
-            <p>© 2026 CARAVAN Restaurant • Frankfurt</p>
+          <a href="tel:+496995909158" className="text-secondary font-bold tracking-wider text-sm md:text-base hover:text-primary transition-colors">
+            069 95909158
+          </a>
+          <div className="mt-4 md:mt-6">
+            <p className="text-xs text-white/80 mt-auto">© {currentYear} CARAVAN Restaurant • Frankfurt</p>
+            <p className="text-xs text-white/60 mt-2">
+              Made by ❤️{" "}
+              <a href="https://beklife.github.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">
+                ASLBEK
+              </a>
+            </p>
           </div>
         </div>
       </footer>

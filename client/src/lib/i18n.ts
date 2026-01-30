@@ -10,8 +10,9 @@ export const translations = {
       reserve: "Reservieren"
     },
     hero: {
-      title: "CARAVAN – erste Usbekische Küche in Frankfurt und Deutschland.",
+      title: "CARAVAN – erste Usbekische Küche in Deutschland.",
       subtitle: "Authentische usbekische Küche, warme Gastfreundschaft und lebendige Teekultur in Frankfurt am Main.",
+      notice: "Dies ist die offizielle Website von CARAVAN. Wir bauen die Website noch, daher sind Fotos und Texte Beispiele. Echte Fotos folgen in Kürze. Sie können trotzdem einen Tisch reservieren oder uns kontaktieren.",
       cta_reserve: "Tisch anfragen",
       cta_menu: "Highlights ansehen"
     },
@@ -97,6 +98,7 @@ export const translations = {
     hero: {
       title: "CARAVAN – first Uzbek cuisine in Frankfurt and Germany.",
       subtitle: "Authentic Uzbek flavors, warm hospitality, and vibrant tea culture in Frankfurt am Main.",
+      notice: "This is the official CARAVAN website. We are still building it, so photos and texts are examples. Real photos are coming soon. You can still reserve a table or contact us.",
       cta_reserve: "Book a Table",
       cta_menu: "View Highlights"
     },
@@ -182,6 +184,7 @@ export const translations = {
     hero: {
       title: "CARAVAN — первая узбекская кухня во Франкфурте и Германии.",
       subtitle: "Аутентичные узбекские вкусы, теплое гостеприимство и культура чаепития во Франкфурте-на-Майне.",
+      notice: "Это официальный сайт CARAVAN. Мы еще дорабатываем сайт, поэтому фото и тексты пока примерные. Настоящие фото скоро будут. Вы уже можете бронировать столик или связаться с нами.",
       cta_reserve: "Забронировать стол",
       cta_menu: "Смотреть меню"
     },
@@ -267,6 +270,7 @@ export const translations = {
     hero: {
       title: "CARAVAN – Frankfurt va Germaniyada birinchi O'zbek oshxonasi.",
       subtitle: "Frankfurt am Main shahrida asl o'zbek ta'mlari, samimiy mehmondo'stlik va choy madaniyati.",
+      notice: "Bu CARAVANning rasmiy veb-sayti. Hozir saytni yakunlayapmiz, shuning uchun foto va matnlar hozircha namunadir. Haqiqiy suratlar tez orada bo'ladi. Baribir stol bron qilishingiz yoki biz bilan bog'lanishingiz mumkin.",
       cta_reserve: "Stol bron qilish",
       cta_menu: "Menyu ko'rish"
     },

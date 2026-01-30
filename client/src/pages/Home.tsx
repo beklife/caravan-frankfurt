@@ -42,6 +42,7 @@ export default function Home() {
   const { musicPlaying, toggleMusic } = useMusic();
 
   const t = translations[lang];
+  const currentYear = new Date().getFullYear();
 
   useLayoutEffect(() => {
     // Check if there's a hash in the URL
@@ -355,13 +356,16 @@ export default function Home() {
           className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-6"
         >
           <div className="inline-block border-y-2 border-primary/60 py-2 mb-4">
-            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-sm md:text-base">Est. 2024 • Frankfurt</span>
+            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-sm md:text-base">Seit 2005 • Frankfurt</span>
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight drop-shadow-lg">
             {t.hero.title}
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl font-semibold leading-relaxed">
             {t.hero.subtitle}
+          </p>
+          <p className="md:text-base text-white/90 max-w-3xl bg-black/35 border border-white/20 px-4 py-3 rounded-sm backdrop-blur-sm">
+            {t.hero.notice}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Button size="lg" onClick={() => scrollToSection("reservation")} className="bg-primary hover:bg-primary/90 text-white font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto">
@@ -425,7 +429,7 @@ export default function Home() {
               
               <div className="grid grid-cols-3 gap-4 border-t border-border pt-8">
                 <div className="text-center">
-                  <span className="block font-heading text-3xl font-bold text-accent">3+</span>
+                  <span className="block font-heading text-3xl font-bold text-accent">15+</span>
                   <span className="text-xs uppercase tracking-wider text-muted-foreground">Cuisines</span>
                 </div>
                 <div className="text-center border-l border-border">
@@ -546,7 +550,9 @@ export default function Home() {
                      <Phone className="w-6 h-6" />
                    </div>
                    <div>
-                     <p className="font-bold text-lg">069 95909158</p>
+                     <a href="tel:+496995909158" className="font-bold text-lg hover:text-primary">
+                       069 95909158
+                     </a>
                    </div>
                  </div>
 
@@ -603,7 +609,7 @@ export default function Home() {
                 </a>
                 <span className="mx-2 text-muted-foreground">|</span>
                 <a
-                  href="tel:+49 69 95909158"
+                  href="tel:+496995909158"
                   className="text-primary hover:underline font-medium"
                 >
                   +49 69 95909158
@@ -621,7 +627,9 @@ export default function Home() {
             <div>
               <h4 className="text-2xl font-heading font-bold mb-6 text-white tracking-widest">CARAVAN</h4>
               <p className="text-white/60 mb-4">{t.location.address}</p>
-              <p className="text-white/60">069 95909158</p>
+              <a href="tel:+496995909158" className="text-white/60 hover:text-primary transition-colors">
+                069 95909158
+              </a>
             </div>
             
             <div className="flex flex-col gap-2 items-center md:items-start">
@@ -646,7 +654,13 @@ export default function Home() {
                 </a>
                 <a href="mailto:info@restaurant-caravan.com" aria-label="Email" className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"><Mail className="w-5 h-5" /></a>
               </div>
-              <p className="text-xs text-white/80 mt-auto">© 2026 CARAVAN Frankfurt. {t.footer.rights}</p>
+              <p className="text-xs text-white/80 mt-auto">© {currentYear} CARAVAN Frankfurt. {t.footer.rights}</p>
+              <p className="text-xs text-white/60 mt-2">
+                Made by ❤️{" "}
+                <a href="https://beklife.github.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">
+                  ASLBEK
+                </a>
+              </p>
             </div>
           </div>
         </div>
