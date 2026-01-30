@@ -42,6 +42,7 @@ export default function Home() {
   const { musicPlaying, toggleMusic } = useMusic();
 
   const t = translations[lang];
+  const currentYear = new Date().getFullYear();
 
   useLayoutEffect(() => {
     // Check if there's a hash in the URL
@@ -549,7 +550,9 @@ export default function Home() {
                      <Phone className="w-6 h-6" />
                    </div>
                    <div>
-                     <p className="font-bold text-lg">069 95909158</p>
+                     <a href="tel:+496995909158" className="font-bold text-lg hover:text-primary">
+                       069 95909158
+                     </a>
                    </div>
                  </div>
 
@@ -606,7 +609,7 @@ export default function Home() {
                 </a>
                 <span className="mx-2 text-muted-foreground">|</span>
                 <a
-                  href="tel:+49 69 95909158"
+                  href="tel:+496995909158"
                   className="text-primary hover:underline font-medium"
                 >
                   +49 69 95909158
@@ -624,7 +627,9 @@ export default function Home() {
             <div>
               <h4 className="text-2xl font-heading font-bold mb-6 text-white tracking-widest">CARAVAN</h4>
               <p className="text-white/60 mb-4">{t.location.address}</p>
-              <p className="text-white/60">069 95909158</p>
+              <a href="tel:+496995909158" className="text-white/60 hover:text-primary transition-colors">
+                069 95909158
+              </a>
             </div>
             
             <div className="flex flex-col gap-2 items-center md:items-start">
@@ -649,7 +654,7 @@ export default function Home() {
                 </a>
                 <a href="mailto:info@restaurant-caravan.com" aria-label="Email" className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"><Mail className="w-5 h-5" /></a>
               </div>
-              <p className="text-xs text-white/80 mt-auto">© 2026 CARAVAN Frankfurt. {t.footer.rights}</p>
+              <p className="text-xs text-white/80 mt-auto">© {currentYear} CARAVAN Frankfurt. {t.footer.rights}</p>
               <p className="text-xs text-white/60 mt-2">
                 Made by ❤️{" "}
                 <a href="https://beklife.github.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">
