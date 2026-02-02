@@ -276,7 +276,7 @@ export default function Impressum() {
                 +49 69 95909158
               </a>
               <br />
-              <strong>E-Mail:</strong> info@restaurant-caravan.com
+              <strong>E-Mail:</strong> info.restaurantcaravan@gmail.com
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">

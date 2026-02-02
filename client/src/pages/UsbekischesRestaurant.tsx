@@ -13,7 +13,7 @@ export default function UsbekischesRestaurant() {
   useSeoMeta({
     title: "Usbekisches Restaurant Frankfurt | CARAVAN",
     description:
-      "Authentisches usbekisches Restaurant in Frankfurt am Main: Plov, Manty, Lagman und mehr. Herzliche Gastfreundschaft, zentrale Lage in Heddernheim.",
+      "Authentisches usbekisches Restaurant in Frankfurt am Main: Plov, Manty, Lagman und mehr. Herzliche Gastfreundschaft, zentrale Lage in Bornheim.",
     canonical: "https://caravan-restaurant.de/usbekisches-restaurant-frankfurt",
   });
 
@@ -102,7 +102,7 @@ export default function UsbekischesRestaurant() {
                 <MapPin className="h-5 w-5 text-primary" />
                 <div>
                   <p className="font-semibold">Wöllstädter Str. 11</p>
-                  <p className="text-muted-foreground">60385 Frankfurt am Main (Heddernheim)</p>
+                  <p className="text-muted-foreground">60385 Frankfurt am Main (Bornheim)</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
