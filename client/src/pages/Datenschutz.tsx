@@ -335,7 +335,7 @@ export default function Datenschutz() {
                 +49 69 95909158
               </a>
               <br />
-              E-Mail: info@restaurant-caravan.com
+              E-Mail: info.restaurantcaravan@gmail.com
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">

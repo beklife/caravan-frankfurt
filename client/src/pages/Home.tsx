@@ -358,8 +358,11 @@ export default function Home() {
           <div className="inline-block border-y-2 border-primary/60 py-2 mb-4">
             <span className="text-secondary font-bold tracking-[0.2em] uppercase text-sm md:text-base">Seit 2005 • Frankfurt</span>
           </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight drop-shadow-lg">
-            {t.hero.title}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-lg">
+            <span className="[font-family:'Quando',_serif]">CARAVAN</span>
+            <span className="block text-xl  font-heading mt-2">
+              {t.hero.title.replace(/^CARAVAN\s*[–—-]\s*/i, '')}
+            </span>
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl font-semibold leading-relaxed">
             {t.hero.subtitle}
@@ -429,7 +432,7 @@ export default function Home() {
               
               <div className="grid grid-cols-3 gap-4 border-t border-border pt-8">
                 <div className="text-center">
-                  <span className="block font-heading text-3xl font-bold text-accent">15+</span>
+                  <span className="block font-heading text-3xl font-bold text-accent">3+</span>
                   <span className="text-xs uppercase tracking-wider text-muted-foreground">Cuisines</span>
                 </div>
                 <div className="text-center border-l border-border">
@@ -450,7 +453,7 @@ export default function Home() {
       <section id="menu" className="py-24 bg-card/80 backdrop-blur-sm relative z-10 border-y border-border/50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 bg-background/80 backdrop-blur-sm p-6 rounded-sm">
-            <div className="text-primary text-lg font-bold tracking-widest mb-2">JOURNEY WITH CARAVAN</div>
+            <div className="text-primary text-lg font-bold tracking-widest mb-2">{t.menu.journey}</div>
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">{t.menu.title}</h2>
             <p className="text-muted-foreground">{t.menu.subtitle}</p>
           </div>
@@ -489,7 +492,7 @@ export default function Home() {
                 <img alt="Traditional Uzbek Plov with lamb, carrots, and chickpeas cooked in Kazan at CARAVAN Frankfurt" src={plovImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
              <div className="col-span-2 row-span-1 relative overflow-hidden group rounded-sm">
-                <img alt="Warm and inviting interior of CARAVAN Restaurant in Heddernheim, Frankfurt with traditional decorations" src={interiorImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                <img alt="Warm and inviting interior of CARAVAN Restaurant in Bornheim, Frankfurt with traditional decorations" src={interiorImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
           </div>
         </div>
@@ -513,12 +516,12 @@ export default function Home() {
 
                <div className="space-y-6">
                  <div className="flex justify-between items-center border-b border-dashed border-border pb-4">
-                   <span className="font-medium text-lg text-muted-foreground">{t.hours.weekdays}</span>
-                   <span className="font-bold text-xl">17:00 – 23:00</span>
+                   <span className="font-medium text-lg text-muted-foreground">{t.hours.open}</span>
+                   <span className="font-bold text-xl">{t.hours.openTime}</span>
                  </div>
                  <div className="flex justify-between items-center border-b border-dashed border-border pb-4">
-                   <span className="font-medium text-lg text-muted-foreground">{t.hours.weekend}</span>
-                   <span className="font-bold text-xl">17:00 – 23:00</span>
+                   <span className="font-medium text-lg text-muted-foreground">{t.hours.kitchen}</span>
+                   <span className="font-bold text-xl">{t.hours.kitchenTime}</span>
                  </div>
                  <div className="flex justify-between items-center border-b border-dashed border-border pb-4">
                    <span className="font-medium text-lg text-muted-foreground">{t.hours.monday}</span>
@@ -541,8 +544,7 @@ export default function Home() {
                  </address>
 
                  <div className="space-y-2 text-sm text-neutral-400 font-mono">
-                   <p>U-Bahn: Heddernheim</p>
-                   <p>Bus: 60, 27</p>
+                   <p>U-Bahn: Seckbacher Landstraße, Bornheim</p>
                  </div>
 
                  <div className="flex items-start gap-4 mt-6">
@@ -602,10 +604,10 @@ export default function Home() {
                   {t.contact.fallback}
                 </p>
                 <a
-                  href="mailto:info@restaurant-caravan.com"
+                  href="mailto:info.restaurantcaravan@gmail.com"
                   className="text-primary hover:underline font-medium"
                 >
-                  info@restaurant-caravan.com
+                  info.restaurantcaravan@gmail.com
                 </a>
                 <span className="mx-2 text-muted-foreground">|</span>
                 <a
@@ -652,7 +654,7 @@ export default function Home() {
                     <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
                   </svg>
                 </a>
-                <a href="mailto:info@restaurant-caravan.com" aria-label="Email" className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"><Mail className="w-5 h-5" /></a>
+                <a href="mailto:info.restaurantcaravan@gmail.com" aria-label="Email" className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"><Mail className="w-5 h-5" /></a>
               </div>
               <p className="text-xs text-white/80 mt-auto">© {currentYear} CARAVAN Frankfurt. {t.footer.rights}</p>
               <p className="text-xs text-white/60 mt-2">

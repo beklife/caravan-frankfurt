@@ -18,9 +18,10 @@ export const translations = {
     },
     about: {
       title: "Unsere Geschichte",
-      content: "Willkommen im CARAVAN. Wir bringen die reichen Aromen und die herzliche Gastfreundschaft der Seidenstraße nach Frankfurt. Unsere Küche zelebriert die kulinarischen Traditionen Zentralasiens – von handgezogenen Nudeln bis zu langsam gegartem Plov. Bei uns ist Essen mehr als nur Nahrung; es ist ein gemeinschaftliches Erlebnis, geteilt mit Freunden und Familie in einer Atmosphäre, die sich wie zu Hause anfühlt."
+      content: "Willkommen im CARAVAN. Wir bringen die reichen Aromen und die herzliche Gastfreundschaft der Seidenstraße nach Frankfurt. Unsere Küche zelebriert die kulinarischen Traditionen Zentralasiens. Bei uns ist Essen mehr als nur Nahrung; es ist ein gemeinschaftliches Erlebnis, geteilt mit Freunden und Familie in einer Atmosphäre, die sich wie zu Hause anfühlt."
     },
     menu: {
+      journey: "REISE MIT CARAVAN",
       title: "Kulinarische Highlights",
       subtitle: "Eine Auswahl unserer beliebtesten Gerichte. Das Angebot kann saisonal variieren.",
       dishes: {
@@ -48,6 +49,10 @@ export const translations = {
     },
     hours: {
       title: "Öffnungszeiten",
+      open: "Dienstag-Sonntag",
+      openTime: "17:00 - 23:00",
+      kitchen: "Küche geöffnet bis",
+      kitchenTime: "22:00 Uhr",
       weekdays: "Dienstag – Freitag",
       weekend: "Samstag – Sonntag",
       monday: "Montag",
@@ -57,7 +62,7 @@ export const translations = {
     location: {
       title: "Standort",
       address: "Wöllstädter Str. 11, 60385 Frankfurt am Main",
-      district: "Heddernheim / Frankfurt am Main",
+      district: "Bornheim / Frankfurt am Main",
       get_directions: "Route planen",
       call_us: "Anrufen"
     },
@@ -104,9 +109,10 @@ export const translations = {
     },
     about: {
       title: "Our Story",
-      content: "Welcome to CARAVAN. We bring the rich flavors and warm hospitality of the ancient Silk Road to Frankfurt. Our kitchen celebrates the culinary traditions of Central Asia—from hand-pulled noodles to slow-cooked Plov. Here, dining is more than just food; it is a communal experience shared with friends and family in an atmosphere that feels like home."
+      content: "Welcome to CARAVAN. We bring the rich flavors and warm hospitality of the ancient Silk Road to Frankfurt. Our kitchen celebrates the culinary traditions of Central Asia. Here, dining is more than just food; it is a communal experience shared with friends and family in an atmosphere that feels like home."
     },
     menu: {
+      journey: "JOURNEY WITH CARAVAN",
       title: "Menu Highlights",
       subtitle: "A selection of our favorites. Offerings may vary seasonally.",
       dishes: {
@@ -134,6 +140,10 @@ export const translations = {
     },
     hours: {
       title: "Opening Hours",
+      open: "Tuesday-Sunday",
+      openTime: "17:00 - 23:00",
+      kitchen: "Kitchen open until",
+      kitchenTime: "22:00",
       weekdays: "Tuesday – Friday",
       weekend: "Saturday – Sunday",
       monday: "Monday",
@@ -143,7 +153,7 @@ export const translations = {
     location: {
       title: "Location",
       address: "Wöllstädter Str. 11, 60385 Frankfurt am Main",
-      district: "Heddernheim / Frankfurt am Main",
+      district: "Bornheim / Frankfurt am Main",
       get_directions: "Get Directions",
       call_us: "Call Us"
     },
@@ -190,9 +200,10 @@ export const translations = {
     },
     about: {
       title: "Наша история",
-      content: "Добро пожаловать в CARAVAN. Мы привезли во Франкфурт богатые вкусы и теплое гостеприимство Шелкового пути. Наша кухня прославляет кулинарные традиции Центральной Азии — от тянутой лапши до томленого плова. Еда для нас — это не просто пища, а повод собраться с друзьями и семьей в атмосфере домашнего уюта."
+      content: "Добро пожаловать в CARAVAN. Мы привезли во Франкфурт богатые вкусы и теплое гостеприимство Шелкового пути. Наша кухня прославляет кулинарные традиции Центральной Азии. Еда для нас — это не просто пища, а повод собраться с друзьями и семьей в атмосфере домашнего уюта."
     },
     menu: {
+      journey: "ПУТЕШЕСТВИЕ С CARAVAN",
       title: "Хиты меню",
       subtitle: "Избранные блюда. Меню может меняться в зависимости от сезона.",
       dishes: {
@@ -220,6 +231,10 @@ export const translations = {
     },
     hours: {
       title: "Часы работы",
+      open: "Вторник-Воскресенье",
+      openTime: "17:00 - 23:00",
+      kitchen: "Кухня открыта до",
+      kitchenTime: "22:00",
       weekdays: "Вторник – Пятница",
       weekend: "Суббота – Воскресенье",
       monday: "Понедельник",
@@ -276,9 +291,10 @@ export const translations = {
     },
     about: {
       title: "Bizning tariximiz",
-      content: "CARAVAN restoraniga xush kelibsiz. Biz Frankfurt shahriga Ipak yo'lining boy ta'mlari va samimiy mehmondo'stligini olib keldik. Oshxonamiz Markaziy Osiyoning oshpazlik an'analarini nishonlaydi – qo'lda tortilgan lag'mon lagmanidan tortib sekin pishirilgan oshgacha. Bizda ovqatlanish shunchaki ovqat emas; bu do'stlar va oila bilan uyga o'xshagan muhitda baham ko'riladigan jamoaviy tajribadir."
+      content: "CARAVAN restoraniga xush kelibsiz. Biz Frankfurt shahriga Ipak yo'lining boy ta'mlari va samimiy mehmondo'stligini olib keldik. Oshxonamiz Markaziy Osiyoning oshpazlik an'analarini nishonlaydi. Bizda ovqatlanish shunchaki ovqat emas; bu do'stlar va oila bilan uyga o'xshagan muhitda baham ko'riladigan jamoaviy tajribadir."
     },
     menu: {
+      journey: "CARAVAN BILAN SAYOHAT",
       title: "Oshxona diqqatga sazovor taomlar",
       subtitle: "Bizning eng mashhur taomlarimizdan tanlov. Taomlar mavsumga qarab o'zgarishi mumkin.",
       dishes: {
@@ -306,6 +322,10 @@ export const translations = {
     },
     hours: {
       title: "Ish vaqti",
+      open: "Seshanba-Yakshanba",
+      openTime: "17:00 - 23:00",
+      kitchen: "Oshxona ochiq",
+      kitchenTime: "22:00 gacha",
       weekdays: "Seshanba – Juma",
       weekend: "Shanba – Yakshanba",
       monday: "Dushanba",
@@ -315,7 +335,7 @@ export const translations = {
     location: {
       title: "Manzil",
       address: "Wöllstädter Str. 11, 60385 Frankfurt am Main",
-      district: "Heddernheim / Frankfurt am Main",
+      district: "Bornheim / Frankfurt am Main",
       get_directions: "Yo'nalish olish",
       call_us: "Qo'ng'iroq qilish"
     },

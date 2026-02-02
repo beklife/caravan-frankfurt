@@ -1211,7 +1211,7 @@ export default function MenuPage() {
           </div>
           <p className="font-heading text-2xl md:text-3xl tracking-[0.2em] md:tracking-[0.3em] mb-2 text-white">CARAVAN</p>
           <p className="text-white/80 text-sm md:text-base mb-1">Wöllstädter Str. 11, 60385 Frankfurt am Main</p>
-          <p className="text-white/60 text-xs md:text-sm mb-3 md:mb-4">Heddernheim • Frankfurt</p>
+          <p className="text-white/60 text-xs md:text-sm mb-3 md:mb-4">Bornheim • Frankfurt</p>
           <a href="tel:+496995909158" className="text-secondary font-bold tracking-wider text-sm md:text-base hover:text-primary transition-colors">
             069 95909158
           </a>
