@@ -6,44 +6,7 @@
   NODE_VERSION = "20"
   PUPPETEER_CACHE_DIR = "/opt/buildhome/.cache/puppeteer"
 
-# Force trailing slashes on all directories (except files with extensions)
-[[redirects]]
-  from = "/menu"
-  to = "/menu/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/impressum"
-  to = "/impressum/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/datenschutz"
-  to = "/datenschutz/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/usbekisches-restaurant-frankfurt"
-  to = "/usbekisches-restaurant-frankfurt/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/halal-restaurant-frankfurt"
-  to = "/halal-restaurant-frankfurt/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/plov-frankfurt"
-  to = "/plov-frankfurt/"
-  status = 301
-  force = true
-
-# SPA fallback - must be last
+# SPA fallback for client-side routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
