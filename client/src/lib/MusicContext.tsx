@@ -13,6 +13,11 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const audioLoadedRef = useRef(false);
   const autoPlayRequestedRef = useRef(true);
+  const musicPlayingRef = useRef(musicPlaying);
+
+  useEffect(() => {
+    musicPlayingRef.current = musicPlaying;
+  }, [musicPlaying]);
 
   const loadAudio = () => {
     if (audioLoadedRef.current || audioRef.current) return;
@@ -41,7 +46,7 @@ export function MusicProvider({ children }: { children: ReactNode }) {
 
     const handleFirstInteraction = () => {
       if (!autoPlayRequestedRef.current) return;
-      if (musicPlaying) {
+      if (musicPlayingRef.current) {
         document.removeEventListener('click', handleFirstInteraction);
         document.removeEventListener('touchstart', handleFirstInteraction);
         document.removeEventListener('keydown', handleFirstInteraction);
