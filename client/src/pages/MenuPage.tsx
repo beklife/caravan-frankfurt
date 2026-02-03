@@ -107,7 +107,7 @@ const fullMenu = {
     { id: 'tschebureki', image: tscheburekiImage, price: '11.90€', dietary: 'halal' },
     {
       id: 'knackigerstart',
-      image: saladImage,
+      image: null,
       price: '10.90€',
       dietary: 'vegetarian',
       names: { de: 'Knäckiger Start', en: 'Crunchy Start', ru: 'Хрустящая закуска', uz: 'Хрустящая закуска' },
@@ -173,7 +173,7 @@ const fullMenu = {
     },
     {
       id: 'non',
-      image: breadImage,
+      image: null,
       price: '3.90€',
       names: { de: 'Extra Portion Brot (ganzes Fladenbrot)', en: 'Extra Portion Bread (whole flatbread)', ru: 'Дополнительная порция хлеба (целая лепёшка)', uz: 'Qo\'shimcha non (butun non)' },
       descs: {
@@ -215,7 +215,7 @@ const fullMenu = {
     },
     {
       id: 'kannetee06jasmin',
-      image: teaImage,
+      image: null,
       price: '6.50€',
       names: { de: 'Kanne Tee (0.6L) - Jasmin', en: 'Pot of Tea (0.6L) - Jasmine', ru: 'Чайник чая (0.6л) - Жасминовый', uz: 'Choynak choy (0.6L) - Yasmin' },
       descs: {
