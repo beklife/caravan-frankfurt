@@ -14,7 +14,7 @@ export default function PlovFrankfurt() {
     title: "Plov Frankfurt | CARAVAN Restaurant",
     description:
       "Plov in Frankfurt am Main genießen: traditionell im Kasan gegart, mit zartem Fleisch, Karotten und Gewürzen. Authentische usbekische Küche.",
-    canonical: "https://caravan-restaurant.de/plov-frankfurt",
+    canonical: "https://caravan-restaurant.de/plov-frankfurt/",
   });
 
   return (
@@ -29,7 +29,7 @@ export default function PlovFrankfurt() {
             CARAVAN
           </Link>
           <div className="flex items-center gap-3">
-            <Link href="/menu">
+            <Link href="/menu/">
               <Button variant="ghost" className="uppercase [font-family:'Quando',_serif]">Speisekarte</Button>
             </Link>
             <a href="tel:+496995909158">
@@ -55,7 +55,7 @@ export default function PlovFrankfurt() {
               gelbe Karotten und Gewürze – langsam gegart und voller Aroma.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/menu">
+              <Link href="/menu/">
                 <Button className="gap-2">
                   Speisekarte ansehen <ArrowRight className="h-4 w-4" />
                 </Button>
@@ -162,7 +162,7 @@ export default function PlovFrankfurt() {
               herzlichem Service und klassischer zentralasiatischer Gastfreundschaft.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/menu">
+              <Link href="/menu/">
                 <Button>Weitere Gerichte</Button>
               </Link>
               <a href="tel:+496995909158">

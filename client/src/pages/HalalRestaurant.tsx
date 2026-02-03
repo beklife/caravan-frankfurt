@@ -13,7 +13,7 @@ export default function HalalRestaurant() {
     title: "Halal Restaurant Frankfurt | CARAVAN",
     description:
       "Halal‑freundliches Restaurant in Frankfurt am Main. Zentralasiatische Küche mit frischen Zutaten, aromatischen Gewürzen und herzlichem Service.",
-    canonical: "https://caravan-restaurant.de/halal-restaurant-frankfurt",
+    canonical: "https://caravan-restaurant.de/halal-restaurant-frankfurt/",
   });
 
   return (
@@ -28,7 +28,7 @@ export default function HalalRestaurant() {
             CARAVAN
           </Link>
           <div className="flex items-center gap-3">
-            <Link href="/menu">
+            <Link href="/menu/">
               <Button variant="ghost" className="uppercase [font-family:'Quando',_serif]">Speisekarte</Button>
             </Link>
             <a href="tel:+496995909158">
@@ -54,7 +54,7 @@ export default function HalalRestaurant() {
               werden. Perfekt für Familien, Freunde und alle, die ehrliche Küche lieben.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/menu">
+              <Link href="/menu/">
                 <Button className="gap-2">
                   Speisekarte ansehen <ArrowRight className="h-4 w-4" />
                 </Button>
@@ -167,7 +167,7 @@ export default function HalalRestaurant() {
               an dem sich jeder willkommen fühlt. Sprechen Sie uns an, wir beraten gern.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/menu">
+              <Link href="/menu/">
                 <Button>Gerichte entdecken</Button>
               </Link>
               <a href="tel:+496995909158">

@@ -13,7 +13,7 @@ export default function UsbekischesRestaurant() {
     title: "Usbekisches Restaurant Frankfurt | CARAVAN",
     description:
       "Authentisches usbekisches Restaurant in Frankfurt am Main: Plov, Manty, Lagman und mehr. Herzliche Gastfreundschaft, zentrale Lage in Bornheim.",
-    canonical: "https://caravan-restaurant.de/usbekisches-restaurant-frankfurt",
+    canonical: "https://caravan-restaurant.de/usbekisches-restaurant-frankfurt/",
   });
 
   return (
@@ -28,7 +28,7 @@ export default function UsbekischesRestaurant() {
             CARAVAN
           </Link>
           <div className="flex items-center gap-3">
-            <Link href="/menu">
+            <Link href="/menu/">
               <Button variant="ghost" className="uppercase [font-family:'Quando',_serif]">Speisekarte</Button>
             </Link>
             <a href="tel:+496995909158">
@@ -54,7 +54,7 @@ export default function UsbekischesRestaurant() {
               handgerollte Manty und kräftige Lagman‑Nudeln – alles frisch zubereitet.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/menu">
+              <Link href="/menu/">
                 <Button className="gap-2">
                   Speisekarte ansehen <ArrowRight className="h-4 w-4" />
                 </Button>
@@ -160,7 +160,7 @@ export default function UsbekischesRestaurant() {
               teilen Geschichten und bringen die Wärme usbekischer Gastlichkeit nach Frankfurt.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/menu">
+              <Link href="/menu/">
                 <Button>Zur Speisekarte</Button>
               </Link>
               <a href="tel:+496995909158">

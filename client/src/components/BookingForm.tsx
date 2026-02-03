@@ -126,7 +126,6 @@ export default function BookingForm({ lang }: BookingFormProps) {
         <Input
           id="name"
           {...register("name")}
-          placeholder="John Doe"
           className={errors.name ? "border-destructive" : ""}
         />
         {errors.name && (
@@ -144,7 +143,6 @@ export default function BookingForm({ lang }: BookingFormProps) {
           id="email"
           type="email"
           {...register("email")}
-          placeholder="john@example.com"
           className={errors.email ? "border-destructive" : ""}
         />
         {errors.email && (
@@ -162,7 +160,6 @@ export default function BookingForm({ lang }: BookingFormProps) {
           id="phone"
           type="tel"
           {...register("phone")}
-          placeholder="+49 123 456789"
           className={errors.phone ? "border-destructive" : ""}
         />
         {errors.phone && (
@@ -247,12 +244,12 @@ export default function BookingForm({ lang }: BookingFormProps) {
           {...register("message")}
           placeholder={
             lang === "de"
-              ? "Besondere Wünsche oder Allergien..."
+              ? "Besondere Wünsche..."
               : lang === "ru"
-              ? "Особые пожелания или аллергии..."
+              ? "Особые пожелания..."
               : lang === "uz"
-              ? "Maxsus so'rovlar yoki allergiyalar..."
-              : "Special requests or allergies..."
+              ? "Maxsus so'rovlar..."
+              : "Special requests..."
           }
           rows={4}
         />
