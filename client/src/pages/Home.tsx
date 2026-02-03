@@ -4,21 +4,22 @@ import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, ChevronDownIcon as ChevronDown, MailIcon as Mail } from "@/components/icons";
+import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, ChevronDownIcon as ChevronDown, MailIcon as Mail, X } from "@/components/icons";
 import HamburgerButton from "@/components/HamburgerButton";
 import { Button } from "@/components/ui/button";
 
 // Lazy load BookingForm to reduce initial bundle size
 const BookingForm = lazy(() => import("@/components/BookingForm"));
 
-import heroImage from "@assets/stock_images/2024_11_04_Zira_Uzbek_Kitchen_046.webp";
-import plovImage from "@assets/stock_images/menu/osh.webp";
+import heroImage from "@assets/stock_images/hero.webp";
 import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.webp";
-import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.webp";
-import samsaImage from "@assets/stock_images/menu/somsa.webp";
-import shashlikImage from "@assets/stock_images/menu/shashlyk-meat-centralasia-food.webp";
+import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.jpg";
+import samsaImage from "@assets/stock_images/menu/Somsa.webp";
 import teaImage from "@assets/stock_images/menu/tea_1.webp";
 import carpetImage from "@assets/stock_images/persian_carpet.webp";
+import plovImage from "@assets/stock_images/menu/palov.webp";
+import shashlikImage from "@assets/stock_images/menu/Schaschlik_vom_Lamm.webp";
+import kazanKebabImage from "@assets/stock_images/menu/Kazan_Kebab.webp";
 
 const langNames: Record<Language, string> = {
   de: "Deutsch",
@@ -39,6 +40,7 @@ export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; name: string } | null>(null);
   const { musicPlaying, toggleMusic } = useMusic();
 
   const t = translations[lang];
@@ -134,10 +136,10 @@ export default function Home() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollToSection("about")} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.about}</button>
-            <Link href="/menu" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.menu}</Link>
-            <button onClick={() => scrollToSection("contact")} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.contact}</button>
-            <button onClick={() => scrollToSection("reservation")} className={`text-sm font-medium hover:text-primary transition-colors ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.reserve}</button>
+            <button onClick={() => scrollToSection("about")} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.about}</button>
+            <Link href="/menu" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.menu}</Link>
+            <button onClick={() => scrollToSection("contact")} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.contact}</button>
+            <button onClick={() => scrollToSection("reservation")} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.reserve}</button>
 
             <div className="h-4 w-px bg-white/30 mx-2"></div>
 
@@ -225,7 +227,7 @@ export default function Home() {
                     transition={{ duration: 0.15 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[140px]"
                   >
-                    {(["de", "en", "ru", "uz"] as Language[]).map((l) => (
+                    {(["de", "en", "uz", "ru"] as Language[]).map((l) => (
                       <button
                         key={l}
                         data-testid={`button-lang-${l}`}
@@ -292,7 +294,7 @@ export default function Home() {
                     exit={{ opacity: 0, y: -10 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden z-50"
                   >
-                    {(["de", "en", "ru", "uz"] as Language[]).map((l) => (
+                    {(["de", "en", "uz", "ru"] as Language[]).map((l) => (
                       <button
                         key={l}
                         onClick={() => { setLang(l); setLangDropdownOpen(false); }}
@@ -325,10 +327,10 @@ export default function Home() {
               className="md:hidden bg-background border-b border-border absolute top-full left-0 right-0 shadow-lg"
             >
               <div className="flex flex-col p-6 gap-4">
-                <button onClick={() => scrollToSection("about")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.about}</button>
-                <Link href="/menu" className="text-lg text-center font-medium py-2 border-b border-dashed border-border" onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'instant' }); }}>{t.nav.menu}</Link>
-                <button onClick={() => scrollToSection("contact")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.contact}</button>
-                <button onClick={() => scrollToSection("reservation")} className="text-lg font-medium py-2 border-b border-dashed border-border">{t.nav.reserve}</button>
+                <button onClick={() => scrollToSection("about")} className="text-lg font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]">{t.nav.about}</button>
+                <Link href="/menu" className="text-lg text-center font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]" onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'instant' }); }}>{t.nav.menu}</Link>
+                <button onClick={() => scrollToSection("contact")} className="text-lg font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]">{t.nav.contact}</button>
+                <button onClick={() => scrollToSection("reservation")} className="text-lg font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]">{t.nav.reserve}</button>
               </div>
             </motion.div>
           )}
@@ -366,9 +368,6 @@ export default function Home() {
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl font-semibold leading-relaxed">
             {t.hero.subtitle}
-          </p>
-          <p className="md:text-base text-white/90 max-w-3xl bg-black/35 border border-white/20 px-4 py-3 rounded-sm backdrop-blur-sm">
-            {t.hero.notice}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Button size="lg" onClick={() => scrollToSection("reservation")} className="bg-primary hover:bg-primary/90 text-white font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto">
@@ -463,7 +462,7 @@ export default function Home() {
             <MenuCard image={mantyImage} title={t.menu.dishes.manty.name} desc={t.menu.dishes.manty.desc} price="23.90€" />
             <MenuCard image={samsaImage} title={t.menu.dishes.somsa.name} desc={t.menu.dishes.somsa.desc} price="11.90€" />
             <MenuCard image={shashlikImage} title={t.menu.dishes.schaschlikvomlamm.name} desc={t.menu.dishes.schaschlikvomlamm.desc} price="26.90€" />
-            <MenuCard image={""} title={t.menu.dishes.kazankebab.name} desc={t.menu.dishes.kazankebab.desc} price="26.90€" />
+            <MenuCard image={kazanKebabImage} title={t.menu.dishes.kazankebab.name} desc={t.menu.dishes.kazankebab.desc} price="26.90€" />
             <MenuCard image={teaImage} title={t.menu.dishes.kannetee06jasmin.name} desc={t.menu.dishes.kannetee06jasmin.desc} price="6.50€" />
           </div>
           
@@ -482,16 +481,10 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-center text-4xl font-heading font-bold mb-12 text-white">{t.gallery.title}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 h-[500px]">
-             <div className="col-span-2 row-span-2 relative overflow-hidden group rounded-sm">
+             <div className="col-span-2 row-span-2 relative overflow-hidden group rounded-sm cursor-pointer" onClick={() => setLightboxImage({ src: heroImage, name: "CARAVAN Restaurant Frankfurt" })}>
                 <img alt="Authentic Uzbek and Central Asian dishes at CARAVAN Restaurant Frankfurt - Uzbek Plov, Manty, Lagman" src={heroImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
-             <div className="col-span-1 row-span-1 relative overflow-hidden group rounded-sm">
-                <img alt="Handmade Manty dumplings with meat filling and yogurt sauce - traditional Uzbek dish in Frankfurt" src={mantyImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
-             </div>
-             <div className="col-span-1 row-span-1 relative overflow-hidden group rounded-sm">
-                <img alt="Traditional Uzbek Plov with lamb, carrots, and chickpeas cooked in Kazan at CARAVAN Frankfurt" src={plovImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
-             </div>
-             <div className="col-span-2 row-span-1 relative overflow-hidden group rounded-sm">
+             <div className="col-span-2 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer" onClick={() => setLightboxImage({ src: interiorImage, name: "CARAVAN Interior" })}>
                 <img alt="Warm and inviting interior of CARAVAN Restaurant in Bornheim, Frankfurt with traditional decorations" src={interiorImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
           </div>
@@ -557,11 +550,6 @@ export default function Home() {
                      </a>
                    </div>
                  </div>
-
-                 <div className="flex gap-4 mt-4">
-                   <Button className="flex-1 bg-foreground text-background hover:bg-foreground/90">{t.location.get_directions}</Button>
-                   <Button variant="outline" className="flex-1">{t.location.call_us}</Button>
-                 </div>
                </div>
             </motion.div>
 
@@ -592,8 +580,6 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-accent/20 rounded-bl-3xl"></div>
 
               <h2 className="text-3xl font-heading font-bold mb-8">{t.contact.title}</h2>
-              <p className="text-muted-foreground mb-8">{t.contact.catering}</p>
-
               <Suspense fallback={<div className="text-center py-8 text-muted-foreground">Loading form...</div>}>
                 <BookingForm lang={lang} />
               </Suspense>
@@ -635,11 +621,11 @@ export default function Home() {
             </div>
             
             <div className="flex flex-col gap-2 items-center md:items-start">
-               <Link href="/menu" className="hover:text-primary transition-colors text-white/80">{t.nav.menu}</Link>
-               <a href="#about" className="hover:text-primary transition-colors text-white/80">{t.nav.about}</a>
-               <a href="#contact" className="hover:text-primary transition-colors text-white/80">{t.nav.contact}</a>
-               <Link href="/impressum" className="hover:text-primary transition-colors text-white/80">{t.footer.impressum}</Link>
-               <Link href="/datenschutz" className="hover:text-primary transition-colors text-white/80">{t.footer.privacy}</Link>
+               <Link href="/menu" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.nav.menu}</Link>
+               <a href="#about" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.nav.about}</a>
+               <a href="#contact" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.nav.contact}</a>
+               <Link href="/impressum" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.footer.impressum}</Link>
+               <Link href="/datenschutz" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.footer.privacy}</Link>
             </div>
 
             <div className="flex flex-col items-center md:items-end gap-4">
@@ -667,6 +653,51 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {lightboxImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setLightboxImage(null)}
+            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-5xl w-full max-h-[90vh] cursor-default"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setLightboxImage(null)}
+                className="absolute -top-12 right-0 md:-right-12 md:top-0 text-white hover:text-primary transition-colors p-2 bg-white/10 rounded-full backdrop-blur-sm"
+                aria-label="Close"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              {/* Image */}
+              <img
+                src={lightboxImage.src}
+                alt={lightboxImage.name}
+                className="w-full h-full object-contain rounded-lg shadow-2xl"
+              />
+
+              {/* Image Title */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+                <h3 className="text-white text-xl md:text-2xl font-heading font-bold text-center">
+                  {lightboxImage.name}
+                </h3>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -3,11 +3,10 @@ import { Button } from "@/components/ui/button";
 import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, CheckIcon as Check, ArrowRightIcon as ArrowRight } from "@/components/icons";
 import { useSeoMeta } from "@/lib/seo";
 
-import heroImage from "@assets/stock_images/2024_11_04_Zira_Uzbek_Kitchen_046.webp";
-import plovImage from "@assets/stock_images/menu/osh.webp";
+import heroImage from "@assets/stock_images/hero.webp";
 import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.webp";
-import lagmanImage from "@assets/stock_images/menu/uygurishe lagman.webp";
-import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.webp";
+import plovImage from "@assets/stock_images/menu/palov.webp";
+import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.jpg";
 
 export default function UsbekischesRestaurant() {
   useSeoMeta({
@@ -30,10 +29,10 @@ export default function UsbekischesRestaurant() {
           </Link>
           <div className="flex items-center gap-3">
             <Link href="/menu">
-              <Button variant="ghost">Speisekarte</Button>
+              <Button variant="ghost" className="uppercase [font-family:'Quando',_serif]">Speisekarte</Button>
             </Link>
             <a href="tel:+496995909158">
-              <Button>Reservieren</Button>
+              <Button className="uppercase [font-family:'Quando',_serif]">Reservierungsanfrage</Button>
             </a>
           </div>
         </div>
@@ -137,7 +136,6 @@ export default function UsbekischesRestaurant() {
           {[
             { image: plovImage, title: "Plov", text: "Das Herz der usbekischen Küche – langsam gegart im Kasan." },
             { image: mantyImage, title: "Manty", text: "Große Teigtaschen mit saftiger Füllung und Joghurt‑Dip." },
-            { image: lagmanImage, title: "Lagman", text: "Handgezogene Nudeln in kräftiger Brühe mit Gemüse." },
           ].map((dish) => (
             <div key={dish.title} className="rounded-2xl border border-border/60 bg-card overflow-hidden shadow-sm">
               <img src={dish.image} alt={dish.title} className="h-48 w-full object-cover" />

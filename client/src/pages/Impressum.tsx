@@ -134,7 +134,7 @@ export default function Impressum() {
                     transition={{ duration: 0.15 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[140px]"
                   >
-                    {(["de", "en", "ru", "uz"] as Language[]).map((l) => (
+                    {(["de", "en", "uz", "ru"] as Language[]).map((l) => (
                       <button
                         key={l}
                         onClick={() => { setLang(l); setLangDropdownOpen(false); }}
@@ -196,7 +196,7 @@ export default function Impressum() {
                     exit={{ opacity: 0, y: -10 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden z-50"
                   >
-                    {(["de", "en", "ru", "uz"] as Language[]).map((l) => (
+                    {(["de", "en", "uz", "ru"] as Language[]).map((l) => (
                       <button
                         key={l}
                         onClick={() => { setLang(l); setLangDropdownOpen(false); }}
@@ -230,17 +230,17 @@ export default function Impressum() {
               className="md:hidden bg-background border-b border-border absolute top-full left-0 right-0 shadow-lg"
             >
               <div className="flex flex-col p-6 gap-4">
-                <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#about'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary">
+                <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#about'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
                   {lang === 'de' ? 'Über uns' : lang === 'ru' ? 'О нас' : lang === 'uz' ? 'Biz haqida' : 'About Us'}
                 </button>
-                <Link href="/menu" className="text-lg text-center font-medium py-2 border-b border-dashed border-border" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/menu" className="text-lg text-center font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]" onClick={() => setMobileMenuOpen(false)}>
                   {lang === 'de' ? 'Speisekarte' : lang === 'ru' ? 'Меню' : lang === 'uz' ? 'Menyu' : 'Menu'}
                 </Link>
-                <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#contact'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary">
+                <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#contact'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
                   {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакт' : lang === 'uz' ? 'Aloqa' : 'Contact'}
                 </button>
-                <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#reservation'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary">
-                  {lang === 'de' ? 'Reservierung' : lang === 'ru' ? 'Бронирование' : lang === 'uz' ? 'Bronlash' : 'Reservation'}
+                <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#reservation'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
+                  {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' : lang === 'uz' ? 'Bron so\'rovi' : 'Reservation Request'}
                 </button>
               </div>
             </motion.div>

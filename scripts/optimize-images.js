@@ -28,14 +28,11 @@ const imageSettings = {
   // Interior/gallery images
   interior: { quality: 55, effort: 6, maxWidth: 1200 },
   // Menu images - displayed in cards
-  menu: { quality: 60, effort: 6, maxWidth: 800 },
+  menu: { quality: 85, effort: 6, maxWidth: 800 },
 };
 
 // Map specific files to settings
 const fileSettings = {
-  '2024_11_04_Zira_Uzbek_Kitchen_046.webp': 'hero',
-  'persian_carpet.webp': 'background',
-  'cozy_warm_restaurant_5c6c7aae.webp': 'interior',
   'manty_dumplings_cent_45246789.webp': 'menu',
   // Menu images
   'osh.webp': 'menu',
@@ -49,11 +46,12 @@ const fileSettings = {
   'Uzbek-bread-obi-non-thumbnail-square-500x500.webp': 'menu',
 };
 
-async function optimizeWebP(inputPath, settings) {
+async function optimizeImage(inputPath, settings) {
   try {
     const image = sharp(inputPath);
     const metadata = await image.metadata();
     const filename = basename(inputPath);
+    const ext = extname(inputPath).toLowerCase();
 
     // Get original file size
     const originalStats = await stat(inputPath);
@@ -62,8 +60,12 @@ async function optimizeWebP(inputPath, settings) {
     console.log(`\nProcessing: ${filename}`);
     console.log(`  Original: ${metadata.width}x${metadata.height}, ${(originalSize / 1024).toFixed(1)}KB`);
 
-    // Create temporary output file
-    const tempPath = inputPath + '.tmp';
+    // For JPG files, output as WebP with .webp extension
+    const isJpg = ext === '.jpg' || ext === '.jpeg';
+    const outputPath = isJpg
+      ? inputPath.replace(/\.(jpg|jpeg|JPG|JPEG)$/i, '.webp')
+      : inputPath;
+    const tempPath = outputPath + '.tmp';
 
     // Resize if wider than maxWidth
     let pipeline = image;
@@ -90,11 +92,18 @@ async function optimizeWebP(inputPath, settings) {
     const saved = originalSize - newSize;
     const percentage = ((saved / originalSize) * 100).toFixed(1);
 
-    if (newSize < originalSize) {
-      // Replace original with optimized version
-      await unlink(inputPath);
-      await rename(tempPath, inputPath);
-      console.log(`  ✓ Optimized: ${(newSize / 1024).toFixed(1)}KB (saved ${(saved / 1024).toFixed(1)}KB, ${percentage}%)`);
+    if (newSize < originalSize || isJpg) {
+      // For JPG files, delete original and create WebP
+      if (isJpg) {
+        await unlink(inputPath);
+        await rename(tempPath, outputPath);
+        console.log(`  ✓ Converted to WebP: ${(newSize / 1024).toFixed(1)}KB (saved ${(saved / 1024).toFixed(1)}KB, ${percentage}%)`);
+      } else {
+        // For WebP files, replace if smaller
+        await unlink(inputPath);
+        await rename(tempPath, inputPath);
+        console.log(`  ✓ Optimized: ${(newSize / 1024).toFixed(1)}KB (saved ${(saved / 1024).toFixed(1)}KB, ${percentage}%)`);
+      }
       return { saved, percentage };
     } else {
       // Keep original if it's already smaller
@@ -111,21 +120,24 @@ async function optimizeWebP(inputPath, settings) {
 async function processDirectory(dir, defaultSettings = 'menu') {
   try {
     const files = await readdir(dir);
-    const webpFiles = files.filter(f => extname(f).toLowerCase() === '.webp');
+    const imageFiles = files.filter(f => {
+      const ext = extname(f).toLowerCase();
+      return ext === '.webp' || ext === '.jpg' || ext === '.jpeg';
+    });
 
     console.log(`\n${'='.repeat(60)}`);
-    console.log(`Processing ${webpFiles.length} WebP images in ${basename(dir)}/`);
+    console.log(`Processing ${imageFiles.length} images in ${basename(dir)}/`);
     console.log('='.repeat(60));
 
     let totalSaved = 0;
     let filesOptimized = 0;
 
-    for (const file of webpFiles) {
+    for (const file of imageFiles) {
       const inputPath = join(dir, file);
       const settingsKey = fileSettings[file] || defaultSettings;
       const settings = imageSettings[settingsKey];
 
-      const result = await optimizeWebP(inputPath, settings);
+      const result = await optimizeImage(inputPath, settings);
       if (result.saved > 0) {
         totalSaved += result.saved;
         filesOptimized++;
@@ -133,7 +145,7 @@ async function processDirectory(dir, defaultSettings = 'menu') {
     }
 
     console.log(`\n📊 Directory Summary:`);
-    console.log(`  Files optimized: ${filesOptimized}/${webpFiles.length}`);
+    console.log(`  Files optimized: ${filesOptimized}/${imageFiles.length}`);
     console.log(`  Total saved: ${(totalSaved / 1024).toFixed(1)}KB`);
 
     return { totalSaved, filesOptimized };
@@ -144,7 +156,7 @@ async function processDirectory(dir, defaultSettings = 'menu') {
 }
 
 async function main() {
-  console.log('🖼️  WebP Image Optimization for Lighthouse Performance\n');
+  console.log('🖼️  Image Optimization - Converting JPG to WebP with Quality 85\n');
 
   let grandTotalSaved = 0;
   let grandTotalOptimized = 0;

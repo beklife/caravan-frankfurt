@@ -7,12 +7,11 @@ export const translations = {
       menu: "Speisekarte",
       location: "Kontakt",
       contact: "Kontakt",
-      reserve: "Reservieren"
+      reserve: "Reservierungsanfrage"
     },
     hero: {
       title: "CARAVAN – erste Usbekische Küche in Deutschland.",
       subtitle: "Authentische usbekische Küche, warme Gastfreundschaft und lebendige Teekultur in Frankfurt am Main.",
-      notice: "Dies ist die offizielle Website von CARAVAN. Wir bauen die Website noch, daher sind Fotos und Texte Beispiele. Echte Fotos folgen in Kürze. Sie können trotzdem einen Tisch reservieren oder uns kontaktieren.",
       cta_reserve: "Tisch anfragen",
       cta_menu: "Highlights ansehen"
     },
@@ -38,8 +37,8 @@ export const translations = {
         plov: { name: "Plov", desc: "Erlesener Reis, Lammfleisch und Karotten fein gewürzt nach alter usbekischer Art. Frischer Gemüsesalat dazu." },
         pelmeni: { name: "Pelmeni", desc: "Kleine gefüllte Teigtaschen mit Fleischfüllung nach altrussische Art. Servieren mit schmand und frische Salat." },
         manty: { name: "Manty", desc: "Gedämpfte Teigtaschen mit Kalbfleisch nach Usbekische Art. Frische Gemüsesalat dazu." },
-        honimvegetariach: { name: "Honim Vegetariach", desc: "Gedämpfte hauchdünne Teigrolade mit Füllung aus Zucchini, Karotten, Kartoffel und Zwiebel. Frische Gemüsesalat dazu." },
-        warenikiwegetarisch: { name: "Wareniki Wegetarisch", desc: "Kleine Maultaschen Mit Kartoffelfüllung. Frische Gemüsesalat dazu." },
+        honimvegetariach: { name: "Honim Vegetarisch", desc: "Gedämpfte hauchdünne Teigrolade mit Füllung aus Zucchini, Karotten, Kartoffel und Zwiebel. Frische Gemüsesalat dazu." },
+        warenikiwegetarisch: { name: "Wareniki Vegetarisch", desc: "Kleine Maultaschen Mit Kartoffelfüllung. Frische Gemüsesalat dazu." },
         schaschlikvomlamm: { name: "Schaschlik vom Lamm", desc: "Saftige Lammfleischstückchen mit Tomaten-Yoghurt-Knoblauch-Sauce und frischem Gemüsesalat." },
         schaschlikvomhaehnchen: { name: "Schaschlik vom Hähnchen", desc: "Saftige Hähnchenfleischstückchen mit Tomaten-Yoghurt-Knoblauch-Sauce und frischem Gemüsesalat." },
         caravandessert: { name: "Caravan Dessert", desc: "Gebackene Apetithäppchen aus Blätterteig mit Halwa und Äpfeln. Vanillesauce dazu." },
@@ -70,7 +69,7 @@ export const translations = {
       title: "Einblicke"
     },
     contact: {
-      title: "Reservierung & Kontakt",
+      title: "Reservierungsanfrage & Kontakt",
       form: {
         name: "Ihr Name",
         email: "E-Mail",
@@ -80,7 +79,7 @@ export const translations = {
         time: "Uhrzeit",
         message: "Nachricht (Optional)",
         submit: "Anfrage senden",
-        success: "Ihre Reservierungsanfrage wurde erfolgreich gesendet! Wir melden uns in Kürze.",
+        success: "Ihre Reservierungsanfrage wurde erfolgreich übermittelt.\nWir prüfen die Verfügbarkeit und melden uns in Kürze bei Ihnen.",
         error: "Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut."
       },
       fallback: "Funktioniert das Formular nicht? Schreiben Sie uns:",
@@ -98,7 +97,7 @@ export const translations = {
       menu: "Menu",
       location: "Location",
       contact: "Contact",
-      reserve: "Reserve"
+      reserve: "Reservation Request"
     },
     hero: {
       title: "CARAVAN – first Uzbek cuisine in Frankfurt and Germany.",
@@ -161,7 +160,7 @@ export const translations = {
       title: "Gallery"
     },
     contact: {
-      title: "Reservations & Contact",
+      title: "Reservation Request & Contact",
       form: {
         name: "Your Name",
         email: "Email",
@@ -189,7 +188,7 @@ export const translations = {
       menu: "Меню",
       location: "Локация",
       contact: "Контакты",
-      reserve: "Бронь"
+      reserve: "Запрос на бронирование"
     },
     hero: {
       title: "CARAVAN — первая узбекская кухня во Франкфурте и Германии.",
@@ -252,7 +251,7 @@ export const translations = {
       title: "Галерея"
     },
     contact: {
-      title: "Бронь и Контакты",
+      title: "Запрос на бронирование и Контакты",
       form: {
         name: "Ваше Имя",
         email: "Email",
@@ -280,7 +279,7 @@ export const translations = {
       menu: "Menyu",
       location: "Manzil",
       contact: "Aloqa",
-      reserve: "Bron qilish"
+      reserve: "Bron so'rovi"
     },
     hero: {
       title: "CARAVAN – Frankfurt va Germaniyada birinchi O'zbek oshxonasi.",
@@ -343,7 +342,7 @@ export const translations = {
       title: "Galereya"
     },
     contact: {
-      title: "Bron qilish va Aloqa",
+      title: "Bron so'rovi va Aloqa",
       form: {
         name: "Ismingiz",
         email: "Elektron pochta",
@@ -360,7 +359,7 @@ export const translations = {
       catering: "So'rov bo'yicha ketering xizmati mavjud."
     },
     footer: {
-      impressum: "Impressum",
+      impressum: "Huquqiy ma'lumot",
       privacy: "Maxfiylik siyosati",
       rights: "Barcha huquqlar himoyalangan."
     }

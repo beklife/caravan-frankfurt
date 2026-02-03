@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, CheckIcon as Check, ArrowRightIcon as ArrowRight } from "@/components/icons";
 import { useSeoMeta } from "@/lib/seo";
 
-import heroImage from "@assets/stock_images/menu/shashlyk-meat-centralasia-food.webp";
+import heroImage from "@assets/stock_images/hero.webp";
 import teaImage from "@assets/stock_images/menu/tea_1.webp";
-import samsaImage from "@assets/stock_images/menu/somsa.webp";
-import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.webp";
+import samsaImage from "@assets/stock_images/menu/Somsa.webp";
+import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.jpg";
 
 export default function HalalRestaurant() {
   useSeoMeta({
@@ -29,10 +29,10 @@ export default function HalalRestaurant() {
           </Link>
           <div className="flex items-center gap-3">
             <Link href="/menu">
-              <Button variant="ghost">Speisekarte</Button>
+              <Button variant="ghost" className="uppercase [font-family:'Quando',_serif]">Speisekarte</Button>
             </Link>
             <a href="tel:+496995909158">
-              <Button>Reservieren</Button>
+              <Button className="uppercase [font-family:'Quando',_serif]">Reservierungsanfrage</Button>
             </a>
           </div>
         </div>
