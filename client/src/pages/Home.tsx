@@ -4,7 +4,7 @@ import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, ChevronDownIcon as ChevronDown, MailIcon as Mail } from "@/components/icons";
+import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, ChevronDownIcon as ChevronDown, MailIcon as Mail, X } from "@/components/icons";
 import HamburgerButton from "@/components/HamburgerButton";
 import { Button } from "@/components/ui/button";
 
@@ -40,6 +40,7 @@ export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; name: string } | null>(null);
   const { musicPlaying, toggleMusic } = useMusic();
 
   const t = translations[lang];
@@ -480,16 +481,10 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-center text-4xl font-heading font-bold mb-12 text-white">{t.gallery.title}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 h-[500px]">
-             <div className="col-span-2 row-span-2 relative overflow-hidden group rounded-sm">
+             <div className="col-span-2 row-span-2 relative overflow-hidden group rounded-sm cursor-pointer" onClick={() => setLightboxImage({ src: heroImage, name: "CARAVAN Restaurant Frankfurt" })}>
                 <img alt="Authentic Uzbek and Central Asian dishes at CARAVAN Restaurant Frankfurt - Uzbek Plov, Manty, Lagman" src={heroImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
-             <div className="col-span-1 row-span-1 relative overflow-hidden group rounded-sm">
-                <img alt="Handmade Manty dumplings with meat filling and yogurt sauce - traditional Uzbek dish in Frankfurt" src={mantyImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
-             </div>
-             <div className="col-span-1 row-span-1 relative overflow-hidden group rounded-sm">
-                <img alt="Traditional Uzbek Plov with lamb, carrots, and chickpeas cooked in Kazan at CARAVAN Frankfurt" src={plovImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
-             </div>
-             <div className="col-span-2 row-span-1 relative overflow-hidden group rounded-sm">
+             <div className="col-span-2 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer" onClick={() => setLightboxImage({ src: interiorImage, name: "CARAVAN Interior" })}>
                 <img alt="Warm and inviting interior of CARAVAN Restaurant in Bornheim, Frankfurt with traditional decorations" src={interiorImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
           </div>
@@ -658,6 +653,51 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {lightboxImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setLightboxImage(null)}
+            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-5xl w-full max-h-[90vh] cursor-default"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setLightboxImage(null)}
+                className="absolute -top-12 right-0 md:-right-12 md:top-0 text-white hover:text-primary transition-colors p-2 bg-white/10 rounded-full backdrop-blur-sm"
+                aria-label="Close"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              {/* Image */}
+              <img
+                src={lightboxImage.src}
+                alt={lightboxImage.name}
+                className="w-full h-full object-contain rounded-lg shadow-2xl"
+              />
+
+              {/* Image Title */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+                <h3 className="text-white text-xl md:text-2xl font-heading font-bold text-center">
+                  {lightboxImage.name}
+                </h3>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

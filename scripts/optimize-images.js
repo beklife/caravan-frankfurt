@@ -33,9 +33,6 @@ const imageSettings = {
 
 // Map specific files to settings
 const fileSettings = {
-  'hero.JPG': 'hero',
-  'persian_carpet.webp': 'background',
-  'cozy_warm_restaurant_5c6c7aae.jpg': 'interior',
   'manty_dumplings_cent_45246789.webp': 'menu',
   // Menu images
   'osh.webp': 'menu',
