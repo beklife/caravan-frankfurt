@@ -233,7 +233,7 @@ export default function Datenschutz() {
                 <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#about'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
                   {lang === 'de' ? 'Über uns' : lang === 'ru' ? 'О нас' : lang === 'uz' ? 'Biz haqida' : 'About Us'}
                 </button>
-                <Link href="/menu" className="text-lg text-center font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/menu/" className="text-lg text-center font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]" onClick={() => setMobileMenuOpen(false)}>
                   {lang === 'de' ? 'Speisekarte' : lang === 'ru' ? 'Меню' : lang === 'uz' ? 'Menyu' : 'Menu'}
                 </Link>
                 <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#contact'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">

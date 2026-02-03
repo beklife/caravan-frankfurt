@@ -25,11 +25,17 @@ function App() {
               <Switch>
                 <Route path="/" component={Home} />
                 <Route path="/menu" component={MenuPage} />
+                <Route path="/menu/" component={MenuPage} />
                 <Route path="/impressum" component={Impressum} />
+                <Route path="/impressum/" component={Impressum} />
                 <Route path="/datenschutz" component={Datenschutz} />
+                <Route path="/datenschutz/" component={Datenschutz} />
                 <Route path="/usbekisches-restaurant-frankfurt" component={UsbekischesRestaurant} />
+                <Route path="/usbekisches-restaurant-frankfurt/" component={UsbekischesRestaurant} />
                 <Route path="/halal-restaurant-frankfurt" component={HalalRestaurant} />
+                <Route path="/halal-restaurant-frankfurt/" component={HalalRestaurant} />
                 <Route path="/plov-frankfurt" component={PlovFrankfurt} />
+                <Route path="/plov-frankfurt/" component={PlovFrankfurt} />
                 <Route component={NotFound} />
               </Switch>
             </Router>

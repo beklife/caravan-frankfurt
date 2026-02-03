@@ -137,7 +137,7 @@ export default function Home() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection("about")} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.about}</button>
-            <Link href="/menu" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.menu}</Link>
+            <Link href="/menu/" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.menu}</Link>
             <button onClick={() => scrollToSection("contact")} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.contact}</button>
             <button onClick={() => scrollToSection("reservation")} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.reserve}</button>
 
@@ -328,7 +328,7 @@ export default function Home() {
             >
               <div className="flex flex-col p-6 gap-4">
                 <button onClick={() => scrollToSection("about")} className="text-lg font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]">{t.nav.about}</button>
-                <Link href="/menu" className="text-lg text-center font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]" onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'instant' }); }}>{t.nav.menu}</Link>
+                <Link href="/menu/" className="text-lg text-center font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]" onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'instant' }); }}>{t.nav.menu}</Link>
                 <button onClick={() => scrollToSection("contact")} className="text-lg font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]">{t.nav.contact}</button>
                 <button onClick={() => scrollToSection("reservation")} className="text-lg font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]">{t.nav.reserve}</button>
               </div>
@@ -467,7 +467,7 @@ export default function Home() {
           </div>
           
           <div className="mt-12 text-center">
-            <Link href="/menu" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>
+            <Link href="/menu/" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>
               <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white font-heading uppercase tracking-wide">
                 {lang === 'de' ? 'Vollständige Speisekarte' : lang === 'ru' ? 'Полное меню' : lang === 'uz' ? 'To\'liq menyu' : 'View Full Menu'}
               </Button>
@@ -621,11 +621,11 @@ export default function Home() {
             </div>
             
             <div className="flex flex-col gap-2 items-center md:items-start">
-               <Link href="/menu" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.nav.menu}</Link>
+               <Link href="/menu/" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.nav.menu}</Link>
                <a href="#about" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.nav.about}</a>
                <a href="#contact" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.nav.contact}</a>
-               <Link href="/impressum" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.footer.impressum}</Link>
-               <Link href="/datenschutz" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.footer.privacy}</Link>
+               <Link href="/impressum/" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.footer.impressum}</Link>
+               <Link href="/datenschutz/" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.footer.privacy}</Link>
             </div>
 
             <div className="flex flex-col items-center md:items-end gap-4">
