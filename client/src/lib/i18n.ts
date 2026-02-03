@@ -7,7 +7,7 @@ export const translations = {
       menu: "Speisekarte",
       location: "Kontakt",
       contact: "Kontakt",
-      reserve: "Reservieren"
+      reserve: "Reservierungsanfrage"
     },
     hero: {
       title: "CARAVAN – erste Usbekische Küche in Deutschland.",
@@ -69,7 +69,7 @@ export const translations = {
       title: "Einblicke"
     },
     contact: {
-      title: "Reservierung & Kontakt",
+      title: "Reservierungsanfrage & Kontakt",
       form: {
         name: "Ihr Name",
         email: "E-Mail",
@@ -97,7 +97,7 @@ export const translations = {
       menu: "Menu",
       location: "Location",
       contact: "Contact",
-      reserve: "Reserve"
+      reserve: "Reservation Request"
     },
     hero: {
       title: "CARAVAN – first Uzbek cuisine in Frankfurt and Germany.",
@@ -160,7 +160,7 @@ export const translations = {
       title: "Gallery"
     },
     contact: {
-      title: "Reservations & Contact",
+      title: "Reservation Request & Contact",
       form: {
         name: "Your Name",
         email: "Email",
@@ -188,7 +188,7 @@ export const translations = {
       menu: "Меню",
       location: "Локация",
       contact: "Контакты",
-      reserve: "Бронь"
+      reserve: "Запрос на бронирование"
     },
     hero: {
       title: "CARAVAN — первая узбекская кухня во Франкфурте и Германии.",
@@ -251,7 +251,7 @@ export const translations = {
       title: "Галерея"
     },
     contact: {
-      title: "Бронь и Контакты",
+      title: "Запрос на бронирование и Контакты",
       form: {
         name: "Ваше Имя",
         email: "Email",
@@ -279,7 +279,7 @@ export const translations = {
       menu: "Menyu",
       location: "Manzil",
       contact: "Aloqa",
-      reserve: "Bron qilish"
+      reserve: "Bron so'rovi"
     },
     hero: {
       title: "CARAVAN – Frankfurt va Germaniyada birinchi O'zbek oshxonasi.",
@@ -342,7 +342,7 @@ export const translations = {
       title: "Galereya"
     },
     contact: {
-      title: "Bron qilish va Aloqa",
+      title: "Bron so'rovi va Aloqa",
       form: {
         name: "Ismingiz",
         email: "Elektron pochta",

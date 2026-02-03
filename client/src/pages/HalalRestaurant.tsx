@@ -29,10 +29,10 @@ export default function HalalRestaurant() {
           </Link>
           <div className="flex items-center gap-3">
             <Link href="/menu">
-              <Button variant="ghost">Speisekarte</Button>
+              <Button variant="ghost" className="uppercase [font-family:'Quando',_serif]">Speisekarte</Button>
             </Link>
             <a href="tel:+496995909158">
-              <Button>Reservieren</Button>
+              <Button className="uppercase [font-family:'Quando',_serif]">Reservierungsanfrage</Button>
             </a>
           </div>
         </div>
