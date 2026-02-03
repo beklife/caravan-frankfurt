@@ -79,7 +79,7 @@ export const translations = {
         time: "Uhrzeit",
         message: "Nachricht (Optional)",
         submit: "Anfrage senden",
-        success: "Ihre Reservierungsanfrage wurde erfolgreich gesendet! Wir melden uns in Kürze.",
+        success: "Ihre Reservierungsanfrage wurde erfolgreich übermittelt.\nWir prüfen die Verfügbarkeit und melden uns in Kürze bei Ihnen.",
         error: "Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut."
       },
       fallback: "Funktioniert das Formular nicht? Schreiben Sie uns:",
@@ -359,7 +359,7 @@ export const translations = {
       catering: "So'rov bo'yicha ketering xizmati mavjud."
     },
     footer: {
-      impressum: "Impressum",
+      impressum: "Huquqiy ma'lumot",
       privacy: "Maxfiylik siyosati",
       rights: "Barcha huquqlar himoyalangan."
     }

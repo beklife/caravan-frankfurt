@@ -11,14 +11,15 @@ import { Button } from "@/components/ui/button";
 // Lazy load BookingForm to reduce initial bundle size
 const BookingForm = lazy(() => import("@/components/BookingForm"));
 
-import heroImage from "@assets/stock_images/hero.jpg";
-import plovImage from "@assets/stock_images/menu/osh.webp";
-import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.jpg";
+import heroImage from "@assets/stock_images/hero.webp";
+import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.webp";
 import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.jpg";
-import samsaImage from "@assets/stock_images/menu/Somsa.jpg";
-import shashlikImage from "@assets/stock_images/menu/shashlyk-meat-centralasia-food.webp";
+import samsaImage from "@assets/stock_images/menu/Somsa.webp";
 import teaImage from "@assets/stock_images/menu/tea_1.webp";
 import carpetImage from "@assets/stock_images/persian_carpet.webp";
+import plovImage from "@assets/stock_images/menu/palov.webp";
+import shashlikImage from "@assets/stock_images/menu/Schaschlik_vom_Lamm.webp";
+import kazanKebabImage from "@assets/stock_images/menu/Kazan_Kebab.webp";
 
 const langNames: Record<Language, string> = {
   de: "Deutsch",
@@ -460,7 +461,7 @@ export default function Home() {
             <MenuCard image={mantyImage} title={t.menu.dishes.manty.name} desc={t.menu.dishes.manty.desc} price="23.90€" />
             <MenuCard image={samsaImage} title={t.menu.dishes.somsa.name} desc={t.menu.dishes.somsa.desc} price="11.90€" />
             <MenuCard image={shashlikImage} title={t.menu.dishes.schaschlikvomlamm.name} desc={t.menu.dishes.schaschlikvomlamm.desc} price="26.90€" />
-            <MenuCard image={""} title={t.menu.dishes.kazankebab.name} desc={t.menu.dishes.kazankebab.desc} price="26.90€" />
+            <MenuCard image={kazanKebabImage} title={t.menu.dishes.kazankebab.name} desc={t.menu.dishes.kazankebab.desc} price="26.90€" />
             <MenuCard image={teaImage} title={t.menu.dishes.kannetee06jasmin.name} desc={t.menu.dishes.kannetee06jasmin.desc} price="6.50€" />
           </div>
           
@@ -554,11 +555,6 @@ export default function Home() {
                      </a>
                    </div>
                  </div>
-
-                 <div className="flex gap-4 mt-4">
-                   <Button className="flex-1 bg-foreground text-background hover:bg-foreground/90">{t.location.get_directions}</Button>
-                   <Button variant="outline" className="flex-1">{t.location.call_us}</Button>
-                 </div>
                </div>
             </motion.div>
 
@@ -589,8 +585,6 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-accent/20 rounded-bl-3xl"></div>
 
               <h2 className="text-3xl font-heading font-bold mb-8">{t.contact.title}</h2>
-              <p className="text-muted-foreground mb-8">{t.contact.catering}</p>
-
               <Suspense fallback={<div className="text-center py-8 text-muted-foreground">Loading form...</div>}>
                 <BookingForm lang={lang} />
               </Suspense>

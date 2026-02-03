@@ -35,7 +35,7 @@ const imageSettings = {
 const fileSettings = {
   'hero.JPG': 'hero',
   'persian_carpet.webp': 'background',
-  'cozy_warm_restaurant_5c6c7aae.webp': 'interior',
+  'cozy_warm_restaurant_5c6c7aae.jpg': 'interior',
   'manty_dumplings_cent_45246789.webp': 'menu',
   // Menu images
   'osh.webp': 'menu',

@@ -110,7 +110,7 @@ const fullMenu = {
       image: null,
       price: '10.90€',
       dietary: 'vegetarian',
-      names: { de: 'Knäckiger Start', en: 'Crunchy Start', ru: 'Хрустящая закуска', uz: 'Хрустящая закуска' },
+      names: { de: 'Knäckiger Start', en: 'Crunchy Start', ru: 'Хрустящая закуска', uz: 'Xırtıldagan boshlanish' },
       descs: {
         de: 'Sauergürkensalat - Bestehend aus hauseingeleg ten sauren Gurken, Tomaten und Weißkohl.',
         en: 'Assortment of home-made pickled cucumbers, tomatoes, and cabbage.',

@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, CheckIcon as Check, ArrowRightIcon as ArrowRight } from "@/components/icons";
 import { useSeoMeta } from "@/lib/seo";
 
-import heroImage from "@assets/stock_images/menu/osh.webp";
-import plovImage from "@assets/stock_images/menu/osh.webp";
-import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.jpg";
+import heroImage from "@assets/stock_images/hero.webp";
+import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.webp";
+import plovImage from "@assets/stock_images/menu/palov.webp";
 import teaImage from "@assets/stock_images/menu/tea_1.webp";
 import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.jpg";
 

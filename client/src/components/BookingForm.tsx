@@ -98,6 +98,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
           title: "Success!",
           description: t.contact.form.success,
           variant: "default",
+          duration: Infinity,
         });
         reset();
       } else {
