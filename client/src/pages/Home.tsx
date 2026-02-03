@@ -11,11 +11,11 @@ import { Button } from "@/components/ui/button";
 // Lazy load BookingForm to reduce initial bundle size
 const BookingForm = lazy(() => import("@/components/BookingForm"));
 
-import heroImage from "@assets/stock_images/2024_11_04_Zira_Uzbek_Kitchen_046.webp";
+import heroImage from "@assets/stock_images/hero.jpg";
 import plovImage from "@assets/stock_images/menu/osh.webp";
-import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.webp";
-import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.webp";
-import samsaImage from "@assets/stock_images/menu/somsa.webp";
+import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.jpg";
+import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.jpg";
+import samsaImage from "@assets/stock_images/menu/Somsa.jpg";
 import shashlikImage from "@assets/stock_images/menu/shashlyk-meat-centralasia-food.webp";
 import teaImage from "@assets/stock_images/menu/tea_1.webp";
 import carpetImage from "@assets/stock_images/persian_carpet.webp";
@@ -366,9 +366,6 @@ export default function Home() {
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl font-semibold leading-relaxed">
             {t.hero.subtitle}
-          </p>
-          <p className="md:text-base text-white/90 max-w-3xl bg-black/35 border border-white/20 px-4 py-3 rounded-sm backdrop-blur-sm">
-            {t.hero.notice}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Button size="lg" onClick={() => scrollToSection("reservation")} className="bg-primary hover:bg-primary/90 text-white font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto">

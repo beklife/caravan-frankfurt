@@ -5,8 +5,8 @@ import { useSeoMeta } from "@/lib/seo";
 
 import heroImage from "@assets/stock_images/menu/shashlyk-meat-centralasia-food.webp";
 import teaImage from "@assets/stock_images/menu/tea_1.webp";
-import samsaImage from "@assets/stock_images/menu/somsa.webp";
-import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.webp";
+import samsaImage from "@assets/stock_images/menu/Somsa.jpg";
+import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.jpg";
 
 export default function HalalRestaurant() {
   useSeoMeta({

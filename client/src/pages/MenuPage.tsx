@@ -8,17 +8,23 @@ import { ArrowLeftIcon as ArrowLeft, ChevronDownIcon as ChevronDown, X } from "@
 import HamburgerButton from "@/components/HamburgerButton";
 import { Button } from "@/components/ui/button";
 
-import plovImage from "@assets/stock_images/menu/osh.webp";
+import plovImage from "@assets/stock_images/menu/palov.webp";
 import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.webp";
-import lagmanImage from "@assets/stock_images/menu/uygurishe lagman.webp";
-import samsaImage from "@assets/stock_images/menu/somsa.webp";
-import shashlikImage from "@assets/stock_images/menu/shashlyk-meat-centralasia-food.webp";
+import samsaImage from "@assets/stock_images/menu/Somsa.webp";
+import shashlikLammImage from "@assets/stock_images/menu/Schaschlik_vom_Lamm.webp";
+import shashlikHaehnchenImage from "@assets/stock_images/menu/Schaschlik_vom_Hahnchen.webp";
 import teaImage from "@assets/stock_images/menu/tea_1.webp";
 import saladImage from "@assets/stock_images/menu/salat.webp";
 import breadImage from "@assets/stock_images/menu/Uzbek-bread-obi-non-thumbnail-square-500x500.webp";
-import ayranImage from "@assets/stock_images/menu/Ayran.webp";
-import kompotImage from "@assets/stock_images/menu/kompot.webp";
 import carpetImage from "@assets/stock_images/persian_carpet.webp";
+import schorpaImage from "@assets/stock_images/menu/Schorpa.webp";
+import tscheburekiImage from "@assets/stock_images/menu/Tschebureki.webp";
+import karottensalatImage from "@assets/stock_images/menu/Karottensalat.webp";
+import atschuchuksalatImage from "@assets/stock_images/menu/Atschuchuksalat.webp";
+import kazanKebabImage from "@assets/stock_images/menu/Kazan_Kebab.webp";
+import kazanKebabHaehnchenImage from "@assets/stock_images/menu/Kazan_Kebab_Hahnchen.webp";
+import honimVegetarischImage from "@assets/stock_images/menu/Honim_Vegetarisch.webp";
+import honigMedovikKuchenImage from "@assets/stock_images/menu/Honig_Medovik_Kuchen.webp";
 
 const langNames: Record<Language, string> = {
   de: "Deutsch",
@@ -91,14 +97,14 @@ const menuCategories = {
 
 const fullMenu = {
   soups: [
-    { id: 'schorpa', image: null, price: '12.90€', dietary: 'halal' },
+    { id: 'schorpa', image: schorpaImage, price: '12.90€', dietary: 'halal' },
     { id: 'borsch', image: null, price: '12.90€', dietary: 'halal' },
     { id: 'chuchvara', image: null, price: '13.90€', dietary: 'halal' },
     { id: 'mastava', image: null, price: '12.90€', dietary: 'halal' },
   ],
   appetizers: [
     { id: 'somsa', image: samsaImage, price: '11.90€', dietary: 'halal' },
-    { id: 'tschebureki', image: null, price: '11.90€', dietary: 'halal' },
+    { id: 'tschebureki', image: tscheburekiImage, price: '11.90€', dietary: 'halal' },
     {
       id: 'knackigerstart',
       image: saladImage,
@@ -112,21 +118,21 @@ const fullMenu = {
         uz: 'Tuzlangan bodring, pomidor va karam salati.'
       }
     },
-    { id: 'karottensalat', image: null, price: '9.90€', dietary: 'vegan' },
-    { id: 'atschuchuksalat', image: null, price: '9.90€', dietary: 'vegan' },
+    { id: 'karottensalat', image: karottensalatImage, price: '9.90€', dietary: 'vegan' },
+    { id: 'atschuchuksalat', image: atschuchuksalatImage, price: '9.90€', dietary: 'vegan' },
   ],
   mains: [
-    { id: 'kazankebab', image: null, price: '26.90€', dietary: 'halal' },
-    { id: 'kazankebabhaehnchen', image: null, price: '25.90€', dietary: 'halal' },
+    { id: 'kazankebab', image: kazanKebabImage, price: '26.90€', dietary: 'halal' },
+    { id: 'kazankebabhaehnchen', image: kazanKebabHaehnchenImage, price: '25.90€', dietary: 'halal' },
     { id: 'plov', image: plovImage, price: '17.90€', dietary: 'halal' },
     { id: 'pelmeni', image: null, price: '22.90€', dietary: 'halal' },
     { id: 'manty', image: mantyImage, price: '23.90€', dietary: 'halal' },
-    { id: 'honimvegetariach', image: null, price: '21.90€', dietary: 'vegetarian' },
+    { id: 'honimvegetariach', image: honimVegetarischImage, price: '21.90€', dietary: 'vegetarian' },
     { id: 'warenikiwegetarisch', image: null, price: '21.90€', dietary: 'vegetarian' },
   ],
   grills: [
-    { id: 'schaschlikvomlamm', image: shashlikImage, price: '26.90€', dietary: 'halal' },
-    { id: 'schaschlikvomhaehnchen', image: null, price: '25.90€', dietary: 'halal' },
+    { id: 'schaschlikvomlamm', image: shashlikLammImage, price: '26.90€', dietary: 'halal' },
+    { id: 'schaschlikvomhaehnchen', image: shashlikHaehnchenImage, price: '25.90€', dietary: 'halal' },
   ],
   sides: [
     {
@@ -192,7 +198,7 @@ const fullMenu = {
   ],
   desserts: [
     { id: 'caravandessert', image: null, price: '7.90€', dietary: 'vegetarian' },
-    { id: 'honigmedovikkuchen', image: null, price: '8.90€', dietary: 'vegetarian' },
+    { id: 'honigmedovikkuchen', image: honigMedovikKuchenImage, price: '8.90€', dietary: 'vegetarian' },
   ],
   drinks: [
     {

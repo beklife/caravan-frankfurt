@@ -12,7 +12,6 @@ export const translations = {
     hero: {
       title: "CARAVAN – erste Usbekische Küche in Deutschland.",
       subtitle: "Authentische usbekische Küche, warme Gastfreundschaft und lebendige Teekultur in Frankfurt am Main.",
-      notice: "Dies ist die offizielle Website von CARAVAN. Wir bauen die Website noch, daher sind Fotos und Texte Beispiele. Echte Fotos folgen in Kürze. Sie können trotzdem einen Tisch reservieren oder uns kontaktieren.",
       cta_reserve: "Tisch anfragen",
       cta_menu: "Highlights ansehen"
     },
