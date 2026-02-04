@@ -13,7 +13,7 @@ const langNames: Record<Language, string> = {
   de: "Deutsch",
   en: "English",
   ru: "Русский",
-  uz: "O'zbek"
+  uz: "O‘zbek"
 };
 
 const langFlags: Record<Language, string> = {
@@ -240,7 +240,7 @@ export default function Impressum() {
                   {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакт' : lang === 'uz' ? 'Aloqa' : 'Contact'}
                 </button>
                 <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#reservation'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
-                  {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' : lang === 'uz' ? 'Bron so\'rovi' : 'Reservation Request'}
+                  {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' : lang === 'uz' ? 'Bron so‘rovi' : 'Reservation Request'}
                 </button>
               </div>
             </motion.div>
@@ -252,12 +252,12 @@ export default function Impressum() {
       <main className="container mx-auto px-4 md:px-6 py-8 md:py-16 relative z-10 max-w-4xl">
         <div className="bg-card/90 backdrop-blur-md p-6 md:p-12 rounded-sm border border-border shadow-xl">
           <h1 className="text-3xl md:text-4xl font-heading font-bold mb-8 text-primary">
-            {lang === 'de' ? 'Impressum' : lang === 'ru' ? 'Импрессум' : lang === 'uz' ? 'Huquqiy ma\'lumot' : 'Imprint'}
+            {lang === 'de' ? 'Impressum' : lang === 'ru' ? 'Импрессум' : lang === 'uz' ? 'Huquqiy ma’lumot' : 'Imprint'}
           </h1>
 
           <div className="prose prose-neutral dark:prose-invert max-w-none">
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
-              {lang === 'de' ? 'Angaben gemäß § 5 TMG' : lang === 'ru' ? 'Информация согласно § 5 TMG' : lang === 'uz' ? '§ 5 TMG ga muvofiq ma\'lumot' : 'Information according to § 5 TMG'}
+              {lang === 'de' ? 'Angaben gemäß § 5 TMG' : lang === 'ru' ? 'Информация согласно § 5 TMG' : lang === 'uz' ? '§ 5 TMG ga muvofiq ma’lumot' : 'Information according to § 5 TMG'}
             </h2>
 
             <p className="mb-4">

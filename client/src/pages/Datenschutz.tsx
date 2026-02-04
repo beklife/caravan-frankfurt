@@ -13,7 +13,7 @@ const langNames: Record<Language, string> = {
   de: "Deutsch",
   en: "English",
   ru: "Русский",
-  uz: "O'zbek"
+  uz: "O‘zbek"
 };
 
 const langFlags: Record<Language, string> = {
@@ -240,7 +240,7 @@ export default function Datenschutz() {
                   {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакт' : lang === 'uz' ? 'Aloqa' : 'Contact'}
                 </button>
                 <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#reservation'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
-                  {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' : lang === 'uz' ? 'Bron so\'rovi' : 'Reservation Request'}
+                  {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' : lang === 'uz' ? 'Bron so‘rovi' : 'Reservation Request'}
                 </button>
               </div>
             </motion.div>
@@ -257,11 +257,11 @@ export default function Datenschutz() {
 
           <div className="prose prose-neutral dark:prose-invert max-w-none">
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
-              {lang === 'de' ? '1. Datenschutz auf einen Blick' : lang === 'ru' ? '1. Краткий обзор защиты данных' : lang === 'uz' ? '1. Ma\'lumotlar himoyasi haqida qisqacha' : '1. Data Protection at a Glance'}
+              {lang === 'de' ? '1. Datenschutz auf einen Blick' : lang === 'ru' ? '1. Краткий обзор защиты данных' : lang === 'uz' ? '1. Ma’lumotlar himoyasi haqida qisqacha' : '1. Data Protection at a Glance'}
             </h2>
 
             <h3 className="text-xl font-semibold mt-6 mb-2">
-              {lang === 'de' ? 'Allgemeine Hinweise' : lang === 'ru' ? 'Общие замечания' : lang === 'uz' ? 'Umumiy ma\'lumotlar' : 'General Information'}
+              {lang === 'de' ? 'Allgemeine Hinweise' : lang === 'ru' ? 'Общие замечания' : lang === 'uz' ? 'Umumiy ma’lumotlar' : 'General Information'}
             </h3>
             <p className="mb-4">
               {lang === 'de'
@@ -269,15 +269,15 @@ export default function Datenschutz() {
                 : lang === 'ru'
                 ? 'Следующие примечания дают простой обзор того, что происходит с вашими персональными данными при посещении нашего веб-сайта. Персональные данные - это все данные, которые могут быть использованы для вашей личной идентификации.'
                 : lang === 'uz'
-                ? 'Quyidagi ma\'lumotlar veb-saytimizga tashrif buyurganingizda shaxsiy ma\'lumotlaringiz bilan nima sodir bo\'lishini qisqacha tushuntiradi. Shaxsiy ma\'lumotlar - bu sizni shaxsan identifikatsiya qilish uchun ishlatilishi mumkin bo\'lgan barcha ma\'lumotlar.'
+                ? 'Quyidagi ma’lumotlar veb-saytimizga tashrif buyurganingizda shaxsiy ma’lumotlaringiz bilan nima sodir bo‘lishini qisqacha tushuntiradi. Shaxsiy ma’lumotlar — bu sizni shaxsan identifikatsiya qilish uchun ishlatilishi mumkin bo‘lgan barcha ma’lumotlar.'
                 : 'The following information provides a simple overview of what happens to your personal data when you visit our website. Personal data is any data that can be used to personally identify you.'}
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-2">
-              {lang === 'de' ? 'Datenerfassung auf unserer Website' : lang === 'ru' ? 'Сбор данных на нашем сайте' : lang === 'uz' ? 'Veb-saytimizda ma\'lumotlarni yig\'ish' : 'Data Collection on Our Website'}
+              {lang === 'de' ? 'Datenerfassung auf unserer Website' : lang === 'ru' ? 'Сбор данных на нашем сайте' : lang === 'uz' ? 'Veb-saytimizda ma’lumotlarni yig‘ish' : 'Data Collection on Our Website'}
             </h3>
             <p className="mb-4">
-              <strong>{lang === 'de' ? 'Wer ist verantwortlich für die Datenerfassung auf dieser Website?' : lang === 'ru' ? 'Кто несет ответственность за сбор данных на этом веб-сайте?' : lang === 'uz' ? 'Ushbu veb-saytda ma\'lumotlarni yig\'ish uchun kim mas\'ul?' : 'Who is responsible for data collection on this website?'}</strong>
+              <strong>{lang === 'de' ? 'Wer ist verantwortlich für die Datenerfassung auf dieser Website?' : lang === 'ru' ? 'Кто несет ответственность за сбор данных на этом веб-сайте?' : lang === 'uz' ? 'Ushbu veb-saytda ma’lumotlarni yig‘ish uchun kim mas’ul?' : 'Who is responsible for data collection on this website?'}</strong>
             </p>
             <p className="mb-4">
               {lang === 'de'
@@ -285,7 +285,7 @@ export default function Datenschutz() {
                 : lang === 'ru'
                 ? 'Обработка данных на этом веб-сайте осуществляется оператором веб-сайта. Его контактные данные можно найти в импрессуме этого веб-сайта.'
                 : lang === 'uz'
-                ? 'Ushbu veb-saytda ma\'lumotlarni qayta ishlash veb-sayt operatori tomonidan amalga oshiriladi. Ularning aloqa ma\'lumotlarini ushbu veb-saytning huquqiy ma\'lumotnomasida topishingiz mumkin.'
+                ? 'Ushbu veb-saytda ma’lumotlarni qayta ishlash veb-sayt operatori tomonidan amalga oshiriladi. Ularning aloqa ma’lumotlarini ushbu veb-saytning huquqiy ma’lumotnomasida topishingiz mumkin.'
                 : 'Data processing on this website is carried out by the website operator. Their contact details can be found in the imprint of this website.'}
             </p>
 
@@ -298,16 +298,16 @@ export default function Datenschutz() {
                 : lang === 'ru'
                 ? 'Мы размещаем содержимое нашего веб-сайта у внешнего поставщика услуг. Собранные данные хранятся на серверах хостинг-провайдера.'
                 : lang === 'uz'
-                ? 'Biz veb-saytimizning mazmunini tashqi xizmat ko\'rsatuvchi provayderda joylashtiramiz. Yig\'ilgan ma\'lumotlar xosting provayderining serverlarida saqlanadi.'
+                ? 'Biz veb-saytimizning mazmunini tashqi xizmat ko‘rsatuvchi provayderda joylashtiramiz. Yig‘ilgan ma’lumotlar xosting provayderining serverlarida saqlanadi.'
                 : 'We host the content of our website with an external service provider. The collected data is stored on the servers of the host.'}
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
-              {lang === 'de' ? '3. Allgemeine Hinweise und Pflichtinformationen' : lang === 'ru' ? '3. Общие замечания и обязательная информация' : lang === 'uz' ? '3. Umumiy ma\'lumotlar va majburiy ma\'lumotlar' : '3. General Information and Mandatory Information'}
+              {lang === 'de' ? '3. Allgemeine Hinweise und Pflichtinformationen' : lang === 'ru' ? '3. Общие замечания и обязательная информация' : lang === 'uz' ? '3. Umumiy ma’lumotlar va majburiy ma’lumotlar' : '3. General Information and Mandatory Information'}
             </h2>
 
             <h3 className="text-xl font-semibold mt-6 mb-2">
-              {lang === 'de' ? 'Datenschutz' : lang === 'ru' ? 'Защита данных' : lang === 'uz' ? 'Ma\'lumotlar himoyasi' : 'Data Protection'}
+              {lang === 'de' ? 'Datenschutz' : lang === 'ru' ? 'Защита данных' : lang === 'uz' ? 'Ma’lumotlar himoyasi' : 'Data Protection'}
             </h3>
             <p className="mb-4">
               {lang === 'de'
@@ -315,15 +315,15 @@ export default function Datenschutz() {
                 : lang === 'ru'
                 ? 'Операторы этих страниц очень серьезно относятся к защите ваших личных данных. Мы обрабатываем ваши персональные данные конфиденциально и в соответствии с законодательными нормами о защите данных, а также с этой политикой конфиденциальности.'
                 : lang === 'uz'
-                ? 'Ushbu sahifalarning operatorlari sizning shaxsiy ma\'lumotlaringizni himoya qilishni juda jiddiy qabul qiladilar. Biz sizning shaxsiy ma\'lumotlaringizni maxfiy va qonuniy ma\'lumotlarni himoya qilish qoidalariga hamda ushbu maxfiylik siyosatiga muvofiq ko\'rib chiqamiz.'
+                ? 'Ushbu sahifalarning operatorlari sizning shaxsiy ma’lumotlaringizni himoya qilishni juda jiddiy qabul qiladilar. Biz sizning shaxsiy ma’lumotlaringizni maxfiy va qonuniy ma’lumotlarni himoya qilish qoidalariga hamda ushbu maxfiylik siyosatiga muvofiq ko‘rib chiqamiz.'
                 : 'The operators of these pages take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with legal data protection regulations and this privacy policy.'}
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-2">
-              {lang === 'de' ? 'Hinweis zur verantwortlichen Stelle' : lang === 'ru' ? 'Примечание об ответственном органе' : lang === 'uz' ? 'Mas\'ul tomon haqida eslatma' : 'Note on the Responsible Party'}
+              {lang === 'de' ? 'Hinweis zur verantwortlichen Stelle' : lang === 'ru' ? 'Примечание об ответственном органе' : lang === 'uz' ? 'Mas’ul tomon haqida eslatma' : 'Note on the Responsible Party'}
             </h3>
             <p className="mb-4">
-              {lang === 'de' ? 'Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:' : lang === 'ru' ? 'Ответственная сторона за обработку данных на этом веб-сайте:' : lang === 'uz' ? 'Ushbu veb-saytda ma\'lumotlarni qayta ishlash uchun mas\'ul tomon:' : 'The responsible party for data processing on this website is:'}
+              {lang === 'de' ? 'Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:' : lang === 'ru' ? 'Ответственная сторона за обработку данных на этом веб-сайте:' : lang === 'uz' ? 'Ushbu veb-saytda ma’lumotlarni qayta ishlash uchun mas’ul tomon:' : 'The responsible party for data processing on this website is:'}
             </p>
             <p className="mb-4">
               CARAVAN Restaurant<br />
@@ -339,7 +339,7 @@ export default function Datenschutz() {
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
-              {lang === 'de' ? '4. Datenerfassung auf unserer Website' : lang === 'ru' ? '4. Сбор данных на нашем сайте' : lang === 'uz' ? '4. Veb-saytimizda ma\'lumotlarni yig\'ish' : '4. Data Collection on Our Website'}
+              {lang === 'de' ? '4. Datenerfassung auf unserer Website' : lang === 'ru' ? '4. Сбор данных на нашем сайте' : lang === 'uz' ? '4. Veb-saytimizda ma’lumotlarni yig‘ish' : '4. Data Collection on Our Website'}
             </h2>
 
             <h3 className="text-xl font-semibold mt-6 mb-2">
@@ -351,7 +351,7 @@ export default function Datenschutz() {
                 : lang === 'ru'
                 ? 'Интернет-страницы частично используют так называемые файлы cookie. Файлы cookie не наносят вреда вашему компьютеру и не содержат вирусов. Файлы cookie служат для того, чтобы сделать наше предложение более удобным, эффективным и безопасным.'
                 : lang === 'uz'
-                ? 'Veb-saytlar qisman cookie-fayllardan foydalanadi. Cookie-fayllar kompyuteringizga zarar yetkazmaydi va viruslarni o\'z ichiga olmaydi. Cookie-fayllar bizning taklifimizni yanada qulay, samarali va xavfsiz qilishga xizmat qiladi.'
+                ? 'Veb-saytlar qisman cookie-fayllardan foydalanadi. Cookie-fayllar kompyuteringizga zarar yetkazmaydi va viruslarni o‘z ichiga olmaydi. Cookie-fayllar bizning taklifimizni yanada qulay, samarali va xavfsiz qilishga xizmat qiladi.'
                 : 'The website partially uses so-called cookies. Cookies do not cause any damage to your computer and do not contain viruses. Cookies serve to make our offer more user-friendly, effective and secure.'}
             </p>
 
@@ -364,7 +364,7 @@ export default function Datenschutz() {
                 : lang === 'ru'
                 ? 'Провайдер страниц автоматически собирает и сохраняет информацию в так называемых файлах журнала сервера, которые ваш браузер автоматически передает нам.'
                 : lang === 'uz'
-                ? 'Sahifalar provayderi avtomatik ravishda server jurnal fayllarida ma\'lumotlarni to\'playdi va saqlaydi, bu ma\'lumotlar sizning brauzeringiz tomonidan bizga avtomatik ravishda uzatiladi.'
+                ? 'Sahifalar provayderi avtomatik ravishda server jurnal fayllarida ma’lumotlarni to‘playdi va saqlaydi, bu ma’lumotlar sizning brauzeringiz tomonidan bizga avtomatik ravishda uzatiladi.'
                 : 'The provider of the pages automatically collects and stores information in so-called server log files, which your browser automatically transmits to us.'}
             </p>
 
@@ -377,7 +377,7 @@ export default function Datenschutz() {
                 : lang === 'ru'
                 ? 'Вы имеете право на информацию, исправление, удаление и ограничение обработки ваших персональных данных. Кроме того, у вас есть право возражать против обработки и право на переносимость данных.'
                 : lang === 'uz'
-                ? 'Siz shaxsiy ma\'lumotlaringizni qayta ishlashni cheklash, ma\'lumot olish, tuzatish, o\'chirish huquqiga egasiz. Bundan tashqari, siz qayta ishlashga e\'tiroz bildirish huquqiga va ma\'lumotlarni ko\'chirish huquqiga egasiz.'
+                ? 'Siz shaxsiy ma’lumotlaringizni qayta ishlashni cheklash, ma’lumot olish, tuzatish, o‘chirish huquqiga egasiz. Bundan tashqari, siz qayta ishlashga e’tiroz bildirish huquqiga va ma’lumotlarni ko‘chirish huquqiga egasiz.'
                 : 'You have the right to information, correction, deletion and restriction of processing of your personal data. Furthermore, you have the right to object to processing and the right to data portability.'}
             </p>
           </div>

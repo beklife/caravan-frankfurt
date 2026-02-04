@@ -31,7 +31,7 @@ const langNames: Record<Language, string> = {
   de: "Deutsch",
   en: "English",
   ru: "Русский",
-  uz: "O'zbek"
+  uz: "O‘zbek"
 };
 
 const langFlags: Record<Language, string> = {
@@ -82,10 +82,10 @@ const menuCategories = {
     desserts: "Десерты"
   },
   uz: {
-    soups: "Sho'rvalar",
-    mains: "Firma taomlar",
-    grills: "Gril taomlar",
-    appetizers: "Issiq, sovuq taomlar va salatlar",
+    soups: "Sho‘rvalar",
+    mains: "Firma taomlari",
+    grills: "Gril taomlari",
+    appetizers: "Issiq va sovuq taomlar, salatlar",
     sides: "Garnirlar",
     drinks: "Issiq ichimliklar",
     colddrinks: "Sovuq ichimliklar",
@@ -140,31 +140,31 @@ const fullMenu = {
       id: 'pommes',
       image: null,
       price: '5.90€',
-      names: { de: 'Extra Portion Pommes', en: 'Extra Portion Fries', ru: 'Дополнительная порция картофеля фри', uz: 'Qo\'shimcha kartoshka fri' },
+      names: { de: 'Extra Portion Pommes', en: 'Extra Portion Fries', ru: 'Дополнительная порция картофеля фри', uz: 'Qo‘shimcha kartoshka fri' },
       descs: {
         de: 'Knusprige Pommes Frites.',
         en: 'Crispy french fries.',
         ru: 'Хрустящий картофель фри.',
-        uz: 'Qo\'shimcha kartoshka fri.'
+        uz: 'Qo‘shimcha kartoshka fri.'
       }
     },
     {
       id: 'reis',
       image: null,
       price: '4.90€',
-      names: { de: 'Extra Portion Reis', en: 'Extra Portion Rice', ru: 'Дополнительная порция риса', uz: 'Qo\'shimcha guruch' },
+      names: { de: 'Extra Portion Reis', en: 'Extra Portion Rice', ru: 'Дополнительная порция риса', uz: 'Qo‘shimcha guruch' },
       descs: {
         de: 'Gedämpfter Reis.',
         en: 'Steamed rice.',
         ru: 'Рис на пару.',
-        uz: 'Bug\'da pishirilgan guruch.'
+        uz: 'Bug‘da pishirilgan guruch.'
       }
     },
     {
       id: 'sosse',
       image: null,
       price: '2.90€',
-      names: { de: 'Extra Portion Sosse', en: 'Extra Portion Sauce', ru: 'Дополнительная порция соуса', uz: 'Qo\'shimcha sous' },
+      names: { de: 'Extra Portion Sosse', en: 'Extra Portion Sauce', ru: 'Дополнительная порция соуса', uz: 'Qo‘shimcha sous' },
       descs: {
         de: 'Yoghurt-, Scharf-, Tomatensoße, Schmand.',
         en: 'Yogurt, Spicy, Tomato sauce, Sour cream.',
@@ -176,7 +176,7 @@ const fullMenu = {
       id: 'non',
       image: null,
       price: '3.90€',
-      names: { de: 'Extra Portion Brot (ganzes Fladenbrot)', en: 'Extra Portion Bread (whole flatbread)', ru: 'Дополнительная порция хлеба (целая лепёшка)', uz: 'Qo\'shimcha non (butun non)' },
+      names: { de: 'Extra Portion Brot (ganzes Fladenbrot)', en: 'Extra Portion Bread (whole flatbread)', ru: 'Дополнительная порция хлеба (целая лепёшка)', uz: 'Qo‘shimcha non (butun non)' },
       descs: {
         de: 'Traditionelles Fladenbrot.',
         en: 'Traditional flatbread.',
@@ -188,7 +188,7 @@ const fullMenu = {
       id: 'nonhalf',
       image: null,
       price: '1.90€',
-      names: { de: 'Extra Portion Brot (halbes Fladenbrot)', en: 'Extra Portion Bread (half flatbread)', ru: 'Дополнительная порция хлеба (половина лепёшки)', uz: 'Qo\'shimcha non (yarim non)' },
+      names: { de: 'Extra Portion Brot (halbes Fladenbrot)', en: 'Extra Portion Bread (half flatbread)', ru: 'Дополнительная порция хлеба (половина лепёшки)', uz: 'Qo‘shimcha non (yarim non)' },
       descs: {
         de: 'Halbes traditionelles Fladenbrot.',
         en: 'Half traditional flatbread.',
@@ -522,12 +522,12 @@ const fullMenu = {
       id: 'schofferhofer',
       image: null,
       price: '5.90€',
-      names: { de: 'Schöfferhofer Hefeweizen (0.5L)', en: 'Schöfferhofer Wheat Beer (0.5L)', ru: 'Schöfferhofer пшеничное (0.5л)', uz: 'Schöfferhofer bug\'doy pivosi (0.5L)' },
+      names: { de: 'Schöfferhofer Hefeweizen (0.5L)', en: 'Schöfferhofer Wheat Beer (0.5L)', ru: 'Schöfferhofer пшеничное (0.5л)', uz: 'Schöfferhofer bug‘doy pivosi (0.5L)' },
       descs: {
         de: 'Klassisches Hefeweizen',
         en: 'Classic wheat beer',
         ru: 'Классическое пшеничное пиво',
-        uz: 'Klassik bug\'doy pivosi'
+        uz: 'Klassik bug‘doy pivosi'
       }
     },
     {
@@ -546,12 +546,12 @@ const fullMenu = {
       id: 'schofferhoferna',
       image: null,
       price: '5.90€',
-      names: { de: 'Schöfferhofer Hefeweizen (0.0% Vol.) (0.5L)', en: 'Schöfferhofer Wheat Beer (0.0% Vol.) (0.5L)', ru: 'Schöfferhofer пшеничное (0.0% Vol.) (0.5л)', uz: 'Schöfferhofer bug\'doy (0.0% Vol.) (0.5L)' },
+      names: { de: 'Schöfferhofer Hefeweizen (0.0% Vol.) (0.5L)', en: 'Schöfferhofer Wheat Beer (0.0% Vol.) (0.5L)', ru: 'Schöfferhofer пшеничное (0.0% Vol.) (0.5л)', uz: 'Schöfferhofer bug‘doy (0.0% Vol.) (0.5L)' },
       descs: {
         de: 'Alkoholfreies Hefeweizen',
         en: 'Non-alcoholic wheat beer',
         ru: 'Безалкогольное пшеничное пиво',
-        uz: 'Alkogolsiz bug\'doy pivosi'
+        uz: 'Alkogolsiz bug‘doy pivosi'
       }
     },
     {
@@ -637,7 +637,7 @@ const fullMenu = {
         de: 'Trocken, 2 Jahre im Eichefass gelagert, nach dunklen Beeren und Vanille, leichte Röstnoten',
         en: 'Dry, 2 years oak-aged, dark berries and vanilla, light roasted notes',
         ru: 'Сухое, 2 года в дубовой бочке, темные ягоды и ваниль, легкая обжарка',
-        uz: 'Quruq, 2 yil eman bochkada, qora rezavorlar va vanil, yengil qovurilgan'
+        uz: 'Quruq, 2 yil eman bochkasida, qora rezavorlar va vanil, yengil qovurilgan notalar'
       }
     },
     {
@@ -649,7 +649,7 @@ const fullMenu = {
         de: 'Rioja / Am Gaumen fein und elegant, mit zarten und runden Tanninen, einem seidigen Mundgefühl und einer angenessenen Säure. Alles in allem ein sehr milder, gut definierter und zugänglicher Wein.',
         en: 'Rioja / Fine and elegant on the palate, with gentle and round tannins, a silky mouthfeel and a pleasant acidity. Overall a very mild, well-defined and accessible wine.',
         ru: 'Риоха / Тонкое и элегантное во рту, с нежными и округлыми танинами, шелковистым ощущением и приятной кислотностью. В целом очень мягкое, хорошо определенное и доступное вино.',
-        uz: 'Rioja / Og\'izda nozik va oqlangan, yumshoq va yumaloq taninlar, ipakdek his va yoqimli kislotalilik. Umuman olganda juda yumshoq, yaxshi aniqlangan va ochiq vino.'
+        uz: 'Rioja / Og‘izda nozik va oqlangan; yumshoq va yumaloq taninlar, ipakdek his va yoqimli kislotalilik. Umuman olganda juda yumshoq, yaxshi aniqlangan va ochiq vino.'
       }
     },
     {
@@ -685,7 +685,7 @@ const fullMenu = {
         de: 'Lieblich, fruchtig nach Mirabellen',
         en: 'Sweet, fruity with mirabelle plums',
         ru: 'Сладкое, фруктовое с мирабелью',
-        uz: 'Shirin, mevali mirabelle olxo\'ri bilan'
+        uz: 'Shirin, mevali mirabelle olxo‘ri bilan'
       }
     },
     {
@@ -721,7 +721,7 @@ const fullMenu = {
         de: 'Der Riscal Blanco ist ein frischer fruchtiger Wein, betont trocken am Gaumen und mit rassiger Säure ausgestattet.',
         en: 'The Riscal Blanco is a fresh fruity wine, distinctly dry on the palate and equipped with racy acidity.',
         ru: 'Riscal Blanco - свежее фруктовое вино, ярко выраженное сухое на вкус и с живой кислотностью.',
-        uz: 'Riscal Blanco yangi mevali vino, og\'izda aniq quruq va jonli kislotalikka ega.'
+        uz: 'Riscal Blanco — yangi mevali vino, og‘izda aniq quruq va jonli kislotalikka ega.'
       }
     },
   ],
@@ -783,7 +783,7 @@ const fullMenu = {
         de: 'Scotch Whisky',
         en: 'Scotch whisky',
         ru: 'Скотч виски',
-        uz: 'Shotland viski'
+        uz: 'Shotland viskisi'
       }
     },
     {
@@ -795,7 +795,7 @@ const fullMenu = {
         de: 'Tennessee Whiskey',
         en: 'Tennessee whiskey',
         ru: 'Теннесси виски',
-        uz: 'Tennessi viski'
+        uz: 'Tennessi viskisi'
       }
     },
     {
@@ -819,7 +819,7 @@ const fullMenu = {
         de: 'Kräuterlikör',
         en: 'Herbal liqueur',
         ru: 'Травяной ликер',
-        uz: 'O\'tli liker'
+        uz: 'O‘tli likyor'
       }
     },
     {
@@ -864,7 +864,7 @@ export default function MenuPage() {
     de: "Speisekarte - CARAVAN Restaurant Frankfurt | Usbekische Gerichte & Preise",
     en: "Menu - CARAVAN Restaurant Frankfurt | Uzbek Dishes & Prices",
     ru: "Меню - Ресторан CARAVAN Франкфурт | Узбекские блюда и цены",
-    uz: "Menyu - CARAVAN Restoran Frankfurt | O'zbek taomlari va narxlar"
+    uz: "Menyu - CARAVAN Restoran Frankfurt | O‘zbek taomlari va narxlar"
   };
 
   const seoDescriptions: Record<Language, string> = {
@@ -1115,7 +1115,7 @@ export default function MenuPage() {
                   {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакт' : lang === 'uz' ? 'Aloqa' : 'Contact'}
                 </button>
                 <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#reservation'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
-                  {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' : lang === 'uz' ? 'Bron so\'rovi' : 'Reservation Request'}
+                  {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' : lang === 'uz' ? 'Bron so‘rovi' : 'Reservation Request'}
                 </button>
               </div>
             </motion.div>
@@ -1196,7 +1196,7 @@ export default function MenuPage() {
             {lang === 'de' && 'Alle Preise inkl. MwSt. • Allergene und Zusatzstoffe auf Anfrage • Alle Gerichte sind Halal'}
             {lang === 'en' && 'All prices include VAT • Allergen information available on request • All dishes are Halal'}
             {lang === 'ru' && 'Все цены включают НДС • Информация об аллергенах по запросу • Все блюда халяльные'}
-            {lang === 'uz' && 'Barcha narxlar QQS bilan • Allergen haqida ma\'lumot so\'rovga binoan • Barcha taomlar halol'}
+            {lang === 'uz' && 'Barcha narxlar QQS bilan • Allergenlar bo‘yicha ma’lumot so‘rovga binoan • Barcha taomlar halol'}
           </p>
           <div className="mt-4 md:mt-6 text-center">
             <p className="text-xs text-muted-foreground/70">

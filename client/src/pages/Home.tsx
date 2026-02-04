@@ -27,7 +27,7 @@ const langNames: Record<Language, string> = {
   de: "Deutsch",
   en: "English",
   ru: "Русский",
-  uz: "O'zbek"
+  uz: "O‘zbek"
 };
 
 const langFlags: Record<Language, string> = {
@@ -501,7 +501,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Link href="/menu/" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>
               <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white font-heading uppercase tracking-wide">
-                {lang === 'de' ? 'Vollständige Speisekarte' : lang === 'ru' ? 'Полное меню' : lang === 'uz' ? 'To\'liq menyu' : 'View Full Menu'}
+                {lang === 'de' ? 'Vollständige Speisekarte' : lang === 'ru' ? 'Полное меню' : lang === 'uz' ? 'To‘liq menyu' : 'View Full Menu'}
               </Button>
             </Link>
           </div>
