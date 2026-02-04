@@ -1,5 +1,5 @@
 import { useState, useLayoutEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -850,7 +850,8 @@ const fullMenu = {
 };
 
 export default function MenuPage() {
-  const { lang, setLang } = useLanguage();
+  const { lang, setLang, getLocalizedPath } = useLanguage();
+  const [, setLocation] = useLocation();
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState<{ src: string; name: string } | null>(null);
@@ -864,22 +865,20 @@ export default function MenuPage() {
     de: "Speisekarte - CARAVAN Restaurant Frankfurt | Usbekische Gerichte & Preise",
     en: "Menu - CARAVAN Restaurant Frankfurt | Uzbek Dishes & Prices",
     ru: "Меню - Ресторан CARAVAN Франкфурт | Узбекские блюда и цены",
-    uz: "Menyu - CARAVAN Restoran Frankfurt | O‘zbek taomlari va narxlar"
+    uz: "Menyu - CARAVAN Restoran Frankfurt | O'zbek taomlari va narxlar"
   };
 
   const seoDescriptions: Record<Language, string> = {
     de: "Entdecken Sie unsere Speisekarte mit authentischen usbekischen Spezialitäten: Plov ab 17.90€, Manty 23.90€, Lagman, Samsa, Schaschlik und mehr. Halal-Küche in Frankfurt Bornheim.",
     en: "Discover our menu with authentic Uzbek specialties: Plov from €17.90, Manty €23.90, Lagman, Samsa, Shashlik and more. Halal cuisine in Frankfurt Bornheim.",
     ru: "Откройте для себя наше меню с аутентичными узбекскими блюдами: Плов от 17.90€, Манты 23.90€, Лагман, Самса, Шашлык и многое другое. Халяль кухня во Франкфурте Борнхайм.",
-    uz: "Bizning menyumizni kashf eting: O‘zbek osh 17.90€ dan, manti 23.90€, lag‘mon, somsa, shashlik va boshqalar. Frankfurt Bornheimdagi halol oshxona."
+    uz: "Bizning menyumizni kashf eting: O'zbek osh 17.90€ dan, manti 23.90€, lag'mon, somsa, shashlik va boshqalar. Frankfurt Bornheimdagi halol oshxona."
   };
 
-  // Dynamic canonical URL based on language
+  // Dynamic canonical URL based on language path
   const getCanonicalUrl = () => {
-    if (lang === 'de') {
-      return "https://caravan-restaurant.de/menu/";
-    }
-    return `https://caravan-restaurant.de/menu/?lang=${lang}`;
+    const localPath = getLocalizedPath('/menu/');
+    return `https://caravan-restaurant.de${localPath}`;
   };
 
   useSeoMeta({
@@ -924,7 +923,7 @@ export default function MenuPage() {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border py-4">
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-          <Link href="/">
+          <Link href={getLocalizedPath('/')}>
             <Button variant="ghost" className="gap-2">
               <ArrowLeft className="w-4 h-4" />
               {lang === 'de' ? 'Zurück' : lang === 'ru' ? 'Назад' : lang === 'en' ? 'Back' : lang === 'uz' ? 'Ortga' : 'Back'}
@@ -932,7 +931,7 @@ export default function MenuPage() {
           </Link>
 
           <Link
-            href="/"
+            href={getLocalizedPath('/')}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="font-heading text-2xl font-bold tracking-wider text-primary"
           >
@@ -1108,13 +1107,13 @@ export default function MenuPage() {
               className="md:hidden bg-background border-b border-border absolute top-full left-0 right-0 shadow-lg"
             >
               <div className="flex flex-col p-6 gap-4">
-                <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#about'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
+                <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#about`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
                   {lang === 'de' ? 'Über uns' : lang === 'ru' ? 'О нас' : lang === 'uz' ? 'Biz haqida' : 'About Us'}
                 </button>
-                <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#contact'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
+                <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#contact`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
                   {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакт' : lang === 'uz' ? 'Aloqa' : 'Contact'}
                 </button>
-                <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#reservation'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
+                <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#reservation`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
                   {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' : lang === 'uz' ? 'Bron so‘rovi' : 'Reservation Request'}
                 </button>
               </div>

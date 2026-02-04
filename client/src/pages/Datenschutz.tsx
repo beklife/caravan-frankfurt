@@ -1,5 +1,5 @@
 import { useState, useLayoutEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -24,7 +24,8 @@ const langFlags: Record<Language, string> = {
 };
 
 export default function Datenschutz() {
-  const { lang, setLang } = useLanguage();
+  const { lang, getLocalizedPath } = useLanguage();
+  const [, setLocation] = useLocation();
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { musicPlaying, toggleMusic } = useMusic();
@@ -52,7 +53,7 @@ export default function Datenschutz() {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border py-4">
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-          <Link href="/">
+          <Link href={getLocalizedPath('/')}>
             <Button variant="ghost" className="gap-2">
               <ArrowLeft className="w-4 h-4" />
               {lang === 'de' ? 'Zurück' : lang === 'ru' ? 'Назад' : 'Back'}
@@ -60,7 +61,7 @@ export default function Datenschutz() {
           </Link>
 
           <Link
-            href="/"
+            href={getLocalizedPath('/')}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="font-heading text-2xl font-bold tracking-wider text-primary"
           >
@@ -137,7 +138,7 @@ export default function Datenschutz() {
                     {(["de", "en", "uz", "ru"] as Language[]).map((l) => (
                       <button
                         key={l}
-                        onClick={() => { setLang(l); setLangDropdownOpen(false); }}
+                        onClick={() => { setLangDropdownOpen(false); setLocation(getLocalizedPath('/', l)); }}
                         className={`w-full px-4 py-3 text-left text-sm font-medium transition-colors flex items-center gap-3 ${
                           lang === l ? "bg-primary/10 text-primary" : "hover:bg-muted text-foreground"
                         }`}
@@ -199,7 +200,7 @@ export default function Datenschutz() {
                     {(["de", "en", "uz", "ru"] as Language[]).map((l) => (
                       <button
                         key={l}
-                        onClick={() => { setLang(l); setLangDropdownOpen(false); }}
+                        onClick={() => { setLangDropdownOpen(false); setLocation(getLocalizedPath('/', l)); }}
                         className={`flex items-center gap-2 w-full px-4 py-2 text-sm ${lang === l ? "bg-primary/10 text-primary" : "hover:bg-muted"}`}
                       >
                         <span className="text-lg">{langFlags[l]}</span>
@@ -230,16 +231,16 @@ export default function Datenschutz() {
               className="md:hidden bg-background border-b border-border absolute top-full left-0 right-0 shadow-lg"
             >
               <div className="flex flex-col p-6 gap-4">
-                <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#about'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
+                <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#about`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
                   {lang === 'de' ? 'Über uns' : lang === 'ru' ? 'О нас' : lang === 'uz' ? 'Biz haqida' : 'About Us'}
                 </button>
-                <Link href="/menu/" className="text-lg text-center font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]" onClick={() => setMobileMenuOpen(false)}>
+                <Link href={getLocalizedPath('/menu/')} className="text-lg text-center font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]" onClick={() => setMobileMenuOpen(false)}>
                   {lang === 'de' ? 'Speisekarte' : lang === 'ru' ? 'Меню' : lang === 'uz' ? 'Menyu' : 'Menu'}
                 </Link>
-                <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#contact'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
+                <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#contact`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
                   {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакт' : lang === 'uz' ? 'Aloqa' : 'Contact'}
                 </button>
-                <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#reservation'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
+                <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#reservation`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
                   {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' : lang === 'uz' ? 'Bron so‘rovi' : 'Reservation Request'}
                 </button>
               </div>

@@ -23,6 +23,7 @@ function App() {
             <Toaster />
             <Router base={import.meta.env.BASE_URL}>
               <Switch>
+                {/* German routes (default, no language prefix) */}
                 <Route path="/" component={Home} />
                 <Route path="/menu" component={MenuPage} />
                 <Route path="/menu/" component={MenuPage} />
@@ -36,6 +37,26 @@ function App() {
                 <Route path="/halal-restaurant-frankfurt/" component={HalalRestaurant} />
                 <Route path="/plov-frankfurt" component={PlovFrankfurt} />
                 <Route path="/plov-frankfurt/" component={PlovFrankfurt} />
+
+                {/* English routes */}
+                <Route path="/en" component={Home} />
+                <Route path="/en/" component={Home} />
+                <Route path="/en/menu" component={MenuPage} />
+                <Route path="/en/menu/" component={MenuPage} />
+
+                {/* Russian routes */}
+                <Route path="/ru" component={Home} />
+                <Route path="/ru/" component={Home} />
+                <Route path="/ru/menu" component={MenuPage} />
+                <Route path="/ru/menu/" component={MenuPage} />
+
+                {/* Uzbek routes */}
+                <Route path="/uz" component={Home} />
+                <Route path="/uz/" component={Home} />
+                <Route path="/uz/menu" component={MenuPage} />
+                <Route path="/uz/menu/" component={MenuPage} />
+
+                {/* 404 */}
                 <Route component={NotFound} />
               </Switch>
             </Router>

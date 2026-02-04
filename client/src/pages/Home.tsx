@@ -38,7 +38,7 @@ const langFlags: Record<Language, string> = {
 };
 
 export default function Home() {
-  const { lang, setLang } = useLanguage();
+  const { lang, setLang, getLocalizedPath } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
@@ -63,12 +63,10 @@ export default function Home() {
     uz: "CARAVAN Restorani Frankfurt Bornheim - Frankfurtdagi eng yaxshi o‘zbek restorani. 2005 yildan beri asl Markaziy Osiyo oshxonasi. O‘zbek osh, manti, lag‘mon, somsa. 100% halol. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158"
   };
 
-  // Dynamic canonical URL based on language
+  // Dynamic canonical URL based on language path
   const getCanonicalUrl = () => {
-    if (lang === 'de') {
-      return "https://caravan-restaurant.de/";
-    }
-    return `https://caravan-restaurant.de/?lang=${lang}`;
+    const localPath = getLocalizedPath('/');
+    return `https://caravan-restaurant.de${localPath}`;
   };
 
   useSeoMeta({
@@ -157,7 +155,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link
-              href="/"
+              href={getLocalizedPath('/')}
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className={`font-heading text-2xl font-bold tracking-wider ${isScrolled ? "text-primary" : "text-white"}`}
             >
@@ -168,7 +166,7 @@ export default function Home() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection("about")} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.about}</button>
-            <Link href="/menu/" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.menu}</Link>
+            <Link href={getLocalizedPath('/menu/')} onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.menu}</Link>
             <button onClick={() => scrollToSection("contact")} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.contact}</button>
             <button onClick={() => scrollToSection("reservation")} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.reserve}</button>
 
@@ -359,7 +357,7 @@ export default function Home() {
             >
               <div className="flex flex-col p-6 gap-4">
                 <button onClick={() => scrollToSection("about")} className="text-lg font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]">{t.nav.about}</button>
-                <Link href="/menu/" className="text-lg text-center font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]" onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'instant' }); }}>{t.nav.menu}</Link>
+                <Link href={getLocalizedPath('/menu/')} className="text-lg text-center font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]" onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'instant' }); }}>{t.nav.menu}</Link>
                 <button onClick={() => scrollToSection("contact")} className="text-lg font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]">{t.nav.contact}</button>
                 <button onClick={() => scrollToSection("reservation")} className="text-lg font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]">{t.nav.reserve}</button>
               </div>
@@ -499,9 +497,9 @@ export default function Home() {
           </div>
           
           <div className="mt-12 text-center">
-            <Link href="/menu/" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>
+            <Link href={getLocalizedPath('/menu/')} onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>
               <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white font-heading uppercase tracking-wide">
-                {lang === 'de' ? 'Vollständige Speisekarte' : lang === 'ru' ? 'Полное меню' : lang === 'uz' ? 'To‘liq menyu' : 'View Full Menu'}
+                {lang === 'de' ? 'Vollständige Speisekarte' : lang === 'ru' ? 'Полное меню' : lang === 'uz' ? "To'liq menyu" : 'View Full Menu'}
               </Button>
             </Link>
           </div>
@@ -653,7 +651,7 @@ export default function Home() {
             </div>
             
             <div className="flex flex-col gap-2 items-center md:items-start">
-               <Link href="/menu/" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.nav.menu}</Link>
+               <Link href={getLocalizedPath('/menu/')} className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.nav.menu}</Link>
                <a href="#about" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.nav.about}</a>
                <a href="#contact" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.nav.contact}</a>
                <Link href="/impressum/" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.footer.impressum}</Link>

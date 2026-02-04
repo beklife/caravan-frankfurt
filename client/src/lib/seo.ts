@@ -21,14 +21,26 @@ function setCanonical(url: string) {
 }
 
 function setHreflangTags(basePath: string) {
-  // Update hreflang tags for multilingual support
+  // Update hreflang tags for multilingual support with path-based URLs
   const languages = ['de', 'en', 'ru', 'uz'];
+
+  // Remove existing language prefix from basePath
+  let cleanPath = basePath;
+  const pathSegments = basePath.split('/').filter(Boolean);
+  if (['en', 'ru', 'uz'].includes(pathSegments[0])) {
+    cleanPath = '/' + pathSegments.slice(1).join('/');
+  }
+
+  // Ensure path ends with /
+  if (!cleanPath.endsWith('/')) {
+    cleanPath += '/';
+  }
 
   languages.forEach(lang => {
     const hreflang = lang;
     const href = lang === 'de'
-      ? `https://caravan-restaurant.de${basePath}`
-      : `https://caravan-restaurant.de${basePath}?lang=${lang}`;
+      ? `https://caravan-restaurant.de${cleanPath}`
+      : `https://caravan-restaurant.de/${lang}${cleanPath}`;
 
     let link = document.querySelector<HTMLLinkElement>(`link[hreflang="${hreflang}"]`);
     if (link) {
@@ -39,7 +51,7 @@ function setHreflangTags(basePath: string) {
   // Update x-default hreflang
   const defaultLink = document.querySelector<HTMLLinkElement>('link[hreflang="x-default"]');
   if (defaultLink) {
-    defaultLink.setAttribute("href", `https://caravan-restaurant.de${basePath}`);
+    defaultLink.setAttribute("href", `https://caravan-restaurant.de${cleanPath}`);
   }
 }
 
