@@ -62,7 +62,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
         title: "Error",
         description: lang === 'de' ? 'Bitte nehmen Sie sich Zeit, das Formular auszufüllen.' :
                      lang === 'ru' ? 'Пожалуйста, не торопитесь при заполнении формы.' :
-                     lang === 'uz' ? 'Iltimos, shaklni toʻldirishda shoshilmang.' :
+                     lang === 'uz' ? 'Iltimos, formani to‘ldirishda shoshilmang.' :
                      'Please take your time filling out the form.',
         variant: "destructive",
       });

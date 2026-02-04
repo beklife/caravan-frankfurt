@@ -294,16 +294,16 @@ export const translations = {
     },
     menu: {
       journey: "CARAVAN BILAN SAYOHAT",
-      title: "Oshxona diqqatga sazovor taomlar",
+      title: "Oshxonamizdagi diqqatga sazovor taomlar",
       subtitle: "Bizning eng mashhur taomlarimizdan tanlov. Taomlar mavsumga qarab o'zgarishi mumkin.",
       dishes: {
         schorpa: { name: "Shurpa", desc: "O'zbek milliy sho'rvasi yumshoq go'sht, kartoshka, sabzi, qalampir, piyoz va yangi ko'katlar bilan." },
         borsch: { name: "Borsh", desc: "Sabzavot va mol go'shti sho'rvasi lavlagi bilan eski rus uslubida." },
-        chuchvara: { name: "Chuchvara", desc: "Dana go'shti, sabzavot va piyoz bilan to'ldirilgan pelmen sho'rvasi, koriander bilan." },
+        chuchvara: { name: "Chuchvara", desc: "Dana go‘shti, sabzavot va piyoz bilan to‘ldirilgan pelmenli sho‘rva, koriandr bilan." },
         mastava: { name: "Mastava", desc: "Dana go'shti, sabzavot va piyoz bilan guruch sho'rvasi, sharq ziravorlari bilan." },
         somsa: { name: "Somsa (2 dona)", desc: "Dana go'shti bilan xamirli somsa, an'anaviy o'zbek ziravorlari bilan." },
         tschebureki: { name: "Cheburek (2 dona)", desc: "Qiyma (mol go'shti) bilan xamirli cheburek." },
-        karottensalat: { name: "Sabzi salati", desc: "O'zbekcha ekzotik sabzi salati ingichka qirib qirg'ich bilan, yangi sarimsoq bilan." },
+        karottensalat: { name: "Sabzi salati", desc: "O‘zbekcha ekzotik sabzi salati ingichka qirg‘ichdan o‘tkazilgan, yangi sarimsoq bilan." },
         atschuchuksalat: { name: "Achichuk salati", desc: "Shirin pomidor, piyoz va ixtiyoriy qalampir bilan yangi sabzavot salati." },
         kazankebab: { name: "Qozon Kabob", desc: "Qovurilgan qo'y go'shti va kartoshka sharq ziravorlari bilan, an'anaviy cho'yan qozonda tayyorlangan. Yangi sabzavot salati." },
         kazankebabhaehnchen: { name: "Qozon Kabob Tovuq", desc: "Qovurilgan tovuq go'shti va kartoshka sharq ziravorlari bilan, an'anaviy cho'yan qozonda tayyorlangan. Yangi sabzavot salati." },
@@ -314,49 +314,49 @@ export const translations = {
         warenikiwegetarisch: { name: "Vareniki Vegetarian", desc: "Kartoshka to'ldirg'ichli kichik vareniklar. Yangi sabzavot salati." },
         schaschlikvomlamm: { name: "Qo'y go'shtidan Shashlik", desc: "Pomidor-yogurt-sarimsoq sousi va yangi sabzavot salati bilan sharbatli qo'y go'shti bo'laklari." },
         schaschlikvomhaehnchen: { name: "Tovuqdan Shashlik", desc: "Pomidor-yogurt-sarimsoq sousi va yangi sabzavot salati bilan sharbatli tovuq go'shti bo'laklari." },
-        caravandessert: { name: "Caravan Desert", desc: "Halva va olma bilan pishirilgan xamir bo'laklari. Vanil sousi bilan." },
+        caravandessert: { name: "Caravan Dessert", desc: "Halva va olma bilan pishirilgan xamir bo‘laklari. Vanil sousi bilan." },
         honigmedovikkuchen: { name: "Asal Medovik Torti", desc: "Ikki xil asal Medovik torti: Yong'oq / Shokolad" },
-        kannetee06jasmin: { name: "Choynak yasmin choy", desc: "Xushbo'y yasmin choy, an'anaviy choynak bilan beriladi." }
+        kannetee06jasmin: { name: "Yasminli choy (choynakda)", desc: "Xushbo‘y yasminli choy, an’anaviy choynak bilan beriladi." }
       }
     },
     hours: {
       title: "Ish vaqti",
       open: "Seshanba-Yakshanba",
       openTime: "17:00 - 23:00",
-      kitchen: "Oshxona ochiq",
+      kitchen: "Oshxona",
       kitchenTime: "22:00 gacha",
       weekdays: "Seshanba – Juma",
       weekend: "Shanba – Yakshanba",
       monday: "Dushanba",
       closed: "Yopiq",
-      note: "Bayram kunlari vaqt o'zgarishi mumkin. Tasdiqlash uchun qo'ng'iroq qiling."
+      note: "Bayram kunlari vaqt o‘zgarishi mumkin. Tasdiqlash uchun qo‘ng‘iroq qiling."
     },
     location: {
       title: "Manzil",
       address: "Wöllstädter Str. 11, 60385 Frankfurt am Main",
       district: "Bornheim / Frankfurt am Main",
-      get_directions: "Yo'nalish olish",
-      call_us: "Qo'ng'iroq qilish"
+      get_directions: "Yo‘nalish olish",
+      call_us: "Qo‘ng‘iroq qilish"
     },
     gallery: {
       title: "Galereya"
     },
     contact: {
-      title: "Bron so'rovi va Aloqa",
+      title: "Bron so‘rovi va aloqa",
       form: {
         name: "Ismingiz",
         email: "Elektron pochta",
-        phone: "Telefon raqam",
+        phone: "Telefon raqami",
         guests: "Mehmonlar soni",
         date: "Sana",
         time: "Vaqt",
-        message: "Xabar (Ixtiyoriy)",
+        message: "Xabar (ixtiyoriy)",
         submit: "So'rov yuborish",
-        success: "Sizning bron qilish so'rovingiz muvaffaqiyatli yuborildi! Tez orada bog'lanamiz.",
-        error: "So'rovingizni yuborishda muammo yuz berdi. Iltimos, qayta urinib ko'ring."
+        success: "Sizning bron qilish so‘rovingiz muvaffaqiyatli yuborildi! Tez orada bog‘lanamiz.",
+        error: "So‘rovingizni yuborishda muammo yuz berdi. Iltimos, qayta urinib ko‘ring."
       },
       fallback: "Shakl ishlamayaptimi? Bizga yozing:",
-      catering: "So'rov bo'yicha ketering xizmati mavjud."
+      catering: "So‘rov bo‘yicha katering xizmati mavjud."
     },
     footer: {
       impressum: "Huquqiy ma'lumot",

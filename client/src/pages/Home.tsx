@@ -53,14 +53,14 @@ export default function Home() {
     de: "CARAVAN Restaurant Frankfurt | Usbekisches Restaurant Bornheim | Authentische Zentralasiatische Küche",
     en: "CARAVAN Restaurant Frankfurt | Uzbek Restaurant Bornheim | Authentic Central Asian Cuisine",
     ru: "Ресторан CARAVAN Франкфурт | Узбекский Ресторан Борнхайм | Аутентичная Центральноазиатская Кухня",
-    uz: "CARAVAN Restoran Frankfurt | O'zbek Restorani Bornheim | Asl Markaziy Osiyo Oshxonasi"
+    uz: "CARAVAN Restoran Frankfurt | Bornheimdagi o‘zbek restorani | Asl Markaziy Osiyo oshxonasi"
   };
 
   const seoDescriptions: Record<Language, string> = {
     de: "Restaurant CARAVAN Frankfurt Bornheim - Das beste usbekische Restaurant in Frankfurt. Authentische zentralasiatische Küche seit 2005. Usbekischer Plov, Manty, Lagman, Samsa. 100% Halal. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158",
     en: "CARAVAN Restaurant Frankfurt Bornheim - The best Uzbek restaurant in Frankfurt. Authentic Central Asian cuisine since 2005. Uzbek Plov, Manty, Lagman, Samsa. 100% Halal. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158",
     ru: "Ресторан CARAVAN Франкфурт Борнхайм - Лучший узбекский ресторан во Франкфурте. Аутентичная центральноазиатская кухня с 2005 года. Узбекский Плов, Манты, Лагман, Самса. 100% Халяль. Wöllstädter Str. 11, 60385 Франкфурт. Тел: 069 95909158",
-    uz: "CARAVAN Restorani Frankfurt Bornheim - Frankfurtdagi eng yaxshi o'zbek restorani. 2005 yildan beri asl markaziy osiyo oshxonasi. O'zbek Osh, Manti, Lag'mon, Somsa. 100% Halol. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158"
+    uz: "CARAVAN Restorani Frankfurt Bornheim - Frankfurtdagi eng yaxshi o‘zbek restorani. 2005 yildan beri asl Markaziy Osiyo oshxonasi. O‘zbek osh, manti, lag‘mon, somsa. 100% halol. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158"
   };
 
   // Dynamic canonical URL based on language

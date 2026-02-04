@@ -111,7 +111,7 @@ const fullMenu = {
       image: null,
       price: '10.90€',
       dietary: 'vegetarian',
-      names: { de: 'Knäckiger Start', en: 'Crunchy Start', ru: 'Хрустящая закуска', uz: 'Xırtıldagan boshlanish' },
+      names: { de: 'Knäckiger Start', en: 'Crunchy Start', ru: 'Хрустящая закуска', uz: 'Qarsildoq boshlanish' },
       descs: {
         de: 'Sauergürkensalat - Bestehend aus hauseingeleg ten sauren Gurken, Tomaten und Weißkohl.',
         en: 'Assortment of home-made pickled cucumbers, tomatoes, and cabbage.',
@@ -193,7 +193,7 @@ const fullMenu = {
         de: 'Halbes traditionelles Fladenbrot.',
         en: 'Half traditional flatbread.',
         ru: 'Половина традиционной лепёшки.',
-        uz: 'Yarim an\'anaviy non.'
+        uz: 'Yarimta an’anaviy non.'
       }
     },
   ],
@@ -206,7 +206,7 @@ const fullMenu = {
       id: 'kannetee06black',
       image: null,
       price: '5.50€',
-      names: { de: 'Kanne Tee (0.6L) - Schwarzer oder Grüner', en: 'Pot of Tea (0.6L) - Black or Green', ru: 'Чайник чая (0.6л) - Черный или Зеленый', uz: 'Choynak choy (0.6L) - Qora yoki Yashil' },
+      names: { de: 'Kanne Tee (0.6L) - Schwarzer oder Grüner', en: 'Pot of Tea (0.6L) - Black or Green', ru: 'Чайник чая (0.6л) - Черный или Зеленый', uz: 'Choynakdagi choy (0.6L) - qora yoki yashil' },
       descs: {
         de: 'Schwarzer oder Grüner Tee.',
         en: 'Black or Green tea.',
@@ -218,24 +218,24 @@ const fullMenu = {
       id: 'kannetee06jasmin',
       image: null,
       price: '6.50€',
-      names: { de: 'Kanne Tee (0.6L) - Jasmin', en: 'Pot of Tea (0.6L) - Jasmine', ru: 'Чайник чая (0.6л) - Жасминовый', uz: 'Choynak choy (0.6L) - Yasmin' },
+      names: { de: 'Kanne Tee (0.6L) - Jasmin', en: 'Pot of Tea (0.6L) - Jasmine', ru: 'Чайник чая (0.6л) - Жасминовый', uz: 'Choynakdagi choy (0.6L) - yasminli' },
       descs: {
         de: 'Jasmin Tee.',
         en: 'Jasmine tea.',
         ru: 'Жасминовый чай.',
-        uz: 'Yasmin choy.'
+        uz: 'Yasminli choy.'
       }
     },
     {
       id: 'tassejasmin',
       image: null,
       price: '3.50€',
-      names: { de: 'Tasse Jasmin Tee (0.3L)', en: 'Cup of Jasmine Tea (0.3L)', ru: 'Чашка жасминового чая (0.3л)', uz: 'Piyola yasmin choy (0.3L)' },
+      names: { de: 'Tasse Jasmin Tee (0.3L)', en: 'Cup of Jasmine Tea (0.3L)', ru: 'Чашка жасминового чая (0.3л)', uz: 'Yasminli choy (piyola, 0.3L)' },
       descs: {
         de: 'Eine Tasse Jasmin Tee.',
         en: 'A cup of jasmine tea.',
         ru: 'Чашка жасминового чая.',
-        uz: 'Bir piyola yasmin choy.'
+        uz: 'Bir piyola yasminli choy.'
       }
     },
     {
@@ -247,31 +247,31 @@ const fullMenu = {
         de: 'Beutel Grüner oder Schwarzer.',
         en: 'Green or Black tea bag.',
         ru: 'Зеленый или черный чай в пакетике.',
-        uz: 'Yashil yoki qora choy paketda.'
+        uz: 'Yashil yoki qora paketli choy.'
       }
     },
     {
       id: 'minzetee1',
       image: null,
       price: '3.00€',
-      names: { de: 'Minze Tee (0.3L)', en: 'Mint Tea (0.3L)', ru: 'Мятный чай (0.3л)', uz: 'Yalpiz choy (0.3L)' },
+      names: { de: 'Minze Tee (0.3L)', en: 'Mint Tea (0.3L)', ru: 'Мятный чай (0.3л)', uz: 'Yalpizli choy (0.3L)' },
       descs: {
         de: 'Frische Minze mit Zitrone.',
         en: 'Fresh mint with lemon.',
         ru: 'Свежая мята с лимоном.',
-        uz: 'Yangi yalpiz limon bilan.'
+        uz: 'Yangi yalpiz va limon bilan.'
       }
     },
     {
       id: 'minzetee2',
       image: null,
       price: '4.50€',
-      names: { de: 'Minze Tee (0.3L)', en: 'Mint Tea (0.3L)', ru: 'Мятный чай (0.3л)', uz: 'Yalpiz choy (0.3L)' },
+      names: { de: 'Minze Tee (0.3L)', en: 'Mint Tea (0.3L)', ru: 'Мятный чай (0.3л)', uz: 'Yalpizli choy (0.3L)' },
       descs: {
         de: 'Frische Minze mit Ingwer, Zitrone und Honig.',
         en: 'Fresh mint with ginger, lemon and honey.',
         ru: 'Свежая мята с имбирем, лимоном и медом.',
-        uz: 'Yangi yalpiz zanjabil, limon va asal bilan.'
+        uz: 'Yangi yalpiz, zanjabil, limon va asal bilan.'
       }
     },
   ],
@@ -304,12 +304,12 @@ const fullMenu = {
       id: 'seltesflasche',
       image: null,
       price: '7.50€',
-      names: { de: 'Seltes Flasche (0.75L)', en: 'Water Bottle (0.75L)', ru: 'Бутылка воды (0.75л)', uz: 'Suv shisha (0.75L)' },
+      names: { de: 'Seltes Flasche (0.75L)', en: 'Water Bottle (0.75L)', ru: 'Бутылка воды (0.75л)', uz: 'Suv shishasi (0.75L)' },
       descs: {
         de: 'Große Wasserflasche',
         en: 'Large water bottle',
         ru: 'Большая бутылка воды',
-        uz: 'Katta suv shisha'
+        uz: 'Katta suv shishasi'
       }
     },
     {
@@ -563,7 +563,7 @@ const fullMenu = {
         de: 'Hessische Spezialität',
         en: 'Hessian specialty',
         ru: 'Гессенская специальность',
-        uz: 'Gessen maxsuloti'
+        uz: 'Gessen mahsuloti'
       }
     },
   ],
@@ -577,7 +577,7 @@ const fullMenu = {
         de: 'Trocken, Kirscharomen, feine Kräuter',
         en: 'Dry, cherry aromas, fine herbs',
         ru: 'Сухое, вишневые ароматы, травы',
-        uz: 'Quruq, olcha aromi, o\'tlar'
+        uz: 'Quruq, olcha aromati, o‘tlar'
       }
     },
     {
@@ -589,7 +589,7 @@ const fullMenu = {
         de: 'Trocken, Wild oder kräftige Käsesorten',
         en: 'Dry, game or strong cheese varieties',
         ru: 'Сухое, дичь или крепкие сыры',
-        uz: 'Quruq, yovvoyi yoki kuchli pishloqlar'
+        uz: 'Quruq, yovvoyi go‘sht yoki kuchli pishloqlar bilan'
       }
     },
     {
@@ -625,7 +625,7 @@ const fullMenu = {
         de: 'Trocken Qualitätswein, gehaltvoll, aromatisch',
         en: 'Dry quality wine, full-bodied, aromatic',
         ru: 'Сухое качественное вино, насыщенное, ароматное',
-        uz: 'Quruq sifatli vino, to\'liq, xushbo\'y'
+        uz: 'Quruq, sifatli vino: to‘liq, xushbo‘y'
       }
     },
     {
@@ -709,7 +709,7 @@ const fullMenu = {
         de: 'Trocken, vollmundig nach frischen Äpfeln',
         en: 'Dry, full-bodied with fresh apples',
         ru: 'Сухое, полнотелое со свежими яблоками',
-        uz: 'Quruq, to\'liq yangi olma bilan'
+        uz: 'Quruq, to‘liq, yangi olma aromati bilan'
       }
     },
     {
@@ -730,7 +730,7 @@ const fullMenu = {
       id: 'vodkaabsolut',
       image: null,
       price: '3.90€ / 20.00€ / 45.00€',
-      names: { de: 'Absolut Russischer Vodka (0.2cl / 0.2L / 0.5L)', en: 'Absolut Russian Vodka (0.2cl / 0.2L / 0.5L)', ru: 'Absolut Русская Водка (0.2cl / 0.2л / 0.5л)', uz: 'Absolut Rus aroq (0.2cl / 0.2L / 0.5L)' },
+      names: { de: 'Absolut Russischer Vodka (0.2cl / 0.2L / 0.5L)', en: 'Absolut Russian Vodka (0.2cl / 0.2L / 0.5L)', ru: 'Absolut Русская Водка (0.2cl / 0.2л / 0.5л)', uz: 'Absolut rus aroqi (0.2cl / 0.2L / 0.5L)' },
       descs: {
         de: 'Premium Vodka',
         en: 'Premium vodka',
@@ -754,12 +754,12 @@ const fullMenu = {
       id: 'vodkaflasche',
       image: null,
       price: '65.00€',
-      names: { de: 'Vodka Flasche (0.75L)', en: 'Vodka Bottle (0.75L)', ru: 'Бутылка водки (0.75л)', uz: 'Aroq shisha (0.75L)' },
+      names: { de: 'Vodka Flasche (0.75L)', en: 'Vodka Bottle (0.75L)', ru: 'Бутылка водки (0.75л)', uz: 'Aroq shishasi (0.75L)' },
       descs: {
         de: 'Vodka Flasche',
         en: 'Vodka bottle',
         ru: 'Бутылка водки',
-        uz: 'Aroq shisha'
+        uz: 'Aroq shishasi'
       }
     },
     {
@@ -807,7 +807,7 @@ const fullMenu = {
         de: 'Italienischer Kräuterlikör',
         en: 'Italian herbal liqueur',
         ru: 'Итальянский травяной ликер',
-        uz: 'Italyan o\'tli liker'
+        uz: 'Italiya o‘tli likyori'
       }
     },
     {
@@ -826,24 +826,24 @@ const fullMenu = {
       id: 'glasssekt',
       image: null,
       price: '5.90€',
-      names: { de: 'Glass Sekt / Prosecco (0.2L)', en: 'Glass Sparkling Wine / Prosecco (0.2L)', ru: 'Бокал игристого / Просекко (0.2л)', uz: 'Piyola ko\'pikli / Prosecco (0.2L)' },
+      names: { de: 'Glass Sekt / Prosecco (0.2L)', en: 'Glass Sparkling Wine / Prosecco (0.2L)', ru: 'Бокал игристого / Просекко (0.2л)', uz: 'Bokal ko‘pikli vino / Prosecco (0.2L)' },
       descs: {
         de: 'Sekt oder Prosecco',
         en: 'Sparkling wine or Prosecco',
         ru: 'Игристое вино или Просекко',
-        uz: 'Ko\'pikli vino yoki Prosecco'
+        uz: 'Ko‘pikli vino yoki Prosecco'
       }
     },
     {
       id: 'flaschesekt',
       image: null,
       price: '21.90€',
-      names: { de: 'Flasche Sekt (0.75L) / Trocken', en: 'Bottle Sparkling Wine (0.75L) / Dry', ru: 'Бутылка игристого (0.75л) / Сухое', uz: 'Shisha ko\'pikli (0.75L) / Quruq' },
+      names: { de: 'Flasche Sekt (0.75L) / Trocken', en: 'Bottle Sparkling Wine (0.75L) / Dry', ru: 'Бутылка игристого (0.75л) / Сухое', uz: 'Ko‘pikli vino shishasi (0.75L) / quruq' },
       descs: {
         de: 'Flasche Sekt, trocken',
         en: 'Bottle sparkling wine, dry',
         ru: 'Бутылка игристого, сухое',
-        uz: 'Shisha ko\'pikli, quruq'
+        uz: 'Ko‘pikli vino shishasi, quruq'
       }
     },
   ]
@@ -871,7 +871,7 @@ export default function MenuPage() {
     de: "Entdecken Sie unsere Speisekarte mit authentischen usbekischen Spezialitäten: Plov ab 17.90€, Manty 23.90€, Lagman, Samsa, Schaschlik und mehr. Halal-Küche in Frankfurt Bornheim.",
     en: "Discover our menu with authentic Uzbek specialties: Plov from €17.90, Manty €23.90, Lagman, Samsa, Shashlik and more. Halal cuisine in Frankfurt Bornheim.",
     ru: "Откройте для себя наше меню с аутентичными узбекскими блюдами: Плов от 17.90€, Манты 23.90€, Лагман, Самса, Шашлык и многое другое. Халяль кухня во Франкфурте Борнхайм.",
-    uz: "Bizning menyumizni kashf eting: O'zbek Osh 17.90€ dan, Manti 23.90€, Lag'mon, Somsa, Shashlik va boshqalar. Frankfurt Bornhaymdagi Halol oshxona."
+    uz: "Bizning menyumizni kashf eting: O‘zbek osh 17.90€ dan, manti 23.90€, lag‘mon, somsa, shashlik va boshqalar. Frankfurt Bornheimdagi halol oshxona."
   };
 
   // Dynamic canonical URL based on language
@@ -1456,7 +1456,7 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
       {isMainSection && (
         <div className="mt-3 md:mt-4 text-center">
           <p className="text-xs md:text-sm text-muted-foreground font-bold italic">
-            <span className="text-secondary text-xl">★</span> {lang === 'de' ? 'Empfehlung des Hauses' : lang === 'ru' ? 'Фирменное блюдо' : lang === 'uz' ? 'Oshpazning tanlovli taomi' : "Chef's Signature"}
+            <span className="text-secondary text-xl">★</span> {lang === 'de' ? 'Empfehlung des Hauses' : lang === 'ru' ? 'Фирменное блюдо' : lang === 'uz' ? 'Oshpaz tavsiyasi' : "Chef's Signature"}
           </p>
         </div>
       )}
