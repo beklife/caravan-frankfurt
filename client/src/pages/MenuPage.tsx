@@ -1422,17 +1422,17 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                         <div className="flex gap-2 mt-2 md:mt-3">
                           {item.dietary === 'halal' && (
                             <span className="inline-flex items-center gap-1 text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
-                              <span>✓</span> Halal
+                              <span>✓</span> {lang === 'de' ? 'Halal' : lang === 'ru' ? 'Халяль' : lang === 'uz' ? 'Halol' : 'Halal'}
                             </span>
                           )}
                           {item.dietary === 'vegetarian' && (
                             <span className="inline-flex items-center gap-1 text-xs bg-green-500/10 text-green-600 px-2 py-1 rounded-full">
-                              <span>🌱</span> Vegetarian
+                              <span>🌱</span> {lang === 'de' ? 'Vegetarisch' : lang === 'ru' ? 'Вегетарианское' : lang === 'uz' ? 'Vegetarian' : 'Vegetarian'}
                             </span>
                           )}
                           {item.dietary === 'vegan' && (
                             <span className="inline-flex items-center gap-1 text-xs bg-green-600/10 text-green-700 px-2 py-1 rounded-full">
-                              <span>🌿</span> Vegan
+                              <span>🌿</span> {lang === 'de' ? 'Vegan' : lang === 'ru' ? 'Веганское' : lang === 'uz' ? 'Vegan' : 'Vegan'}
                             </span>
                           )}
                         </div>
