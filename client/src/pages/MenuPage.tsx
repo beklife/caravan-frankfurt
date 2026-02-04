@@ -874,10 +874,18 @@ export default function MenuPage() {
     uz: "Bizning menyumizni kashf eting: O'zbek Osh 17.90€ dan, Manti 23.90€, Lag'mon, Somsa, Shashlik va boshqalar. Frankfurt Bornhaymdagi Halol oshxona."
   };
 
+  // Dynamic canonical URL based on language
+  const getCanonicalUrl = () => {
+    if (lang === 'de') {
+      return "https://caravan-restaurant.de/menu/";
+    }
+    return `https://caravan-restaurant.de/menu/?lang=${lang}`;
+  };
+
   useSeoMeta({
     title: seoTitles[lang],
     description: seoDescriptions[lang],
-    canonical: "https://caravan-restaurant.de/menu/"
+    canonical: getCanonicalUrl()
   });
 
   useLayoutEffect(() => {

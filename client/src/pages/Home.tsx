@@ -63,10 +63,18 @@ export default function Home() {
     uz: "CARAVAN Restorani Frankfurt Bornheim - Frankfurtdagi eng yaxshi o'zbek restorani. 2005 yildan beri asl markaziy osiyo oshxonasi. O'zbek Osh, Manti, Lag'mon, Somsa. 100% Halol. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158"
   };
 
+  // Dynamic canonical URL based on language
+  const getCanonicalUrl = () => {
+    if (lang === 'de') {
+      return "https://caravan-restaurant.de/";
+    }
+    return `https://caravan-restaurant.de/?lang=${lang}`;
+  };
+
   useSeoMeta({
     title: seoTitles[lang],
     description: seoDescriptions[lang],
-    canonical: "https://caravan-restaurant.de/"
+    canonical: getCanonicalUrl()
   });
 
   useLayoutEffect(() => {
