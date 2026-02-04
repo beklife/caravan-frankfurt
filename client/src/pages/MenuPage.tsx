@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useSeoMeta } from "@/lib/seo";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ArrowLeftIcon as ArrowLeft, ChevronDownIcon as ChevronDown, X } from "@/components/icons";
 import HamburgerButton from "@/components/HamburgerButton";
@@ -177,10 +178,10 @@ const fullMenu = {
       price: '3.90€',
       names: { de: 'Extra Portion Brot (ganzes Fladenbrot)', en: 'Extra Portion Bread (whole flatbread)', ru: 'Дополнительная порция хлеба (целая лепёшка)', uz: 'Qo\'shimcha non (butun non)' },
       descs: {
-        de: 'Traditionelles Fladenbrot aus dem Lehmofen.',
-        en: 'Traditional flatbread from the clay oven.',
-        ru: 'Традиционная лепёшка из глиняной печи.',
-        uz: 'Tandirda pishirilgan an\'anaviy non.'
+        de: 'Traditionelles Fladenbrot.',
+        en: 'Traditional flatbread.',
+        ru: 'Традиционная лепёшка.',
+        uz: 'Milliy non.'
       }
     },
     {
@@ -857,6 +858,27 @@ export default function MenuPage() {
   const t = translations[lang];
   const cats = menuCategories[lang];
   const currentYear = new Date().getFullYear();
+
+  // SEO meta tags for menu page
+  const seoTitles: Record<Language, string> = {
+    de: "Speisekarte - CARAVAN Restaurant Frankfurt | Usbekische Gerichte & Preise",
+    en: "Menu - CARAVAN Restaurant Frankfurt | Uzbek Dishes & Prices",
+    ru: "Меню - Ресторан CARAVAN Франкфурт | Узбекские блюда и цены",
+    uz: "Menyu - CARAVAN Restoran Frankfurt | O'zbek taomlari va narxlar"
+  };
+
+  const seoDescriptions: Record<Language, string> = {
+    de: "Entdecken Sie unsere Speisekarte mit authentischen usbekischen Spezialitäten: Plov ab 17.90€, Manty 23.90€, Lagman, Samsa, Schaschlik und mehr. Halal-Küche in Frankfurt Bornheim.",
+    en: "Discover our menu with authentic Uzbek specialties: Plov from €17.90, Manty €23.90, Lagman, Samsa, Shashlik and more. Halal cuisine in Frankfurt Bornheim.",
+    ru: "Откройте для себя наше меню с аутентичными узбекскими блюдами: Плов от 17.90€, Манты 23.90€, Лагман, Самса, Шашлык и многое другое. Халяль кухня во Франкфурте Борнхайм.",
+    uz: "Bizning menyumizni kashf eting: O'zbek Osh 17.90€ dan, Manti 23.90€, Lag'mon, Somsa, Shashlik va boshqalar. Frankfurt Bornhaymdagi Halol oshxona."
+  };
+
+  useSeoMeta({
+    title: seoTitles[lang],
+    description: seoDescriptions[lang],
+    canonical: "https://caravan-restaurant.de/menu/"
+  });
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);

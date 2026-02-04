@@ -100,7 +100,7 @@ export const translations = {
       reserve: "Reservation Request"
     },
     hero: {
-      title: "CARAVAN – first Uzbek cuisine in Frankfurt and Germany.",
+      title: "CARAVAN – first Uzbek cuisine in Germany.",
       subtitle: "Authentic Uzbek flavors, warm hospitality, and vibrant tea culture in Frankfurt am Main.",
       notice: "This is the official CARAVAN website. We are still building it, so photos and texts are examples. Real photos are coming soon. You can still reserve a table or contact us.",
       cta_reserve: "Book a Table",
@@ -191,7 +191,7 @@ export const translations = {
       reserve: "Запрос на бронирование"
     },
     hero: {
-      title: "CARAVAN — первая узбекская кухня во Франкфурте и Германии.",
+      title: "CARAVAN — первая узбекская кухня в Германии.",
       subtitle: "Аутентичные узбекские вкусы, теплое гостеприимство и культура чаепития во Франкфурте-на-Майне.",
       notice: "Это официальный сайт CARAVAN. Мы еще дорабатываем сайт, поэтому фото и тексты пока примерные. Настоящие фото скоро будут. Вы уже можете бронировать столик или связаться с нами.",
       cta_reserve: "Забронировать стол",
@@ -282,7 +282,7 @@ export const translations = {
       reserve: "Bron so'rovi"
     },
     hero: {
-      title: "CARAVAN – Frankfurt va Germaniyada birinchi O'zbek oshxonasi.",
+      title: "CARAVAN – Germaniyadagi birinchi O'zbek oshxonasi.",
       subtitle: "Frankfurt am Main shahrida asl o'zbek ta'mlari, samimiy mehmondo'stlik va choy madaniyati.",
       notice: "Bu CARAVANning rasmiy veb-sayti. Hozir saytni yakunlayapmiz, shuning uchun foto va matnlar hozircha namunadir. Haqiqiy suratlar tez orada bo'ladi. Baribir stol bron qilishingiz yoki biz bilan bog'lanishingiz mumkin.",
       cta_reserve: "Stol bron qilish",
