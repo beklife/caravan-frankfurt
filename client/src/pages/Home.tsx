@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
 import { useLanguage } from "@/lib/LanguageContext";
+import { useSeoMeta } from "@/lib/seo";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, ChevronDownIcon as ChevronDown, MailIcon as Mail, X } from "@/components/icons";
 import HamburgerButton from "@/components/HamburgerButton";
@@ -20,6 +21,7 @@ import carpetImage from "@assets/stock_images/persian_carpet.webp";
 import plovImage from "@assets/stock_images/menu/palov.webp";
 import shashlikImage from "@assets/stock_images/menu/Schaschlik_vom_Lamm.webp";
 import kazanKebabImage from "@assets/stock_images/menu/Kazan_Kebab.webp";
+import heroLogoImage from "../../../attached_assets/stock_images/ChatGPT Image Feb 4, 2026, 07_43_14 PM.png";
 
 const langNames: Record<Language, string> = {
   de: "Deutsch",
@@ -45,6 +47,35 @@ export default function Home() {
 
   const t = translations[lang];
   const currentYear = new Date().getFullYear();
+
+  // SEO meta tags optimized for key search terms
+  const seoTitles: Record<Language, string> = {
+    de: "CARAVAN Restaurant Frankfurt | Usbekisches Restaurant Bornheim | Authentische Zentralasiatische Küche",
+    en: "CARAVAN Restaurant Frankfurt | Uzbek Restaurant Bornheim | Authentic Central Asian Cuisine",
+    ru: "Ресторан CARAVAN Франкфурт | Узбекский Ресторан Борнхайм | Аутентичная Центральноазиатская Кухня",
+    uz: "CARAVAN Restoran Frankfurt | Bornheimdagi o‘zbek restorani | Asl Markaziy Osiyo oshxonasi"
+  };
+
+  const seoDescriptions: Record<Language, string> = {
+    de: "Restaurant CARAVAN Frankfurt Bornheim - Das beste usbekische Restaurant in Frankfurt. Authentische zentralasiatische Küche seit 2005. Usbekischer Plov, Manty, Lagman, Samsa. 100% Halal. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158",
+    en: "CARAVAN Restaurant Frankfurt Bornheim - The best Uzbek restaurant in Frankfurt. Authentic Central Asian cuisine since 2005. Uzbek Plov, Manty, Lagman, Samsa. 100% Halal. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158",
+    ru: "Ресторан CARAVAN Франкфурт Борнхайм - Лучший узбекский ресторан во Франкфурте. Аутентичная центральноазиатская кухня с 2005 года. Узбекский Плов, Манты, Лагман, Самса. 100% Халяль. Wöllstädter Str. 11, 60385 Франкфурт. Тел: 069 95909158",
+    uz: "CARAVAN Restorani Frankfurt Bornheim - Frankfurtdagi eng yaxshi o‘zbek restorani. 2005 yildan beri asl Markaziy Osiyo oshxonasi. O‘zbek osh, manti, lag‘mon, somsa. 100% halol. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158"
+  };
+
+  // Dynamic canonical URL based on language
+  const getCanonicalUrl = () => {
+    if (lang === 'de') {
+      return "https://caravan-restaurant.de/";
+    }
+    return `https://caravan-restaurant.de/?lang=${lang}`;
+  };
+
+  useSeoMeta({
+    title: seoTitles[lang],
+    description: seoDescriptions[lang],
+    canonical: getCanonicalUrl()
+  });
 
   useLayoutEffect(() => {
     // Check if there's a hash in the URL
@@ -360,8 +391,9 @@ export default function Home() {
           <div className="inline-block border-y-2 border-primary/60 py-2 mb-4">
             <span className="text-secondary font-bold tracking-[0.2em] uppercase text-sm md:text-base">Seit 2005 • Frankfurt</span>
           </div>
+          <img src={heroLogoImage} alt="CARAVAN" className="w-64 h-auto" />
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-lg">
-            <span className="[font-family:'Quando',_serif]">CARAVAN</span>
+            <span className="[font-family:'Quando',_serif]">CARAVAN</span>{' '}
             <span className="block text-xl  font-heading mt-2">
               {t.hero.title.replace(/^CARAVAN\s*[–—-]\s*/i, '')}
             </span>

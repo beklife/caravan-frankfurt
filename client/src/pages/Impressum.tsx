@@ -280,7 +280,7 @@ export default function Impressum() {
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
-              {lang === 'de' ? 'Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV' : lang === 'ru' ? 'Ответственный за содержание согласно § 55 Abs. 2 RStV' : 'Responsible for content according to § 55 Abs. 2 RStV'}
+              {lang === 'de' ? 'Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV' : lang === 'ru' ? 'Ответственный за содержание согласно § 55 Abs. 2 RStV' : lang === 'uz' ? '§ 55 Abs. 2 RStV bo‘yicha mazmun uchun mas’ul shaxs' : 'Responsible for content according to § 55 Abs. 2 RStV'}
             </h2>
             <p className="mb-4">
               CARAVAN Restaurant<br />
@@ -289,11 +289,11 @@ export default function Impressum() {
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
-              {lang === 'de' ? 'Haftungsausschluss' : lang === 'ru' ? 'Отказ от ответственности' : 'Disclaimer'}
+              {lang === 'de' ? 'Haftungsausschluss' : lang === 'ru' ? 'Отказ от ответственности' : lang === 'uz' ? 'Mas’uliyatdan voz kechish' : 'Disclaimer'}
             </h2>
 
             <h3 className="text-xl font-semibold mt-6 mb-2">
-              {lang === 'de' ? 'Haftung für Inhalte' : lang === 'ru' ? 'Ответственность за содержание' : 'Liability for content'}
+              {lang === 'de' ? 'Haftung für Inhalte' : lang === 'ru' ? 'Ответственность за содержание' : lang === 'uz' ? 'Mazmun uchun mas’uliyat' : 'Liability for content'}
             </h3>
             <p className="mb-4">
               {lang === 'de'
@@ -304,7 +304,7 @@ export default function Impressum() {
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-2">
-              {lang === 'de' ? 'Haftung für Links' : lang === 'ru' ? 'Ответственность за ссылки' : 'Liability for links'}
+              {lang === 'de' ? 'Haftung für Links' : lang === 'ru' ? 'Ответственность за ссылки' : lang === 'uz' ? 'Havolalar uchun mas’uliyat' : 'Liability for links'}
             </h3>
             <p className="mb-4">
               {lang === 'de'
