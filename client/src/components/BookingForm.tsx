@@ -178,7 +178,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
           {...register("guests")}
           className={`flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${errors.guests ? "border-destructive" : ""}`}
         >
-          <option value="">{lang === 'de' ? 'Bitte wählen' : lang === 'ru' ? 'Пожалуйста, выберите' : lang === 'uz' ? 'Iltimos tanlang' : 'Please select'}</option>
+          <option value="">{lang === 'de' ? 'Bitte wählen' : lang === 'ru' ? 'Пожалуйста, выберите' : lang === 'uz' ? 'Iltimos, tanlang' : 'Please select'}</option>
           <option value="1">1 {lang === 'de' ? 'Person' : lang === 'ru' ? 'человек' : lang === 'uz' ? 'kishi' : 'person'}</option>
           <option value="2">2 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человека' : lang === 'uz' ? 'kishi' : 'people'}</option>
           <option value="3">3 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человека' : lang === 'uz' ? 'kishi' : 'people'}</option>
@@ -248,7 +248,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
               : lang === "ru"
               ? "Особые пожелания..."
               : lang === "uz"
-              ? "Maxsus so'rovlar..."
+              ? "Maxsus so‘rovlar..."
               : "Special requests..."
           }
           rows={4}

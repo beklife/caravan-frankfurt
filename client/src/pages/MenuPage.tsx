@@ -1,5 +1,5 @@
 import { useState, useLayoutEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -31,7 +31,7 @@ const langNames: Record<Language, string> = {
   de: "Deutsch",
   en: "English",
   ru: "Русский",
-  uz: "O'zbek"
+  uz: "O‘zbek"
 };
 
 const langFlags: Record<Language, string> = {
@@ -82,10 +82,10 @@ const menuCategories = {
     desserts: "Десерты"
   },
   uz: {
-    soups: "Sho'rvalar",
-    mains: "Firma taomlar",
-    grills: "Gril taomlar",
-    appetizers: "Issiq, sovuq taomlar va salatlar",
+    soups: "Sho‘rvalar",
+    mains: "Firma taomlari",
+    grills: "Gril taomlari",
+    appetizers: "Issiq va sovuq taomlar, salatlar",
     sides: "Garnirlar",
     drinks: "Issiq ichimliklar",
     colddrinks: "Sovuq ichimliklar",
@@ -140,31 +140,31 @@ const fullMenu = {
       id: 'pommes',
       image: null,
       price: '5.90€',
-      names: { de: 'Extra Portion Pommes', en: 'Extra Portion Fries', ru: 'Дополнительная порция картофеля фри', uz: 'Qo\'shimcha kartoshka fri' },
+      names: { de: 'Extra Portion Pommes', en: 'Extra Portion Fries', ru: 'Дополнительная порция картофеля фри', uz: 'Qo‘shimcha kartoshka fri' },
       descs: {
         de: 'Knusprige Pommes Frites.',
         en: 'Crispy french fries.',
         ru: 'Хрустящий картофель фри.',
-        uz: 'Qo\'shimcha kartoshka fri.'
+        uz: 'Qo‘shimcha kartoshka fri.'
       }
     },
     {
       id: 'reis',
       image: null,
       price: '4.90€',
-      names: { de: 'Extra Portion Reis', en: 'Extra Portion Rice', ru: 'Дополнительная порция риса', uz: 'Qo\'shimcha guruch' },
+      names: { de: 'Extra Portion Reis', en: 'Extra Portion Rice', ru: 'Дополнительная порция риса', uz: 'Qo‘shimcha guruch' },
       descs: {
         de: 'Gedämpfter Reis.',
         en: 'Steamed rice.',
         ru: 'Рис на пару.',
-        uz: 'Bug\'da pishirilgan guruch.'
+        uz: 'Bug‘da pishirilgan guruch.'
       }
     },
     {
       id: 'sosse',
       image: null,
       price: '2.90€',
-      names: { de: 'Extra Portion Sosse', en: 'Extra Portion Sauce', ru: 'Дополнительная порция соуса', uz: 'Qo\'shimcha sous' },
+      names: { de: 'Extra Portion Sosse', en: 'Extra Portion Sauce', ru: 'Дополнительная порция соуса', uz: 'Qo‘shimcha sous' },
       descs: {
         de: 'Yoghurt-, Scharf-, Tomatensoße, Schmand.',
         en: 'Yogurt, Spicy, Tomato sauce, Sour cream.',
@@ -176,7 +176,7 @@ const fullMenu = {
       id: 'non',
       image: null,
       price: '3.90€',
-      names: { de: 'Extra Portion Brot (ganzes Fladenbrot)', en: 'Extra Portion Bread (whole flatbread)', ru: 'Дополнительная порция хлеба (целая лепёшка)', uz: 'Qo\'shimcha non (butun non)' },
+      names: { de: 'Extra Portion Brot (ganzes Fladenbrot)', en: 'Extra Portion Bread (whole flatbread)', ru: 'Дополнительная порция хлеба (целая лепёшка)', uz: 'Qo‘shimcha non (butun non)' },
       descs: {
         de: 'Traditionelles Fladenbrot.',
         en: 'Traditional flatbread.',
@@ -188,7 +188,7 @@ const fullMenu = {
       id: 'nonhalf',
       image: null,
       price: '1.90€',
-      names: { de: 'Extra Portion Brot (halbes Fladenbrot)', en: 'Extra Portion Bread (half flatbread)', ru: 'Дополнительная порция хлеба (половина лепёшки)', uz: 'Qo\'shimcha non (yarim non)' },
+      names: { de: 'Extra Portion Brot (halbes Fladenbrot)', en: 'Extra Portion Bread (half flatbread)', ru: 'Дополнительная порция хлеба (половина лепёшки)', uz: 'Qo‘shimcha non (yarim non)' },
       descs: {
         de: 'Halbes traditionelles Fladenbrot.',
         en: 'Half traditional flatbread.',
@@ -522,12 +522,12 @@ const fullMenu = {
       id: 'schofferhofer',
       image: null,
       price: '5.90€',
-      names: { de: 'Schöfferhofer Hefeweizen (0.5L)', en: 'Schöfferhofer Wheat Beer (0.5L)', ru: 'Schöfferhofer пшеничное (0.5л)', uz: 'Schöfferhofer bug\'doy pivosi (0.5L)' },
+      names: { de: 'Schöfferhofer Hefeweizen (0.5L)', en: 'Schöfferhofer Wheat Beer (0.5L)', ru: 'Schöfferhofer пшеничное (0.5л)', uz: 'Schöfferhofer bug‘doy pivosi (0.5L)' },
       descs: {
         de: 'Klassisches Hefeweizen',
         en: 'Classic wheat beer',
         ru: 'Классическое пшеничное пиво',
-        uz: 'Klassik bug\'doy pivosi'
+        uz: 'Klassik bug‘doy pivosi'
       }
     },
     {
@@ -546,12 +546,12 @@ const fullMenu = {
       id: 'schofferhoferna',
       image: null,
       price: '5.90€',
-      names: { de: 'Schöfferhofer Hefeweizen (0.0% Vol.) (0.5L)', en: 'Schöfferhofer Wheat Beer (0.0% Vol.) (0.5L)', ru: 'Schöfferhofer пшеничное (0.0% Vol.) (0.5л)', uz: 'Schöfferhofer bug\'doy (0.0% Vol.) (0.5L)' },
+      names: { de: 'Schöfferhofer Hefeweizen (0.0% Vol.) (0.5L)', en: 'Schöfferhofer Wheat Beer (0.0% Vol.) (0.5L)', ru: 'Schöfferhofer пшеничное (0.0% Vol.) (0.5л)', uz: 'Schöfferhofer bug‘doy (0.0% Vol.) (0.5L)' },
       descs: {
         de: 'Alkoholfreies Hefeweizen',
         en: 'Non-alcoholic wheat beer',
         ru: 'Безалкогольное пшеничное пиво',
-        uz: 'Alkogolsiz bug\'doy pivosi'
+        uz: 'Alkogolsiz bug‘doy pivosi'
       }
     },
     {
@@ -637,7 +637,7 @@ const fullMenu = {
         de: 'Trocken, 2 Jahre im Eichefass gelagert, nach dunklen Beeren und Vanille, leichte Röstnoten',
         en: 'Dry, 2 years oak-aged, dark berries and vanilla, light roasted notes',
         ru: 'Сухое, 2 года в дубовой бочке, темные ягоды и ваниль, легкая обжарка',
-        uz: 'Quruq, 2 yil eman bochkada, qora rezavorlar va vanil, yengil qovurilgan'
+        uz: 'Quruq, 2 yil eman bochkasida, qora rezavorlar va vanil, yengil qovurilgan notalar'
       }
     },
     {
@@ -649,7 +649,7 @@ const fullMenu = {
         de: 'Rioja / Am Gaumen fein und elegant, mit zarten und runden Tanninen, einem seidigen Mundgefühl und einer angenessenen Säure. Alles in allem ein sehr milder, gut definierter und zugänglicher Wein.',
         en: 'Rioja / Fine and elegant on the palate, with gentle and round tannins, a silky mouthfeel and a pleasant acidity. Overall a very mild, well-defined and accessible wine.',
         ru: 'Риоха / Тонкое и элегантное во рту, с нежными и округлыми танинами, шелковистым ощущением и приятной кислотностью. В целом очень мягкое, хорошо определенное и доступное вино.',
-        uz: 'Rioja / Og\'izda nozik va oqlangan, yumshoq va yumaloq taninlar, ipakdek his va yoqimli kislotalilik. Umuman olganda juda yumshoq, yaxshi aniqlangan va ochiq vino.'
+        uz: 'Rioja / Og‘izda nozik va oqlangan; yumshoq va yumaloq taninlar, ipakdek his va yoqimli kislotalilik. Umuman olganda juda yumshoq, yaxshi aniqlangan va ochiq vino.'
       }
     },
     {
@@ -685,7 +685,7 @@ const fullMenu = {
         de: 'Lieblich, fruchtig nach Mirabellen',
         en: 'Sweet, fruity with mirabelle plums',
         ru: 'Сладкое, фруктовое с мирабелью',
-        uz: 'Shirin, mevali mirabelle olxo\'ri bilan'
+        uz: 'Shirin, mevali mirabelle olxo‘ri bilan'
       }
     },
     {
@@ -721,7 +721,7 @@ const fullMenu = {
         de: 'Der Riscal Blanco ist ein frischer fruchtiger Wein, betont trocken am Gaumen und mit rassiger Säure ausgestattet.',
         en: 'The Riscal Blanco is a fresh fruity wine, distinctly dry on the palate and equipped with racy acidity.',
         ru: 'Riscal Blanco - свежее фруктовое вино, ярко выраженное сухое на вкус и с живой кислотностью.',
-        uz: 'Riscal Blanco yangi mevali vino, og\'izda aniq quruq va jonli kislotalikka ega.'
+        uz: 'Riscal Blanco — yangi mevali vino, og‘izda aniq quruq va jonli kislotalikka ega.'
       }
     },
   ],
@@ -783,7 +783,7 @@ const fullMenu = {
         de: 'Scotch Whisky',
         en: 'Scotch whisky',
         ru: 'Скотч виски',
-        uz: 'Shotland viski'
+        uz: 'Shotland viskisi'
       }
     },
     {
@@ -795,7 +795,7 @@ const fullMenu = {
         de: 'Tennessee Whiskey',
         en: 'Tennessee whiskey',
         ru: 'Теннесси виски',
-        uz: 'Tennessi viski'
+        uz: 'Tennessi viskisi'
       }
     },
     {
@@ -819,7 +819,7 @@ const fullMenu = {
         de: 'Kräuterlikör',
         en: 'Herbal liqueur',
         ru: 'Травяной ликер',
-        uz: 'O\'tli liker'
+        uz: 'O‘tli likyor'
       }
     },
     {
@@ -850,7 +850,8 @@ const fullMenu = {
 };
 
 export default function MenuPage() {
-  const { lang, setLang } = useLanguage();
+  const { lang, setLang, getLocalizedPath } = useLanguage();
+  const [, setLocation] = useLocation();
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState<{ src: string; name: string } | null>(null);
@@ -871,15 +872,13 @@ export default function MenuPage() {
     de: "Entdecken Sie unsere Speisekarte mit authentischen usbekischen Spezialitäten: Plov ab 17.90€, Manty 23.90€, Lagman, Samsa, Schaschlik und mehr. Halal-Küche in Frankfurt Bornheim.",
     en: "Discover our menu with authentic Uzbek specialties: Plov from €17.90, Manty €23.90, Lagman, Samsa, Shashlik and more. Halal cuisine in Frankfurt Bornheim.",
     ru: "Откройте для себя наше меню с аутентичными узбекскими блюдами: Плов от 17.90€, Манты 23.90€, Лагман, Самса, Шашлык и многое другое. Халяль кухня во Франкфурте Борнхайм.",
-    uz: "Bizning menyumizni kashf eting: O‘zbek osh 17.90€ dan, manti 23.90€, lag‘mon, somsa, shashlik va boshqalar. Frankfurt Bornheimdagi halol oshxona."
+    uz: "Bizning menyumizni kashf eting: O'zbek osh 17.90€ dan, manti 23.90€, lag'mon, somsa, shashlik va boshqalar. Frankfurt Bornheimdagi halol oshxona."
   };
 
-  // Dynamic canonical URL based on language
+  // Dynamic canonical URL based on language path
   const getCanonicalUrl = () => {
-    if (lang === 'de') {
-      return "https://caravan-restaurant.de/menu/";
-    }
-    return `https://caravan-restaurant.de/menu/?lang=${lang}`;
+    const localPath = getLocalizedPath('/menu/');
+    return `https://caravan-restaurant.de${localPath}`;
   };
 
   useSeoMeta({
@@ -924,7 +923,7 @@ export default function MenuPage() {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border py-4">
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-          <Link href="/">
+          <Link href={getLocalizedPath('/')}>
             <Button variant="ghost" className="gap-2">
               <ArrowLeft className="w-4 h-4" />
               {lang === 'de' ? 'Zurück' : lang === 'ru' ? 'Назад' : lang === 'en' ? 'Back' : lang === 'uz' ? 'Ortga' : 'Back'}
@@ -932,7 +931,7 @@ export default function MenuPage() {
           </Link>
 
           <Link
-            href="/"
+            href={getLocalizedPath('/')}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="font-heading text-2xl font-bold tracking-wider text-primary"
           >
@@ -1108,14 +1107,14 @@ export default function MenuPage() {
               className="md:hidden bg-background border-b border-border absolute top-full left-0 right-0 shadow-lg"
             >
               <div className="flex flex-col p-6 gap-4">
-                <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#about'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
+                <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#about`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
                   {lang === 'de' ? 'Über uns' : lang === 'ru' ? 'О нас' : lang === 'uz' ? 'Biz haqida' : 'About Us'}
                 </button>
-                <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#contact'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
+                <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#contact`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
                   {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакт' : lang === 'uz' ? 'Aloqa' : 'Contact'}
                 </button>
-                <button onClick={() => { setMobileMenuOpen(false); window.location.href = '/#reservation'; }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
-                  {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' : lang === 'uz' ? 'Bron so\'rovi' : 'Reservation Request'}
+                <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#reservation`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
+                  {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' : lang === 'uz' ? 'Bron so‘rovi' : 'Reservation Request'}
                 </button>
               </div>
             </motion.div>
@@ -1196,7 +1195,7 @@ export default function MenuPage() {
             {lang === 'de' && 'Alle Preise inkl. MwSt. • Allergene und Zusatzstoffe auf Anfrage • Alle Gerichte sind Halal'}
             {lang === 'en' && 'All prices include VAT • Allergen information available on request • All dishes are Halal'}
             {lang === 'ru' && 'Все цены включают НДС • Информация об аллергенах по запросу • Все блюда халяльные'}
-            {lang === 'uz' && 'Barcha narxlar QQS bilan • Allergen haqida ma\'lumot so\'rovga binoan • Barcha taomlar halol'}
+            {lang === 'uz' && 'Barcha narxlar QQS bilan • Allergenlar bo‘yicha ma’lumot so‘rovga binoan • Barcha taomlar halol'}
           </p>
           <div className="mt-4 md:mt-6 text-center">
             <p className="text-xs text-muted-foreground/70">
@@ -1423,17 +1422,17 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                         <div className="flex gap-2 mt-2 md:mt-3">
                           {item.dietary === 'halal' && (
                             <span className="inline-flex items-center gap-1 text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
-                              <span>✓</span> Halal
+                              <span>✓</span> {lang === 'de' ? 'Halal' : lang === 'ru' ? 'Халяль' : lang === 'uz' ? 'Halol' : 'Halal'}
                             </span>
                           )}
                           {item.dietary === 'vegetarian' && (
                             <span className="inline-flex items-center gap-1 text-xs bg-green-500/10 text-green-600 px-2 py-1 rounded-full">
-                              <span>🌱</span> Vegetarian
+                              <span>🌱</span> {lang === 'de' ? 'Vegetarisch' : lang === 'ru' ? 'Вегетарианское' : lang === 'uz' ? 'Vegetarian' : 'Vegetarian'}
                             </span>
                           )}
                           {item.dietary === 'vegan' && (
                             <span className="inline-flex items-center gap-1 text-xs bg-green-600/10 text-green-700 px-2 py-1 rounded-full">
-                              <span>🌿</span> Vegan
+                              <span>🌿</span> {lang === 'de' ? 'Vegan' : lang === 'ru' ? 'Веганское' : lang === 'uz' ? 'Vegan' : 'Vegan'}
                             </span>
                           )}
                         </div>

@@ -4,18 +4,66 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Homepage -->
+  <!-- Homepage - German (default) -->
   <url>
     <loc>https://caravan-restaurant.de/</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Menu Page -->
+  <!-- Homepage - English -->
+  <url>
+    <loc>https://caravan-restaurant.de/en/</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Homepage - Russian -->
+  <url>
+    <loc>https://caravan-restaurant.de/ru/</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Homepage - Uzbek -->
+  <url>
+    <loc>https://caravan-restaurant.de/uz/</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Menu Page - German -->
   <url>
     <loc>https://caravan-restaurant.de/menu/</loc>
-    <lastmod>2026-02-03</lastmod>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Menu Page - English -->
+  <url>
+    <loc>https://caravan-restaurant.de/en/menu/</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Menu Page - Russian -->
+  <url>
+    <loc>https://caravan-restaurant.de/ru/menu/</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Menu Page - Uzbek -->
+  <url>
+    <loc>https://caravan-restaurant.de/uz/menu/</loc>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
