@@ -57,10 +57,10 @@ export default function Home() {
   };
 
   const seoDescriptions: Record<Language, string> = {
-    de: "Restaurant CARAVAN Frankfurt Bornheim - Das beste usbekische Restaurant in Frankfurt. Authentische zentralasiatische Küche seit 2005. Usbekischer Plov, Manty, Lagman, Samsa. 100% Halal. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158",
-    en: "CARAVAN Restaurant Frankfurt Bornheim - The best Uzbek restaurant in Frankfurt. Authentic Central Asian cuisine since 2005. Uzbek Plov, Manty, Lagman, Samsa. 100% Halal. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158",
-    ru: "Ресторан CARAVAN Франкфурт Борнхайм - Лучший узбекский ресторан во Франкфурте. Аутентичная центральноазиатская кухня с 2005 года. Узбекский Плов, Манты, Лагман, Самса. 100% Халяль. Wöllstädter Str. 11, 60385 Франкфурт. Тел: 069 95909158",
-    uz: "CARAVAN Restorani Frankfurt Bornheim - Frankfurtdagi eng yaxshi o‘zbek restorani. 2005 yildan beri asl Markaziy Osiyo oshxonasi. O‘zbek osh, manti, lag‘mon, somsa. 100% halol. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158"
+    de: "Restaurant CARAVAN Frankfurt Bornheim - Das beste usbekische Restaurant in Frankfurt. Authentische zentralasiatische Küche seit 2005. Usbekischer Plov, Manty, Samsa. 100% Halal. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158",
+    en: "CARAVAN Restaurant Frankfurt Bornheim - The best Uzbek restaurant in Frankfurt. Authentic Central Asian cuisine since 2005. Uzbek Plov, Manty, Samsa. 100% Halal. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158",
+    ru: "Ресторан CARAVAN Франкфурт Борнхайм - Лучший узбекский ресторан во Франкфурте. Аутентичная центральноазиатская кухня с 2005 года. Узбекский Плов, Манты, Самса. 100% Халяль. Wöllstädter Str. 11, 60385 Франкфурт. Тел: 069 95909158",
+    uz: "CARAVAN Restorani Frankfurt Bornheim - Frankfurtdagi eng yaxshi o'zbek restorani. 2005 yildan beri asl Markaziy Osiyo oshxonasi. O'zbek osh, manti, somsa. 100% halol. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158"
   };
 
   // Dynamic canonical URL based on language path
@@ -371,7 +371,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <img
             src={heroImage}
-            alt="Traditional Uzbek and Central Asian feast with colorful dishes including Uzbek Plov, Manty dumplings, and Lagman noodles at CARAVAN Restaurant Frankfurt"
+            alt="Traditional Uzbek and Central Asian feast with colorful dishes including Uzbek Plov and Manty dumplings at CARAVAN Restaurant Frankfurt"
             className="w-full h-full object-cover"
             fetchPriority="high"
             decoding="async"
@@ -512,7 +512,7 @@ export default function Home() {
           <h2 className="text-center text-4xl font-heading font-bold mb-12 text-white">{t.gallery.title}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 h-[500px]">
              <div className="col-span-2 row-span-2 relative overflow-hidden group rounded-sm cursor-pointer" onClick={() => setLightboxImage({ src: heroImage, name: "CARAVAN Restaurant Frankfurt" })}>
-                <img alt="Authentic Uzbek and Central Asian dishes at CARAVAN Restaurant Frankfurt - Uzbek Plov, Manty, Lagman" src={heroImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                <img alt="Authentic Uzbek and Central Asian dishes at CARAVAN Restaurant Frankfurt - Uzbek Plov, Manty" src={heroImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
              <div className="col-span-2 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer" onClick={() => setLightboxImage({ src: interiorImage, name: "CARAVAN Interior" })}>
                 <img alt="Warm and inviting interior of CARAVAN Restaurant in Bornheim, Frankfurt with traditional decorations" src={interiorImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />

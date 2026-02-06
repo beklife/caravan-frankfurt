@@ -869,10 +869,10 @@ export default function MenuPage() {
   };
 
   const seoDescriptions: Record<Language, string> = {
-    de: "Entdecken Sie unsere Speisekarte mit authentischen usbekischen Spezialitäten: Plov ab 17.90€, Manty 23.90€, Lagman, Samsa, Schaschlik und mehr. Halal-Küche in Frankfurt Bornheim.",
-    en: "Discover our menu with authentic Uzbek specialties: Plov from €17.90, Manty €23.90, Lagman, Samsa, Shashlik and more. Halal cuisine in Frankfurt Bornheim.",
-    ru: "Откройте для себя наше меню с аутентичными узбекскими блюдами: Плов от 17.90€, Манты 23.90€, Лагман, Самса, Шашлык и многое другое. Халяль кухня во Франкфурте Борнхайм.",
-    uz: "Bizning menyumizni kashf eting: O'zbek osh 17.90€ dan, manti 23.90€, lag'mon, somsa, shashlik va boshqalar. Frankfurt Bornheimdagi halol oshxona."
+    de: "Entdecken Sie unsere Speisekarte mit authentischen usbekischen Spezialitäten: Plov ab 17.90€, Manty 23.90€, Samsa, Schaschlik und mehr. Halal-Küche in Frankfurt Bornheim.",
+    en: "Discover our menu with authentic Uzbek specialties: Plov from €17.90, Manty €23.90, Samsa, Shashlik and more. Halal cuisine in Frankfurt Bornheim.",
+    ru: "Откройте для себя наше меню с аутентичными узбекскими блюдами: Плов от 17.90€, Манты 23.90€, Самса, Шашлык и многое другое. Халяль кухня во Франкфурте Борнхайм.",
+    uz: "Bizning menyumizni kashf eting: O'zbek osh 17.90€ dan, manti 23.90€, somsa, shashlik va boshqalar. Frankfurt Bornheimdagi halol oshxona."
   };
 
   // Dynamic canonical URL based on language path

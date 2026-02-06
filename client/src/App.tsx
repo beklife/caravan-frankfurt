@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { MusicProvider } from "@/lib/MusicContext";
 import { LanguageProvider } from "@/lib/LanguageContext";
+import GoogleReviewButton from "@/components/GoogleReviewButton";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import MenuPage from "@/pages/MenuPage";
@@ -21,6 +22,7 @@ function App() {
         <MusicProvider>
           <LanguageProvider>
             <Toaster />
+            <GoogleReviewButton />
             <Router base={import.meta.env.BASE_URL}>
               <Switch>
                 {/* German routes (default, no language prefix) */}

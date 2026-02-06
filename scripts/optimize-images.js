@@ -38,7 +38,6 @@ const fileSettings = {
   'osh.webp': 'menu',
   'somsa.webp': 'menu',
   'shashlyk-meat-centralasia-food.webp': 'menu',
-  'uygurishe lagman.webp': 'menu',
   'tea_1.webp': 'menu',
   'salat.webp': 'menu',
   'Ayran.webp': 'menu',

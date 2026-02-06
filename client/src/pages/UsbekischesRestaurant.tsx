@@ -12,7 +12,7 @@ export default function UsbekischesRestaurant() {
   useSeoMeta({
     title: "Usbekisches Restaurant Frankfurt | CARAVAN",
     description:
-      "Authentisches usbekisches Restaurant in Frankfurt am Main: Plov, Manty, Lagman und mehr. Herzliche Gastfreundschaft, zentrale Lage in Bornheim.",
+      "Authentisches usbekisches Restaurant in Frankfurt am Main: Plov, Manty und mehr. Herzliche Gastfreundschaft, zentrale Lage in Bornheim.",
     canonical: "https://caravan-restaurant.de/usbekisches-restaurant-frankfurt/",
   });
 
@@ -51,7 +51,7 @@ export default function UsbekischesRestaurant() {
             </h1>
             <p className="mt-5 text-lg text-white/90">
               CARAVAN bringt die Seele Usbekistans nach Frankfurt: langsam geschmorter Plov,
-              handgerollte Manty und kräftige Lagman‑Nudeln – alles frisch zubereitet.
+              handgerollte Manty und authentische Samsa – alles frisch zubereitet.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/menu/">
