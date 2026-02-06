@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -39,10 +39,40 @@ export default function BookingForm({ lang }: BookingFormProps) {
     register,
     handleSubmit,
     reset,
+    watch,
+    setValue,
     formState: { errors },
   } = useForm<BookingFormData>({
     resolver: zodResolver(bookingSchema),
   });
+  const selectedDate = watch("date");
+  const selectedTime = watch("time");
+
+  const availableTimes = useMemo(() => {
+    if (!selectedDate) return [];
+
+    const dayOfWeek = new Date(`${selectedDate}T12:00:00`).getDay();
+
+    // Tuesday (2) to Thursday (4)
+    if (dayOfWeek >= 2 && dayOfWeek <= 4) {
+      return ["17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00"];
+    }
+
+    // Friday (5), Saturday (6), Sunday (0)
+    if (dayOfWeek === 5 || dayOfWeek === 6 || dayOfWeek === 0) {
+      return ["17:00", "17:30", "19:00", "19:30", "20:30", "21:00", "21:30"];
+    }
+
+    // Monday closed
+    return [];
+  }, [selectedDate]);
+
+  useEffect(() => {
+    if (!selectedTime) return;
+    if (!selectedDate || availableTimes.length === 0 || !availableTimes.includes(selectedTime)) {
+      setValue("time", "");
+    }
+  }, [availableTimes, selectedDate, selectedTime, setValue]);
 
   const onSubmit = async (data: BookingFormData) => {
     setIsSubmitting(true);
@@ -221,12 +251,43 @@ export default function BookingForm({ lang }: BookingFormProps) {
             <Clock className="h-4 w-4" />
             {t.contact.form.time}
           </Label>
-          <Input
+          <select
             id="time"
-            type="time"
             {...register("time")}
-            className={errors.time ? "border-destructive" : ""}
-          />
+            disabled={!selectedDate || availableTimes.length === 0}
+            className={`flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${errors.time ? "border-destructive" : ""}`}
+          >
+            <option value="">
+              {lang === "de"
+                ? !selectedDate
+                  ? "Bitte zuerst Datum wählen"
+                  : availableTimes.length === 0
+                  ? "Keine verfügbaren Zeiten"
+                  : "Bitte wählen"
+                : lang === "ru"
+                ? !selectedDate
+                  ? "Сначала выберите дату"
+                  : availableTimes.length === 0
+                  ? "Нет доступного времени"
+                  : "Пожалуйста, выберите"
+                : lang === "uz"
+                ? !selectedDate
+                  ? "Avval sanani tanlang"
+                  : availableTimes.length === 0
+                  ? "Mos vaqt mavjud emas"
+                  : "Iltimos, tanlang"
+                : !selectedDate
+                ? "Please select a date first"
+                : availableTimes.length === 0
+                ? "No available times"
+                : "Please select"}
+            </option>
+            {availableTimes.map((time) => (
+              <option key={time} value={time}>
+                {time}
+              </option>
+            ))}
+          </select>
           {errors.time && (
             <p className="text-destructive text-sm text-red-700 mt-1">{errors.time.message}</p>
           )}
