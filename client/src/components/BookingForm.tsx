@@ -51,6 +51,11 @@ export default function BookingForm({ lang }: BookingFormProps) {
   const availableTimes = useMemo(() => {
     if (!selectedDate) return [];
 
+    // Valentine's Day 2026 - special hours only
+    if (selectedDate === "2026-02-14") {
+      return ["17:00", "21:00"];
+    }
+
     const dayOfWeek = new Date(`${selectedDate}T12:00:00`).getDay();
 
     // Tuesday (2) to Thursday (4)
