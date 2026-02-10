@@ -35,12 +35,26 @@ export default function GoogleReviewButton() {
 
   const t = translations[lang];
 
+  const [footerVisible, setFooterVisible] = useState(false);
+
   // Check localStorage on mount
   useEffect(() => {
     const dismissed = localStorage.getItem("reviewButtonDismissed");
     if (dismissed === "true") {
       setIsVisible(false);
     }
+  }, []);
+
+  // Hide when footer is visible
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setFooterVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    observer.observe(footer);
+    return () => observer.disconnect();
   }, []);
 
   const handleClose = (e: React.MouseEvent) => {
@@ -50,7 +64,7 @@ export default function GoogleReviewButton() {
     localStorage.setItem("reviewButtonDismissed", "true");
   };
 
-  if (!isVisible) return null;
+  if (!isVisible || footerVisible) return null;
 
   if (!isExpanded) {
     return (
