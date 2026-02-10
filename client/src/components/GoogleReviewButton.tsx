@@ -5,6 +5,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 export default function GoogleReviewButton() {
   const { lang } = useLanguage();
   const [isVisible, setIsVisible] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
   const placeId = "ChIJhx2VfmkJvUcRnefb1P5Fxf4";
   const reviewUrl = `https://search.google.com/local/writereview?placeid=${placeId}`;
 
@@ -34,12 +35,26 @@ export default function GoogleReviewButton() {
 
   const t = translations[lang];
 
+  const [footerVisible, setFooterVisible] = useState(false);
+
   // Check localStorage on mount
   useEffect(() => {
     const dismissed = localStorage.getItem("reviewButtonDismissed");
     if (dismissed === "true") {
       setIsVisible(false);
     }
+  }, []);
+
+  // Hide when footer is visible
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setFooterVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    observer.observe(footer);
+    return () => observer.disconnect();
   }, []);
 
   const handleClose = (e: React.MouseEvent) => {
@@ -49,10 +64,29 @@ export default function GoogleReviewButton() {
     localStorage.setItem("reviewButtonDismissed", "true");
   };
 
-  if (!isVisible) return null;
+  if (!isVisible || footerVisible) return null;
+
+  if (!isExpanded) {
+    return (
+      <div className="fixed z-[60] right-4 md:right-6 bottom-[max(1rem,env(safe-area-inset-bottom))]">
+        <button
+          onClick={() => setIsExpanded(true)}
+          aria-label="Google Bewertung"
+          className="w-12 h-12 rounded-full shadow-[0_8px_32px_-8px_rgba(199,68,64,0.4)]
+                     flex items-center justify-center
+                     bg-gradient-to-br from-[hsl(355,65%,42%)] to-[hsl(355,55%,35%)]
+                     hover:scale-110 active:scale-95 transition-transform duration-200"
+        >
+          <svg className="w-5 h-5 text-[hsl(38,85%,60%)]" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.748L12.545,10.239z"/>
+          </svg>
+        </button>
+      </div>
+    );
+  }
 
   return (
-    <div className="fixed z-[60] right-4 md:right-6 bottom-[max(1rem,env(safe-area-inset-bottom))] group">
+    <div className="fixed z-[60] right-4 md:right-6 bottom-[max(1rem,env(safe-area-inset-bottom))] group animate-expand">
       <a
         href={reviewUrl}
         target="_blank"
@@ -137,6 +171,11 @@ export default function GoogleReviewButton() {
           0% { transform: translateX(-100%); }
           100% { transform: translateX(100%); }
         }
+        @keyframes expand-in {
+          from { transform: scale(0.5); opacity: 0; transform-origin: bottom right; }
+          to   { transform: scale(1);   opacity: 1; transform-origin: bottom right; }
+        }
+        .animate-expand { animation: expand-in 0.25s ease-out; }
       `}</style>
     </div>
   );
