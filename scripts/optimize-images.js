@@ -33,16 +33,7 @@ const imageSettings = {
 
 // Map specific files to settings
 const fileSettings = {
-  'manty_dumplings_cent_45246789.webp': 'menu',
   // Menu images
-  'osh.webp': 'menu',
-  'somsa.webp': 'menu',
-  'shashlyk-meat-centralasia-food.webp': 'menu',
-  'tea_1.webp': 'menu',
-  'salat.webp': 'menu',
-  'Ayran.webp': 'menu',
-  'kompot.webp': 'menu',
-  'Uzbek-bread-obi-non-thumbnail-square-500x500.webp': 'menu',
 };
 
 async function optimizeImage(inputPath, settings) {

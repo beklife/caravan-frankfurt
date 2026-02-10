@@ -43,6 +43,7 @@ export const translations = {
         schaschlikvomhaehnchen: { name: "Schaschlik vom Hähnchen", desc: "Saftige Hähnchenfleischstückchen mit Tomaten-Yoghurt-Knoblauch-Sauce und frischem Gemüsesalat." },
         caravandessert: { name: "Caravan Dessert", desc: "Gebackene Apetithäppchen aus Blätterteig mit Halwa und Äpfeln. Vanillesauce dazu." },
         honigmedovikkuchen: { name: "Honig Medovik Kuchen", desc: "Honig Medovik Kuchen in zwei Sorten: Nuss / Schokolade" },
+        honigmedovikschokolade: { name: "Honig Medovik Schokolade", desc: "Honig Medovik Torte in der Schokoladen-Variante." },
         kannetee06jasmin: { name: "Kanne Jasmin Tee", desc: "Aromatischer Jasmin-Tee, traditionell serviert in einer Teekanne." }
       }
     },
@@ -134,6 +135,7 @@ export const translations = {
         schaschlikvomhaehnchen: { name: "Shashlik from Chicken", desc: "Tenderly marinated chicken filets, served with a fresh vegetable salad, tomato sauce and a side dish of your choice." },
         caravandessert: { name: "Caravan Dessert", desc: "Puff pastry filled with Halva and Apples, served with a vanilla sauce." },
         honigmedovikkuchen: { name: "Honey Medovik Cake", desc: "Honey Medovik Cake in two varieties: Nut / Chocolate" },
+        honigmedovikschokolade: { name: "Honey Medovik Chocolate", desc: "Honey Medovik cake in the chocolate variety." },
         kannetee06jasmin: { name: "Pot of Jasmine Tea", desc: "Aromatic jasmine tea, traditionally served in a teapot." }
       }
     },
@@ -225,6 +227,7 @@ export const translations = {
         schaschlikvomhaehnchen: { name: "Шашлык из курицы", desc: "Сочные кусочки курицы с томатно-йогуртовым соусом с чесноком и свежим овощным салатом." },
         caravandessert: { name: "Десерт Караван", desc: "Печеные аппетитные кусочки слоеного теста с халвой и яблоками. Ванильный соус." },
         honigmedovikkuchen: { name: "Медовый торт Медовик", desc: "Медовый торт Медовик в двух вариантах: Ореховый / Шоколадный" },
+        honigmedovikschokolade: { name: "Медовик Шоколадный", desc: "Медовый торт Медовик в шоколадном исполнении." },
         kannetee06jasmin: { name: "Чайник жасминового чая", desc: "Ароматный жасминовый чай, традиционно подается в чайнике." }
       }
     },
@@ -315,7 +318,8 @@ export const translations = {
         schaschlikvomlamm: { name: "Qo‘y go‘shtidan shashlik", desc: "Pomidor-yogurt-sarimsoq sousi va yangi sabzavot salati bilan sharbatli qo‘y go‘shti bo‘laklari." },
         schaschlikvomhaehnchen: { name: "Tovuqdan shashlik", desc: "Pomidor-yogurt-sarimsoq sousi va yangi sabzavot salati bilan sharbatli tovuq go‘shti bo‘laklari." },
         caravandessert: { name: "Caravan dessert", desc: "Halva va olma bilan pishirilgan xamir bo‘laklari. Vanil sousi bilan." },
-        honigmedovikkuchen: { name: "Asal Medovik torti", desc: "Ikki xil asal Medovik torti: yong‘oq / shokolad" },
+        honigmedovikkuchen: { name: "Asal Medovik torti", desc: "Ikki xil asal Medovik torti: yong'oq / shokolad" },
+        honigmedovikschokolade: { name: "Shokoladli Medovik torti", desc: "Shokoladli asal Medovik torti." },
         kannetee06jasmin: { name: "Yasminli choy (choynakda)", desc: "Xushbo‘y yasminli choy, an’anaviy choynak bilan beriladi." }
       }
     },

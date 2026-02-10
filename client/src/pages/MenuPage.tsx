@@ -26,6 +26,13 @@ import kazanKebabImage from "@assets/stock_images/menu/Kazan_Kebab.webp";
 import kazanKebabHaehnchenImage from "@assets/stock_images/menu/Kazan_Kebab_Hahnchen.webp";
 import honimVegetarischImage from "@assets/stock_images/menu/Honim_Vegetarisch.webp";
 import honigMedovikKuchenImage from "@assets/stock_images/menu/Honig_Medovik_Kuchen.webp";
+import borschImage from "@assets/stock_images/menu/Borsch.webp";
+import chuchvaraImage from "@assets/stock_images/menu/Chuchvara.webp";
+import mastavAImage from "@assets/stock_images/menu/Mastava.webp";
+import pelmeniImage from "@assets/stock_images/menu/Pelmeni.webp";
+import warenikyImage from "@assets/stock_images/menu/Wareniki.webp";
+import caravanDessertImage from "@assets/stock_images/menu/Caravan Dessert.webp";
+import honigMedovikSchokoladeImage from "@assets/stock_images/menu/Honig Medovik schokolade.webp";
 
 const langNames: Record<Language, string> = {
   de: "Deutsch",
@@ -99,9 +106,9 @@ const menuCategories = {
 const fullMenu = {
   soups: [
     { id: 'schorpa', image: schorpaImage, price: '12.90€', dietary: 'halal' },
-    { id: 'borsch', image: null, price: '12.90€', dietary: 'halal' },
-    { id: 'chuchvara', image: null, price: '13.90€', dietary: 'halal' },
-    { id: 'mastava', image: null, price: '12.90€', dietary: 'halal' },
+    { id: 'borsch', image: borschImage, price: '12.90€', dietary: 'halal' },
+    { id: 'chuchvara', image: chuchvaraImage, price: '13.90€', dietary: 'halal' },
+    { id: 'mastava', image: mastavAImage, price: '12.90€', dietary: 'halal' },
   ],
   appetizers: [
     { id: 'somsa', image: samsaImage, price: '11.90€', dietary: 'halal' },
@@ -126,10 +133,10 @@ const fullMenu = {
     { id: 'kazankebab', image: kazanKebabImage, price: '26.90€', dietary: 'halal' },
     { id: 'kazankebabhaehnchen', image: kazanKebabHaehnchenImage, price: '25.90€', dietary: 'halal' },
     { id: 'plov', image: plovImage, price: '17.90€', dietary: 'halal' },
-    { id: 'pelmeni', image: null, price: '22.90€', dietary: 'halal' },
+    { id: 'pelmeni', image: pelmeniImage, price: '22.90€', dietary: 'halal' },
     { id: 'manty', image: mantyImage, price: '23.90€', dietary: 'halal' },
     { id: 'honimvegetariach', image: honimVegetarischImage, price: '21.90€', dietary: 'vegetarian' },
-    { id: 'warenikiwegetarisch', image: null, price: '21.90€', dietary: 'vegetarian' },
+    { id: 'warenikiwegetarisch', image: warenikyImage, price: '21.90€', dietary: 'vegetarian' },
   ],
   grills: [
     { id: 'schaschlikvomlamm', image: shashlikLammImage, price: '26.90€', dietary: 'halal' },
@@ -198,8 +205,9 @@ const fullMenu = {
     },
   ],
   desserts: [
-    { id: 'caravandessert', image: null, price: '7.90€', dietary: 'vegetarian' },
+    { id: 'caravandessert', image: caravanDessertImage, price: '7.90€', dietary: 'vegetarian' },
     { id: 'honigmedovikkuchen', image: honigMedovikKuchenImage, price: '8.90€', dietary: 'vegetarian' },
+    { id: 'honigmedovikschokolade', image: honigMedovikSchokoladeImage, price: '8.90€', dietary: 'vegetarian' },
   ],
   drinks: [
     {
