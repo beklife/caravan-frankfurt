@@ -33,6 +33,7 @@ import pelmeniImage from "@assets/stock_images/menu/Pelmeni.webp";
 import warenikyImage from "@assets/stock_images/menu/Wareniki.webp";
 import caravanDessertImage from "@assets/stock_images/menu/Caravan Dessert.webp";
 import honigMedovikSchokoladeImage from "@assets/stock_images/menu/Honig Medovik schokolade.webp";
+import knackigerStartImage from "@assets/stock_images/menu/Knäckiger start.webp";
 
 const langNames: Record<Language, string> = {
   de: "Deutsch",
@@ -115,7 +116,7 @@ const fullMenu = {
     { id: 'tschebureki', image: tscheburekiImage, price: '11.90€', dietary: 'halal' },
     {
       id: 'knackigerstart',
-      image: null,
+      image: knackigerStartImage,
       price: '10.90€',
       dietary: 'vegetarian',
       names: { de: 'Knäckiger Start', en: 'Crunchy Start', ru: 'Хрустящая закуска', uz: 'Qarsildoq boshlanish' },
