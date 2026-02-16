@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Calendar as CalendarIcon, Clock, Mail, Phone, User, MessageSquare, Users } from "@/components/icons";
+import { Calendar as CalendarIcon, Clock, Mail, Phone, User, MessageSquare, Users, BanknoteIcon as Banknote } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -337,6 +337,20 @@ export default function BookingForm({ lang }: BookingFormProps) {
         autoComplete="off"
         aria-hidden="true"
       />
+
+      {/* Cash only notice */}
+      <div className="flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-md px-4 py-3 text-sm text-primary">
+        <Banknote className="w-5 h-5 shrink-0" />
+        <span className="font-medium">
+          {lang === "de"
+            ? "Bitte beachten: Wir akzeptieren nur Barzahlung."
+            : lang === "ru"
+            ? "Обратите внимание: оплата только наличными."
+            : lang === "uz"
+            ? "Eslatma: faqat naqd pul qabul qilinadi."
+            : "Please note: We accept cash payments only."}
+        </span>
+      </div>
 
       {/* Submit Button */}
       <Button

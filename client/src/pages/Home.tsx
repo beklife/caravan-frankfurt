@@ -5,7 +5,7 @@ import { useMusic } from "@/lib/MusicContext";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useSeoMeta } from "@/lib/seo";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, ChevronDownIcon as ChevronDown, MailIcon as Mail, X } from "@/components/icons";
+import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, ChevronDownIcon as ChevronDown, MailIcon as Mail, X, BanknoteIcon as Banknote } from "@/components/icons";
 import HamburgerButton from "@/components/HamburgerButton";
 import { Button } from "@/components/ui/button";
 
@@ -549,6 +549,14 @@ export default function Home() {
                  <div className="flex justify-between items-center border-b border-dashed border-border pb-4">
                    <span className="font-medium text-lg text-muted-foreground">{t.hours.monday}</span>
                    <span className="font-bold text-xl">{t.hours.closed}</span>
+                 </div>
+                 <div className="flex justify-between items-center pb-4">
+                   <span className="font-medium text-lg text-muted-foreground flex items-center gap-2">
+                     <Banknote className="w-5 h-5" /> {t.hours.payment}
+                   </span>
+                   <span className="font-bold text-base bg-primary/15 text-primary px-4 py-1.5 rounded-full flex items-center gap-2 tracking-wide uppercase">
+                     <Banknote className="w-4 h-4" /> {t.hours.cash_only}
+                   </span>
                  </div>
                </div>
 

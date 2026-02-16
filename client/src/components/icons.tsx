@@ -164,6 +164,14 @@ export const StarIcon = ({ className }: IconProps) => (
   </svg>
 );
 
+export const BanknoteIcon = ({ className }: IconProps) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <rect x="2" y="6" width="20" height="12" rx="2" strokeWidth={2} />
+    <circle cx="12" cy="12" r="2" strokeWidth={2} />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 12h.01M18 12h.01" />
+  </svg>
+);
+
 // Aliases for compatibility
 export const Calendar = CalendarIcon;
 export const Clock = ClockIcon;
@@ -189,3 +197,4 @@ export const PanelLeft = PanelLeftIcon;
 export const ArrowLeft = ArrowLeftIcon;
 export const ArrowRight = ArrowRightIcon;
 export const Star = StarIcon;
+export const Banknote = BanknoteIcon;
