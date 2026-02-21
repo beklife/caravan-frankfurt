@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, ChevronDownIcon as ChevronDown, MailIcon as Mail, X, BanknoteIcon as Banknote } from "@/components/icons";
 import HamburgerButton from "@/components/HamburgerButton";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 
 // Lazy load BookingForm to reduce initial bundle size
 const BookingForm = lazy(() => import("@/components/BookingForm"));
@@ -43,6 +44,8 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState<{ src: string; name: string } | null>(null);
+  const [menuCarouselApi, setMenuCarouselApi] = useState<CarouselApi>();
+  const [activeMenuSlide, setActiveMenuSlide] = useState(0);
   const { musicPlaying, toggleMusic } = useMusic();
 
   const t = translations[lang];
@@ -128,6 +131,42 @@ export default function Home() {
     hidden: { opacity: 0, y: 20, willChange: 'transform, opacity' },
     visible: { opacity: 1, y: 0, willChange: 'auto', transition: { duration: 0.6 } }
   };
+
+  const menuHighlights = [
+    { image: plovImage, title: t.menu.dishes.plov.name, desc: t.menu.dishes.plov.desc, price: "17.90€" },
+    { image: mantyImage, title: t.menu.dishes.manty.name, desc: t.menu.dishes.manty.desc, price: "23.90€" },
+    { image: samsaImage, title: t.menu.dishes.somsa.name, desc: t.menu.dishes.somsa.desc, price: "11.90€" },
+    { image: shashlikImage, title: t.menu.dishes.schaschlikvomlamm.name, desc: t.menu.dishes.schaschlikvomlamm.desc, price: "26.90€" },
+    { image: kazanKebabImage, title: t.menu.dishes.kazankebab.name, desc: t.menu.dishes.kazankebab.desc, price: "26.90€" },
+    { image: teaImage, title: t.menu.dishes.kannetee06jasmin.name, desc: t.menu.dishes.kannetee06jasmin.desc, price: "6.50€" }
+  ];
+
+  useEffect(() => {
+    if (!menuCarouselApi) return;
+
+    const onSelect = () => {
+      setActiveMenuSlide(menuCarouselApi.selectedScrollSnap());
+    };
+
+    onSelect();
+    menuCarouselApi.on("select", onSelect);
+    menuCarouselApi.on("reInit", onSelect);
+
+    const autoplay = window.setInterval(() => {
+      if (!menuCarouselApi) return;
+      if (menuCarouselApi.canScrollNext()) {
+        menuCarouselApi.scrollNext();
+      } else {
+        menuCarouselApi.scrollTo(0);
+      }
+    }, 4500);
+
+    return () => {
+      window.clearInterval(autoplay);
+      menuCarouselApi.off("select", onSelect);
+      menuCarouselApi.off("reInit", onSelect);
+    };
+  }, [menuCarouselApi]);
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground selection:bg-primary selection:text-white relative overflow-hidden">
@@ -487,13 +526,44 @@ export default function Home() {
             <p className="text-muted-foreground">{t.menu.subtitle}</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <MenuCard image={plovImage} title={t.menu.dishes.plov.name} desc={t.menu.dishes.plov.desc} price="17.90€" />
-            <MenuCard image={mantyImage} title={t.menu.dishes.manty.name} desc={t.menu.dishes.manty.desc} price="23.90€" />
-            <MenuCard image={samsaImage} title={t.menu.dishes.somsa.name} desc={t.menu.dishes.somsa.desc} price="11.90€" />
-            <MenuCard image={shashlikImage} title={t.menu.dishes.schaschlikvomlamm.name} desc={t.menu.dishes.schaschlikvomlamm.desc} price="26.90€" />
-            <MenuCard image={kazanKebabImage} title={t.menu.dishes.kazankebab.name} desc={t.menu.dishes.kazankebab.desc} price="26.90€" />
-            <MenuCard image={teaImage} title={t.menu.dishes.kannetee06jasmin.name} desc={t.menu.dishes.kannetee06jasmin.desc} price="6.50€" />
+          <div className="relative px-2 md:px-14">
+            <Carousel
+              setApi={setMenuCarouselApi}
+              opts={{ align: "center", loop: true }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {menuHighlights.map((item, index) => (
+                  <CarouselItem
+                    key={item.title}
+                    className="pl-2 md:pl-4 basis-[88%] sm:basis-[74%] lg:basis-[42%] h-full"
+                  >
+                    <MenuCard
+                      image={item.image}
+                      title={item.title}
+                      desc={item.desc}
+                      price={item.price}
+                      isActive={index === activeMenuSlide}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-0 md:left-3 h-10 w-10 border-primary/40 bg-background/95 hover:bg-primary hover:text-white shadow-md" />
+              <CarouselNext className="right-0 md:right-3 h-10 w-10 border-primary/40 bg-background/95 hover:bg-primary hover:text-white shadow-md" />
+            </Carousel>
+
+            <div className="mt-8 flex items-center justify-center gap-2">
+              {menuHighlights.map((item, index) => (
+                <button
+                  key={`${item.title}-dot`}
+                  onClick={() => menuCarouselApi?.scrollTo(index)}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    index === activeMenuSlide ? "w-9 bg-primary" : "w-2.5 bg-primary/40 hover:bg-primary/70"
+                  }`}
+                  aria-label={`Go to menu item ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
           
           <div className="mt-12 text-center">
@@ -735,24 +805,30 @@ export default function Home() {
   );
 }
 
-function MenuCard({ image, title, desc, price }: { image: string, title: string, desc: string, price: string }) {
+function MenuCard({ image, title, desc, price, isActive = false }: { image: string, title: string, desc: string, price: string, isActive?: boolean }) {
   return (
-    <div className="group bg-background/95 backdrop-blur-sm rounded-sm overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300">
-      <div className="aspect-[4/3] bg-muted relative overflow-hidden">
+    <div className={`group h-full bg-background/95 backdrop-blur-sm rounded-sm overflow-hidden border shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col ${
+      isActive
+        ? "border-primary/60 ring-2 ring-primary/20 md:-translate-y-2"
+        : "border-border opacity-95"
+    }`}>
+      <div className="aspect-[4/3] bg-muted relative overflow-hidden shrink-0">
         {image ? (
-          <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+          <img src={image} alt={title} className={`w-full h-full object-cover transition-transform duration-700 ${isActive ? "scale-[1.03]" : ""} group-hover:scale-110`} loading="lazy" />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
             <span className="text-6xl opacity-40">🍽</span>
           </div>
         )}
-        <div className="absolute top-2 right-2 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-sm text-sm font-bold shadow-sm">
+        <div className={`absolute top-2 right-2 backdrop-blur-sm px-3 py-1 rounded-sm text-sm font-bold shadow-sm ${
+          isActive ? "bg-primary text-white" : "bg-background/90"
+        }`}>
           {price}
         </div>
       </div>
-      <div className="p-6">
-        <h4 className="text-xl font-heading font-bold mb-2 group-hover:text-primary transition-colors">{title}</h4>
-        <p className="text-muted-foreground text-sm leading-relaxed">{desc}</p>
+      <div className="p-6 flex-1 flex flex-col">
+        <h4 className="text-xl font-heading font-bold mb-2 min-h-[3.1rem] leading-tight group-hover:text-primary transition-colors [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden">{title}</h4>
+        <p className="text-muted-foreground text-sm leading-relaxed min-h-[3.9rem] [display:-webkit-box] [-webkit-line-clamp:3] [-webkit-box-orient:vertical] overflow-hidden">{desc}</p>
       </div>
     </div>
   )
