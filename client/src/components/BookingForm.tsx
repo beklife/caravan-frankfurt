@@ -53,7 +53,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
 
     // Valentine's Day 2026 - special hours only
     if (selectedDate === "2026-02-14") {
-      return ["21:00"];
+      return ["17:00", "17:30", "19:00", "19:30", "20:30", "21:00", "21:30"];
     }
 
     const dayOfWeek = new Date(`${selectedDate}T12:00:00`).getDay();

@@ -171,7 +171,7 @@ const fullMenu = {
     {
       id: 'sosse',
       image: null,
-      price: '2.90€',
+      price: '1.90€',
       names: { de: 'Extra Portion Sosse', en: 'Extra Portion Sauce', ru: 'Дополнительная порция соуса', uz: 'Qo‘shimcha sous' },
       descs: {
         de: 'Yoghurt-, Scharf-, Tomatensoße, Schmand.',
@@ -183,25 +183,25 @@ const fullMenu = {
     {
       id: 'non',
       image: null,
-      price: '3.90€',
-      names: { de: 'Extra Portion Brot (ganzes Fladenbrot)', en: 'Extra Portion Bread (whole flatbread)', ru: 'Дополнительная порция хлеба (целая лепёшка)', uz: 'Qo‘shimcha non (butun non)' },
+      price: '4.90€',
+      names: { de: 'USBEKISCHES BROT (groß)', en: 'Uzbek Bread (large)', ru: 'Узбекский хлеб (большой)', uz: 'O‘zbek noni (katta)' },
       descs: {
-        de: 'Traditionelles Fladenbrot.',
-        en: 'Traditional flatbread.',
-        ru: 'Традиционная лепёшка.',
-        uz: 'Milliy non.'
+        de: 'Hausgemachtes Weißbrot mit Milch, Eiern und Butter.',
+        en: 'Homemade white bread with milk, eggs, and butter.',
+        ru: 'Домашний белый хлеб с молоком, яйцами и сливочным маслом.',
+        uz: 'Sut, tuxum va sariyog‘ bilan tayyorlangan uy noni.'
       }
     },
     {
       id: 'nonhalf',
       image: null,
-      price: '1.90€',
-      names: { de: 'Extra Portion Brot (halbes Fladenbrot)', en: 'Extra Portion Bread (half flatbread)', ru: 'Дополнительная порция хлеба (половина лепёшки)', uz: 'Qo‘shimcha non (yarim non)' },
+      price: '2.90€',
+      names: { de: 'USBEKISCHES BROT (klein)', en: 'Uzbek Bread (small)', ru: 'Узбекский хлеб (маленький)', uz: 'O‘zbek noni (kichik)' },
       descs: {
-        de: 'Halbes traditionelles Fladenbrot.',
-        en: 'Half traditional flatbread.',
-        ru: 'Половина традиционной лепёшки.',
-        uz: 'Yarimta an’anaviy non.'
+        de: 'Hausgemachtes Weißbrot mit Milch, Eiern und Butter.',
+        en: 'Homemade white bread with milk, eggs, and butter.',
+        ru: 'Домашний белый хлеб с молоком, яйцами и сливочным маслом.',
+        uz: 'Sut, tuxum va sariyog‘ bilan tayyorlangan uy noni.'
       }
     },
   ],
@@ -212,281 +212,386 @@ const fullMenu = {
   ],
   drinks: [
     {
-      id: 'kannetee06black',
+      id: 'group-kanne-tee',
       image: null,
-      price: '5.50€',
-      names: { de: 'Kanne Tee (0.6L) - Schwarzer oder Grüner', en: 'Pot of Tea (0.6L) - Black or Green', ru: 'Чайник чая (0.6л) - Черный или Зеленый', uz: 'Choynakdagi choy (0.6L) - qora yoki yashil' },
+      price: '',
+      isGroupTitle: true,
+      names: { de: 'KANNE TEE', en: 'POT OF TEA', ru: 'ЧАЙНИК ЧАЯ', uz: 'CHOVNAK CHOY' },
       descs: {
-        de: 'Schwarzer oder Grüner Tee.',
-        en: 'Black or Green tea.',
-        ru: 'Черный или зеленый чай.',
-        uz: 'Qora yoki yashil choy.'
+        de: '',
+        en: '',
+        ru: '',
+        uz: ''
       }
     },
     {
-      id: 'kannetee06jasmin',
+      id: 'kanneteeklassik',
       image: null,
-      price: '6.50€',
-      names: { de: 'Kanne Tee (0.6L) - Jasmin', en: 'Pot of Tea (0.6L) - Jasmine', ru: 'Чайник чая (0.6л) - Жасминовый', uz: 'Choynakdagi choy (0.6L) - yasminli' },
+      price: '7.90€',
+      subItem: true,
+      names: { de: 'Schwarzer, Grüner, Frische Minze mit Zitrone', en: 'Black, green, fresh mint with lemon', ru: 'Черный, зеленый, свежая мята с лимоном', uz: 'Qora, yashil, limonli yangi yalpiz' },
       descs: {
-        de: 'Jasmin Tee.',
-        en: 'Jasmine tea.',
-        ru: 'Жасминовый чай.',
-        uz: 'Yasminli choy.'
+        de: '',
+        en: '',
+        ru: '',
+        uz: ''
       }
     },
     {
-      id: 'tassejasmin',
+      id: 'kanneteejasmin',
+      image: null,
+      price: '8.90€',
+      subItem: true,
+      names: { de: 'Jasmin Tee', en: 'Jasmine Tea', ru: 'Жасминовый чай', uz: 'Yasminli choy' },
+      descs: {
+        de: '',
+        en: '',
+        ru: '',
+        uz: ''
+      }
+    },
+    {
+      id: 'kanneteespezial',
+      image: null,
+      price: '9.90€',
+      subItem: true,
+      names: { de: 'Rosen Tee, Tashkent Tee, Immun Tee', en: 'Rose tea, Tashkent tea, immune tea', ru: 'Розовый чай, ташкентский чай, иммунный чай', uz: 'Atirgul choyi, Toshkent choyi, immun choyi' },
+      descs: {
+        de: '',
+        en: '',
+        ru: '',
+        uz: ''
+      }
+    },
+    {
+      id: 'group-tasse-tee',
+      image: null,
+      price: '',
+      isGroupTitle: true,
+      names: { de: 'TASSE TEE', en: 'CUP OF TEA', ru: 'ЧАШКА ЧАЯ', uz: 'PIYOLA CHOY' },
+      descs: {
+        de: '',
+        en: '',
+        ru: '',
+        uz: ''
+      }
+    },
+    {
+      id: 'tasseteeklassik',
       image: null,
       price: '3.50€',
-      names: { de: 'Tasse Jasmin Tee (0.3L)', en: 'Cup of Jasmine Tea (0.3L)', ru: 'Чашка жасминового чая (0.3л)', uz: 'Yasminli choy (piyola, 0.3L)' },
+      subItem: true,
+      names: { de: 'Schwarzer, Grüner, Frische Minze mit Zitrone', en: 'Black, green, fresh mint with lemon', ru: 'Черный, зеленый, свежая мята с лимоном', uz: 'Qora, yashil, limonli yangi yalpiz' },
       descs: {
-        de: 'Eine Tasse Jasmin Tee.',
-        en: 'A cup of jasmine tea.',
-        ru: 'Чашка жасминового чая.',
-        uz: 'Bir piyola yasminli choy.'
+        de: '',
+        en: '',
+        ru: '',
+        uz: ''
       }
     },
     {
-      id: 'tassetee',
+      id: 'tasseteejasmin',
       image: null,
-      price: '2.50€',
-      names: { de: 'Tasse Tee (0.3L)', en: 'Cup of Tea (0.3L)', ru: 'Чашка чая (0.3л)', uz: 'Piyola choy (0.3L)' },
+      price: '3.90€',
+      subItem: true,
+      names: { de: 'Jasmin Tee', en: 'Jasmine Tea', ru: 'Жасминовый чай', uz: 'Yasminli choy' },
       descs: {
-        de: 'Beutel Grüner oder Schwarzer.',
-        en: 'Green or Black tea bag.',
-        ru: 'Зеленый или черный чай в пакетике.',
-        uz: 'Yashil yoki qora paketli choy.'
+        de: '',
+        en: '',
+        ru: '',
+        uz: ''
       }
     },
     {
-      id: 'minzetee1',
-      image: null,
-      price: '3.00€',
-      names: { de: 'Minze Tee (0.3L)', en: 'Mint Tea (0.3L)', ru: 'Мятный чай (0.3л)', uz: 'Yalpizli choy (0.3L)' },
-      descs: {
-        de: 'Frische Minze mit Zitrone.',
-        en: 'Fresh mint with lemon.',
-        ru: 'Свежая мята с лимоном.',
-        uz: 'Yangi yalpiz va limon bilan.'
-      }
-    },
-    {
-      id: 'minzetee2',
+      id: 'tasseteeimmun',
       image: null,
       price: '4.50€',
-      names: { de: 'Minze Tee (0.3L)', en: 'Mint Tea (0.3L)', ru: 'Мятный чай (0.3л)', uz: 'Yalpizli choy (0.3L)' },
+      subItem: true,
+      names: { de: 'Immun Tee', en: 'Immune Tea', ru: 'Иммунный чай', uz: 'Immun choyi' },
       descs: {
-        de: 'Frische Minze mit Ingwer, Zitrone und Honig.',
-        en: 'Fresh mint with ginger, lemon and honey.',
-        ru: 'Свежая мята с имбирем, лимоном и медом.',
-        uz: 'Yangi yalpiz, zanjabil, limon va asal bilan.'
+        de: '',
+        en: '',
+        ru: '',
+        uz: ''
+      }
+    },
+    {
+      id: 'group-kafe',
+      image: null,
+      price: '',
+      isGroupTitle: true,
+      names: { de: 'KAFE', en: 'COFFEE', ru: 'КОФЕ', uz: 'QAHVA' },
+      descs: {
+        de: '',
+        en: '',
+        ru: '',
+        uz: ''
+      }
+    },
+    {
+      id: 'espresso',
+      image: null,
+      price: '2.90€',
+      subItem: true,
+      names: { de: 'ESPRESSO', en: 'ESPRESSO', ru: 'ЭСПРЕССО', uz: 'ESPRESSO' },
+      descs: {
+        de: '',
+        en: '',
+        ru: '',
+        uz: ''
+      }
+    },
+    {
+      id: 'schwarzerkaffee',
+      image: null,
+      price: '3.50€',
+      subItem: true,
+      names: { de: 'SCHWARZER KAFFEE', en: 'BLACK COFFEE', ru: 'ЧЕРНЫЙ КОФЕ', uz: 'QORA QAHVA' },
+      descs: {
+        de: '',
+        en: '',
+        ru: '',
+        uz: ''
+      }
+    },
+    {
+      id: 'cappuccino',
+      image: null,
+      price: '4.50€',
+      subItem: true,
+      names: { de: 'CAPPUCCINO', en: 'CAPPUCCINO', ru: 'КАПУЧИНО', uz: 'CAPPUCCINO' },
+      descs: {
+        de: '',
+        en: '',
+        ru: '',
+        uz: ''
+      }
+    },
+    {
+      id: 'lattemacchiato',
+      image: null,
+      price: '4.90€',
+      subItem: true,
+      names: { de: 'LATTE MACCHIATO', en: 'LATTE MACCHIATO', ru: 'ЛАТТЕ МАККИАТО', uz: 'LATTE MACCHIATO' },
+      descs: {
+        de: '',
+        en: '',
+        ru: '',
+        uz: ''
+      }
+    },
+    {
+      id: 'espressomacchiato',
+      image: null,
+      price: '3.50€',
+      subItem: true,
+      names: { de: 'ESPRESSO MACCHIATO', en: 'ESPRESSO MACCHIATO', ru: 'ЭСПРЕССО МАККИАТО', uz: 'ESPRESSO MACCHIATO' },
+      descs: {
+        de: '',
+        en: '',
+        ru: '',
+        uz: ''
+      }
+    },
+    {
+      id: 'heisseschokolade',
+      image: null,
+      price: '3.90€',
+      subItem: true,
+      names: { de: 'HEIßE SCHOKOLADE', en: 'HOT CHOCOLATE', ru: 'ГОРЯЧИЙ ШОКОЛАД', uz: 'ISSIQ SHOKOLAD' },
+      descs: {
+        de: '',
+        en: '',
+        ru: '',
+        uz: ''
       }
     },
   ],
   colddrinks: [
     {
-      id: 'selteskohlensaeure',
+      id: 'group-cold-volume',
       image: null,
-      price: '2.20€ / 3.80€',
-      names: { de: 'Seltes Kohlensäure (0.2L / 0.4L)', en: 'Sparkling Water (0.2L / 0.4L)', ru: 'Газированная вода (0.2л / 0.4л)', uz: 'Gazlangan suv (0.2L / 0.4L)' },
-      descs: {
-        de: 'Sprudelwasser',
-        en: 'Sparkling water',
-        ru: 'Газированная вода',
-        uz: 'Gazlangan suv'
-      }
+      price: '',
+      isGroupTitle: true,
+      names: { de: '0.2 / 0.4 L', en: '0.2 / 0.4 L', ru: '0.2 / 0.4 Л', uz: '0.2 / 0.4 L' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
-      id: 'seltesnaturell',
+      id: 'selterskohlensaeure',
       image: null,
       price: '2.20€ / 3.80€',
-      names: { de: 'Seltes Naturell (0.2L / 0.4L)', en: 'Still Water (0.2L / 0.4L)', ru: 'Негазированная вода (0.2л / 0.4л)', uz: 'Gazsiz suv (0.2L / 0.4L)' },
-      descs: {
-        de: 'Stilles Wasser',
-        en: 'Still water',
-        ru: 'Негазированная вода',
-        uz: 'Gazsiz suv'
-      }
+      subItem: true,
+      names: { de: 'SELTERS KOHLENSÄURE', en: 'SELTERS SPARKLING', ru: 'SELTERS ГАЗИРОВАННАЯ', uz: 'SELTERS GAZLANGAN' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
-      id: 'seltesflasche',
+      id: 'seltersnaturell',
+      image: null,
+      price: '2.20€ / 3.80€',
+      subItem: true,
+      names: { de: 'SELTERS NATURELL', en: 'SELTERS STILL', ru: 'SELTERS НАТУРАЛЬНАЯ', uz: 'SELTERS TABIIY' },
+      descs: { de: '', en: '', ru: '', uz: '' }
+    },
+    {
+      id: 'seltersflaschen',
       image: null,
       price: '7.50€',
-      names: { de: 'Seltes Flasche (0.75L)', en: 'Water Bottle (0.75L)', ru: 'Бутылка воды (0.75л)', uz: 'Suv shishasi (0.75L)' },
-      descs: {
-        de: 'Große Wasserflasche',
-        en: 'Large water bottle',
-        ru: 'Большая бутылка воды',
-        uz: 'Katta suv shishasi'
-      }
+      subItem: true,
+      names: { de: 'SELTERS FLASCHEN (0.75L)', en: 'SELTERS BOTTLE (0.75L)', ru: 'SELTERS БУТЫЛКА (0.75Л)', uz: 'SELTERS SHISHA (0.75L)' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
       id: 'cocacola',
       image: null,
       price: '3.90€ / 4.90€',
-      names: { de: 'Coca-Cola (0.2L / 0.4L)', en: 'Coca-Cola (0.2L / 0.4L)', ru: 'Кока-Кола (0.2л / 0.4л)', uz: 'Coca-Cola (0.2L / 0.4L)' },
-      descs: {
-        de: 'Coca-Cola',
-        en: 'Coca-Cola',
-        ru: 'Кока-Кола',
-        uz: 'Coca-Cola'
-      }
+      subItem: true,
+      names: { de: 'COCA-COLA', en: 'COCA-COLA', ru: 'COCA-COLA', uz: 'COCA-COLA' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
       id: 'colalight',
       image: null,
       price: '3.90€ / 4.90€',
-      names: { de: 'Cola-Light (0.2L / 0.4L)', en: 'Cola Light (0.2L / 0.4L)', ru: 'Кола Лайт (0.2л / 0.4л)', uz: 'Cola Light (0.2L / 0.4L)' },
-      descs: {
-        de: 'Cola Light',
-        en: 'Cola Light',
-        ru: 'Кола Лайт',
-        uz: 'Cola Light'
-      }
+      subItem: true,
+      names: { de: 'COLA-LIGHT', en: 'COLA-LIGHT', ru: 'COLA-LIGHT', uz: 'COLA-LIGHT' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
       id: 'colazero',
       image: null,
       price: '3.90€ / 4.90€',
-      names: { de: 'Cola-Zero (0.2L / 0.4L)', en: 'Cola Zero (0.2L / 0.4L)', ru: 'Кола Зеро (0.2л / 0.4л)', uz: 'Cola Zero (0.2L / 0.4L)' },
-      descs: {
-        de: 'Cola Zero',
-        en: 'Cola Zero',
-        ru: 'Кола Зеро',
-        uz: 'Cola Zero'
-      }
+      subItem: true,
+      names: { de: 'COLA-ZERO', en: 'COLA-ZERO', ru: 'COLA-ZERO', uz: 'COLA-ZERO' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
       id: 'fanta',
       image: null,
       price: '3.90€ / 4.90€',
-      names: { de: 'Fanta (0.2L / 0.4L)', en: 'Fanta (0.2L / 0.4L)', ru: 'Фанта (0.2л / 0.4л)', uz: 'Fanta (0.2L / 0.4L)' },
-      descs: {
-        de: 'Fanta Orange',
-        en: 'Fanta Orange',
-        ru: 'Фанта Апельсин',
-        uz: 'Fanta Apelsin'
-      }
+      subItem: true,
+      names: { de: 'FANTA', en: 'FANTA', ru: 'FANTA', uz: 'FANTA' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
-      id: 'sprit',
+      id: 'sprite',
       image: null,
       price: '3.90€ / 4.90€',
-      names: { de: 'Sprit (0.2L / 0.4L)', en: 'Sprite (0.2L / 0.4L)', ru: 'Спрайт (0.2л / 0.4л)', uz: 'Sprite (0.2L / 0.4L)' },
-      descs: {
-        de: 'Sprite',
-        en: 'Sprite',
-        ru: 'Спрайт',
-        uz: 'Sprite'
-      }
+      subItem: true,
+      names: { de: 'SPRITE', en: 'SPRITE', ru: 'SPRITE', uz: 'SPRITE' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
       id: 'apfelsaftschorle',
       image: null,
       price: '3.90€ / 4.90€',
-      names: { de: 'Apfelsaftschorle (0.2L / 0.4L)', en: 'Apple Spritzer (0.2L / 0.4L)', ru: 'Яблочный сок со газом (0.2л / 0.4л)', uz: 'Olma sharbati (0.2L / 0.4L)' },
-      descs: {
-        de: 'Apfelsaft mit Sprudelwasser',
-        en: 'Apple juice with sparkling water',
-        ru: 'Яблочный сок с газированной водой',
-        uz: 'Olma sharbati gazlangan suv bilan'
-      }
+      subItem: true,
+      names: { de: 'APFELSAFTSCHORLE', en: 'APPLE SPRITZER', ru: 'ЯБЛОЧНЫЙ ШПРИТЦЕР', uz: 'OLMA SHARBAT SPRITZER' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
       id: 'bitterlemon',
       image: null,
       price: '3.90€ / 4.90€',
-      names: { de: 'Bitter Lemon (0.2L / 0.4L)', en: 'Bitter Lemon (0.2L / 0.4L)', ru: 'Биттер Лимон (0.2л / 0.4л)', uz: 'Bitter Lemon (0.2L / 0.4L)' },
-      descs: {
-        de: 'Bitter Lemon',
-        en: 'Bitter Lemon',
-        ru: 'Биттер Лимон',
-        uz: 'Bitter Lemon'
-      }
+      subItem: true,
+      names: { de: 'BITTER LEMON', en: 'BITTER LEMON', ru: 'BITTER LEMON', uz: 'BITTER LEMON' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
       id: 'gingerale',
       image: null,
       price: '3.90€ / 4.90€',
-      names: { de: 'Ginger Ale (0.2L / 0.4L)', en: 'Ginger Ale (0.2L / 0.4L)', ru: 'Имбирный Эль (0.2л / 0.4л)', uz: 'Ginger Ale (0.2L / 0.4L)' },
-      descs: {
-        de: 'Ginger Ale',
-        en: 'Ginger Ale',
-        ru: 'Имбирный Эль',
-        uz: 'Ginger Ale'
-      }
+      subItem: true,
+      names: { de: 'GINGER ALE', en: 'GINGER ALE', ru: 'GINGER ALE', uz: 'GINGER ALE' },
+      descs: { de: '', en: '', ru: '', uz: '' }
+    },
+    {
+      id: 'group-safte',
+      image: null,
+      price: '',
+      isGroupTitle: true,
+      names: { de: 'SÄFTE • 0.2 / 0.4 L', en: 'JUICES • 0.2 / 0.4 L', ru: 'СОКИ • 0.2 / 0.4 Л', uz: 'SHARBATLAR • 0.2 / 0.4 L' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
       id: 'orangensaft',
       image: null,
       price: '3.90€ / 5.90€',
-      names: { de: 'Orangensaft (0.2L / 0.4L)', en: 'Orange Juice (0.2L / 0.4L)', ru: 'Апельсиновый сок (0.2л / 0.4л)', uz: 'Apelsin sharbati (0.2L / 0.4L)' },
-      descs: {
-        de: 'Frischer Orangensaft',
-        en: 'Fresh orange juice',
-        ru: 'Свежий апельсиновый сок',
-        uz: 'Yangi apelsin sharbati'
-      }
+      subItem: true,
+      names: { de: 'ORANGENSAFT', en: 'ORANGE JUICE', ru: 'АПЕЛЬСИНОВЫЙ СОК', uz: 'APELSIN SHARBATI' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
       id: 'apfelsaft',
       image: null,
       price: '3.90€ / 5.90€',
-      names: { de: 'Apfelsaft (0.2L / 0.4L)', en: 'Apple Juice (0.2L / 0.4L)', ru: 'Яблочный сок (0.2л / 0.4л)', uz: 'Olma sharbati (0.2L / 0.4L)' },
-      descs: {
-        de: 'Frischer Apfelsaft',
-        en: 'Fresh apple juice',
-        ru: 'Свежий яблочный сок',
-        uz: 'Yangi olma sharbati'
-      }
+      subItem: true,
+      names: { de: 'APFELSAFT', en: 'APPLE JUICE', ru: 'ЯБЛОЧНЫЙ СОК', uz: 'OLMA SHARBATI' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
       id: 'kirschsaft',
       image: null,
       price: '3.90€ / 5.90€',
-      names: { de: 'Kirschsaft (0.2L / 0.4L)', en: 'Cherry Juice (0.2L / 0.4L)', ru: 'Вишневый сок (0.2л / 0.4л)', uz: 'Olcha sharbati (0.2L / 0.4L)' },
-      descs: {
-        de: 'Kirschsaft',
-        en: 'Cherry juice',
-        ru: 'Вишневый сок',
-        uz: 'Olcha sharbati'
-      }
+      subItem: true,
+      names: { de: 'KIRSCHSAFT', en: 'CHERRY JUICE', ru: 'ВИШНЕВЫЙ СОК', uz: 'OLCHA SHARBATI' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
       id: 'bananensaft',
       image: null,
       price: '3.90€ / 5.90€',
-      names: { de: 'Bananensaft (0.2L / 0.4L)', en: 'Banana Juice (0.2L / 0.4L)', ru: 'Банановый сок (0.2л / 0.4л)', uz: 'Banan sharbati (0.2L / 0.4L)' },
-      descs: {
-        de: 'Bananensaft',
-        en: 'Banana juice',
-        ru: 'Банановый сок',
-        uz: 'Banan sharbati'
-      }
+      subItem: true,
+      names: { de: 'BANANENSAFT', en: 'BANANA JUICE', ru: 'БАНАНОВЫЙ СОК', uz: 'BANAN SHARBATI' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
       id: 'pfirsichsaft',
       image: null,
       price: '3.90€ / 5.90€',
-      names: { de: 'Pfirsichsaft (0.2L / 0.4L)', en: 'Peach Juice (0.2L / 0.4L)', ru: 'Персиковый сок (0.2л / 0.4л)', uz: 'Shaftoli sharbati (0.2L / 0.4L)' },
-      descs: {
-        de: 'Pfirsichsaft',
-        en: 'Peach juice',
-        ru: 'Персиковый сок',
-        uz: 'Shaftoli sharbati'
-      }
+      subItem: true,
+      names: { de: 'PFIRSICHSAFT', en: 'PEACH JUICE', ru: 'ПЕРСИКОВЫЙ СОК', uz: 'SHAFTOLI SHARBATI' },
+      descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
       id: 'maracujasaft',
       image: null,
       price: '3.90€ / 5.90€',
-      names: { de: 'Maracujasaft (0.2L / 0.4L)', en: 'Passion Fruit Juice (0.2L / 0.4L)', ru: 'Маракуйя сок (0.2л / 0.4л)', uz: 'Marakuya sharbati (0.2L / 0.4L)' },
+      subItem: true,
+      names: { de: 'MARACUJASAFT', en: 'PASSION FRUIT JUICE', ru: 'СОК МАРАКУЙИ', uz: 'MARAKUYA SHARBATI' },
+      descs: { de: '', en: '', ru: '', uz: '' }
+    },
+    {
+      id: 'group-hausgetraenke',
+      image: null,
+      price: '',
+      isGroupTitle: true,
+      names: { de: 'HAUSGEMACHTE GETRÄNKE', en: 'HOMEMADE DRINKS', ru: 'ДОМАШНИЕ НАПИТКИ', uz: 'UYDA TAYYORLANGAN ICHIMLIKLAR' },
+      descs: { de: '', en: '', ru: '', uz: '' }
+    },
+    {
+      id: 'morssmarodina',
+      image: null,
+      price: '4.90€',
+      subItem: true,
+      names: { de: 'Mors Smarodina (0.4L)', en: 'Mors Smarodina (0.4L)', ru: 'Морс Смородина (0.4Л)', uz: 'Mors Smarodina (0.4L)' },
       descs: {
-        de: 'Maracujasaft',
-        en: 'Passion fruit juice',
-        ru: 'Сок маракуйи',
-        uz: 'Marakuya sharbati'
+        de: 'Erfrischendes hausgemachtes Johannisbeeren-Getränk mit viel Vitamin und natürlichem Fruchtaroma.',
+        en: 'Refreshing homemade currant drink with vitamins and natural fruit aroma.',
+        ru: 'Освежающий домашний напиток из смородины с витаминами и натуральным фруктовым ароматом.',
+        uz: 'Vitaminlarga boy va tabiiy meva hidli, uyda tayyorlangan tetiklantiruvchi qoraqat ichimligi.'
+      }
+    },
+    {
+      id: 'morsoblepikha',
+      image: null,
+      price: '4.90€',
+      subItem: true,
+      names: { de: 'Mors Oblepikha (0.4L)', en: 'Mors Oblepikha (0.4L)', ru: 'Морс Облепиха (0.4Л)', uz: 'Mors Oblepikha (0.4L)' },
+      descs: {
+        de: 'Erfrischendes hausgemachtes Sanddornbeeren-Getränk mit voller Vitamine und natürlichem Fruchtgenuss.',
+        en: 'Refreshing homemade sea buckthorn drink with full vitamins and natural fruit taste.',
+        ru: 'Освежающий домашний напиток из облепихи с витаминами и натуральным фруктовым вкусом.',
+        uz: 'Vitaminlarga boy va tabiiy mevali taʼmga ega, uyda tayyorlangan tetiklantiruvchi chakanda ichimligi.'
       }
     },
   ],
@@ -1176,13 +1281,13 @@ export default function MenuPage() {
         <MenuSection title={cats.desserts} items={fullMenu.desserts} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />
 
         {/* Sides */}
-        <MenuSection title={cats.sides} items={fullMenu.sides} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />
+        <MenuSection title={cats.sides} items={fullMenu.sides} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />
 
         {/* Hot Drinks */}
         <MenuSection title={cats.drinks} items={fullMenu.drinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />
 
         {/* Cold Drinks */}
-        <MenuSection title={cats.colddrinks} items={fullMenu.colddrinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} hideDetails={true} />
+        <MenuSection title={cats.colddrinks} items={fullMenu.colddrinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />
 
         {/* Beer */}
         <MenuSection title={cats.beer} items={fullMenu.beer} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />
@@ -1263,7 +1368,7 @@ export default function MenuPage() {
             <p className="text-xs text-white/80 mt-auto">© {currentYear} CARAVAN Restaurant • Frankfurt</p>
             <p className="text-xs text-white/60 mt-2">
               Made by ❤️{" "}
-              <a href="https://beklife.github.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">
+              <a href="https://codebek.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">
                 ASLBEK
               </a>
             </p>
@@ -1305,12 +1410,6 @@ export default function MenuPage() {
                 className="w-full h-full object-contain rounded-lg shadow-2xl"
               />
 
-              {/* Image Title */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
-                <h3 className="text-white text-xl md:text-2xl font-heading font-bold text-center">
-                  {lightboxImage.name}
-                </h3>
-              </div>
             </motion.div>
           </motion.div>
         )}
@@ -1351,6 +1450,29 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
           {items.map((item, idx) => {
             const { name, desc } = getDishInfo(item);
             const isSignature = isMainSection && (item.id === 'plov' || item.id === 'shashlik');
+            const isGroupTitle = Boolean(item.isGroupTitle);
+            const isSubItem = Boolean(item.subItem);
+
+            if (isGroupTitle) {
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 1, x: reduceMotion ? 0 : -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "0px", amount: 0.4 }}
+                  transition={{ delay: reduceMotion ? 0 : idx * 0.04, duration: reduceMotion ? 0 : 0.35 }}
+                  className="pt-2 md:pt-3"
+                >
+                  <div className="flex items-center gap-3 md:gap-4">
+                    <div className="h-[1px] w-6 md:w-10 bg-primary/40"></div>
+                    <h4 className="text-base md:text-xl font-heading font-bold tracking-[0.12em] text-primary uppercase">
+                      {name}
+                    </h4>
+                    <div className="h-[1px] flex-1 bg-primary/20"></div>
+                  </div>
+                </motion.div>
+              );
+            }
 
             return (
               <motion.div
@@ -1391,14 +1513,14 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                   ) : null}
 
                   {/* Content */}
-                  <div className="flex-1 min-w-0">
+                  <div className={`flex-1 min-w-0 ${isSubItem ? "pl-2 md:pl-4" : ""}`}>
                     {/* Dish Name & Price with Dotted Line - Stack on mobile */}
                     <div className="mb-2 md:mb-3">
                       {/* Mobile Layout - Stacked */}
                       <div className="md:hidden">
                         <div className="flex items-baseline justify-between gap-2 mb-1">
-                          <h4 className="text-lg font-heading font-bold group-hover:text-primary transition-colors">
-                            {name}
+                          <h4 className={`${isSubItem ? "text-base font-medium" : "text-lg font-heading font-bold"} group-hover:text-primary transition-colors`}>
+                            {isSubItem ? `• ${name}` : name}
                             {isSignature && <span className="text-secondary ml-1 text-sm">★</span>}
                           </h4>
                           <span className="text-lg font-bold text-primary whitespace-nowrap">
@@ -1409,12 +1531,12 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
 
                       {/* Desktop Layout - With dotted line */}
                       <div className="hidden md:flex items-baseline gap-2">
-                        <h4 className="text-xl lg:text-2xl font-heading font-bold group-hover:text-primary transition-colors flex-shrink-0">
-                          {name}
+                        <h4 className={`${isSubItem ? "text-lg font-medium" : "text-xl lg:text-2xl font-heading font-bold"} group-hover:text-primary transition-colors flex-shrink-0`}>
+                          {isSubItem ? `• ${name}` : name}
                           {isSignature && <span className="text-secondary ml-2 text-sm">★</span>}
                         </h4>
                         <div className="flex-1 border-b-2 border-dotted border-border/50 mb-1 min-w-[20px]"></div>
-                        <span className="text-xl lg:text-2xl font-bold text-primary whitespace-nowrap flex-shrink-0">
+                        <span className={`${isSubItem ? "text-lg" : "text-xl lg:text-2xl"} font-bold text-primary whitespace-nowrap flex-shrink-0`}>
                           {item.price}
                         </span>
                       </div>
@@ -1423,9 +1545,11 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                     {!hideDetails && (
                       <>
                         {/* Description */}
-                        <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
-                          {desc}
-                        </p>
+                        {desc && (
+                          <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                            {desc}
+                          </p>
+                        )}
 
                         {/* Dietary Icons (if applicable) */}
                         <div className="flex gap-2 mt-2 md:mt-3">
