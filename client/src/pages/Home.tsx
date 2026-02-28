@@ -622,7 +622,7 @@ export default function Home() {
                  </div>
                  <div className="flex justify-between items-center pb-4">
                    <span className="font-medium text-lg text-muted-foreground flex items-center gap-2">
-                     <Banknote className="w-5 h-5" /> {t.hours.payment}
+                     {t.hours.payment}
                    </span>
                    <span className="font-bold text-base bg-primary/15 text-primary px-4 py-1.5 rounded-full flex items-center gap-2 tracking-wide uppercase">
                      <Banknote className="w-4 h-4" /> {t.hours.cash_only}

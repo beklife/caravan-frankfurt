@@ -29,6 +29,21 @@ interface BookingFormProps {
   lang: Language;
 }
 
+const VACATION_START = "2026-03-30";
+const VACATION_END = "2026-04-08";
+const NOTICE_START = "2026-03-30";
+
+function getLocalDateString(date = new Date()): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function isVacationClosedDate(date: string): boolean {
+  return date >= VACATION_START && date <= VACATION_END;
+}
+
 export default function BookingForm({ lang }: BookingFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formLoadTime] = useState(Date.now());
@@ -47,9 +62,14 @@ export default function BookingForm({ lang }: BookingFormProps) {
   });
   const selectedDate = watch("date");
   const selectedTime = watch("time");
+  const todayLocal = useMemo(() => getLocalDateString(), []);
+  const showVacationNotice =
+    todayLocal >= NOTICE_START && todayLocal <= VACATION_END;
+  const isVacationDateSelected = selectedDate ? isVacationClosedDate(selectedDate) : false;
 
   const availableTimes = useMemo(() => {
     if (!selectedDate) return [];
+    if (isVacationClosedDate(selectedDate)) return [];
 
     // Valentine's Day 2026 - special hours only
     if (selectedDate === "2026-02-14") {
@@ -81,6 +101,16 @@ export default function BookingForm({ lang }: BookingFormProps) {
 
   const onSubmit = async (data: BookingFormData) => {
     setIsSubmitting(true);
+
+    if (isVacationClosedDate(data.date)) {
+      toast({
+        title: lang === "de" ? "Reservierung geschlossen" : lang === "ru" ? "Бронирование закрыто" : lang === "uz" ? "Bron yopiq" : "Reservations closed",
+        description: t.contact.vacation_notice,
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
 
     // Anti-spam validation
     // 1. Check honeypot field (should be empty)
@@ -152,6 +182,12 @@ export default function BookingForm({ lang }: BookingFormProps) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      {showVacationNotice && (
+        <div className="rounded-md border border-amber-300 bg-amber-50 px-4 py-3 text-sm font-medium text-amber-800">
+          {t.contact.vacation_notice}
+        </div>
+      )}
+
       {/* Name */}
       <div>
         <Label htmlFor="name" className="flex items-center gap-2 mb-2">
@@ -242,11 +278,15 @@ export default function BookingForm({ lang }: BookingFormProps) {
           <Input
             id="date"
             type="date"
+            min={todayLocal}
             {...register("date")}
             className={errors.date ? "border-destructive" : ""}
           />
           {errors.date && (
             <p className="text-destructive text-sm text-red-700 mt-1">{errors.date.message}</p>
+          )}
+          {isVacationDateSelected && (
+            <p className="text-sm text-amber-700 mt-1">{t.contact.vacation_notice}</p>
           )}
         </div>
 
@@ -355,7 +395,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
       {/* Submit Button */}
       <Button
         type="submit"
-        disabled={isSubmitting}
+        disabled={isSubmitting || isVacationDateSelected}
         className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-6 text-lg"
       >
         {isSubmitting ? "..." : t.contact.form.submit}
