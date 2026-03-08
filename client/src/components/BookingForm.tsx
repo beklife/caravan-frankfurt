@@ -7,6 +7,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import type { Language } from "@/lib/i18n";
 import { translations } from "@/lib/i18n";
@@ -47,6 +55,7 @@ function isVacationClosedDate(date: string): boolean {
 export default function BookingForm({ lang }: BookingFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formLoadTime] = useState(Date.now());
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const { toast } = useToast();
   const t = translations[lang];
 
@@ -74,6 +83,11 @@ export default function BookingForm({ lang }: BookingFormProps) {
     // Valentine's Day 2026 - special hours only
     if (selectedDate === "2026-02-14") {
       return ["17:00", "17:30", "19:00", "19:30", "20:30", "21:00", "21:30"];
+    }
+
+    // 14.03.2026 - special hours only
+    if (selectedDate === "2026-03-14") {
+      return ["16:30", "18:30", "20:30", "21:00", "21:30"];
     }
 
     const dayOfWeek = new Date(`${selectedDate}T12:00:00`).getDay();
@@ -159,12 +173,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
       const result = await response.json();
 
       if (result.success) {
-        toast({
-          title: "Success!",
-          description: t.contact.form.success,
-          variant: "default",
-          duration: Infinity,
-        });
+        setShowSuccessDialog(true);
         reset();
       } else {
         throw new Error("Form submission failed");
@@ -181,6 +190,58 @@ export default function BookingForm({ lang }: BookingFormProps) {
   };
 
   return (
+    <>
+    <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+      <DialogContent className="max-w-md">
+        <DialogHeader>
+          <DialogTitle className="text-xl">
+            {lang === "de"
+              ? "Vielen Dank fur Ihre Reservierung!"
+              : lang === "ru"
+              ? "Спасибо за вашу бронь!"
+              : lang === "uz"
+              ? "Bron uchun rahmat!"
+              : "Thank you for your reservation!"}
+          </DialogTitle>
+          <DialogDescription asChild>
+            <div className="space-y-3 text-sm text-foreground/80 pt-2">
+              <p>
+                {lang === "de"
+                  ? "Wir haben Ihre Reservierungsanfrage erhalten und werden uns in Kürze bei Ihnen melden."
+                  : lang === "ru"
+                  ? "Мы получили вашу заявку на бронирование и скоро свяжемся с вами."
+                  : lang === "uz"
+                  ? "Bron so'rovingizni qabul qildik va tez orada siz bilan bog'lanamiz."
+                  : "We have received your reservation request and will get back to you shortly."}
+              </p>
+              <p className="font-medium text-primary">
+                {lang === "de"
+                  ? "Bitte beachten: Wir akzeptieren ausschliesslich Barzahlung."
+                  : lang === "ru"
+                  ? "Обратите внимание: мы принимаем только наличные."
+                  : lang === "uz"
+                  ? "Eslatma: faqat naqd pul qabul qilinadi."
+                  : "Please note: We accept cash payments only."}
+              </p>
+              <p>
+                {lang === "de"
+                  ? "Fur Reservierungen an Freitag, Samstag und Sonntag ist die maximale Aufenthaltsdauer zwei Stunden."
+                  : lang === "ru"
+                  ? "По пятницам, субботам и воскресеньям максимальное время пребывания составляет два часа."
+                  : lang === "uz"
+                  ? "Juma, shanba va yakshanba kunlari maksimal qolish vaqti ikki soat."
+                  : "For Friday, Saturday, and Sunday reservations, the maximum stay is two hours."}
+              </p>
+            </div>
+          </DialogDescription>
+        </DialogHeader>
+        <DialogFooter>
+          <Button onClick={() => setShowSuccessDialog(false)} className="w-full">
+            {lang === "de" ? "Verstanden" : lang === "ru" ? "Понятно" : lang === "uz" ? "Tushunarli" : "Got it"}
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       {showVacationNotice && (
         <div className="rounded-md border border-amber-300 bg-amber-50 px-4 py-3 text-sm font-medium text-amber-800">
@@ -401,5 +462,6 @@ export default function BookingForm({ lang }: BookingFormProps) {
         {isSubmitting ? "..." : t.contact.form.submit}
       </Button>
     </form>
+    </>
   );
 }
