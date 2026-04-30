@@ -44,13 +44,14 @@ export const translations = {
         caravandessert: { name: "Caravan Dessert", desc: "Gebackene Apetithäppchen aus Blätterteig mit Halwa und Äpfeln. Vanillesauce dazu." },
         honigmedovikkuchen: { name: "Honig Medovik Kuchen", desc: "Honig Medovik Kuchen in zwei Sorten: Nuss / Schokolade" },
         honigmedovikschokolade: { name: "Honig Medovik Schokolade", desc: "Honig Medovik Torte in der Schokoladen-Variante." },
-        kannetee06jasmin: { name: "Kanne Jasmin Tee", desc: "Aromatischer Jasmin-Tee, traditionell serviert in einer Teekanne." }
+        kannetee06jasmin: { name: "Kanne Jasmin Tee", desc: "Aromatischer Tashkent-Tee, traditionell serviert in einer Teekanne." }
       }
     },
     hours: {
       title: "Öffnungszeiten",
       open: "Dienstag-Sonntag",
-      openTime: "17:00 - 23:00",
+      weekdayTime: "17:00 - 23:00",
+      weekendTime: "14:00 - 23:00",
       kitchen: "Küche geöffnet bis",
       kitchenTime: "22:00 Uhr",
       weekdays: "Dienstag – Freitag",
@@ -139,13 +140,14 @@ export const translations = {
         caravandessert: { name: "Caravan Dessert", desc: "Puff pastry filled with Halva and Apples, served with a vanilla sauce." },
         honigmedovikkuchen: { name: "Honey Medovik Cake", desc: "Honey Medovik Cake in two varieties: Nut / Chocolate" },
         honigmedovikschokolade: { name: "Honey Medovik Chocolate", desc: "Honey Medovik cake in the chocolate variety." },
-        kannetee06jasmin: { name: "Pot of Jasmine Tea", desc: "Aromatic jasmine tea, traditionally served in a teapot." }
+        kannetee06jasmin: { name: "Pot of Jasmine Tea", desc: "Aromatic Tashkent tea, traditionally served in a teapot." }
       }
     },
     hours: {
       title: "Opening Hours",
       open: "Tuesday-Sunday",
-      openTime: "17:00 - 23:00",
+      weekdayTime: "17:00 - 23:00",
+      weekendTime: "14:00 - 23:00",
       kitchen: "Kitchen open until",
       kitchenTime: "22:00",
       weekdays: "Tuesday – Friday",
@@ -234,13 +236,14 @@ export const translations = {
         caravandessert: { name: "Десерт Караван", desc: "Печеные аппетитные кусочки слоеного теста с халвой и яблоками. Ванильный соус." },
         honigmedovikkuchen: { name: "Медовый торт Медовик", desc: "Медовый торт Медовик в двух вариантах: Ореховый / Шоколадный" },
         honigmedovikschokolade: { name: "Медовик Шоколадный", desc: "Медовый торт Медовик в шоколадном исполнении." },
-        kannetee06jasmin: { name: "Чайник жасминового чая", desc: "Ароматный жасминовый чай, традиционно подается в чайнике." }
+        kannetee06jasmin: { name: "Чайник жасминового чая", desc: "Ароматный чай, традиционно подается в чайнике." }
       }
     },
     hours: {
       title: "Часы работы",
       open: "Вторник-Воскресенье",
-      openTime: "17:00 - 23:00",
+      weekdayTime: "17:00 - 23:00",
+      weekendTime: "14:00 - 23:00",
       kitchen: "Кухня открыта до",
       kitchenTime: "22:00",
       weekdays: "Вторник – Пятница",
@@ -329,13 +332,14 @@ export const translations = {
         caravandessert: { name: "Caravan dessert", desc: "Halva va olma bilan pishirilgan xamir bo‘laklari. Vanil sousi bilan." },
         honigmedovikkuchen: { name: "Asal Medovik torti", desc: "Ikki xil asal Medovik torti: yong'oq / shokolad" },
         honigmedovikschokolade: { name: "Shokoladli Medovik torti", desc: "Shokoladli asal Medovik torti." },
-        kannetee06jasmin: { name: "Yasminli choy (choynakda)", desc: "Xushbo‘y yasminli choy, an’anaviy choynak bilan beriladi." }
+        kannetee06jasmin: { name: "Yasminli choy (choynakda)", desc: "Xushbo‘y Toshkent choy, an’anaviy choynak bilan beriladi." }
       }
     },
     hours: {
       title: "Ish vaqti",
       open: "Seshanba – Yakshanba",
-      openTime: "17:00 - 23:00",
+      weekdayTime: "17:00 - 23:00",
+      weekendTime: "14:00 - 23:00",
       kitchen: "Oshxona",
       kitchenTime: "22:00 gacha",
       weekdays: "Seshanba – Juma",

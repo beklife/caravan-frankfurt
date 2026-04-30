@@ -138,7 +138,12 @@ export default function Home() {
     { image: samsaImage, title: t.menu.dishes.somsa.name, desc: t.menu.dishes.somsa.desc, price: "11.90€" },
     { image: shashlikImage, title: t.menu.dishes.schaschlikvomlamm.name, desc: t.menu.dishes.schaschlikvomlamm.desc, price: "26.90€" },
     { image: kazanKebabImage, title: t.menu.dishes.kazankebab.name, desc: t.menu.dishes.kazankebab.desc, price: "26.90€" },
-    { image: teaImage, title: t.menu.dishes.kannetee06jasmin.name, desc: t.menu.dishes.kannetee06jasmin.desc, price: "6.50€" }
+    {
+      image: teaImage,
+      title: lang === "de" ? "Tashkent Tee" : lang === "ru" ? "Ташкентский чай" : lang === "uz" ? "Toshkent choyi" : "Tashkent Tea",
+      desc: t.menu.dishes.kannetee06jasmin.desc,
+      price: "9.90€"
+    }
   ];
 
   useEffect(() => {
@@ -609,8 +614,12 @@ export default function Home() {
 
                <div className="space-y-6">
                  <div className="flex justify-between items-center border-b border-dashed border-border pb-4">
-                   <span className="font-medium text-lg text-muted-foreground">{t.hours.open}</span>
-                   <span className="font-bold text-xl">{t.hours.openTime}</span>
+                   <span className="font-medium text-lg text-muted-foreground">{t.hours.weekdays}</span>
+                   <span className="font-bold text-xl">{t.hours.weekdayTime}</span>
+                 </div>
+                 <div className="flex justify-between items-center border-b border-dashed border-border pb-4">
+                   <span className="font-medium text-lg text-muted-foreground">{t.hours.weekend}</span>
+                   <span className="font-bold text-xl">{t.hours.weekendTime}</span>
                  </div>
                  <div className="flex justify-between items-center border-b border-dashed border-border pb-4">
                    <span className="font-medium text-lg text-muted-foreground">{t.hours.kitchen}</span>
