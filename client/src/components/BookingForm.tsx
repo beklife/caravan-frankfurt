@@ -90,6 +90,11 @@ export default function BookingForm({ lang }: BookingFormProps) {
       return ["16:30", "18:30", "20:30", "21:00", "21:30"];
     }
 
+    // 14.05.2026 - additional afternoon reservation times
+    if (selectedDate === "2026-05-14") {
+      return ["14:00", "15:00", "16:00", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00"];
+    }
+
     const dayOfWeek = new Date(`${selectedDate}T12:00:00`).getDay();
 
     // Tuesday (2) to Thursday (4)
