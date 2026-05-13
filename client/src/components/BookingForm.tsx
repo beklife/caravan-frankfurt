@@ -92,6 +92,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
 
     // 14.05.2026 - additional afternoon reservation times
     if (selectedDate === "2026-05-14") {
+      
       return ["14:00", "15:00", "16:00", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00"];
     }
 
