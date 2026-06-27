@@ -34,17 +34,19 @@ export const translations = {
         atschuchuksalat: { name: "Atschuchuksalat", desc: "Ein frischer Gemüsesalat mit saftigen Tomaten, Zwiebeln und wahlweise Pfeffer." },
         kazankebab: { name: "Kazan Kebab", desc: "Gebratenes Lammfleisch und Kartoffeln mit orientalischen Gewürzen, köstlich zubereitet im traditionellen gusseisernen Kochtopf 'Kazan'. Frischer Gemüsesalat dazu." },
         kazankebabhaehnchen: { name: "Kazan Kebab Hähnchen", desc: "Gebratenes Hühnerfleisch und Kartoffeln mit orientalischen Gewürzen, köstlich zubereitet im traditionellen gusseisernen Kochtopf 'Kazan'. Frischer Gemüsesalat dazu." },
-        plov: { name: "Plov", desc: "Erlesener Reis, Lammfleisch und Karotten fein gewürzt nach alter usbekischer Art. Frischer Gemüsesalat dazu." },
+        plov: { name: "Plov", desc: "Erlesener Reis, Lammfleisch und Karotten, Kichererbsen, Rosinen fein gewürzt nach alter usbekischer Art. Frischer Gemüsesalat dazu." },
         pelmeni: { name: "Pelmeni", desc: "Kleine gefüllte Teigtaschen mit Fleischfüllung nach altrussische Art. Servieren mit schmand und frische Salat." },
         manty: { name: "Manty", desc: "Gedämpfte Teigtaschen mit Kalbfleisch nach Usbekische Art. Frische Gemüsesalat dazu." },
-        honimvegetariach: { name: "Honim Vegetarisch", desc: "Gedämpfte hauchdünne Teigrolade mit Füllung aus Zucchini, Karotten, Kartoffel und Zwiebel. Frische Gemüsesalat dazu." },
-        warenikiwegetarisch: { name: "Wareniki Vegetarisch", desc: "Kleine Maultaschen Mit Kartoffelfüllung. Frische Gemüsesalat dazu." },
+        honimvegetariach: { name: "Honim Vegetarisch", desc: "Gedämpfte hauchdünne Teigroulade mit Füllung aus Zucchini, Paprika, Karotten, Kartoffel und Zwiebel. Frische Gemüsesalat dazu." },
+        warenikiwegetarisch: { name: "Wareniki Vegetarisch", desc: "Kleine Maultaschen mit Kartoffel-Zwiebel-Füllung. Serviert mit frischem Gemüsesalat." },
         schaschlikvomlamm: { name: "Schaschlik vom Lamm", desc: "Saftige Lammfleischstückchen mit Tomaten-Yoghurt-Knoblauch-Sauce und frischem Gemüsesalat." },
         schaschlikvomhaehnchen: { name: "Schaschlik vom Hähnchen", desc: "Saftige Hähnchenfleischstückchen mit Tomaten-Yoghurt-Knoblauch-Sauce und frischem Gemüsesalat." },
-        caravandessert: { name: "Caravan Dessert", desc: "Gebackene Apetithäppchen aus Blätterteig mit Halwa und Äpfeln. Vanillesauce dazu." },
-        honigmedovikkuchen: { name: "Honig Medovik Kuchen", desc: "Honig Medovik Kuchen in zwei Sorten: Nuss / Schokolade" },
-        honigmedovikschokolade: { name: "Honig Medovik Schokolade", desc: "Honig Medovik Torte in der Schokoladen-Variante." },
-        kannetee06jasmin: { name: "Kanne Jasmin Tee", desc: "Aromatischer Tashkent-Tee, traditionell serviert in einer Teekanne." }
+        honigmedovikkuchen: { name: "Medovik", desc: "Honigtorte mit Walnüssen." },
+        honigmedovikschokolade: { name: "Schoko Medovik", desc: "Honigtorte mit Schokolade." },
+        napoleon: { name: "Napoleon", desc: "Hausgemachte Blätterteigtorte mit feinen, knusprigen Schichten und zarter Vanillecreme." },
+        kannetee06jasmin: { name: "Kanne Jasmin Tee", desc: "Aromatischer Tashkent-Tee, traditionell serviert in einer Teekanne." },
+        caravanplov: { name: "Caravan Plov", desc: "Traditioneller usbekischer Plov nach Art des Hauses, verfeinert mit Wachteleiern und serviert mit frischem Achuchuk-Salat." },
+        taschkentteller: { name: "Taschkent Teller", desc: "Eine Auswahl der beliebtesten Spezialitäten der usbekischen Küche: traditioneller Plov, hausgemachte Manti, knusprige Samsa und frischer Atschuchuk Salat." }
       }
     },
     hours: {
@@ -130,17 +132,19 @@ export const translations = {
         atschuchuksalat: { name: "Atschuchuk Salad", desc: "A fresh vegetable salad with juicy tomatoes, onions, and optional peppers." },
         kazankebab: { name: "Kazan Kebab", desc: "Mouth-watering fried lamb pieces served with potatoes and a fresh vegetable salad." },
         kazankebabhaehnchen: { name: "Kazan Kebab Chicken", desc: "Mouth-watering fried chicken pieces served with potatoes and a fresh vegetable salad." },
-        plov: { name: "Plov", desc: "The main national Uzbek specialty made of rice, carrots, lamb, with a fine mix of spices." },
+        plov: { name: "Plov", desc: "The main national Uzbek specialty made of rice, carrots, lamb, chickpeas, raisins, with a fine mix of spices." },
         pelmeni: { name: "Pelmeni", desc: "Small filled dumplings with meat filling in the old Russian style. Served with a fresh vegetable salad." },
         manty: { name: "Manty", desc: "Steamed dumplings with veal prepared in Uzbek style. Served with a fresh vegetable salad." },
-        honimvegetariach: { name: "Honim Vegetarian", desc: "Steamed, paper-thin dough roll filled with zucchini, carrots, potatoes, and onions. Served with a fresh vegetable salad." },
-        warenikiwegetarisch: { name: "Wareniki Vegetarian", desc: "Little dumpling filled with potatoes. Served with a fresh vegetable salad." },
+        honimvegetariach: { name: "Honim Vegetarian", desc: "Steamed, paper-thin dough roll filled with zucchini, bell pepper, carrots, potatoes, and onions. Served with a fresh vegetable salad." },
+        warenikiwegetarisch: { name: "Wareniki Vegetarian", desc: "Little dumplings filled with potatoes and onions. Served with a fresh vegetable salad." },
         schaschlikvomlamm: { name: "Shashlik from Lamb", desc: "Tenderly marinated lamb filets, served with a fresh vegetable salad, tomato sauce and a side dish of your choice." },
         schaschlikvomhaehnchen: { name: "Shashlik from Chicken", desc: "Tenderly marinated chicken filets, served with a fresh vegetable salad, tomato sauce and a side dish of your choice." },
-        caravandessert: { name: "Caravan Dessert", desc: "Puff pastry filled with Halva and Apples, served with a vanilla sauce." },
-        honigmedovikkuchen: { name: "Honey Medovik Cake", desc: "Honey Medovik Cake in two varieties: Nut / Chocolate" },
-        honigmedovikschokolade: { name: "Honey Medovik Chocolate", desc: "Honey Medovik cake in the chocolate variety." },
-        kannetee06jasmin: { name: "Pot of Jasmine Tea", desc: "Aromatic Tashkent tea, traditionally served in a teapot." }
+        honigmedovikkuchen: { name: "Medovik", desc: "Honey cake with walnuts." },
+        honigmedovikschokolade: { name: "Schoko Medovik", desc: "Honey chocolate cake." },
+        napoleon: { name: "Napoleon", desc: "Homemade puff pastry cake with delicate, crispy layers and smooth vanilla cream." },
+        kannetee06jasmin: { name: "Pot of Jasmine Tea", desc: "Aromatic Tashkent tea, traditionally served in a teapot." },
+        caravanplov: { name: "Caravan Plov", desc: "Traditional Uzbek plov prepared in the house style, refined with quail eggs and served with fresh Achuchuk salad." },
+        taschkentteller: { name: "Tashkent Platter", desc: "A selection of the most popular Uzbek specialties: traditional plov, homemade manti, crispy samsa and fresh Achuchuk salad." }
       }
     },
     hours: {
@@ -226,17 +230,19 @@ export const translations = {
         atschuchuksalat: { name: "Салат Ачучук", desc: "Свежий овощной салат с сочными помидорами, луком и перцем по желанию." },
         kazankebab: { name: "Казан Кебаб", desc: "Жареная баранина с картофелем и восточными специями, приготовленная в традиционном чугунном казане. Свежий овощной салат." },
         kazankebabhaehnchen: { name: "Казан Кебаб из курицы", desc: "Жареная курица с картофелем и восточными специями, приготовленная в традиционном чугунном казане. Свежий овощной салат." },
-        plov: { name: "Плов", desc: "Изысканный рис, баранина и морковь, приправленные по старинному узбекскому рецепту. Свежий овощной салат." },
+        plov: { name: "Плов", desc: "Изысканный рис, баранина, морковь, нут и изюм, приправленные по старинному узбекскому рецепту. Свежий овощной салат." },
         pelmeni: { name: "Пельмени", desc: "Маленькие пельмени с мясной начинкой по старорусскому рецепту. Подаются со сметаной и свежим салатом." },
         manty: { name: "Манты", desc: "Паровые манты с телятиной по-узбекски. Свежий овощной салат." },
-        honimvegetariach: { name: "Хоним вегетарианский", desc: "Паровые тонкие рулеты из теста с начинкой из кабачков, моркови, картофеля и лука. Свежий овощной салат." },
-        warenikiwegetarisch: { name: "Вареники вегетарианские", desc: "Маленькие вареники с картофельной начинкой. Свежий овощной салат." },
+        honimvegetariach: { name: "Хоним вегетарианский", desc: "Паровые тонкие рулеты из теста с начинкой из кабачков, паприки, моркови, картофеля и лука. Свежий овощной салат." },
+        warenikiwegetarisch: { name: "Вареники вегетарианские", desc: "Маленькие вареники с начинкой из картофеля и лука. Свежий овощной салат." },
         schaschlikvomlamm: { name: "Шашлык из баранины", desc: "Сочные кусочки баранины с томатно-йогуртовым соусом с чесноком и свежим овощным салатом." },
         schaschlikvomhaehnchen: { name: "Шашлык из курицы", desc: "Сочные кусочки курицы с томатно-йогуртовым соусом с чесноком и свежим овощным салатом." },
-        caravandessert: { name: "Десерт Караван", desc: "Печеные аппетитные кусочки слоеного теста с халвой и яблоками. Ванильный соус." },
-        honigmedovikkuchen: { name: "Медовый торт Медовик", desc: "Медовый торт Медовик в двух вариантах: Ореховый / Шоколадный" },
-        honigmedovikschokolade: { name: "Медовик Шоколадный", desc: "Медовый торт Медовик в шоколадном исполнении." },
-        kannetee06jasmin: { name: "Чайник жасминового чая", desc: "Ароматный чай, традиционно подается в чайнике." }
+        honigmedovikkuchen: { name: "Медовик", desc: "Медовый торт с грецкими орехами." },
+        honigmedovikschokolade: { name: "Шоко Медовик", desc: "Медовый торт с шоколадом." },
+        napoleon: { name: "Наполеон", desc: "Домашний торт Наполеон из нежных хрустящих слоёв теста с ванильным кремом." },
+        kannetee06jasmin: { name: "Чайник жасминового чая", desc: "Ароматный чай, традиционно подается в чайнике." },
+        caravanplov: { name: "Плов Карavan", desc: "Традиционный узбекский плов по-домашнему, с перепелиными яйцами и свежим салатом Ачучук." },
+        taschkentteller: { name: "Ташкентская тарелка", desc: "Выбор самых популярных блюд узбекской кухни: традиционный плов, домашние манты, хрустящая самса и свежий салат Ачучук." }
       }
     },
     hours: {
@@ -294,45 +300,47 @@ export const translations = {
       menu: "Menyu",
       location: "Manzil",
       contact: "Aloqa",
-      reserve: "Bron so‘rovi"
+      reserve: "Bron so'rovi"
     },
     hero: {
-      title: "CARAVAN – Germaniyadagi birinchi o‘zbek oshxonasi.",
-      subtitle: "Frankfurt am Main shahrida asl o‘zbek ta’mlari, samimiy mehmondo‘stlik va choy madaniyati.",
-      notice: "Bu CARAVANning rasmiy veb-sayti. Hozir saytni yakunlayapmiz, shuning uchun foto va matnlar hozircha namunadir. Haqiqiy suratlar tez orada bo‘ladi. Baribir stol bron qilishingiz yoki biz bilan bog‘lanishingiz mumkin.",
+      title: "CARAVAN – Germaniyadagi birinchi o'zbek oshxonasi.",
+      subtitle: "Frankfurt am Main shahrida asl o'zbek ta'mlari, samimiy mehmondo'stlik va choy madaniyati.",
+      notice: "Bu CARAVANning rasmiy veb-sayti. Hozir saytni yakunlayapmiz, shuning uchun foto va matnlar hozircha namunadir. Haqiqiy suratlar tez orada bo'ladi. Baribir stol bron qilishingiz yoki biz bilan bog'lanishingiz mumkin.",
       cta_reserve: "Stol bron qilish",
-      cta_menu: "Menyu ko‘rish"
+      cta_menu: "Menyu ko'rish"
     },
     about: {
       title: "Bizning tariximiz",
-      content: "CARAVAN restoraniga xush kelibsiz. Biz Frankfurt shahriga Ipak yo‘lining boy ta’mlari va samimiy mehmondo‘stligini olib keldik. Oshxonamiz Markaziy Osiyoning oshpazlik an’analarini nishonlaydi. Bizda ovqatlanish shunchaki ovqat emas; bu do‘stlar va oila bilan uyga o‘xshagan muhitda baham ko‘riladigan jamoaviy tajribadir."
+      content: "CARAVAN restoraniga xush kelibsiz. Biz Frankfurt shahriga Ipak yo'lining boy ta'mlari va samimiy mehmondo'stligini olib keldik. Oshxonamiz Markaziy Osiyoning oshpazlik an'analarini nishonlaydi. Bizda ovqatlanish shunchaki ovqat emas; bu do'stlar va oila bilan uyga o'xshagan muhitda baham ko'riladigan jamoaviy tajribadir."
     },
     menu: {
       journey: "CARAVAN BILAN SAYOHAT",
       title: "Oshxonamizdagi diqqatga sazovor taomlar",
-      subtitle: "Bizning eng mashhur taomlarimizdan tanlov. Taomlar mavsumga qarab o‘zgarishi mumkin.",
+      subtitle: "Bizning eng mashhur taomlarimizdan tanlov. Taomlar mavsumga qarab o'zgarishi mumkin.",
       dishes: {
-        schorpa: { name: "Shurpa", desc: "O‘zbek milliy sho‘rvasi yumshoq go‘sht, kartoshka, sabzi, qalampir, piyoz va yangi ko‘katlar bilan." },
-        borsch: { name: "Borsh", desc: "Sabzavot va mol go‘shti sho‘rvasi lavlagi bilan eski rus uslubida." },
-        chuchvara: { name: "Chuchvara", desc: "Dana go‘shti, sabzavot va piyoz bilan to‘ldirilgan pelmenli sho‘rva, koriandr bilan." },
-        mastava: { name: "Mastava", desc: "Dana go‘shti, sabzavot va piyoz bilan guruch sho‘rvasi, sharq ziravorlari bilan." },
-        somsa: { name: "Somsa (2 dona)", desc: "Dana go‘shti bilan xamirli somsa, an’anaviy o‘zbek ziravorlari bilan." },
-        tschebureki: { name: "Cheburek (2 dona)", desc: "Qiyma (mol go‘shti) bilan xamirli cheburek." },
-        karottensalat: { name: "Sabzi salati", desc: "O‘zbekcha ekzotik sabzi salati ingichka qirg‘ichdan o‘tkazilgan, yangi sarimsoq bilan." },
+        schorpa: { name: "Shurpa", desc: "O'zbek milliy sho'rvasi yumshoq go'sht, kartoshka, sabzi, qalampir, piyoz va yangi ko'katlar bilan." },
+        borsch: { name: "Borsh", desc: "Sabzavot va mol go'shti sho'rvasi lavlagi bilan eski rus uslubida." },
+        chuchvara: { name: "Chuchvara", desc: "Dana go'shti, sabzavot va piyoz bilan to'ldirilgan pelmenli sho'rva, koriandr bilan." },
+        mastava: { name: "Mastava", desc: "Dana go'shti, sabzavot va piyoz bilan guruch sho'rvasi, sharq ziravorlari bilan." },
+        somsa: { name: "Somsa (2 dona)", desc: "Dana go'shti bilan xamirli somsa, an'anaviy o'zbek ziravorlari bilan." },
+        tschebureki: { name: "Cheburek (2 dona)", desc: "Qiyma (mol go'shti) bilan xamirli cheburek." },
+        karottensalat: { name: "Sabzi salati", desc: "O'zbekcha ekzotik sabzi salati ingichka qirg'ichdan o'tkazilgan, yangi sarimsoq bilan." },
         atschuchuksalat: { name: "Achichuk salati", desc: "Shirin pomidor, piyoz va ixtiyoriy qalampir bilan yangi sabzavot salati." },
-        kazankebab: { name: "Qozon kabob", desc: "Qovurilgan qo‘y go‘shti va kartoshka sharq ziravorlari bilan, an’anaviy cho‘yan qozonda tayyorlangan. Yangi sabzavot salati." },
-        kazankebabhaehnchen: { name: "Qozon kabob (tovuq)", desc: "Qovurilgan tovuq go‘shti va kartoshka sharq ziravorlari bilan, an’anaviy cho‘yan qozonda tayyorlangan. Yangi sabzavot salati." },
-        plov: { name: "Osh", desc: "Tanlangan guruch, qo‘y go‘shti va sabzi qadimiy o‘zbek uslubida ziravorlangan. Yangi sabzavot salati." },
-        pelmeni: { name: "Pelmeni", desc: "Go‘shtli kichik pelmenlar eski rus uslubida. Smetana va yangi salat bilan." },
-        manty: { name: "Manti", desc: "Dana go‘shti bilan bug‘da pishirilgan manti, o‘zbekcha. Yangi sabzavot salati." },
-        honimvegetariach: { name: "Honim Vegetarian", desc: "Qovoq, sabzi, kartoshka va piyoz bilan to‘ldirilgan yupqa xamir ruleti bug‘da pishirilgan. Yangi sabzavot salati." },
-        warenikiwegetarisch: { name: "Vareniki Vegetarian", desc: "Kartoshkali kichik vareniklar. Yangi sabzavot salati." },
-        schaschlikvomlamm: { name: "Qo‘y go‘shtidan shashlik", desc: "Pomidor-yogurt-sarimsoq sousi va yangi sabzavot salati bilan sharbatli qo‘y go‘shti bo‘laklari." },
-        schaschlikvomhaehnchen: { name: "Tovuqdan shashlik", desc: "Pomidor-yogurt-sarimsoq sousi va yangi sabzavot salati bilan sharbatli tovuq go‘shti bo‘laklari." },
-        caravandessert: { name: "Caravan dessert", desc: "Halva va olma bilan pishirilgan xamir bo‘laklari. Vanil sousi bilan." },
-        honigmedovikkuchen: { name: "Asal Medovik torti", desc: "Ikki xil asal Medovik torti: yong'oq / shokolad" },
-        honigmedovikschokolade: { name: "Shokoladli Medovik torti", desc: "Shokoladli asal Medovik torti." },
-        kannetee06jasmin: { name: "Yasminli choy (choynakda)", desc: "Xushbo‘y Toshkent choy, an’anaviy choynak bilan beriladi." }
+        kazankebab: { name: "Qozon kabob", desc: "Qovurilgan qo'y go'shti va kartoshka sharq ziravorlari bilan, an'anaviy cho'yan qozonda tayyorlangan. Yangi sabzavot salati." },
+        kazankebabhaehnchen: { name: "Qozon kabob (tovuq)", desc: "Qovurilgan tovuq go'shti va kartoshka sharq ziravorlari bilan, an'anaviy cho'yan qozonda tayyorlangan. Yangi sabzavot salati." },
+        plov: { name: "Osh", desc: "Tanlangan guruch, qo'y go'shti, sabzi, no'xat va mayiz qadimiy o'zbek uslubida ziravorlangan. Yangi sabzavot salati." },
+        pelmeni: { name: "Pelmeni", desc: "Go'shtli kichik pelmenlar eski rus uslubida. Smetana va yangi salat bilan." },
+        manty: { name: "Manti", desc: "Dana go'shti bilan bug'da pishirilgan manti, o'zbekcha. Yangi sabzavot salati." },
+        honimvegetariach: { name: "Honim Vegetarian", desc: "Qovoq, qalampir, sabzi, kartoshka va piyoz bilan to'ldirilgan yupqa xamir ruleti bug'da pishirilgan. Yangi sabzavot salati." },
+        warenikiwegetarisch: { name: "Vareniki Vegetarian", desc: "Kartoshka va piyozli kichik vareniklar. Yangi sabzavot salati." },
+        schaschlikvomlamm: { name: "Qo'y go'shtidan shashlik", desc: "Pomidor-yogurt-sarimsoq sousi va yangi sabzavot salati bilan sharbatli qo'y go'shti bo'laklari." },
+        schaschlikvomhaehnchen: { name: "Tovuqdan shashlik", desc: "Pomidor-yogurt-sarimsoq sousi va yangi sabzavot salati bilan sharbatli tovuq go'shti bo'laklari." },
+        honigmedovikkuchen: { name: "Medovik", desc: "Yong'oqli asal torti." },
+        honigmedovikschokolade: { name: "Shokolad Medovik", desc: "Shokoladli asal torti." },
+        napoleon: { name: "Napoleon", desc: "Nozik qatlamli va yumshoq vanil kremli uy Napoleon torti." },
+        kannetee06jasmin: { name: "Yasminli choy (choynakda)", desc: "Xushbo'y Toshkent choy, an'anaviy choynak bilan beriladi." },
+        caravanplov: { name: "Caravan Oshi", desc: "Uy uslubidagi an'anaviy o'zbek oshi, bedana tuxumi bilan bezatilgan va yangi Achichuk salati bilan." },
+        taschkentteller: { name: "Toshkent Tarelkasi", desc: "O'zbek oshpazligining eng mashhur taomlari: an'anaviy osh, uy mantisi, qarsildoq somsa va yangi Achichuk salati." }
       }
     },
     hours: {
@@ -354,14 +362,14 @@ export const translations = {
       title: "Manzil",
       address: "Wöllstädter Str. 11, 60385 Frankfurt am Main",
       district: "Bornheim / Frankfurt am Main",
-      get_directions: "Yo‘nalish olish",
-      call_us: "Qo‘ng‘iroq qilish"
+      get_directions: "Yo'nalish olish",
+      call_us: "Qo'ng'iroq qilish"
     },
     gallery: {
       title: "Galereya"
     },
     contact: {
-      title: "Bron so‘rovi va aloqa",
+      title: "Bron so'rovi va aloqa",
       vacation_notice: "Bronlar 30-martdan 8-aprelgacha yopiq. Biz ta'tildamiz.",
       form: {
         name: "Ismingiz",
@@ -371,15 +379,15 @@ export const translations = {
         date: "Sana",
         time: "Vaqt",
         message: "Xabar (ixtiyoriy)",
-        submit: "So‘rov yuborish",
-        success: "Sizning bron qilish so‘rovingiz muvaffaqiyatli yuborildi! Tez orada bog‘lanamiz.",
-        error: "So‘rovingizni yuborishda muammo yuz berdi. Iltimos, qayta urinib ko‘ring."
+        submit: "So'rov yuborish",
+        success: "Sizning bron qilish so'rovingiz muvaffaqiyatli yuborildi! Tez orada bog'lanamiz.",
+        error: "So'rovingizni yuborishda muammo yuz berdi. Iltimos, qayta urinib ko'ring."
       },
       fallback: "Shakl ishlamayaptimi? Bizga yozing:",
-      catering: "So‘rov bo‘yicha katering xizmati mavjud."
+      catering: "So'rov bo'yicha katering xizmati mavjud."
     },
     footer: {
-      impressum: "Huquqiy ma’lumot",
+      impressum: "Huquqiy ma'lumot",
       privacy: "Maxfiylik siyosati",
       rights: "Barcha huquqlar himoyalangan."
     }

@@ -4,9 +4,9 @@ import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, CheckIcon
 import { useSeoMeta } from "@/lib/seo";
 
 import heroImage from "@assets/stock_images/hero.webp";
-import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.webp";
-import plovImage from "@assets/stock_images/menu/palov.webp";
-import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.jpg";
+import mantyImage from "@assets/stock_images/menu/Manti.webp";
+import plovImage from "@assets/stock_images/menu/Plov.webp";
+import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.webp";
 
 export default function UsbekischesRestaurant() {
   useSeoMeta({
