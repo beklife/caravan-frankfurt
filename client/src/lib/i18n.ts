@@ -60,9 +60,7 @@ export const translations = {
       weekend: "Samstag – Sonntag",
       monday: "Montag",
       closed: "Geschlossen",
-      note: "An Feiertagen können die Zeiten abweichen. Bitte rufen Sie an.",
-      payment: "Zahlung",
-      cash_only: "Nur Barzahlung"
+      note: "An Feiertagen können die Zeiten abweichen. Bitte rufen Sie an."
     },
     location: {
       title: "Standort",
@@ -158,9 +156,7 @@ export const translations = {
       weekend: "Saturday – Sunday",
       monday: "Monday",
       closed: "Closed",
-      note: "Hours may vary on holidays. Call to confirm.",
-      payment: "Payment",
-      cash_only: "Cash only"
+      note: "Hours may vary on holidays. Call to confirm."
     },
     location: {
       title: "Location",
@@ -256,9 +252,7 @@ export const translations = {
       weekend: "Суббота – Воскресенье",
       monday: "Понедельник",
       closed: "Закрыто",
-      note: "В праздничные дни часы могут меняться. Позвоните для уточнения.",
-      payment: "Оплата",
-      cash_only: "Только наличными"
+      note: "В праздничные дни часы могут меняться. Позвоните для уточнения."
     },
     location: {
       title: "Как нас найти",
@@ -354,9 +348,7 @@ export const translations = {
       weekend: "Shanba – Yakshanba",
       monday: "Dushanba",
       closed: "Yopiq",
-      note: "Bayram kunlari vaqt o'zgarishi mumkin. Tasdiqlash uchun qo'ng'iroq qiling.",
-      payment: "To'lov",
-      cash_only: "Faqat naqd pul"
+      note: "Bayram kunlari vaqt o'zgarishi mumkin. Tasdiqlash uchun qo'ng'iroq qiling."
     },
     location: {
       title: "Manzil",
