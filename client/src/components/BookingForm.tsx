@@ -37,9 +37,9 @@ interface BookingFormProps {
   lang: Language;
 }
 
-const VACATION_START = "2026-03-30";
-const VACATION_END = "2026-04-08";
-const NOTICE_START = "2026-03-30";
+const VACATION_START = "2026-07-28";
+const VACATION_END = "2026-08-07";
+const NOTICE_START = "2026-07-28";
 
 function getLocalDateString(date = new Date()): string {
   const year = date.getFullYear();

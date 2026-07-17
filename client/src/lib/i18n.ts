@@ -74,7 +74,7 @@ export const translations = {
     },
     contact: {
       title: "Reservierungsanfrage & Kontakt",
-      vacation_notice: "Reservierungen sind vom 30. März bis 8. April geschlossen. Wir sind im Urlaub.",
+      vacation_notice: "Reservierungen sind vom 28. Juli bis 7. August geschlossen. Ab 8. August sind wir wieder für Sie da.",
       form: {
         name: "Ihr Name",
         email: "E-Mail",
@@ -170,7 +170,7 @@ export const translations = {
     },
     contact: {
       title: "Reservation Request & Contact",
-      vacation_notice: "Reservations are closed from March 30 to April 8. We are on vacation.",
+      vacation_notice: "Reservations are closed from July 28 to August 7. We will reopen on August 8.",
       form: {
         name: "Your Name",
         email: "Email",
@@ -266,7 +266,7 @@ export const translations = {
     },
     contact: {
       title: "Запрос на бронирование и Контакты",
-      vacation_notice: "Бронирование закрыто с 30 марта по 8 апреля. Мы в отпуске.",
+      vacation_notice: "Бронирование закрыто с 28 июля по 7 августа. Мы снова открыты с 8 августа.",
       form: {
         name: "Ваше Имя",
         email: "Email",
@@ -362,7 +362,7 @@ export const translations = {
     },
     contact: {
       title: "Bron so'rovi va aloqa",
-      vacation_notice: "Bronlar 30-martdan 8-aprelgacha yopiq. Biz ta'tildamiz.",
+      vacation_notice: "Bronlar 28-iyuldan 7-avgustgacha yopiq. 8-avgustdan yana ochiqmiz.",
       form: {
         name: "Ismingiz",
         email: "Elektron pochta",
