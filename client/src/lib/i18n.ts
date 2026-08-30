@@ -43,7 +43,7 @@ export const translations = {
         schaschlikvomhaehnchen: { name: "Schaschlik vom Hähnchen", desc: "Saftige Hähnchenfleischstückchen mit Tomaten-Yoghurt-Knoblauch-Sauce und frischem Gemüsesalat." },
         honigmedovikkuchen: { name: "Medovik", desc: "Honigtorte mit Walnüssen." },
         honigmedovikschokolade: { name: "Schoko Medovik", desc: "Honigtorte mit Schokolade." },
-        napoleon: { name: "Napoleon", desc: "Hausgemachte Blätterteigtorte mit feinen, knusprigen Schichten und zarter Vanillecreme." },
+        napoleon: { name: "Napoleon", desc: "Blätterteigtorte mit feinen, knusprigen Schichten und zarter Vanillecreme." },
         kannetee06jasmin: { name: "Kanne Jasmin Tee", desc: "Aromatischer Tashkent-Tee, traditionell serviert in einer Teekanne." },
         caravanplov: { name: "Caravan Plov", desc: "Traditioneller usbekischer Plov nach Art des Hauses, verfeinert mit Wachteleiern und serviert mit frischem Achuchuk-Salat." },
         taschkentteller: { name: "Taschkent Teller", desc: "Eine Auswahl der beliebtesten Spezialitäten der usbekischen Küche: traditioneller Plov, hausgemachte Manti, knusprige Samsa und frischer Atschuchuk Salat." }
@@ -139,7 +139,7 @@ export const translations = {
         schaschlikvomhaehnchen: { name: "Shashlik from Chicken", desc: "Tenderly marinated chicken filets, served with a fresh vegetable salad, tomato sauce and a side dish of your choice." },
         honigmedovikkuchen: { name: "Medovik", desc: "Honey cake with walnuts." },
         honigmedovikschokolade: { name: "Schoko Medovik", desc: "Honey chocolate cake." },
-        napoleon: { name: "Napoleon", desc: "Homemade puff pastry cake with delicate, crispy layers and smooth vanilla cream." },
+        napoleon: { name: "Napoleon", desc: "Puff pastry cake with delicate, crispy layers and smooth vanilla cream." },
         kannetee06jasmin: { name: "Pot of Jasmine Tea", desc: "Aromatic Tashkent tea, traditionally served in a teapot." },
         caravanplov: { name: "Caravan Plov", desc: "Traditional Uzbek plov prepared in the house style, refined with quail eggs and served with fresh Achuchuk salad." },
         taschkentteller: { name: "Tashkent Platter", desc: "A selection of the most popular Uzbek specialties: traditional plov, homemade manti, crispy samsa and fresh Achuchuk salad." }
@@ -235,7 +235,7 @@ export const translations = {
         schaschlikvomhaehnchen: { name: "Шашлык из курицы", desc: "Сочные кусочки курицы с томатно-йогуртовым соусом с чесноком и свежим овощным салатом." },
         honigmedovikkuchen: { name: "Медовик", desc: "Медовый торт с грецкими орехами." },
         honigmedovikschokolade: { name: "Шоко Медовик", desc: "Медовый торт с шоколадом." },
-        napoleon: { name: "Наполеон", desc: "Домашний торт Наполеон из нежных хрустящих слоёв теста с ванильным кремом." },
+        napoleon: { name: "Наполеон", desc: "Торт Наполеон из нежных хрустящих слоёв теста с ванильным кремом." },
         kannetee06jasmin: { name: "Чайник жасминового чая", desc: "Ароматный чай, традиционно подается в чайнике." },
         caravanplov: { name: "Плов Карavan", desc: "Традиционный узбекский плов по-домашнему, с перепелиными яйцами и свежим салатом Ачучук." },
         taschkentteller: { name: "Ташкентская тарелка", desc: "Выбор самых популярных блюд узбекской кухни: традиционный плов, домашние манты, хрустящая самса и свежий салат Ачучук." }
@@ -331,7 +331,7 @@ export const translations = {
         schaschlikvomhaehnchen: { name: "Tovuqdan shashlik", desc: "Pomidor-yogurt-sarimsoq sousi va yangi sabzavot salati bilan sharbatli tovuq go'shti bo'laklari." },
         honigmedovikkuchen: { name: "Medovik", desc: "Yong'oqli asal torti." },
         honigmedovikschokolade: { name: "Shokolad Medovik", desc: "Shokoladli asal torti." },
-        napoleon: { name: "Napoleon", desc: "Nozik qatlamli va yumshoq vanil kremli uy Napoleon torti." },
+        napoleon: { name: "Napoleon", desc: "Nozik qatlamli va yumshoq vanil kremli Napoleon torti." },
         kannetee06jasmin: { name: "Yasminli choy (choynakda)", desc: "Xushbo'y Toshkent choy, an'anaviy choynak bilan beriladi." },
         caravanplov: { name: "Caravan Oshi", desc: "Uy uslubidagi an'anaviy o'zbek oshi, bedana tuxumi bilan bezatilgan va yangi Achichuk salati bilan." },
         taschkentteller: { name: "Toshkent Tarelkasi", desc: "O'zbek oshpazligining eng mashhur taomlari: an'anaviy osh, uy mantisi, qarsildoq somsa va yangi Achichuk salati." }

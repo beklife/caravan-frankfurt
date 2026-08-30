@@ -111,7 +111,7 @@ const fullMenu = {
     { id: 'mastava', image: mastavAImage, price: '12.90€', dietary: 'halal' },
   ],
   appetizers: [
-    { id: 'somsa', image: samsaImage, price: '12.90€', dietary: 'halal' },
+    { id: 'somsa', image: samsaImage, price: '13.90€', dietary: 'halal' },
     { id: 'tschebureki', image: tscheburekiImage, price: '12.90€', dietary: 'halal' },
     {
       id: 'knackigerstart',
@@ -138,7 +138,7 @@ const fullMenu = {
     { id: 'kazankebabhaehnchen', image: kazanKebabHaehnchenImage, price: '25.90€', dietary: 'halal' },
     { id: 'schaschlikvomlamm', image: shashlikLammImage, price: '26.90€', dietary: 'halal' },
     { id: 'schaschlikvomhaehnchen', image: shashlikHaehnchenImage, price: '25.90€', dietary: 'halal' },
-    { id: 'taschkentteller', image: taschkentTellerImage, price: '25.90€', dietary: 'halal' },
+    { id: 'taschkentteller', image: taschkentTellerImage, price: '27.90€', dietary: 'halal' },
     { id: 'honimvegetariach', image: honimImage, price: '21.90€', dietary: 'vegetarian' },
     { id: 'warenikiwegetarisch', image: warenikyImage, price: '21.90€', dietary: 'vegetarian' },
   ],
@@ -405,7 +405,7 @@ const fullMenu = {
     {
       id: 'selterskohlensaeure',
       image: null,
-      price: '2.50€ / 3.80€',
+      price: '2.90€ / 3.80€',
       subItem: true,
       names: { de: 'SELTERS KOHLENSÄURE', en: 'SELTERS SPARKLING', ru: 'SELTERS ГАЗИРОВАННАЯ', uz: 'SELTERS GAZLANGAN' },
       descs: { de: '', en: '', ru: '', uz: '' }
@@ -413,7 +413,7 @@ const fullMenu = {
     {
       id: 'seltersnaturell',
       image: null,
-      price: '2.50€ / 3.80€',
+      price: '2.90€ / 3.80€',
       subItem: true,
       names: { de: 'SELTERS NATURELL', en: 'SELTERS STILL', ru: 'SELTERS НАТУРАЛЬНАЯ', uz: 'SELTERS TABIIY' },
       descs: { de: '', en: '', ru: '', uz: '' }
@@ -461,15 +461,15 @@ const fullMenu = {
     {
       id: 'apfelsaftschorle',
       image: null,
-      price: '3.20€',
+      price: '3.90€',
       subItem: true,
-      names: { de: 'APFELSAFTSCHORLE', en: 'APPLE SPRITZER', ru: 'ЯБЛОЧНЫЙ ШПРИТЦЕР', uz: 'OLMA SHARBAT SPRITZER' },
+      names: { de: 'APFELSAFTSCHORLE (0.33L)', en: 'APPLE SPRITZER (0.33L)', ru: 'ЯБЛОЧНЫЙ ШПРИТЦЕР (0.33Л)', uz: 'OLMA SHARBAT SPRITZER (0.33L)' },
       descs: { de: '', en: '', ru: '', uz: '' }
     },
     {
       id: 'bitterlemon',
       image: null,
-      price: '3.90€ / 4.90€',
+      price: '2.90€ / 4.20€',
       subItem: true,
       names: { de: 'BITTER LEMON', en: 'BITTER LEMON', ru: 'BITTER LEMON', uz: 'BITTER LEMON' },
       descs: { de: '', en: '', ru: '', uz: '' }
@@ -477,7 +477,7 @@ const fullMenu = {
     {
       id: 'gingerale',
       image: null,
-      price: '3.90€ / 4.90€',
+      price: '2.90€ / 4.20€',
       subItem: true,
       names: { de: 'GINGER ALE', en: 'GINGER ALE', ru: 'GINGER ALE', uz: 'GINGER ALE' },
       descs: { de: '', en: '', ru: '', uz: '' }
@@ -485,7 +485,7 @@ const fullMenu = {
     {
       id: 'schweppestonic',
       image: null,
-      price: '3.90€',
+      price: '2.90€',
       subItem: true,
       names: { de: 'SCHWEPPES TONIC', en: 'SCHWEPPES TONIC', ru: 'SCHWEPPES TONIC', uz: 'SCHWEPPES TONIC' },
       descs: { de: '', en: '', ru: '', uz: '' }
@@ -501,7 +501,7 @@ const fullMenu = {
     {
       id: 'orangensaft',
       image: null,
-      price: '3.90€',
+      price: '3.20€',
       subItem: true,
       names: { de: 'ORANGENSAFT', en: 'ORANGE JUICE', ru: 'АПЕЛЬСИНОВЫЙ СОК', uz: 'APELSIN SHARBATI' },
       descs: { de: '', en: '', ru: '', uz: '' }
@@ -509,7 +509,7 @@ const fullMenu = {
     {
       id: 'apfelsaft',
       image: null,
-      price: '3.90€',
+      price: '3.20€',
       subItem: true,
       names: { de: 'APFELSAFT', en: 'APPLE JUICE', ru: 'ЯБЛОЧНЫЙ СОК', uz: 'OLMA SHARBATI' },
       descs: { de: '', en: '', ru: '', uz: '' }
@@ -517,7 +517,7 @@ const fullMenu = {
     {
       id: 'kirschsaft',
       image: null,
-      price: '3.90€',
+      price: '3.20€',
       subItem: true,
       names: { de: 'KIRSCHSAFT', en: 'CHERRY JUICE', ru: 'ВИШНЕВЫЙ СОК', uz: 'OLCHA SHARBATI' },
       descs: { de: '', en: '', ru: '', uz: '' }
@@ -525,7 +525,7 @@ const fullMenu = {
     {
       id: 'bananensaft',
       image: null,
-      price: '3.90€',
+      price: '3.20€',
       subItem: true,
       names: { de: 'BANANENSAFT', en: 'BANANA JUICE', ru: 'БАНАНОВЫЙ СОК', uz: 'BANAN SHARBATI' },
       descs: { de: '', en: '', ru: '', uz: '' }
@@ -605,7 +605,7 @@ const fullMenu = {
     {
       id: 'schofferhofer',
       image: null,
-      price: '5.90€',
+      price: '5.20€',
       names: { de: 'Schöfferhofer Hefeweizen (0.5L)', en: 'Schöfferhofer Wheat Beer (0.5L)', ru: 'Schöfferhofer пшеничное (0.5л)', uz: "Schöfferhofer bug'doy pivosi (0.5L)" },
       descs: {
         de: 'Klassisches Hefeweizen',
@@ -629,7 +629,7 @@ const fullMenu = {
     {
       id: 'schofferhoferna',
       image: null,
-      price: '5.90€',
+      price: '5.20€',
       names: { de: 'Schöfferhofer Hefeweizen (0.0% Vol.) (0.5L)', en: 'Schöfferhofer Wheat Beer (0.0% Vol.) (0.5L)', ru: 'Schöfferhofer пшеничное (0.0% Vol.) (0.5л)', uz: "Schöfferhofer bug'doy (0.0% Vol.) (0.5L)" },
       descs: {
         de: 'Alkoholfreies Hefeweizen',
@@ -667,7 +667,7 @@ const fullMenu = {
     {
       id: 'gintonic',
       image: null,
-      price: '12.90€',
+      price: '10.90€',
       names: { de: 'Gin Tonic', en: 'Gin Tonic', ru: 'Джин Тоник', uz: 'Gin Tonic' },
       descs: { de: '', en: '', ru: '', uz: '' }
     },
