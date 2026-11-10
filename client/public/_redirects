@@ -23,6 +23,3 @@
 /ru/datenschutz/  /datenschutz/       301
 /uz/datenschutz   /datenschutz/       301
 /uz/datenschutz/  /datenschutz/       301
-
-# SPA fallback - serve index.html for all other routes
-/*                /index.html         200
