@@ -210,7 +210,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
         <DialogHeader>
           <DialogTitle className="text-xl">
             {lang === "de"
-              ? "Vielen Dank fur Ihre Reservierung!"
+              ? "Vielen Dank für Ihre Reservierung!"
               : lang === "ru"
               ? "Спасибо за вашу бронь!"
               : lang === "uz"
@@ -230,12 +230,12 @@ export default function BookingForm({ lang }: BookingFormProps) {
               </p>
               <p>
                 {lang === "de"
-                  ? "Fur Reservierungen an Freitag, Samstag und Sonntag ist die maximale Aufenthaltsdauer zwei Stunden."
+                  ? "Für Reservierungen am Samstag ist die maximale Aufenthaltsdauer zwei Stunden."
                   : lang === "ru"
-                  ? "По пятницам, субботам и воскресеньям максимальное время пребывания составляет два часа."
+                  ? "По субботам максимальное время пребывания составляет два часа."
                   : lang === "uz"
-                  ? "Juma, shanba va yakshanba kunlari maksimal qolish vaqti ikki soat."
-                  : "For Friday, Saturday, and Sunday reservations, the maximum stay is two hours."}
+                  ? "Shanba kunlari maksimal qolish vaqti ikki soat."
+                  : "For Saturday reservations, the maximum stay is two hours."}
               </p>
             </div>
           </DialogDescription>

@@ -10,7 +10,7 @@ export const translations = {
       reserve: "Reservierungsanfrage"
     },
     hero: {
-      title: "CARAVAN – erste Usbekische Küche in Deutschland.",
+      title: "CARAVAN – erste usbekische Küche in Deutschland.",
       subtitle: "Authentische usbekische Küche, warme Gastfreundschaft und lebendige Teekultur in Frankfurt am Main.",
       cta_reserve: "Tisch anfragen",
       cta_menu: "Highlights ansehen"
@@ -25,7 +25,7 @@ export const translations = {
       subtitle: "Eine Auswahl unserer beliebtesten Gerichte. Das Angebot kann saisonal variieren.",
       dishes: {
         schorpa: { name: "Schorpa", desc: "Usbekische Nationalsuppe mit zartem Fleisch, Kartoffeln, Karotten, Paprika, Zwiebeln und frischen Kräutern." },
-        borsch: { name: "Borsch", desc: "Gemüsesuppe und Rindfleisch mit rote Bete nach altrussische Art." },
+        borsch: { name: "Borsch", desc: "Gemüsesuppe mit Rindfleisch und Roter Bete nach altrussischer Art." },
         chuchvara: { name: "Chuchvara", desc: "Gefüllte Teigtaschensuppe (Pelmeny) mit Kalbfleisch, Gemüse und Zwiebeln, verfeinert mit Koriander." },
         mastava: { name: "Mastava", desc: "Reissuppe mit Kalbfleisch, Gemüse und Zwiebeln und abgeschmeckt mit orientalischen Gewürzen." },
         somsa: { name: "Somsa (2 St.)", desc: "Knuspriges Gebäck mit Kalbfleisch, verfeinert mit traditionell usbekischen Gewürzen." },
@@ -35,9 +35,9 @@ export const translations = {
         kazankebab: { name: "Kazan Kebab", desc: "Gebratenes Lammfleisch und Kartoffeln mit orientalischen Gewürzen, köstlich zubereitet im traditionellen gusseisernen Kochtopf 'Kazan'. Frischer Gemüsesalat dazu." },
         kazankebabhaehnchen: { name: "Kazan Kebab Hähnchen", desc: "Gebratenes Hühnerfleisch und Kartoffeln mit orientalischen Gewürzen, köstlich zubereitet im traditionellen gusseisernen Kochtopf 'Kazan'. Frischer Gemüsesalat dazu." },
         plov: { name: "Plov", desc: "Erlesener Reis, Lammfleisch und Karotten, Kichererbsen, Rosinen fein gewürzt nach alter usbekischer Art. Frischer Gemüsesalat dazu." },
-        pelmeni: { name: "Pelmeni", desc: "Kleine gefüllte Teigtaschen mit Fleischfüllung nach altrussische Art. Servieren mit schmand und frische Salat." },
-        manty: { name: "Manty", desc: "Gedämpfte Teigtaschen mit Kalbfleisch nach Usbekische Art. Frische Gemüsesalat dazu." },
-        honimvegetariach: { name: "Honim Vegetarisch", desc: "Gedämpfte hauchdünne Teigroulade mit Füllung aus Zucchini, Paprika, Karotten, Kartoffel und Zwiebel. Frische Gemüsesalat dazu." },
+        pelmeni: { name: "Pelmeni", desc: "Kleine gefüllte Teigtaschen mit Fleischfüllung nach altrussischer Art. Serviert mit Schmand und frischem Salat." },
+        manty: { name: "Manty", desc: "Gedämpfte Teigtaschen mit Kalbfleisch nach usbekischer Art. Frischer Gemüsesalat dazu." },
+        honimvegetariach: { name: "Honim Vegetarisch", desc: "Gedämpfte hauchdünne Teigroulade mit Füllung aus Zucchini, Paprika, Karotten, Kartoffel und Zwiebel. Frischer Gemüsesalat dazu." },
         warenikiwegetarisch: { name: "Wareniki Vegetarisch", desc: "Kleine Maultaschen mit Kartoffel-Zwiebel-Füllung. Serviert mit frischem Gemüsesalat." },
         schaschlikvomlamm: { name: "Schaschlik vom Lamm", desc: "Saftige Lammfleischstückchen mit Tomaten-Yoghurt-Knoblauch-Sauce und frischem Gemüsesalat." },
         schaschlikvomhaehnchen: { name: "Schaschlik vom Hähnchen", desc: "Saftige Hähnchenfleischstückchen mit Tomaten-Yoghurt-Knoblauch-Sauce und frischem Gemüsesalat." },
